@@ -12,14 +12,14 @@ const About = () => {
       {/* Hero Section with Team Background */}
       <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0">
-          <img 
-            src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=1600" 
+          <img
+            src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=1600"
             alt="About Us Background"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/50" />
         </div>
-        
+
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -60,7 +60,6 @@ const About = () => {
                 </p>
               </div>
             </motion.div>
-
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -81,7 +80,6 @@ const About = () => {
         </div>
       </section>
 
-     
       {/* Team Section */}
       <section className="py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -100,7 +98,6 @@ const About = () => {
               Our diverse team of AI specialists, engineers, and consultants brings together decades of experience in cutting-edge technology and business transformation.
             </p>
           </motion.div>
-
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
