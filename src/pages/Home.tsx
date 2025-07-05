@@ -196,9 +196,9 @@ const Home = () => {
                 whileHover={{ scale: 1.05, color: '#FF6600' }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-white text-blue-600 px-8 py-4 rounded-full text-lg font-semibold flex items-center transition-all duration-300 hover:bg-gray-100"
-                onClick={() => navigate('/contact')}
+                onClick={() => navigate('/services')}
               >
-                Book a 15-minute scoping call
+                Explore Our Services
                 <ArrowRight className="w-4 h-4 ml-2" />
               </motion.button>
             </motion.div>

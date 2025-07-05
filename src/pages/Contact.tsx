@@ -214,7 +214,7 @@ const Contact = () => {
                       <Mail className="w-6 h-6 text-white" />
                     </div>
                     <span className="font-semibold text-gray-900">
-                      cubeaisolutions@gmail.com
+                      contact@cubeaisolutions.com
                     </span>
                   </div>
 

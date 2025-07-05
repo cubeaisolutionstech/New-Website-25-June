@@ -28,11 +28,11 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center text-gray-300 hover:text-blue-300 transition-colors">
                 <Mail className="w-5 h-5 mr-3 text-blue-400" />
-                <span>cubeaisolutions@gmail.com</span>
+                <span>contact@cubeaisolutions.com</span>
               </div>
               <div className="flex items-center text-gray-300 hover:text-blue-300 transition-colors">
                 <Phone className="w-5 h-5 mr-3 text-blue-400" />
-                <span>cubeaisolutions@gmail.com</span>
+                <span>+91 9486938781 </span>
               </div>
               <div className="flex items-start text-gray-300">
                 <MapPin className="w-6 h-6 mr-3 text-blue-400 mt-0.5 flex-shrink-0" />
