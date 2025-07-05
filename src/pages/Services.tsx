@@ -12,7 +12,7 @@ const Services = () => {
     {
       id: 'aima',
       title: 'AIMA',
-      subtitle: 'Artificial Intelligence & Machine Learning',
+      subtitle: 'Artificial Intelligence & Machine Learning & Agent',
       image: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800',
       color: 'from-blue-600 to-indigo-700',
       description: 'Advanced AI and ML solutions for Industry 4.0 & 5.0, legacy modernization, and intelligent automation.',

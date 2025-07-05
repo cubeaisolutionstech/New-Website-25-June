@@ -139,13 +139,7 @@ const ExploreDetail = () => {
           image: 'https://images.pexels.com/photos/2599244/pexels-photo-2599244.jpeg?auto=compress&cs=tinysrgb&w=800',
           color: 'from-cyan-500 to-blue-600'
         },
-        {
-          id: 'computer-vision',
-          title: 'Computer Vision',
-          description: 'Advanced computer vision applications for image recognition and analysis.',
-          image: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800',
-          color: 'from-violet-500 to-purple-600'
-        }
+       
       ]
     },
     'tech-solution': {

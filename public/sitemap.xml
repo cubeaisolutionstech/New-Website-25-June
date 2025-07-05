@@ -1,0 +1,22 @@
+<!-- public/sitemap.xml -->
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://www.cubeaisolutions.com/</loc>
+  </url>
+  <url>
+    <loc>https://www.cubeaisolutions.com/about</loc>
+  </url>
+  <url>
+    <loc>https://www.cubeaisolutions.com/services</loc>
+  </url>
+  <url>
+    <loc>https://www.cubeaisolutions.com/products</loc>
+  </url>
+  <url>
+    <loc>https://www.cubeaisolutions.com/contact</loc>
+  </url>
+  <url>
+    <loc>https://www.cubeaisolutions.com/career</loc>
+  </url>
+</urlset>

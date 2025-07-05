@@ -15,7 +15,7 @@ const ServiceDetail = () => {
 
   const serviceData = {
     'aima': {
-      title: 'AIMA - Artificial Intelligence & Machine Learning',
+      title: 'AIMA - Artificial Intelligence & Machine Learning & Agent',
       image: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800',
       color: 'from-blue-500 to-indigo-600',
       sections: [
