@@ -12,7 +12,7 @@ const Footer = () => {
             <div className="flex items-center space-x-3 mb-6">
               <div className="relative">
                 <img
-                  src="/cube ai - Copy.jpg"
+                  src="/cubeai.jpg"
                   alt="CubeAI Solutions"
                   className="h-10 w-10 rounded-xl shadow-lg shadow-blue-500/20"
                 />

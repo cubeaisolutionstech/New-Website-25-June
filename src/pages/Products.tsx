@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { 
+import {
   Users,
   Building2,
   Database,
@@ -112,14 +112,14 @@ const Products = () => {
       {/* Hero Section with Robot Background */}
       <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0">
-          <img 
-            src="https://images.pexels.com/photos/8439093/pexels-photo-8439093.jpeg?auto=compress&cs=tinysrgb&w=1600" 
+          <img
+            src="https://images.pexels.com/photos/8439093/pexels-photo-8439093.jpeg?auto=compress&cs=tinysrgb&w=1600"
             alt="Products Background"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/50" />
         </div>
-        
+
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -130,8 +130,8 @@ const Products = () => {
               <Orbit className="w-5 h-5 text-white mr-2" />
               <span className="text-white font-medium">Our Products</span>
             </div>
-            
-            <motion.h1 
+
+            <motion.h1
               className="text-5xl md:text-7xl font-bold mb-8 leading-tight text-white"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -141,22 +141,20 @@ const Products = () => {
                 Our Galaxy of Solutions
               </span>
             </motion.h1>
-            
-            <motion.p 
+
+            <motion.p
               className="text-xl text-gray-200 max-w-5xl mx-auto leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              Discover our comprehensive constellation of AI-powered enterprise solutions designed 
-              to transform how you navigate the cosmos of customers, resources, data, and 
-              orchestrate stellar business processes.
+              Discover our comprehensive constellation of AI-powered enterprise solutions designed to transform how you navigate the cosmos of customers, resources, data, and orchestrate stellar business processes.
             </motion.p>
           </motion.div>
         </div>
       </section>
 
-      {/* Products Grid */}
+      {/* Products Section */}
       <section className="py-32 relative z-10 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -176,16 +174,16 @@ const Products = () => {
                 <div className="bg-white rounded-2xl p-10 border border-gray-200 hover:border-gray-300 transition-all duration-500 h-full relative overflow-hidden">
                   {/* Top Color Bar */}
                   <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${product.color}`} />
-                  
+
                   {/* Product Image */}
                   <div className="mb-6 overflow-hidden rounded-xl">
-                    <img 
-                      src={product.image} 
+                    <img
+                      src={product.image}
                       alt={product.title}
                       className="w-full h-32 object-cover group-hover:scale-110 transition-transform duration-500"
                     />
                   </div>
-                  
+
                   {/* Icon */}
                   <div className="flex items-start justify-between mb-8">
                     <div className={`w-16 h-16 rounded-xl ${product.iconBg} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
@@ -197,18 +195,19 @@ const Products = () => {
                       ))}
                     </div>
                   </div>
-                  
+
                   {/* Content */}
                   <h3 className="text-3xl font-bold text-gray-900 mb-6 group-hover:text-blue-600 transition-colors">
                     {product.title}
                   </h3>
-                  
+
                   <p className="text-gray-600 mb-8 leading-relaxed text-lg">
                     {product.description}
                   </p>
-                  
+
                   {/* Features */}
                   <div className="mb-10">
+                    <h4 className="text-xl font-semibold text-gray-900 mb-4">Key Features</h4>
                     <div className="grid grid-cols-2 gap-4">
                       {product.features.map((feature, featureIndex) => (
                         <motion.div
@@ -224,7 +223,7 @@ const Products = () => {
                       ))}
                     </div>
                   </div>
-                  
+
                   {/* CTA Button */}
                   <Link to={`/product/${product.id}`}>
                     <motion.button

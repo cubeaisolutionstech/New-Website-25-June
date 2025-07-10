@@ -19,7 +19,6 @@ const About = () => {
           />
           <div className="absolute inset-0 bg-black/50" />
         </div>
-
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -40,9 +39,21 @@ const About = () => {
         </div>
       </section>
 
-      {/* Mission & Vision */}
+      {/* Mission & Vision Section */}
       <section className="py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="text-center mb-20"
+          >
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              Our Mission and Vision
+            </h2>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              At CubeAI Solutions, we are driven by a clear mission and vision that guide our efforts in transforming businesses through AI technology.
+            </p>
+          </motion.div>
           <div className="grid md:grid-cols-2 gap-16">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -54,7 +65,7 @@ const About = () => {
                 <div className="w-16 h-16 rounded-xl bg-blue-600 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
                   <Target className="w-8 h-8 text-white" />
                 </div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Mission</h2>
+                <h3 className="text-3xl font-bold text-gray-900 mb-6">Our Mission</h3>
                 <p className="text-gray-600 leading-relaxed text-lg">
                   To empower businesses worldwide with cutting-edge AI solutions that drive innovation, efficiency, and sustainable growth. We believe in making advanced technology accessible and practical for organizations of all sizes.
                 </p>
@@ -70,7 +81,7 @@ const About = () => {
                 <div className="w-16 h-16 rounded-xl bg-emerald-600 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
                   <Award className="w-8 h-8 text-white" />
                 </div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Vision</h2>
+                <h3 className="text-3xl font-bold text-gray-900 mb-6">Our Vision</h3>
                 <p className="text-gray-600 leading-relaxed text-lg">
                   To be the global leader in AI-driven business transformation, creating a future where intelligent technology seamlessly integrates with human expertise to solve complex challenges and unlock new possibilities.
                 </p>
