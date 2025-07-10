@@ -226,16 +226,18 @@ const Contact = () => {
                       +91 9486938781
                     </span>
                   </div>
+                  <div>
+                      <p className="font-semibold text-gray-900 ml-12">Corporate office</p>
+                  </div>
 
                   <div className="flex items-start group">
                     <div className="w-12 h-12 rounded-xl bg-emerald-600 flex items-center justify-center mr-4 mt-1">
-                      <MapPin className="w-6 h-6 text-white" />
+                      <MapPin className="w-6 h-6 text-white" /> 
                     </div>
                     <div className="text-gray-600 group-hover:text-blue-600 transition-colors">
                       <p className="font-semibold text-gray-900">CubeAISolutions Tech Pvt Ltd</p>
-                      <p className="font-semibold text-gray-900">CyTI ( Cyber Tech Innovations Centre)</p>
-                      <p className="font-semibold text-gray-900">KSR Kalvi Nagar</p>
-                      <p className="font-semibold text-gray-900">Tamil Nadu - 637215</p>
+                      <p className="font-semibold text-gray-900">Shri Anathanagar </p>
+                      <p className="font-semibold text-gray-900">Bangalore 560100</p>
                     </div>
                   </div>
                 </div>
