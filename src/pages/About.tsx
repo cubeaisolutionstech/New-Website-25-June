@@ -70,15 +70,7 @@ const About = () => {
             <p className="text-xl text-gray-200 max-w-4xl mx-auto leading-relaxed">
               We are a leading AI solutions company dedicated to transforming
               businesses through innovative technology and intelligent automation
-              across the globe.{' '}
-              <a
-                href="/services"
-                className="text-blue-400 hover:underline"
-                title="Explore CubeAI Solutions' AI services"
-                onClick={() => console.log('Clicked link to /services')}
-              >
-                Explore our services
-              </a>{' '}
+              across the globe.
               to see how we can empower your organization.
             </p>
           </motion.div>

@@ -156,15 +156,7 @@ const Contact = () => {
               Get in <span className="text-blue-400">Touch</span>
             </h1>
             <p className="text-xl text-gray-200 max-w-4xl mx-auto leading-relaxed">
-              Ready to transform your business with AI?{' '}
-              <a
-                href="/contact"
-                className="text-blue-400 hover:underline"
-                title="Contact CubeAI Solutions"
-                onClick={() => console.log('Clicked link to /contact')}
-              >
-                Let’s discuss your project
-              </a>{' '}
+              Ready to transform your business with AI?
               and explore how we can help you achieve your goals with cutting-edge solutions.
             </p>
           </motion.div>

@@ -175,15 +175,8 @@ const Career = () => {
               Build the <span className="text-blue-400">Future</span> with Us
             </h1>
             <p className="text-xl text-gray-200 max-w-4xl mx-auto leading-relaxed">
-              Join CubeAI Solutions and work on cutting-edge AI projects that transform industries.{' '}
-              <a
-                href="/career"
-                className="text-blue-400 hover:underline"
-                title="Explore career opportunities"
-                onClick={() => console.log('Clicked link to /career')}
-              >
-                Explore exciting career opportunities
-              </a>{' '}
+              Join CubeAI Solutions and work on cutting-edge AI projects that transform industries.
+             
               and become part of our innovative team.
             </p>
           </motion.div>
