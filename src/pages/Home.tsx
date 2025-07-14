@@ -10,6 +10,7 @@ import {
   Zap,
   Target
 } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 import FloatingCube from '../components/FloatingCube';
 import StatsCounter from '../components/StatsCounter';
 
@@ -154,6 +155,19 @@ const Home = () => {
 
   return (
     <div className="relative overflow-hidden bg-gray-50">
+       
+      <Helmet>
+        <title>CubeAI Solutions - Empowering Businesses with Intelligent AI</title>
+        <meta
+          name="description"
+          content="CubeAI Solutions delivers GenAI-driven software, including web and mobile apps, FinTech, and cybersecurity tools, to streamline operations and boost efficiency."
+        />
+        <meta
+          name="keywords"
+          content="CubeAI Solutions, AI solutions, GenAI software, web development, mobile apps, FinTech, cybersecurity, business transformation"
+        />
+      </Helmet>
+      
       <FloatingCube />
 
       {/* Hero Section */}

@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import {
   Briefcase,
@@ -10,22 +10,51 @@ import {
   CheckCircle,
   Sparkles,
 } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 import { toast, Toaster } from 'react-hot-toast';
 
 const Career = () => {
   const [showConfirmation, setShowConfirmation] = useState(false);
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<{
+    name: string;
+    email: string;
+    position: string;
+    resume: File | null;
+    coverLetter: string;
+  }>({
     name: '',
     email: '',
     position: '',
-    resume: null as File | null,
+    resume: null,
     coverLetter: '',
   });
-  const formRef = useRef<HTMLDivElement>(null); // Reference to the form section
+  const formRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    console.log('Career component mounted (entered /career route)');
+    try {
+      console.log('Lucide icons available:', {
+        Briefcase,
+        MapPin,
+        User,
+        Mail,
+        FileText,
+        ArrowRight,
+        CheckCircle,
+        Sparkles,
+      });
+      console.log('Framer Motion available:', motion);
+      console.log('React Hot Toast available:', toast);
+      console.log('Helmet available:', Helmet);
+    } catch (error) {
+      console.error('Error in Career component dependencies:', error);
+    }
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log('Application submitted:', formData);
+    console.log('Submitting application with data:', formData);
+
     try {
       const formDataToSend = new FormData();
       formDataToSend.append('name', formData.name);
@@ -33,22 +62,30 @@ const Career = () => {
       formDataToSend.append('position', formData.position);
       if (formData.resume) {
         formDataToSend.append('resume', formData.resume);
+      } else {
+        console.warn('No resume file provided');
       }
       formDataToSend.append('coverLetter', formData.coverLetter);
 
+      console.log('Sending FormData to backend:', Object.fromEntries(formDataToSend));
       const response = await fetch('http://localhost:5000/api/career', {
         method: 'POST',
         body: formDataToSend,
       });
 
       const data = await response.json();
+      console.log('Backend response:', data);
+
       if (!response.ok) {
         throw new Error(data.message || 'Application submission failed');
       }
 
       toast.success(data.message || 'Application submitted successfully!');
       setShowConfirmation(true);
-      setTimeout(() => setShowConfirmation(false), 3000);
+      setTimeout(() => {
+        setShowConfirmation(false);
+        console.log('Confirmation modal hidden');
+      }, 3000);
       setFormData({
         name: '',
         email: '',
@@ -57,12 +94,12 @@ const Career = () => {
         coverLetter: '',
       });
     } catch (error) {
-      console.error('Application error:', error);
-      if (error instanceof Error) {
-        toast.error(error.message || 'Application submission failed. Please try again.');
-      } else {
-        toast.error('Application submission failed. Please try again.');
-      }
+      console.error('Application submission error:', error);
+      toast.error(
+        error instanceof Error
+          ? error.message || 'Application submission failed. Please try again.'
+          : 'Application submission failed. Please try again.'
+      );
     }
   };
 
@@ -71,17 +108,19 @@ const Career = () => {
   ) => {
     const { name, value } = e.target;
     const files = e.target instanceof HTMLInputElement ? e.target.files : null;
+    console.log(`Input changed: ${name}=${files ? files[0]?.name : value}`);
     setFormData((prev) => ({
       ...prev,
       [name]: files ? files[0] : value,
     }));
   };
 
-  // Function to handle Apply Now button click
   const handleApplyNow = (position: string) => {
+    console.log(`Apply Now clicked for position: ${position}`);
     setFormData((prev) => ({ ...prev, position }));
     if (formRef.current) {
       formRef.current.scrollIntoView({ behavior: 'smooth' });
+      console.log('Scrolled to form section');
     }
   };
 
@@ -90,28 +129,43 @@ const Career = () => {
     { title: 'Frontend Developer', location: 'Bangalore, India', type: 'Full-time' },
     { title: 'Machine Learning Engineer', location: 'London, UK', type: 'Full-time' },
     { title: 'Data Analyst', location: 'Namakkal, India', type: 'Part-time' },
-    { title: 'DevOps Engineer', location: 'Kochin, India', type: 'Full-time' },
+    { title: 'DevOps Engineer', location: 'Kochi, India', type: 'Full-time' }, // Fixed typo
   ];
 
   return (
     <div className="min-h-screen pt-20 bg-gray-50">
-      <Toaster />
+      <Toaster position="top-right" />
+      {/* SEO Meta Tags */}
+      <Helmet>
+        <title>Career Opportunities at CubeAI Solutions - Join Our Innovative Team</title>
+        <meta
+          name="description"
+          content="Explore exciting career opportunities at CubeAI Solutions in AI, software development, and more. Join our team in Coimbatore, Bangalore, or London."
+        />
+        <meta
+          name="keywords"
+          content="career opportunities, CubeAI Solutions, AI jobs, software development jobs, Coimbatore, Bangalore, London"
+        />
+      </Helmet>
+
       {/* Hero Section */}
       <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0">
           <img
             src="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=1600"
-            alt="Careers Background"
+            alt="CubeAI Solutions careers background"
             className="w-full h-full object-cover"
+            onError={(e) => console.error('Error loading hero image:', e)}
           />
           <div className="absolute inset-0 bg-black/50" />
         </div>
-
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-center mb-20"
+            onAnimationStart={() => console.log('Hero section animation started')}
+            onAnimationComplete={() => console.log('Hero section animation completed')}
           >
             <div className="inline-flex items-center px-6 py-3 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 mb-8">
               <Sparkles className="w-5 h-5 text-white mr-2" />
@@ -121,7 +175,16 @@ const Career = () => {
               Build the <span className="text-blue-400">Future</span> with Us
             </h1>
             <p className="text-xl text-gray-200 max-w-4xl mx-auto leading-relaxed">
-              Join CubeAISolutions and work on cutting-edge AI projects that transform industries. Explore exciting career opportunities and become part of our innovative team.
+              Join CubeAI Solutions and work on cutting-edge AI projects that transform industries.{' '}
+              <a
+                href="/career"
+                className="text-blue-400 hover:underline"
+                title="Explore career opportunities"
+                onClick={() => console.log('Clicked link to /career')}
+              >
+                Explore exciting career opportunities
+              </a>{' '}
+              and become part of our innovative team.
             </p>
           </motion.div>
         </div>
@@ -134,6 +197,7 @@ const Career = () => {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             className="text-center mb-16"
+            onAnimationComplete={() => console.log('Job Openings section animation completed')}
           >
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Current Openings</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
@@ -165,6 +229,7 @@ const Career = () => {
                   whileTap={{ scale: 0.95 }}
                   className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center"
                   onClick={() => handleApplyNow(job.title)}
+                  aria-label={`Apply for ${job.title} position`}
                 >
                   Apply Now
                   <ArrowRight className="w-5 h-5 ml-2" />
@@ -183,6 +248,7 @@ const Career = () => {
             whileInView={{ opacity: 1, x: 0 }}
             whileHover={{ y: -5, scale: 1.02 }}
             className="transform-gpu"
+            onAnimationComplete={() => console.log('Application Form section animation completed')}
           >
             <div className="bg-white rounded-2xl p-10 border border-gray-200">
               <h2 className="text-3xl font-bold text-gray-900 mb-8">Apply Now</h2>
@@ -190,74 +256,98 @@ const Career = () => {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-gray-700 mb-3 font-medium">
+                    <label
+                      htmlFor="name"
+                      className="block text-gray-700 mb-3 font-medium"
+                    >
                       <User className="w-5 h-5 inline mr-2" />
                       Name
                     </label>
                     <input
                       type="text"
+                      id="name"
                       name="name"
                       value={formData.name}
                       onChange={handleInputChange}
                       required
                       className="w-full px-6 py-4 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors"
                       placeholder="Your Name"
+                      aria-required="true"
                     />
                   </div>
                   <div>
-                    <label className="block text-gray-700 mb-3 font-medium">
+                    <label
+                      htmlFor="email"
+                      className="block text-gray-700 mb-3 font-medium"
+                    >
                       <Mail className="w-5 h-5 inline mr-2" />
                       Email
                     </label>
                     <input
                       type="email"
+                      id="email"
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
                       required
                       className="w-full px-6 py-4 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors"
                       placeholder="your@email.com"
+                      aria-required="true"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-gray-700 mb-3 font-medium">
+                  <label
+                    htmlFor="position"
+                    className="block text-gray-700 mb-3 font-medium"
+                  >
                     <Briefcase className="w-5 h-5 inline mr-2" />
                     Position
                   </label>
                   <input
                     type="text"
+                    id="position"
                     name="position"
                     value={formData.position}
                     onChange={handleInputChange}
                     required
                     className="w-full px-6 py-4 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors"
                     placeholder="Position you're applying for"
+                    aria-required="true"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-gray-700 mb-3 font-medium">
+                  <label
+                    htmlFor="resume"
+                    className="block text-gray-700 mb-3 font-medium"
+                  >
                     <FileText className="w-5 h-5 inline mr-2" />
                     Resume
                   </label>
                   <input
                     type="file"
+                    id="resume"
                     name="resume"
                     onChange={handleInputChange}
                     accept=".pdf,.doc,.docx"
                     required
                     className="w-full px-6 py-4 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors"
+                    aria-required="true"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-gray-700 mb-3 font-medium">
+                  <label
+                    htmlFor="coverLetter"
+                    className="block text-gray-700 mb-3 font-medium"
+                  >
                     <FileText className="w-5 h-5 inline mr-2" />
                     Cover Letter
                   </label>
                   <textarea
+                    id="coverLetter"
                     rows={5}
                     name="coverLetter"
                     value={formData.coverLetter}
@@ -265,6 +355,7 @@ const Career = () => {
                     required
                     className="w-full px-6 py-4 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors resize-none"
                     placeholder="Tell us why you're a great fit..."
+                    aria-required="true"
                   ></textarea>
                 </div>
 
@@ -273,6 +364,7 @@ const Career = () => {
                   whileTap={{ scale: 0.98 }}
                   type="submit"
                   className="w-full bg-blue-600 hover:bg-blue-700 text-white py-5 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center"
+                  aria-label="Submit application"
                 >
                   Submit Application
                   <ArrowRight className="w-5 h-5 ml-2" />
