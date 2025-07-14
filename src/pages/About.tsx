@@ -29,7 +29,7 @@ const About = () => {
     <div className="min-h-screen pt-20 bg-gray-50">
       {/* SEO Meta Tags */}
       <Helmet>
-        <title>About CubeAI Solutions - Transforming Businesses with AI Innovation</title>
+        <title>CubeAI Solutions - Transforming Businesses with AI Innovation</title>
         <meta
           name="description"
           content="Discover CubeAI Solutions, a leader in AI-driven business transformation, offering innovative technology solutions across Coimbatore, Bangalore, and beyond."
@@ -70,15 +70,7 @@ const About = () => {
             <p className="text-xl text-gray-200 max-w-4xl mx-auto leading-relaxed">
               We are a leading AI solutions company dedicated to transforming
               businesses through innovative technology and intelligent automation
-              across the globe.{' '}
-              <a
-                href="/services"
-                className="text-blue-400 hover:underline"
-                title="Explore CubeAI Solutions' AI services"
-                onClick={() => console.log('Clicked link to /services')}
-              >
-                Explore our services
-              </a>{' '}
+              across the globe.
               to see how we can empower your organization.
             </p>
           </motion.div>
