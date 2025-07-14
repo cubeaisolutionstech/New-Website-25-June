@@ -1,14 +1,5 @@
 {
-  "redirects": [
-    {
-      "source": "/contact-us/contact.html",
-      "destination": "/contact",
-      "permanent": true
-    },
-    {
-      "source": "/Service Page/Service.html",
-      "destination": "/services",
-      "permanent": true
-    }
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/" }
   ]
 }
