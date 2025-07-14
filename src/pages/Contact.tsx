@@ -126,6 +126,7 @@ const Contact = () => {
           name="keywords"
           content="contact CubeAI Solutions, AI solutions, business transformation, Coimbatore, Bangalore, London"
         />
+        <link rel="canonical" href="https://www.cubeaisolutions.com/contact" />
       </Helmet>
 
       {/* Hero Section */}
