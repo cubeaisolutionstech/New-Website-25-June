@@ -121,6 +121,7 @@ const Services = () => {
           name="keywords"
           content="CubeAI Solutions, AI services, machine learning, data analytics, cybersecurity, IoT, cloud engineering, web development, app development, business consulting"
         />
+        <link rel="canonical" href="https://www.cubeaisolutions.com/services" />
       </Helmet>
 
       {/* Hero Section with Developer Background */}
