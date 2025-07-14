@@ -1,14 +1,35 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { 
-  ArrowRight,
-  CheckCircle,
-  Sparkles
-} from 'lucide-react';
+import { ArrowRight, CheckCircle, Sparkles } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
+
+interface Service {
+  id: string;
+  title: string;
+  subtitle: string;
+  image: string;
+  color: string;
+  description: string;
+  features: string[];
+  bgImage: string;
+  gradient: string;
+}
 
 const Services = () => {
-  const services = [
+  useEffect(() => {
+    console.log('Services component mounted');
+    try {
+      console.log('Lucide icons available:', { ArrowRight, CheckCircle, Sparkles });
+      console.log('Framer Motion available:', motion);
+      console.log('React Router available:', { Link });
+      console.log('Helmet available:', Helmet);
+    } catch (error) {
+      console.error('Error in Services component dependencies:', error);
+    }
+  }, []);
+
+  const services: Service[] = [
     {
       id: 'aima',
       title: 'AIMA',
@@ -89,25 +110,46 @@ const Services = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-20 bg-gray-50">
+    <div className="relative min-h-screen pt-20 bg-gray-50">
+      <Helmet>
+        <title>CubeAI Solutions - Our Services</title>
+        <meta
+          name="description"
+          content="Explore CubeAI Solutions' comprehensive AI-powered services, including AIMA, AIDA, CITY, Cubebotics, DCE, Vision AI, and Tech Solution, designed to transform businesses across industries."
+        />
+        <meta
+          name="keywords"
+          content="CubeAI Solutions, AI services, machine learning, data analytics, cybersecurity, IoT, cloud engineering, web development, app development, business consulting"
+        />
+      </Helmet>
+
       {/* Hero Section with Developer Background */}
       <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0">
-          <img 
-            src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1600" 
-            alt="Services Background"
+          <img
+            src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1600"
+            alt="Technology and innovation background"
             className="w-full h-full object-cover"
+            onError={(e) => console.error('Error loading hero background image:', e)}
           />
           <div className="absolute inset-0 bg-black/50" />
         </div>
-        
+
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
             className="text-center mb-20"
+            onAnimationStart={() => console.log('Hero section animation started')}
+            onAnimationComplete={() => console.log('Hero section animation completed')}
           >
-            <div className="inline-flex items-center px-6 py-3 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 mb-8">
+            <div
+              className="inline-flex items-center px-6 py-3 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 mb-8 cursor-pointer"
+              role="button"
+              aria-label="View our services"
+              onClick={() => console.log('Our Services button clicked')}
+            >
               <Sparkles className="w-5 h-5 text-white mr-2" />
               <span className="text-white font-medium">Our Services</span>
             </div>
@@ -122,7 +164,7 @@ const Services = () => {
       </section>
 
       {/* Services Grid */}
-      <section className="py-32 bg-white">
+      <section className="py-32 bg-white/50 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12">
             {services.map((service, index) => (
@@ -131,48 +173,54 @@ const Services = () => {
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                whileHover={{ y: -10, scale: 1.02 }}
-                className="group"
+                whileHover={{ y: -10, scale: 1.02, rotateX: 5, rotateY: 5 }}
+                className="group transform-gpu"
+                style={{ transformStyle: 'preserve-3d' }}
+                onAnimationComplete={() => console.log(`${service.title} card animation completed`)}
               >
                 <div className="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-gray-300 transition-all duration-500">
                   <div className="relative h-64 overflow-hidden">
                     <img
                       src={service.bgImage}
-                      alt={service.title}
+                      alt={`${service.title} background`}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      onError={(e) => console.error(`Error loading background image for ${service.title}:`, e)}
                     />
                     <div className="absolute inset-0 bg-black/40" />
                     <div className="absolute top-6 left-6">
                       <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-xl overflow-hidden group-hover:scale-110 transition-transform duration-300">
-                        <img 
-                          src={service.image} 
-                          alt={service.title}
+                        <img
+                          src={service.image}
+                          alt={`${service.title} icon`}
                           className="w-full h-full object-cover"
+                          onError={(e) => console.error(`Error loading icon image for ${service.title}:`, e)}
                         />
                       </div>
                     </div>
                   </div>
-                  
+
                   <div className="p-10">
                     <h3 className="text-2xl font-bold text-gray-900 mb-2">{service.title}</h3>
                     <p className="text-blue-600 mb-6 font-medium">{service.subtitle}</p>
                     <p className="text-gray-600 mb-8 leading-relaxed">{service.description}</p>
-                    
+
                     <div className="mb-8">
                       <h4 className="text-lg font-semibold text-gray-900 mb-4">Key Features:</h4>
                       <div className="space-y-3">
                         {service.features.map((feature, featureIndex) => (
-                          <div key={featureIndex} className="flex items-center text-gray-600">
+                          <div key={featureIndex} className="flex items-center text-gray-600 group-hover:text-gray-800 transition-colors">
                             <CheckCircle className="w-5 h-5 text-blue-600 mr-3 flex-shrink-0" />
                             <span>{feature}</span>
                           </div>
                         ))}
                       </div>
                     </div>
-                    
+
                     <Link
-                      to={`/service/${service.id}`}
+                      to={`/services/${service.id}`}
                       className={`inline-flex items-center w-full justify-center bg-gradient-to-r ${service.color} text-white py-4 rounded-xl font-semibold transition-all duration-300 group-hover:scale-105`}
+                      aria-label={`Learn more about ${service.title}`}
+                      onClick={() => console.log(`Navigating to /services/${service.id}`)}
                     >
                       Learn More
                       <ArrowRight className="w-5 h-5 ml-2" />
@@ -191,7 +239,9 @@ const Services = () => {
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
             className="text-center mb-20"
+            onAnimationComplete={() => console.log('Process section animation completed')}
           >
             <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
               Our Process
@@ -233,11 +283,15 @@ const Services = () => {
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.2 }}
-                whileHover={{ y: -10, scale: 1.05 }}
-                className="text-center group"
+                whileHover={{ y: -10, scale: 1.05, rotateX: 5, rotateY: 5 }}
+                className="text-center group transform-gpu"
+                style={{ transformStyle: 'preserve-3d' }}
+                onAnimationComplete={() => console.log(`${process.title} process card animation completed`)}
               >
                 <div className="bg-white rounded-2xl p-8 border border-gray-200 hover:border-gray-300 transition-all duration-500">
-                  <div className={`w-20 h-20 bg-gradient-to-r ${process.color} rounded-xl flex items-center justify-center text-white font-bold text-2xl mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                  <div
+                    className={`w-20 h-20 bg-gradient-to-r ${process.color} rounded-xl flex items-center justify-center text-white font-bold text-2xl mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}
+                  >
                     {process.step}
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-4">{process.title}</h3>

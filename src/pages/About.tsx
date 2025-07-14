@@ -1,21 +1,53 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Users, Target, Award, Globe, Sparkles, Zap } from 'lucide-react';
+import { Users, Target, Award, Sparkles, Zap } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 
 const About = () => {
   const offices = [
-    'Coimbatore', 'Bangalore', 'Namakkal', 'Kochi', 'Tiruppur', 'Dharapuram', 'UK'
+    'Coimbatore',
+    'Bangalore',
+    'Namakkal',
+    'Kochi',
+    'Tiruppur',
+    'Dharapuram',
+    'UK',
   ];
+
+  useEffect(() => {
+    console.log('About component mounted successfully');
+    try {
+      console.log('Lucide icons available:', { Users, Target, Award, Sparkles, Zap });
+      console.log('Framer Motion available:', motion);
+      console.log('Helmet available:', Helmet);
+    } catch (error) {
+      console.error('Error in About component dependencies:', error);
+    }
+  }, []);
 
   return (
     <div className="min-h-screen pt-20 bg-gray-50">
+      {/* SEO Meta Tags */}
+      <Helmet>
+        <title>About CubeAI Solutions - Transforming Businesses with AI Innovation</title>
+        <meta
+          name="description"
+          content="Discover CubeAI Solutions, a leader in AI-driven business transformation, offering innovative technology solutions across Coimbatore, Bangalore, and beyond."
+        />
+        <meta
+          name="keywords"
+          content="AI solutions, CubeAI Solutions, business transformation, artificial intelligence, Coimbatore, Bangalore"
+        />
+      </Helmet>
+
       {/* Hero Section with Team Background */}
       <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0">
           <img
             src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=1600"
-            alt="About Us Background"
+            alt="CubeAI Solutions team working on AI technology"
             className="w-full h-full object-cover"
+            onError={(e) => console.error('Error loading hero image:', e)}
           />
           <div className="absolute inset-0 bg-black/50" />
         </div>
@@ -24,16 +56,30 @@ const About = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-center mb-20"
+            onAnimationStart={() => console.log('Hero section animation started')}
+            onAnimationComplete={() => console.log('Hero section animation completed')}
           >
             <div className="inline-flex items-center px-6 py-3 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 mb-8">
               <Sparkles className="w-5 h-5 text-white mr-2" />
               <span className="text-white font-medium">About Our Journey</span>
             </div>
             <h1 className="text-4xl md:text-7xl font-bold text-white mb-8">
-              About <span className="text-blue-400">CubeAI Solutions</span>
+              Transform Your Business with{' '}
+              <span className="text-blue-400">CubeAI Solutions</span>
             </h1>
             <p className="text-xl text-gray-200 max-w-4xl mx-auto leading-relaxed">
-              We are a leading AI solutions company dedicated to transforming businesses through innovative technology and intelligent automation across the globe.
+              We are a leading AI solutions company dedicated to transforming
+              businesses through innovative technology and intelligent automation
+              across the globe.{' '}
+              <a
+                href="/services"
+                className="text-blue-400 hover:underline"
+                title="Explore CubeAI Solutions' AI services"
+                onClick={() => console.log('Clicked link to /services')}
+              >
+                Explore our services
+              </a>{' '}
+              to see how we can empower your organization.
             </p>
           </motion.div>
         </div>
@@ -51,7 +97,9 @@ const About = () => {
               Our Mission and Vision
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              At CubeAI Solutions, we are driven by a clear mission and vision that guide our efforts in transforming businesses through AI technology.
+              At CubeAI Solutions, we are driven by a clear mission and vision
+              that guide our efforts in transforming businesses through AI
+              technology.
             </p>
           </motion.div>
           <div className="grid md:grid-cols-2 gap-16">
@@ -65,9 +113,22 @@ const About = () => {
                 <div className="w-16 h-16 rounded-xl bg-blue-600 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
                   <Target className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-3xl font-bold text-gray-900 mb-6">Our Mission</h3>
+                <h3 className="text-3xl font-bold text-gray-900 mb-6">
+                  Our Mission
+                </h3>
                 <p className="text-gray-600 leading-relaxed text-lg">
-                  To empower businesses worldwide with cutting-edge AI solutions that drive innovation, efficiency, and sustainable growth. We believe in making advanced technology accessible and practical for organizations of all sizes.
+                  To empower businesses worldwide with cutting-edge AI solutions
+                  that drive innovation, efficiency, and sustainable growth.{' '}
+                  <a
+                    href="https://www.nature.com/articles/s41586-021-03819-2"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:underline"
+                    onClick={() => console.log('Clicked external link to Nature article')}
+                  >
+                    Learn about AI advancements
+                  </a>{' '}
+                  shaping our approach.
                 </p>
               </div>
             </motion.div>
@@ -81,9 +142,22 @@ const About = () => {
                 <div className="w-16 h-16 rounded-xl bg-emerald-600 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
                   <Award className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-3xl font-bold text-gray-900 mb-6">Our Vision</h3>
+                <h3 className="text-3xl font-bold text-gray-900 mb-6">
+                  Our Vision
+                </h3>
                 <p className="text-gray-600 leading-relaxed text-lg">
-                  To be the global leader in AI-driven business transformation, creating a future where intelligent technology seamlessly integrates with human expertise to solve complex challenges and unlock new possibilities.
+                  To be the global leader in AI-driven business transformation,
+                  creating a future where intelligent technology seamlessly
+                  integrates with human expertise.{' '}
+                  <a
+                    href="/blog/ai-trends-2025"
+                    className="text-blue-600 hover:underline"
+                    title="Read about AI trends"
+                    onClick={() => console.log('Clicked link to /blog/ai-trends-2025')}
+                  >
+                    Discover AI trends
+                  </a>{' '}
+                  shaping our vision.
                 </p>
               </div>
             </motion.div>
@@ -103,29 +177,74 @@ const About = () => {
               <Users className="w-10 h-10 text-white" />
             </div>
             <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              Our Expert Team
+              Meet Our Expert Team
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Our diverse team of AI specialists, engineers, and consultants brings together decades of experience in cutting-edge technology and business transformation.
+              Our diverse team of AI specialists, engineers, and consultants
+              brings decades of experience in cutting-edge technology and business
+              transformation.
             </p>
           </motion.div>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
                 title: 'AI Researchers',
-                description: 'PhD-level experts in machine learning, deep learning, and artificial intelligence research with published papers and patents.',
+                description: (
+                  <>
+                    PhD-level experts in machine learning and AI research with
+                    published papers and patents.{' '}
+                    <a
+                      href="https://arxiv.org/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 hover:underline"
+                      onClick={() => console.log('Clicked external link to arXiv')}
+                    >
+                      Explore AI research
+                    </a>
+                    .
+                  </>
+                ),
                 color: 'from-blue-600 to-indigo-700',
                 icon: Zap,
               },
               {
                 title: 'Software Engineers',
-                description: 'Full-stack developers specializing in scalable, enterprise-grade software solutions with cloud-native architectures.',
+                description: (
+                  <>
+                    Full-stack developers specializing in scalable,
+                    enterprise-grade software solutions.{' '}
+                    <a
+                      href="/portfolio"
+                      className="text-blue-600 hover:underline"
+                      title="View our portfolio"
+                      onClick={() => console.log('Clicked link to /portfolio')}
+                    >
+                      See our portfolio
+                    </a>
+                    .
+                  </>
+                ),
                 color: 'from-emerald-600 to-teal-700',
                 icon: Target,
               },
               {
                 title: 'Business Consultants',
-                description: 'Strategic advisors helping organizations navigate digital transformation journeys with proven methodologies.',
+                description: (
+                  <>
+                    Strategic advisors helping organizations navigate digital
+                    transformation.{' '}
+                    <a
+                      href="/contact"
+                      className="text-blue-600 hover:underline"
+                      title="Contact our consultants"
+                      onClick={() => console.log('Clicked link to /contact')}
+                    >
+                      Connect with us
+                    </a>
+                    .
+                  </>
+                ),
                 color: 'from-red-600 to-rose-700',
                 icon: Award,
               },
@@ -139,11 +258,17 @@ const About = () => {
                 className="group"
               >
                 <div className="bg-white rounded-2xl p-8 text-center border border-gray-200 hover:border-gray-300 transition-all duration-500 h-full">
-                  <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${role.color} flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                  <div
+                    className={`w-16 h-16 rounded-xl bg-gradient-to-r ${role.color} flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}
+                  >
                     <role.icon className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-4">{role.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{role.description}</p>
+                  <h3 className="text-2xl font-semibold text-gray-900 mb-4">
+                    {role.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {role.description}
+                  </p>
                 </div>
               </motion.div>
             ))}
