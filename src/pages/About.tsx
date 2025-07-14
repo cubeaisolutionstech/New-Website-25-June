@@ -29,7 +29,7 @@ const About = () => {
     <div className="min-h-screen pt-20 bg-gray-50">
       {/* SEO Meta Tags */}
       <Helmet>
-        <title>About CubeAI Solutions - Transforming Businesses with AI Innovation</title>
+        <title>CubeAI Solutions - Transforming Businesses with AI Innovation</title>
         <meta
           name="description"
           content="Discover CubeAI Solutions, a leader in AI-driven business transformation, offering innovative technology solutions across Coimbatore, Bangalore, and beyond."
