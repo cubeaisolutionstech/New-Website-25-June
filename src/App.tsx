@@ -15,6 +15,7 @@ import IndustryDetail from './pages/IndustryDetail';
 import ProductDetail from './pages/ProductDetail';
 import { HelmetProvider } from 'react-helmet-async';
 
+
 const ScrollToTop = () => {
   const { pathname } = useLocation();
 
