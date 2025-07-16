@@ -18,7 +18,7 @@ const Footer = () => {
   return (
     <>
       <Helmet>
-        <title>CubeAI Solutions - Footer</title>
+        <title>CubeAI Solutions - AI Automation Tools for Business Productivity</title>
         <meta
           name="description"
           content="Connect with CubeAI Solutions for innovative AI services. Find our contact details, explore services, and learn about our mission to drive business innovation."
