@@ -121,7 +121,6 @@ const Services = () => {
           name="keywords"
           content="CubeAI Solutions, AI services, machine learning, data analytics, cybersecurity, IoT, cloud engineering, web development, app development, business consulting"
         />
-        
       </Helmet>
 
       {/* Hero Section with Developer Background */}
@@ -135,7 +134,6 @@ const Services = () => {
           />
           <div className="absolute inset-0 bg-black/50" />
         </div>
-
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -199,12 +197,10 @@ const Services = () => {
                       </div>
                     </div>
                   </div>
-
                   <div className="p-10">
                     <h3 className="text-2xl font-bold text-gray-900 mb-2">{service.title}</h3>
                     <p className="text-blue-600 mb-6 font-medium">{service.subtitle}</p>
                     <p className="text-gray-600 mb-8 leading-relaxed">{service.description}</p>
-
                     <div className="mb-8">
                       <h4 className="text-lg font-semibold text-gray-900 mb-4">Key Features:</h4>
                       <div className="space-y-3">
@@ -216,12 +212,9 @@ const Services = () => {
                         ))}
                       </div>
                     </div>
-
                     <Link
-                      to={`/services/${service.id}`}
-                      className={`inline-flex items-center w-full justify-center bg-gradient-to-r ${service.color} text-white py-4 rounded-xl font-semibold transition-all duration-300 group-hover:scale-105`}
-                      aria-label={`Learn more about ${service.title}`}
-                      onClick={() => console.log(`Navigating to /services/${service.id}`)}
+                      to={`/service/${service.id}`}
+                      className={`inline-flex items-center justify-center w-full bg-gradient-to-r ${service.color} text-white py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105`}
                     >
                       Learn More
                       <ArrowRight className="w-5 h-5 ml-2" />
@@ -251,7 +244,6 @@ const Services = () => {
               How we deliver exceptional AI solutions with proven methodologies
             </p>
           </motion.div>
-
           <div className="grid md:grid-cols-4 gap-8">
             {[
               {
