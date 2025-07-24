@@ -39,6 +39,7 @@ const Navbar: React.FC<NavbarProps> = () => {
     { name: 'About', path: '/about' },
     { name: 'Products', path: '/products' },
     { name: 'Services', path: '/services' },
+    { name: 'Insights', path: '/insights' },
     { name: 'Career', path: '/career' },
     { name: 'Contact', path: '/contact' },
   ];

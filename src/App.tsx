@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -13,17 +14,15 @@ import ExploreDetail from './pages/ExploreDetail';
 import SectionDetail from './pages/SectionDetail';
 import IndustryDetail from './pages/IndustryDetail';
 import ProductDetail from './pages/ProductDetail';
-import { HelmetProvider } from 'react-helmet-async';
-
+import Insights from './pages/Insights'; // Added import
+import ArticlePage from './pages/ArticlePage'; // Added import
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
-
   useEffect(() => {
     console.log(`Navigated to path: ${pathname}`);
     window.scrollTo(0, 0);
   }, [pathname]);
-
   return null;
 };
 
@@ -37,6 +36,8 @@ function App() {
       '/services',
       '/career',
       '/contact',
+      '/insights', // Added route
+      '/article/:id', // Added route
       '/service/:serviceId',
       '/explore/:exploreId',
       '/explore/:exploreId/:sectionId',
@@ -58,6 +59,8 @@ function App() {
             <Route path="/services" element={<Services />} />
             <Route path="/career" element={<Career />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/insights" element={<Insights />} /> {/* Added route */}
+            <Route path="/article/:id" element={<ArticlePage />} /> {/* Added route */}
             <Route path="/service/:serviceId" element={<ServiceDetail />} />
             <Route path="/explore/:exploreId" element={<ExploreDetail />} />
             <Route path="/explore/:exploreId/:sectionId" element={<SectionDetail />} />
