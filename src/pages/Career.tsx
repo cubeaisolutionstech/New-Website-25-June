@@ -126,7 +126,7 @@ const Career = () => {
 
   const jobOpenings = [
     { title: 'AI Research Scientist', location: 'Coimbatore, India', type: 'Full-time' },
-    { title: 'Frontend Developer', location: 'Bangalore, India', type: 'Full-time' },
+    { title: 'Backend Developer', location: 'Bangalore, India', type: 'Full-time' },
     { title: 'Machine Learning Engineer', location: 'London, UK', type: 'Full-time' },
     { title: 'Data Analyst', location: 'Namakkal, India', type: 'Part-time' },
     { title: 'DevOps Engineer', location: 'Kochi, India', type: 'Full-time' }, // Fixed typo
@@ -155,6 +155,7 @@ const Career = () => {
             src="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=1600"
             alt="CubeAI Solutions careers background"
             className="w-full h-full object-cover"
+            loading="lazy"
             onError={(e) => console.error('Error loading hero image:', e)}
           />
           <div className="absolute inset-0 bg-black/50" />

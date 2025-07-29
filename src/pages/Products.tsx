@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { motion } from 'framer-motion';
+import React from 'react';
+import { motion, Variants } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
   Users,
@@ -8,49 +8,25 @@ import {
   Workflow,
   CheckCircle,
   ArrowRight,
-  Sparkles,
   Star,
   Orbit,
 } from 'lucide-react';
-import { LucideIcon } from 'lucide-react'; // Import LucideIcon type
 import { Helmet } from 'react-helmet-async';
 
+// Define interfaces for type safety
 interface Product {
   id: string;
   title: string;
   description: string;
-  icon: LucideIcon;
+  icon: React.ComponentType<{ className?: string }>;
   color: string;
   bgColor: string;
   iconBg: string;
   image: string;
   features: string[];
-  gradient: string;
 }
 
 const Products = () => {
-  useEffect(() => {
-    console.log('Products component mounted (entered /products route)');
-    try {
-      console.log('Lucide icons available:', {
-        Users,
-        Building2,
-        Database,
-        Workflow,
-        CheckCircle,
-        ArrowRight,
-        Sparkles,
-        Star,
-        Orbit,
-      });
-      console.log('Framer Motion available:', motion);
-      console.log('React Router available:', { Link });
-      console.log('Helmet available:', Helmet);
-    } catch (error) {
-      console.error('Error in Products component dependencies:', error);
-    }
-  }, []);
-
   const products: Product[] = [
     {
       id: 'andromeda-crm',
@@ -60,14 +36,8 @@ const Products = () => {
       color: 'from-blue-600 to-indigo-700',
       bgColor: 'bg-blue-50/10',
       iconBg: 'bg-blue-600',
-      image: 'https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=800',
-      features: [
-        '360° Customer View',
-        'Predictive Analytics',
-        'Automated Workflows',
-        'Real-time Reporting',
-      ],
-      gradient: 'bg-gradient-to-br from-blue-600/10 to-indigo-700/10',
+      image: 'image/crm.webp',
+      features: ['360° Customer View', 'Predictive Analytics', 'Automated Workflows', 'Real-time Reporting'],
     },
     {
       id: 'orion-erp',
@@ -77,14 +47,8 @@ const Products = () => {
       color: 'from-emerald-600 to-teal-700',
       bgColor: 'bg-emerald-50/10',
       iconBg: 'bg-emerald-600',
-      image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800',
-      features: [
-        'Integrated Modules',
-        'Cloud-Native',
-        'Real-time Data',
-        'Scalable Architecture',
-      ],
-      gradient: 'bg-gradient-to-br from-emerald-600/10 to-teal-700/10',
+      image: 'image/werp.jpg',
+      features: ['Integrated Modules', 'Cloud-Native', 'Real-time Data', 'Scalable Architecture'],
     },
     {
       id: 'nebula-cdm',
@@ -94,14 +58,8 @@ const Products = () => {
       color: 'from-red-600 to-rose-700',
       bgColor: 'bg-red-50/10',
       iconBg: 'bg-red-600',
-      image: 'https://images.pexels.com/photos/1181677/pexels-photo-1181677.jpeg?auto=compress&cs=tinysrgb&w=800',
-      features: [
-        'Data Unification',
-        'Privacy Compliance',
-        'AI Processing',
-        'API Integration',
-      ],
-      gradient: 'bg-gradient-to-br from-red-600/10 to-rose-700/10',
+      image: 'image/pcdm.jpg',
+      features: ['Data Unification', 'Privacy Compliance', 'AI Processing', 'API Integration'],
     },
     {
       id: 'cosmos-orchestration',
@@ -111,32 +69,29 @@ const Products = () => {
       color: 'from-orange-600 to-amber-700',
       bgColor: 'bg-orange-50/10',
       iconBg: 'bg-orange-600',
-      image: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=800',
-      features: [
-        'Workflow Automation',
-        'Process Integration',
-        'Event-Driven Architecture',
-        'Multi-System Sync',
-      ],
-      gradient: 'bg-gradient-to-br from-orange-600/10 to-amber-700/10',
+      image: 'image/General.webp',
+      features: ['Workflow Automation', 'Process Integration', 'Event-Driven Architecture', 'Multi-System Sync'],
     },
   ];
 
-  const containerVariants = {
+  // Animation Variants
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
         staggerChildren: 0.2,
+        delayChildren: 0.3,
       },
     },
   };
 
-  const cardVariants = {
-    hidden: { opacity: 0, y: 50 },
+  const cardVariants: Variants = {
+    hidden: { opacity: 0, y: 50, scale: 0.95 },
     visible: {
       opacity: 1,
       y: 0,
+      scale: 1,
       transition: {
         duration: 0.6,
         ease: 'easeOut',
@@ -144,8 +99,44 @@ const Products = () => {
     },
   };
 
+  const badgeVariants: Variants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.5,
+        ease: 'easeOut',
+        repeat: Infinity,
+        repeatType: 'reverse',
+        repeatDelay: 1,
+      },
+    },
+  };
+
+  const iconVariants: Variants = {
+    hover: {
+      rotate: [0, 360],
+      scale: 1.2,
+      transition: {
+        duration: 0.8,
+        ease: 'easeInOut',
+      },
+    },
+  };
+
+  const starVariants: Variants = {
+    hover: {
+      scale: 1.3,
+      opacity: 1,
+      transition: {
+        duration: 0.3,
+      },
+    },
+  };
+
   return (
-    <div className="relative min-h-screen pt-20 overflow-hidden bg-gray-50">
+    <div className="min-h-screen pt-20 relative overflow-hidden bg-gradient-to-b from-gray-100 to-blue-100">
       <Helmet>
         <title>CubeAI Solutions - Our Products</title>
         <meta
@@ -158,37 +149,40 @@ const Products = () => {
         />
       </Helmet>
 
-      {/* Hero Section with Robot Background */}
+      {/* Hero Section */}
       <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0">
-          <img
-            src="https://images.pexels.com/photos/8439093/pexels-photo-8439093.jpeg?auto=compress&cs=tinysrgb&w=1600"
-            alt="AI-powered enterprise solutions background"
+          <motion.img
+            src="image/producti.webp"
+            alt="Products Background"
             className="w-full h-full object-cover"
-            onError={(e) => console.error('Error loading hero background image:', e)}
+            initial={{ scale: 1.1, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 1.5, ease: 'easeOut' }}
+            onError={(e) => {
+              e.currentTarget.src = '';
+            }}
           />
           <div className="absolute inset-0 bg-black/50" />
         </div>
-
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-center mb-20"
-            onAnimationStart={() => console.log('Hero section animation started')}
-            onAnimationComplete={() => console.log('Hero section animation completed')}
           >
-            <div
-              className="inline-flex items-center px-6 py-3 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 mb-8 cursor-pointer"
-              role="button"
-              aria-label="View our products"
-              onClick={() => console.log('Our Products button clicked')}
+            <motion.div
+              variants={badgeVariants}
+              initial="hidden"
+              animate="visible"
+              className="inline-flex items-center px-6 py-3 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 mb-8"
+              role="region"
+              aria-label="Our Products Badge"
             >
-              <Orbit className="w-5 h-5 text-white mr-2" />
+              <Orbit className="w-5 h-5 text-white mr-2 animate-spin-slow" />
               <span className="text-white font-medium">Our Products</span>
-            </div>
-
+            </motion.div>
             <motion.h1
               className="text-5xl md:text-7xl font-bold mb-8 leading-tight text-white"
               initial={{ opacity: 0, scale: 0.9 }}
@@ -197,16 +191,21 @@ const Products = () => {
             >
               <span className="text-blue-400">Our Galaxy of Solutions</span>
             </motion.h1>
-
+            <motion.h2
+              className="text-2xl md:text-3xl font-semibold text-white mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            >
+              AI-Powered Enterprise Solutions
+            </motion.h2>
             <motion.p
               className="text-xl text-gray-200 max-w-5xl mx-auto leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              Discover our comprehensive constellation of AI-powered enterprise solutions designed
-              to transform how you navigate the cosmos of customers, resources, data, and
-              orchestrate stellar business processes.
+              Discover our comprehensive constellation of AI-powered enterprise solutions designed to transform how you navigate the cosmos of customers, resources, data, and orchestrate stellar business processes.
             </motion.p>
           </motion.div>
         </div>
@@ -216,56 +215,74 @@ const Products = () => {
       <section className="py-32 relative z-10 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-20"
+          >
+            <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+              Business Transformation Tools
+            </h2>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              Explore our range of AI-based products designed to help your business run smoothly. From managing customer relationships and data to organizing workflows and business processes, our tools make everyday tasks easier and more efficient.
+            </p>
+          </motion.div>
+          <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             className="grid lg:grid-cols-2 gap-12"
-            onAnimationComplete={() => console.log('Products grid animation completed')}
           >
-            {products.map((product, index) => (
+            {products.map((product) => (
               <motion.div
-                key={index}
+                key={product.id}
                 variants={cardVariants}
                 whileHover={{ y: -10, scale: 1.02 }}
                 className="group relative"
-                onAnimationComplete={() => console.log(`${product.title} card animation completed`)}
               >
                 <div className="bg-white rounded-2xl p-10 border border-gray-200 hover:border-gray-300 transition-all duration-500 h-full relative overflow-hidden">
                   {/* Top Color Bar */}
-                  <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${product.color}`} />
-
+                  <motion.div
+                    className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${product.color}`}
+                    whileHover={{ scaleX: 1.1 }}
+                    transition={{ duration: 0.4 }}
+                  />
                   {/* Product Image */}
                   <div className="mb-6 overflow-hidden rounded-xl">
-                    <img
+                    <motion.img
                       src={product.image}
-                      alt={`${product.title} product`}
-                      className="w-full h-32 object-cover group-hover:scale-110 transition-transform duration-500"
-                      onError={(e) => console.error(`Error loading product image for ${product.title}:`, e)}
+                      alt={product.title}
+                      className="w-full h-32 object-cover"
+                      whileHover={{ scale: 1.15 }}
+                      transition={{ duration: 0.5 }}
+                      onError={(e) => {
+                        e.currentTarget.src = '';
+                      }}
                     />
                   </div>
-
-                  {/* Icon */}
+                  {/* Icon and Stars */}
                   <div className="flex items-start justify-between mb-8">
-                    <div
-                      className={`w-16 h-16 rounded-xl ${product.iconBg} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}
+                    <motion.div
+                      className={`w-16 h-16 rounded-xl ${product.iconBg} flex items-center justify-center`}
+                      variants={iconVariants}
+                      whileHover="hover"
                     >
                       <product.icon className="w-8 h-8 text-white" />
-                    </div>
+                    </motion.div>
                     <div className="flex space-x-1">
                       {[...Array(3)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 text-blue-600 opacity-60" />
+                        <motion.div key={i} variants={starVariants} whileHover="hover">
+                          <Star className="w-4 h-4 text-blue-600 opacity-60" />
+                        </motion.div>
                       ))}
                     </div>
                   </div>
-
-                  {/* Content */}
+                  {/* Title and Description */}
                   <h3 className="text-3xl font-bold text-gray-900 mb-6 group-hover:text-blue-600 transition-colors">
                     {product.title}
                   </h3>
-
                   <p className="text-gray-600 mb-8 leading-relaxed text-lg">{product.description}</p>
-
                   {/* Features */}
                   <div className="mb-10">
                     <div className="grid grid-cols-2 gap-4">
@@ -283,20 +300,19 @@ const Products = () => {
                       ))}
                     </div>
                   </div>
-
                   {/* CTA Button */}
                   <Link
                     to={`/product/${product.id}`}
-                    onClick={() => console.log(`Navigating to product: ${product.id}`)}
+                    className="w-full"
+                    aria-label={`Learn more about ${product.title}`}
                   >
                     <motion.button
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                      className={`w-full bg-gradient-to-r ${product.color} text-white py-4 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center group-hover:scale-105`}
-                      aria-label={`Learn more about ${product.title}`}
+                      whileHover={{ scale: 1.05, boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.2)' }}
+                      whileTap={{ scale: 0.95 }}
+                      className={`w-full bg-gradient-to-r ${product.color} text-white py-4 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center`}
                     >
                       Learn More
-                      <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                      <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-2 transition-transform" />
                     </motion.button>
                   </Link>
                 </div>

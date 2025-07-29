@@ -10,6 +10,7 @@ const About = () => {
       name: 'Thiru IRS P.Muthusamy BSc(Agri) BL,MS',
       title: 'EX-IRS',
       image: 'image/muthu .jpg',
+      
       bio: 'Visionary leader with 25+ years in AI and technology innovation.',
     },
     {
