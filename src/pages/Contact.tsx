@@ -378,15 +378,14 @@ const Contact = () => {
               >
                 <h3 className="text-2xl font-bold text-gray-900 mb-8">Find Us at KSR</h3>
                 <div className="rounded-xl overflow-hidden border border-gray-200">
-                 <iframe 
-title="CubeAISolutions Tech Pvt Ltd Location"
-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3911.667766644267!2d77.82425297505046!3d11.358959588827455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba967f537594377%3A0x1b9478bc228b5b56!2sCubeAISolutions%20Tech%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1752467952866!5m2!1sen!2sin" 
-width="100%"
-  height="300"
-  style={{ border: 0 }}
-   allowFullScreen
-   loading="lazy"
-   referrerPolicy="no-referrer-when-downgrade"></iframe>
+                 <iframe title="CubeAISolutions Tech Pvt Ltd Location"
+                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3911.667766644267!2d77.82425297505046!3d11.358959588827455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba967f537594377%3A0x1b9478bc228b5b56!2sCubeAISolutions%20Tech%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1752467952866!5m2!1sen!2sin" 
+                 width="100%"
+                 height="300"
+                 style={{ border: 0 }}
+                 allowFullScreen
+                 loading="lazy"
+                 referrerPolicy="no-referrer-when-downgrade"></iframe>
                 </div>
               </motion.div>
             </motion.div>

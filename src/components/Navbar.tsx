@@ -72,22 +72,15 @@ const Navbar: React.FC<NavbarProps> = () => {
         <h1 className="sr-only">CubeAI Solutions Navigation</h1>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20" style={{ width: '90%' }}>
-            <Link to="/" className="flex items-center space-x-3" onClick={() => console.log('Navigating to Home')}>
-              <div className="relative">
-                <img
-                  src="/cube ai - Copy copy copy.jpg"
-                  alt="CubeAI Solutions logo"
-                  className="h-12 w-12 rounded-xl object-contain"
-                  onError={(e) => console.error('Error loading CubeAI logo:', e)}
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 rounded-xl"></div>
-              </div>
-              <span className="text-2xl font-bold leading-tight">
-                <span className="text-blue-800">CubeAI</span>
-                <br />
-                <span className="text-blue-500">Solutions</span>
-              </span>
-            </Link>
+               <Link to="/" className="flex items-center space-x-3">
+            <div className="relative">
+              <img
+                src="/image/lo.png"
+                alt="CubeAI Solutions"
+                className="h-[135px] w-[135px] rounded-xl object-contain hover:scale-105 transition-transform duration-200"
+              />
+            </div>
+          </Link>
 
             {/* Desktop Menu */}
             <div className="hidden md:flex space-x-8">

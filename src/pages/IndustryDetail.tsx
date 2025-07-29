@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import React from 'react';
+import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
   Target,
@@ -7,61 +7,40 @@ import {
   TrendingUp,
   Rocket,
   CheckCircle,
-  Star,
-  Zap,
-  ArrowRight,
   Sparkles,
 } from 'lucide-react';
-import { LucideIcon } from 'lucide-react'; // Import LucideIcon type
 import { Helmet } from 'react-helmet-async';
 
-interface IndustrySection {
+// Define interfaces for type safety
+interface SectionContent {
   title: string;
-  icon: LucideIcon; // Use LucideIcon for type safety
+  icon: React.ComponentType<{ className?: string }>;
   content: string;
   features: string[];
 }
 
-interface Industry {
+interface IndustryData {
   title: string;
   bgImage: string;
-  color: string;
-  whatWeDo: IndustrySection;
-  solutions: IndustrySection;
-  trending: IndustrySection;
-  futurePlans: IndustrySection;
+  primaryColor: string;
+  whatWeDo: SectionContent;
+  solutions: SectionContent;
+  trending: SectionContent;
+  futurePlans: SectionContent;
+}
+
+interface IndustryDataMap {
+  [key: string]: IndustryData;
 }
 
 const IndustryDetail = () => {
   const { industryId } = useParams<{ industryId?: string }>();
 
-  useEffect(() => {
-    console.log('IndustryDetail component mounted (entered /industry/:industryId route)', { industryId });
-    try {
-      console.log('Lucide icons available:', {
-        Target,
-        Lightbulb,
-        TrendingUp,
-        Rocket,
-        CheckCircle,
-        Star,
-        Zap,
-        ArrowRight,
-        Sparkles,
-      });
-      console.log('Framer Motion available:', motion);
-      console.log('React Router available:', { useParams });
-      console.log('Helmet available:', Helmet);
-    } catch (error) {
-      console.error('Error in IndustryDetail component dependencies:', error);
-    }
-  }, [industryId]);
-
-  const industryData: Record<string, Industry> = {
+  const industryData: IndustryDataMap = {
     manufacturing: {
       title: 'Manufacturing',
-      bgImage: 'https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg?auto=compress&cs=tinysrgb&w=1200',
-      color: 'from-purple-500 to-indigo-600',
+      bgImage: '/image/vector.jpg',
+      primaryColor: 'bg-blue-800',
       whatWeDo: {
         title: 'What We Do',
         icon: Target,
@@ -89,8 +68,8 @@ const IndustryDetail = () => {
     },
     telecom: {
       title: 'Telecom',
-      bgImage: 'https://images.pexels.com/photos/442150/pexels-photo-442150.jpeg?auto=compress&cs=tinysrgb&w=1200',
-      color: 'from-emerald-500 to-teal-600',
+      bgImage: '/image/telecom.jpg',
+      primaryColor: 'bg-sky-300',
       whatWeDo: {
         title: 'What We Do',
         icon: Target,
@@ -118,8 +97,8 @@ const IndustryDetail = () => {
     },
     healthcare: {
       title: 'Healthcare & Life Sciences',
-      bgImage: 'https://images.pexels.com/photos/263402/pexels-photo-263402.jpeg?auto=compress&cs=tinysrgb&w=1200',
-      color: 'from-pink-500 to-rose-500',
+      bgImage: '/image/helcar.jpg',
+      primaryColor: 'bg-teal-800',
       whatWeDo: {
         title: 'What We Do',
         icon: Target,
@@ -147,8 +126,8 @@ const IndustryDetail = () => {
     },
     biotech: {
       title: 'Biotech',
-      bgImage: 'https://images.pexels.com/photos/2280549/pexels-photo-2280549.jpeg?auto=compress&cs=tinysrgb&w=1200',
-      color: 'from-orange-500 to-red-500',
+      bgImage: '/image/biomed.jpeg',
+      primaryColor: 'bg-emerald-800',
       whatWeDo: {
         title: 'What We Do',
         icon: Target,
@@ -164,7 +143,7 @@ const IndustryDetail = () => {
       trending: {
         title: 'Trending',
         icon: TrendingUp,
-        content: 'Gene editing, synthetic biology, and personalized medicine are transforming biotechnology. We integrate these cutting-edge fields to create innovative research and development platforms.',
+        content: 'Gene editing, synthetic biology, and personalized medicine are transforming biotechnology. We leverage these cutting-edge fields to create innovative research and development platforms.',
         features: ['Gene Editing', 'Synthetic Biology', 'Personalized Medicine', 'Bioengineering'],
       },
       futurePlans: {
@@ -176,8 +155,8 @@ const IndustryDetail = () => {
     },
     hr: {
       title: 'Human Resource',
-      bgImage: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1200',
-      color: 'from-cyan-500 to-blue-600',
+      bgImage: '/image/hr.webp',
+      primaryColor: 'bg-indigo-800',
       whatWeDo: {
         title: 'What We Do',
         icon: Target,
@@ -205,8 +184,8 @@ const IndustryDetail = () => {
     },
     automation: {
       title: 'Industry Automation',
-      bgImage: 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1200',
-      color: 'from-violet-500 to-purple-600',
+      bgImage: '/image/autom.jpg',
+      primaryColor: 'bg-cyan-800',
       whatWeDo: {
         title: 'What We Do',
         icon: Target,
@@ -234,23 +213,32 @@ const IndustryDetail = () => {
     },
   };
 
-  const industry = industryData[industryId as keyof typeof industryData];
-
-  if (!industry) {
+  // Validate industryId
+  const validIndustryIds = Object.keys(industryData);
+  if (!industryId || !validIndustryIds.includes(industryId)) {
     return (
-      <div className="min-h-screen flex items-center justify-center pt-20">
-        <div className="text-center text-white">
-          <h1 className="text-4xl font-bold mb-4">Industry Not Found</h1>
-          <p className="text-gray-300">The requested industry page could not be found.</p>
+      <div className="min-h-screen flex items-center justify-center pt-20 bg-gray-200">
+        <div className="text-center">
+          <h1 className="text-4xl font-bold mb-4 text-gray-900">Industry Not Found</h1>
+          <p className="text-gray-600 mb-8">The requested industry page could not be found.</p>
+          <Link
+            to="/"
+            className="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors"
+            aria-label="Go back to homepage"
+          >
+            Go Back Home
+            <CheckCircle className="w-4 h-4 ml-2" />
+          </Link>
         </div>
       </div>
     );
   }
 
+  const industry = industryData[industryId];
   const sections = [industry.whatWeDo, industry.solutions, industry.trending, industry.futurePlans];
 
   return (
-    <div className="relative min-h-screen pt-20">
+    <div className="min-h-screen bg-blue-100">
       <Helmet>
         <title>{`CubeAI Solutions - ${industry.title} Industry Solutions`}</title>
         <meta
@@ -263,133 +251,146 @@ const IndustryDetail = () => {
         />
       </Helmet>
 
-      {/* Hero Section with Sliding Text Animation */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src={industry.bgImage}
-            alt={`${industry.title} industry background`}
-            className="w-full h-full object-cover"
-            onError={(e) => console.error(`Error loading background image for ${industry.title}:`, e)}
-          />
-          <div className={`absolute inset-0 bg-gradient-to-r ${industry.color} opacity-80`} />
-          <div className="absolute inset-0 bg-black/20" />
-        </div>
-
-        <div className="relative z-10 text-center text-white max-w-6xl mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
-            onAnimationStart={() => console.log('Hero section animation started')}
-            onAnimationComplete={() => console.log('Hero section animation completed')}
+      {/* Brand Header */}
+      <div className="pt-20 pb-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.h2
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-2xl font-bold text-blue-900 mb-2"
           >
-            {/* Sliding Text Animation */}
-            <div className="overflow-hidden mb-8">
-              <motion.h1
-                className="text-8xl md:text-9xl font-bold leading-tight"
-                initial={{ y: 200, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{
-                  duration: 1.2,
-                  delay: 0.3,
-                  type: 'spring',
-                  stiffness: 60,
-                }}
-                style={{
-                  textShadow: '0 8px 32px rgba(0,0,0,0.6)',
-                  background: 'linear-gradient(45deg, #ffffff, #f0f9ff, #ffffff)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                }}
-              >
-                {industry.title}
-              </motion.h1>
-            </div>
+          </motion.h2>
+        </div>
+      </div>
 
-            <div className="overflow-hidden mb-12">
+      {/* Hero Section with Modern Layout */}
+      <section className="relative py-16 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
+            <div className="space-y-8">
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+              >
+                <h1 className="text-5xl lg:text-7xl font-bold text-blue-900 leading-tight">
+                  {industry.title.split(' ').map((word, index) => (
+                    <motion.span
+                      key={index}
+                      initial={{ opacity: 0, y: 50 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: index * 0.2, duration: 0.6 }}
+                      className="inline-block mr-4"
+                    >
+                      {word}
+                    </motion.span>
+                  ))}
+                </h1>
+              </motion.div>
               <motion.p
-                className="text-3xl md:text-4xl font-light"
-                initial={{ x: -300, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{
-                  duration: 1.5,
-                  delay: 0.8,
-                  type: 'spring',
-                  stiffness: 40,
-                }}
-                style={{
-                  textShadow: '0 4px 16px rgba(0,0,0,0.5)',
-                  letterSpacing: '0.02em',
-                }}
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.4, duration: 0.8 }}
+                className="text-xl text-gray-700 leading-relaxed max-w-lg"
               >
-                Transforming Industries with AI Innovation
+                Transforming industries with cutting-edge AI solutions and innovative technology platforms
               </motion.p>
-            </div>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0, rotateY: 180 }}
-              animate={{ opacity: 1, scale: 1, rotateY: 0 }}
-              transition={{ delay: 1.5, duration: 1, type: 'spring' }}
-            >
-              <div
-                className="inline-flex items-center px-8 py-4 rounded-full bg-white/20 backdrop-blur-xl border border-white/30 shadow-2xl cursor-pointer"
-                role="button"
-                aria-label="Explore our industry solutions"
-                onClick={() => console.log('Explore Solutions button clicked')}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6, duration: 0.8 }}
+                className="flex items-center space-x-4"
               >
-                <Sparkles className="w-6 h-6 mr-3" />
-                <span className="text-xl font-medium">Explore Our Solutions</span>
-              </div>
-            </motion.div>
-          </motion.div>
+                <div className="inline-flex items-center px-6 py-3 rounded-full bg-blue-100 text-blue-800 font-medium hover:bg-blue-200 transition-colors cursor-pointer">
+                  <Sparkles className="w-5 h-5 mr-2" />
+                  Explore Solutions
+                </div>
+              </motion.div>
+            </div>
+            {/* Right Image with Organic Shape */}
+            <div className="relative">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.3, duration: 1 }}
+                className="relative"
+              >
+                {/* Organic Background Shape */}
+                <div className="absolute inset-0 transform rotate-6">
+                  <div
+                    className={`w-full h-96 rounded-[3rem] ${industry.primaryColor} opacity-90`}
+                    style={{
+                      clipPath: 'polygon(20% 0%, 80% 10%, 100% 50%, 90% 90%, 10% 100%, 0% 60%)',
+                    }}
+                  />
+                </div>
+                {/* Image Container */}
+                <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl">
+                  <img
+                    src={industry.bgImage}
+                    alt={industry.title}
+                    className="w-full h-96 object-cover"
+                    onError={(e) => {
+                      e.currentTarget.src =
+                        'https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80';
+                    }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                </div>
+                {/* Floating Elements */}
+                <motion.div
+                  animate={{ y: [-10, 10, -10] }}
+                  transition={{ duration: 3, repeat: Infinity }}
+                  className="absolute -top-4 -right-4 w-16 h-16 bg-white rounded-full shadow-lg flex items-center justify-center"
+                >
+                  <TrendingUp className="w-8 h-8 text-blue-600" />
+                </motion.div>
+                <motion.div
+                  animate={{ y: [10, -10, 10] }}
+                  transition={{ duration: 4, repeat: Infinity }}
+                  className="absolute -bottom-4 -left-4 w-12 h-12 bg-green-500 rounded-full shadow-lg flex items-center justify-center"
+                >
+                  <Rocket className="w-6 h-6 text-white" />
+                </motion.div>
+              </motion.div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Content Sections */}
-      <section className="py-32 bg-slate-800/50 backdrop-blur-sm">
+      {/* Content Sections with Clean Cards */}
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16">
-            {sections.map((sectionContent, index) => (
+          <div className="grid lg:grid-cols-2 gap-8">
+            {sections.map((sectionContent: SectionContent, index: number) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 50 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
-                whileHover={{
-                  y: -20,
-                  scale: 1.02,
-                  rotateX: 10,
-                  rotateY: index % 2 === 0 ? 5 : -5,
-                }}
-                className="group transform-gpu"
-                style={{ transformStyle: 'preserve-3d' }}
-                onAnimationComplete={() => console.log(`${sectionContent.title} section animation completed`)}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                whileHover={{ y: -8, scale: 1.02 }}
+                className="group"
               >
-                <div className="bg-slate-800/80 backdrop-blur-xl rounded-3xl p-10 hover:bg-slate-700/80 transition-all duration-500 border border-purple-500/30 hover:border-purple-400/50 hover:shadow-2xl h-full">
-                  <div className="flex items-center mb-8">
-                    <div
-                      className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${industry.color} flex items-center justify-center mr-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}
-                    >
-                      <sectionContent.icon className="w-8 h-8 text-white" />
+                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 h-full">
+                  <div className="flex items-center mb-6">
+                    <div className="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center mr-4 group-hover:bg-blue-200 transition-colors">
+                      <sectionContent.icon className="w-6 h-6 text-blue-600" />
                     </div>
-                    <h3 className="text-3xl font-bold text-white">{sectionContent.title}</h3>
+                    <h3 className="text-2xl font-bold text-gray-900">{sectionContent.title}</h3>
                   </div>
-
-                  <p className="text-gray-300 mb-8 leading-relaxed text-lg">{sectionContent.content}</p>
-
-                  <div className="space-y-4">
-                    <h4 className="text-xl font-semibold text-white mb-4">Key Features:</h4>
-                    {sectionContent.features.map((feature, featureIndex) => (
+                  <p className="text-gray-600 mb-6 leading-relaxed">{sectionContent.content}</p>
+                  <div className="space-y-3">
+                    <h4 className="text-lg font-semibold text-gray-900 mb-3">Key Features:</h4>
+                    {sectionContent.features.map((feature: string, featureIndex: number) => (
                       <motion.div
                         key={featureIndex}
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ delay: featureIndex * 0.1 }}
-                        className="flex items-center text-gray-300 group-hover:text-white transition-colors"
+                        className="flex items-center text-gray-700"
                       >
-                        <CheckCircle className="w-5 h-5 mr-4 flex-shrink-0 text-purple-500" />
+                        <CheckCircle className="w-4 h-4 mr-3 flex-shrink-0 text-green-500" />
                         <span className="font-medium">{feature}</span>
                       </motion.div>
                     ))}
