@@ -58,7 +58,7 @@ const Products = () => {
       color: 'from-red-600 to-rose-700',
       bgColor: 'bg-red-50/10',
       iconBg: 'bg-red-600',
-      image: 'image/pcdm.jpg',
+      image: 'image/cdn.webp',
       features: ['Data Unification', 'Privacy Compliance', 'AI Processing', 'API Integration'],
     },
     {

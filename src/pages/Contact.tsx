@@ -155,6 +155,9 @@ const Contact = () => {
             <h1 className="text-4xl md:text-7xl font-bold text-white mb-8">
               Get in <span className="text-blue-400">Touch</span>
             </h1>
+             <h2 className="text-2xl md:text-3xl font-semibold text-white mb-6">
+              Connect for AI Solutions
+            </h2>
             <p className="text-xl text-gray-200 max-w-4xl mx-auto leading-relaxed">
               Ready to transform your business with AI?
               and explore how we can help you achieve your goals with cutting-edge solutions.

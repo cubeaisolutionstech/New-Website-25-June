@@ -36,6 +36,104 @@ export interface Article {
 
 export const articles: Article[] = [
   {
+    id: 'VissionAi',
+    title: 'VissionAI',
+    excerpt: 'VissionAI is not just another AI framework—it is a cognitive infrastructure capable of ethical self-evolution, autonomous goal-setting, and real-time cross-domain adaptation. As we enter 2025, VissionAI redefines intelligence as a governed, explainable, and collaborative system across industries.',
+    category: 'AI Ethics',
+    image: '/image/vis.avif',
+    featured: false,
+    author: {
+      name: 'Sowntharya',
+      role: 'AI Governance Specialist',
+      avatar: generateAvatar('Sowntharya')
+    },
+    content: {
+      introduction: "VissionAI is a next-generation artificial intelligence architecture that blends explainable machine learning, neuro-symbolic reasoning, and ethical alignment frameworks. Unlike siloed AI models, VissionAI operates as a unified fabric—capable of making decisions across finance, healthcare, defense, and climate domains—while remaining aligned with human values and legal systems. This paper outlines the advanced components of VissionAI and how it leads the new era of responsible superintelligence.",
+      sections: [
+        {
+          title: "Ethical Intelligence Core",
+          content: "At the heart of VissionAI lies an ethical decision engine that blends legal compliance, cultural context, and moral alignment into every prediction, classification, or action.",
+          subsections: [
+            {
+              title: "AI Law and Policy Alignment Engine",
+              content: "VissionAI maps real-time decisions to jurisdictional laws and regulations using ontologies sourced from open government APIs and UN ethical guidelines."
+            },
+            {
+              title: "Human Feedback Loops via RLHF++",
+              content: "The system is continually trained on multi-modal human feedback—not just thumbs-up or down, but full debates, rationales, and expert revisions in real time."
+            },
+            {
+              title: "Bias Detection and Self-Correction",
+              content: "Using internal explainability graphs and adversarial logic probes, VissionAI identifies its own cognitive blind spots and retrains on ethically sound counterexamples."
+            }
+          ]
+        },
+        {
+          title: "Autonomous Multimodal Reasoning",
+          content: "VissionAI handles not just text or images, but fuses speech, graphs, sensor data, 3D vision, and even policy documents to make compound, explainable decisions.",
+          subsections: [
+            {
+              title: "Neuro-Symbolic Fusion",
+              content: "Combines neural pattern recognition with symbolic logical frameworks (like Prolog/KGs) to reason across domains such as law, medicine, and robotics."
+            },
+            {
+              title: "Causal Inference with Real-World Feedback",
+              content: "Goes beyond correlation—VissionAI simulates cause-effect chains using dynamic Bayesian graphs and real-world trials, even with incomplete or noisy data."
+            },
+            {
+              title: "Autonomous Task Composition",
+              content: "Given a high-level goal, the system can deconstruct and chain tasks across APIs, data warehouses, and physical IoT systems with zero code required by the user."
+            }
+          ]
+        },
+        {
+          title: "Governed AI Ecosystem Integration",
+          content: "VissionAI is designed to plug into enterprise environments as a governed actor—not a black box—enabling cross-organization accountability, auditability, and transparency.",
+          subsections: [
+            {
+              title: "Explainable AI (XAI) Dashboards",
+              content: "Every decision is accompanied by a reasoning tree, confidence scores, and legal alignment markers visible to end-users and auditors."
+            },
+            {
+              title: "Role-Based AI Agent Permissions",
+              content: "Each AI agent within the VissionAI system has roles, scopes, and time-bound access—governed like a human employee."
+            },
+            {
+              title: "Audit Trail via Blockchain Smart Logs",
+              content: "All critical decisions are cryptographically logged in a distributed ledger, allowing traceable forensics across industries."
+            }
+          ]
+        },
+        {
+          title: "Continuous Learning and Adaptive Governance",
+          content: "Unlike static models, VissionAI is self-evolving within bounded ethical constraints. Its governance model updates in sync with geopolitical changes, new laws, and public feedback.",
+          subsections: [
+            {
+              title: "Federated Self-Supervised Learning",
+              content: "Learns continuously across organizations (banks, hospitals, schools) without compromising privacy—using secure gradient aggregation."
+            },
+            {
+              title: "Policy-Aware Model Mutation",
+              content: "Model weights and outputs adapt when regulatory landscapes shift, with rollback and audit tools built into the pipeline."
+            },
+            {
+              title: "Collective Alignment Voting",
+              content: "Organizations and users vote on high-stakes ethical dilemmas (e.g. surveillance, job automation), and the system adapts accordingly."
+            }
+          ]
+        }
+      ],
+      conclusion: "VissionAI is more than a product—it is a philosophy of intelligence that centers accountability, transparency, and adaptability. In a world where AI impacts healthcare, law, education, and national security, VissionAI serves as a blueprint for scalable, ethical, autonomous intelligence. The future isn't just AI—it’s VissionAI.",
+    },
+    flowchartImage: "/image/vissflow.png",
+    tags: ['VissionAI', 'EthicalAI', 'NeuroSymbolicAI', 'GovernedAI', 'AI2025'],
+    relatedArticles: [
+      'building-ethical-ai-framework',
+      'self-adaptive-governance-ai',
+      'xai-systems-in-enterprise'
+    ]
+  },
+  {
     id: 'future-ai-enterprise-2025',
     title: 'AI-Powered Enterprises  Strategic Innovations  ',
     excerpt: 'As we move through 2025, AI is not just a tool—it is becoming the foundation of enterprise transformation. From reshaping customer experiences to redefining cybersecurity strategies, artificial intelligence is powering a new era of business agility, intelligence, and automation.In this article, we explore the most critical AI trends that are reshaping enterprises in 2025, beyond just Generative AI and LLMs. These insights help you stay ahead, innovate faster, and lead smarter.',
@@ -251,7 +349,7 @@ export const articles: Article[] = [
     title: 'LLMs and the Generative AI Revolution',
     excerpt: "Dive into the world of Large Language Models understand their architecture, prompt engineering techniques, and how they're powering the next generation of intelligent applications across industries.",
     category: 'Business Strategy',
-    image: '/image/llm.jpg',
+    image: '/image/llm.webp',
     featured: false,
     author: {
       name: 'Dinesh Yuvaraj',
@@ -427,193 +525,7 @@ export const articles: Article[] = [
     tags: ["Enterprise AI", "AI Agents", "AI Transformation", "LLMs", "Generative AI", "IoT and AI", "Decision Intelligence", "Zero Trust Security"],
     relatedArticles: ["future-ai-enterprise-2025", "ai-governance-trust", "building-ethical-ai-framework", "roi-ai-implementation"]
   },
-  {
-    id: 'nlp-language-barriers',
-    title: 'Cybersecurity',
-    excerpt: 'Explore the advanced state of cybersecurity in 2025. Dive into zero trust architecture, AI-powered threat detection, behavioral analytics, and how to defend against sophisticated attacks like deepfake phishing, nation-state APTs, and AI-driven malware.',
-    category: 'Technology Trends',
-    image: '/image/Cybersecurity.jpg',
-    featured: false,
-    author: {
-      name: 'Bharanidharan S',
-      role: 'NLP Research Lead',
-      avatar: generateAvatar('bharanidharan')
-    },
-    content: {
-      introduction: "Cybersecurity has transformed from a traditional reactive defense into a proactive, predictive, and AI-powered ecosystem. As cyber threats grow more sophisticated—from nation-state attacks to ransomware-as-a-service (RaaS)—organizations must embrace next-generation security paradigms. This article explores cutting-edge cybersecurity trends, AI-based threat detection, and future-proof solutions like quantum-safe cryptography and zero trust architecture.",
-      sections: [
-        {
-          title: "AI and Machine Learning in Cybersecurity",
-          content: "Cyberattacks are now automated, evolving rapidly. Only AI/ML can defend in real time at scale. From detecting unknown malware to identifying insider threats, AI is the future of defense.",
-          subsections: [
-            {
-              title: "Behavioral Analytics for Anomaly Detection",
-              content: "Analyzes user behavior (logins, file access, browsing) to create a baseline. Any deviation—like login from an unusual location—is flagged as suspicious."
-            },
-            {
-              title: "Threat Intelligence Platforms with NLP",
-              content: "Uses Natural Language Processing (NLP) to scan blogs, forums, and dark web data to detect emerging threats and create automated response strategies."
-            },
-            {
-              title: "Predictive Modeling for Insider Threats",
-              content: "Machine learning models use historical employee behavior to predict potential insider threats before they occur, especially in high-risk departments."
-            }
-          ]
-        },
-        {
-          title: "Zero Trust Security Architecture (ZTA)",
-          content: "With hybrid work and cloud systems, there's no “secure internal network” anymore. ZTA ensures continuous validation of every user, device, and request.",
-          subsections: [
-            {
-              title: "Never Trust, Always Verify",
-              content: "Unlike traditional perimeter-based security, ZTA treats all users, even within the network, as untrusted. Every device, user, and access attempt must be verified each time."
-            },
-            {
-              title: "Micro-Segmentation of Networks",
-              content: "Breaking the internal network into segments prevents lateral movement. Even if one section (like HR systems) is breached, attackers can’t move to Finance or DevOps without further authentication."
-            },
-            {
-              title: "Continuous Authentication",
-              content: "Authentication isn’t a one-time process. AI constantly verifies user identity using biometrics, typing style, or device health—even during the same session."
-            }
-          ]
-        },
-        {
-          title: "Quantum-Resistant Cryptography",
-          content: "Quantum computers could break current encryption (RSA, ECC). Though still emerging, governments and critical infrastructure must act now.",
-          subsections: [
-            {
-              title: "The Threat from Quantum Computing",
-              content: "Quantum computers will soon be able to crack RSA and ECC encryption in seconds. This puts secure communications, financial systems, and even government data at risk."
-            },
-            {
-              title: "Post-Quantum Cryptography (PQC)",
-              content: "Lattice-based, hash-based, and code-based encryption methods are being tested to resist quantum decryption. These algorithms don’t rely on number factorization, making them quantum-safe."
-            },
-            {
-              title: "NIST’s Quantum-Safe Algorithm Candidates",
-              content: "The U.S. National Institute of Standards and Technology (NIST) is finalizing quantum-safe encryption standards like CRYSTALS-Kyber and CRYSTALS-Dilithium, which are expected to be globally adopted."
-            }
-          ]
-        },
-        {
-          title: "Cloud Security and SASE",
-          content: "Most businesses use multi-cloud and SaaS platforms. Securing cloud-native apps, remote workers, and edge access is a top priority.",
-          subsections: [
-            {
-              title: "Cloud Workload Protection Platforms (CWPP)",
-              content: "CWPP solutions protect workloads (like containers or VMs) running in cloud environments by monitoring traffic, system calls, and file access to detect malware or misconfigurations."
-            },
-            {
-              title: "Cloud Access Security Brokers (CASB)",
-              content: "CASBs enforce security policies between cloud services (like Google Drive or Salesforce) and users. They prevent data leaks, malware uploads, and unauthorized access."
-            },
-            {
-              title: "Edge-Based Threat Enforcement (SASE)",
-              content: "SASE combines networking (like SD-WAN) and security (like firewalls, CASBs) at the cloud edge. This reduces latency and improves threat response for remote users."
-            }
-          ]
-        }
-      ],
-      conclusion: "Cybersecurity has become a strategic business enabler, not just a technical function. AI-driven defense systems, zero trust policies, and quantum-safe encryption are reshaping the way we protect data. The next-generation cyber strategy must be adaptive, automated, and deeply integrated across cloud, IoT, and human interfaces.",
-    },
-    flowchartImage: "/image/Cyber.png",
-    tags: ['AIInCyberSecurity', 'CyberThreatIntelligence', 'SCADASecurity', 'DataPrivacy', 'PhishingDefense'],
-    relatedArticles: ['future-ai-enterprise-2025', 'building-ethical-ai-framework', 'ai-governance-trust']
-  },
-  {
-    id: 'ai-governance-trust',
-    title: 'The Internet of Things (IoT)',
-    excerpt: 'The Internet of Things (IoT) is reshaping our world by enabling smart devices to communicate, analyze, and act in real time transforming industries, cities, and everyday life through intelligent automation and connectivity.',
-    category: 'AI Ethics',
-    image: '/image/internet.jpg',
-    featured: false,
-    author: {
-      name: 'Palanivel S',
-      role: 'AI Governance Specialist',
-      avatar: generateAvatar('Palanivel S')
-    },
-    content: {
-      introduction: "The Internet of Things (IoT) is not just about smart devices—it's a revolutionary ecosystem where sensors, networks, and data analytics merge to enable intelligent automation. As industries shift towards digitization, IoT plays a critical role in creating smarter homes, connected factories, predictive healthcare, and real-time decision-making systems.",
-      sections: [
-        {
-          title: "Understanding IoT: Beyond Basic Connectivity",
-          content: "IoT refers to the interconnection of everyday physical objects with the internet, allowing them to collect, exchange, and act upon data.",
-          subsections: [
-            {
-              title: "Edge Computing",
-              content: "Processing data closer to the device to reduce latency and bandwidth."
-            },
-            {
-              title: "AI-Powered IoT (AIoT)",
-              content: "Integrating machine learning models into IoT devices for intelligent behavior."
-            },
-            {
-              title: "5G Integration",
-              content: "Ultra-low latency and high-speed communication enable massive IoT deployments."
-            }
-          ]
-        },
-        {
-          title: "Architecture of an Advanced IoT System",
-          content: "A full-scale IoT system involves multiple layers:",
-          subsections: [
-            {
-              title: "System Layers",
-              content: [
-                " Sensing Layer Includes sensors, RFID tags, and actuators",
-                " Network Layer Uses Wi-Fi, LPWAN, 5G, and protocols like MQTT or CoAP",
-                " Edge Layer Performs preprocessing or analytics before cloud",
-                " Data Processing Layer Stores and analyzes big data using AI/ML",
-                " Application Layer Mobile apps, dashboards, automation tools"
-              ]
-            }
-          ]
-        },
-        {
-          title: "Industrial Use Cases of IoT",
-          content: "The Internet of Things (IoT) is revolutionizing industries by enabling real-time data collection, automation, and predictive intelligence. Below are key sectors where IoT is having a transformative impact.",
-          subsections: [
-            {
-              title: "A. Smart Manufacturing (IIoT)",
-              content: "Predictive maintenance reduces downtime using sensor data. Digital twins simulate equipment performance in real-time. AI models optimize production efficiency and detect defects."
-            },
-            {
-              title: "B. Smart Cities",
-              content: "IoT-enabled traffic control systems reduce congestion. Smart meters monitor energy usage and optimize distribution. Waste management becomes more efficient with fill-level sensors."
-            },
-            {
-              title: "C. Healthcare (IoMT)",
-              content: "Wearable IoT devices track vitals and send alerts to doctors. Smart pills and remote patient monitoring reduce hospital visits. AI-assisted diagnostics through connected devices improves accuracy."
-            }
-          ]
-        },
-        {
-          title: "Future Trends in IoT",
-          content: "Artificial Intelligence (AI) enhances the capabilities of IoT by enabling real-time decision-making, predictive intelligence, and autonomous operations. Together, they form AIoT (Artificial Intelligence of Things) — the fusion of smart connectivity and machine intelligence.",
-          subsections: [
-            {
-              title: "IoT + Generative AI:",
-              content: "Devices not only sense and respond but also create—like AI-generated reports from sensor data."
-            },
-            {
-              title: "Self-Healing IoT Networks",
-              content: "Using AI, these networks detect faults and reroute traffic in real time."
-            },
-            {
-              title: "Sustainability with IoT",
-              content: "Precision agriculture, smart grids, and water management systems use IoT to reduce waste and environmental impact."
-            }
-          ]
-        }
-      ],
-      conclusion: "AI governance is not a one-time implementation but an ongoing commitment to responsible AI development and deployment. Organizations that invest in robust governance frameworks will not only mitigate risks but also build the trust necessary for AI adoption and success. The future of AI depends on our ability to create systems that are not just intelligent, but also trustworthy, accountable, and aligned with human values.",
-    },
-    flowchartImage: "/image/iot.png",
-    tags: ['InternetOfThings', 'SmartTechnology', 'EdgeComputing', 'AIoT', '5GandIoT', 'IoTArchitecture'],
-    relatedArticles: ['building-ethical-ai-framework', 'future-ai-enterprise-2025', 'roi-ai-implementation']
-  },
-  {
+   {
     id: 'data-analytics-2025',
     title: 'Data Analytics',
     excerpt: 'Data Analytics is no longer just a support function—it’s the strategic engine behind enterprise innovation, customer personalization, and real-time decision-making. In 2025, AI-powered analytics, real-time data fabrics, and predictive models are transforming how organizations understand the past and act on the future',
@@ -621,7 +533,7 @@ export const articles: Article[] = [
     image: '/image/data.jpg',
     featured: false,
     author: {
-      name: 'Nithya ',
+      name: 'Nithya',
       role: 'AI Governance Specialist',
       avatar: generateAvatar('Nithya')
     },
@@ -726,103 +638,193 @@ export const articles: Article[] = [
     relatedArticles: ['building-ethical-ai-framework', 'future-ai-enterprise-2025', 'roi-ai-implementation']
   },
   {
-    id: 'VissionAi',
-    title: 'VissionAI',
-    excerpt: 'VissionAI is not just another AI framework—it is a cognitive infrastructure capable of ethical self-evolution, autonomous goal-setting, and real-time cross-domain adaptation. As we enter 2025, VissionAI redefines intelligence as a governed, explainable, and collaborative system across industries.',
-    category: 'AI Ethics',
-    image: '/image/computervision.jpg',
+    id: 'nlp-language-barriers',
+    title: 'Cybersecurity',
+    excerpt: 'Explore the advanced state of cybersecurity in 2025. Dive into zero trust architecture, AI-powered threat detection, behavioral analytics, and how to defend against sophisticated attacks like deepfake phishing, nation-state APTs, and AI-driven malware.',
+    category: 'Technology Trends',
+    image: '/image/Cybersecurity.jpg',
     featured: false,
     author: {
-      name: 'Sowntharya S',
-      role: 'AI Governance Specialist',
-      avatar: generateAvatar('Sowntharya')
+      name: 'Bharanidharan',
+      role: 'NLP Research Lead',
+      avatar: generateAvatar('Bharanidharan')
     },
     content: {
-      introduction: "VissionAI is a next-generation artificial intelligence architecture that blends explainable machine learning, neuro-symbolic reasoning, and ethical alignment frameworks. Unlike siloed AI models, VissionAI operates as a unified fabric—capable of making decisions across finance, healthcare, defense, and climate domains—while remaining aligned with human values and legal systems. This paper outlines the advanced components of VissionAI and how it leads the new era of responsible superintelligence.",
+      introduction: "Cybersecurity has transformed from a traditional reactive defense into a proactive, predictive, and AI-powered ecosystem. As cyber threats grow more sophisticated—from nation-state attacks to ransomware-as-a-service (RaaS)—organizations must embrace next-generation security paradigms. This article explores cutting-edge cybersecurity trends, AI-based threat detection, and future-proof solutions like quantum-safe cryptography and zero trust architecture.",
       sections: [
         {
-          title: "Ethical Intelligence Core",
-          content: "At the heart of VissionAI lies an ethical decision engine that blends legal compliance, cultural context, and moral alignment into every prediction, classification, or action.",
+          title: "AI and Machine Learning in Cybersecurity",
+          content: "Cyberattacks are now automated, evolving rapidly. Only AI/ML can defend in real time at scale. From detecting unknown malware to identifying insider threats, AI is the future of defense.",
           subsections: [
             {
-              title: "AI Law and Policy Alignment Engine",
-              content: "VissionAI maps real-time decisions to jurisdictional laws and regulations using ontologies sourced from open government APIs and UN ethical guidelines."
+              title: "Behavioral Analytics for Anomaly Detection",
+              content: "Analyzes user behavior (logins, file access, browsing) to create a baseline. Any deviation—like login from an unusual location—is flagged as suspicious."
             },
             {
-              title: "Human Feedback Loops via RLHF++",
-              content: "The system is continually trained on multi-modal human feedback—not just thumbs-up or down, but full debates, rationales, and expert revisions in real time."
+              title: "Threat Intelligence Platforms with NLP",
+              content: "Uses Natural Language Processing (NLP) to scan blogs, forums, and dark web data to detect emerging threats and create automated response strategies."
             },
             {
-              title: "Bias Detection and Self-Correction",
-              content: "Using internal explainability graphs and adversarial logic probes, VissionAI identifies its own cognitive blind spots and retrains on ethically sound counterexamples."
+              title: "Predictive Modeling for Insider Threats",
+              content: "Machine learning models use historical employee behavior to predict potential insider threats before they occur, especially in high-risk departments."
             }
           ]
         },
         {
-          title: "Autonomous Multimodal Reasoning",
-          content: "VissionAI handles not just text or images, but fuses speech, graphs, sensor data, 3D vision, and even policy documents to make compound, explainable decisions.",
+          title: "Zero Trust Security Architecture (ZTA)",
+          content: "With hybrid work and cloud systems, there's no “secure internal network” anymore. ZTA ensures continuous validation of every user, device, and request.",
           subsections: [
             {
-              title: "Neuro-Symbolic Fusion",
-              content: "Combines neural pattern recognition with symbolic logical frameworks (like Prolog/KGs) to reason across domains such as law, medicine, and robotics."
+              title: "Never Trust, Always Verify",
+              content: "Unlike traditional perimeter-based security, ZTA treats all users, even within the network, as untrusted. Every device, user, and access attempt must be verified each time."
             },
             {
-              title: "Causal Inference with Real-World Feedback",
-              content: "Goes beyond correlation—VissionAI simulates cause-effect chains using dynamic Bayesian graphs and real-world trials, even with incomplete or noisy data."
+              title: "Micro-Segmentation of Networks",
+              content: "Breaking the internal network into segments prevents lateral movement. Even if one section (like HR systems) is breached, attackers can’t move to Finance or DevOps without further authentication."
             },
             {
-              title: "Autonomous Task Composition",
-              content: "Given a high-level goal, the system can deconstruct and chain tasks across APIs, data warehouses, and physical IoT systems with zero code required by the user."
+              title: "Continuous Authentication",
+              content: "Authentication isn’t a one-time process. AI constantly verifies user identity using biometrics, typing style, or device health—even during the same session."
             }
           ]
         },
         {
-          title: "Governed AI Ecosystem Integration",
-          content: "VissionAI is designed to plug into enterprise environments as a governed actor—not a black box—enabling cross-organization accountability, auditability, and transparency.",
+          title: "Quantum-Resistant Cryptography",
+          content: "Quantum computers could break current encryption (RSA, ECC). Though still emerging, governments and critical infrastructure must act now.",
           subsections: [
             {
-              title: "Explainable AI (XAI) Dashboards",
-              content: "Every decision is accompanied by a reasoning tree, confidence scores, and legal alignment markers visible to end-users and auditors."
+              title: "The Threat from Quantum Computing",
+              content: "Quantum computers will soon be able to crack RSA and ECC encryption in seconds. This puts secure communications, financial systems, and even government data at risk."
             },
             {
-              title: "Role-Based AI Agent Permissions",
-              content: "Each AI agent within the VissionAI system has roles, scopes, and time-bound access—governed like a human employee."
+              title: "Post-Quantum Cryptography (PQC)",
+              content: "Lattice-based, hash-based, and code-based encryption methods are being tested to resist quantum decryption. These algorithms don’t rely on number factorization, making them quantum-safe."
             },
             {
-              title: "Audit Trail via Blockchain Smart Logs",
-              content: "All critical decisions are cryptographically logged in a distributed ledger, allowing traceable forensics across industries."
+              title: "NIST’s Quantum-Safe Algorithm Candidates",
+              content: "The U.S. National Institute of Standards and Technology (NIST) is finalizing quantum-safe encryption standards like CRYSTALS-Kyber and CRYSTALS-Dilithium, which are expected to be globally adopted."
             }
           ]
         },
         {
-          title: "Continuous Learning and Adaptive Governance",
-          content: "Unlike static models, VissionAI is self-evolving within bounded ethical constraints. Its governance model updates in sync with geopolitical changes, new laws, and public feedback.",
+          title: "Cloud Security and SASE",
+          content: "Most businesses use multi-cloud and SaaS platforms. Securing cloud-native apps, remote workers, and edge access is a top priority.",
           subsections: [
             {
-              title: "Federated Self-Supervised Learning",
-              content: "Learns continuously across organizations (banks, hospitals, schools) without compromising privacy—using secure gradient aggregation."
+              title: "Cloud Workload Protection Platforms (CWPP)",
+              content: "CWPP solutions protect workloads (like containers or VMs) running in cloud environments by monitoring traffic, system calls, and file access to detect malware or misconfigurations."
             },
             {
-              title: "Policy-Aware Model Mutation",
-              content: "Model weights and outputs adapt when regulatory landscapes shift, with rollback and audit tools built into the pipeline."
+              title: "Cloud Access Security Brokers (CASB)",
+              content: "CASBs enforce security policies between cloud services (like Google Drive or Salesforce) and users. They prevent data leaks, malware uploads, and unauthorized access."
             },
             {
-              title: "Collective Alignment Voting",
-              content: "Organizations and users vote on high-stakes ethical dilemmas (e.g. surveillance, job automation), and the system adapts accordingly."
+              title: "Edge-Based Threat Enforcement (SASE)",
+              content: "SASE combines networking (like SD-WAN) and security (like firewalls, CASBs) at the cloud edge. This reduces latency and improves threat response for remote users."
             }
           ]
         }
       ],
-      conclusion: "VissionAI is more than a product—it is a philosophy of intelligence that centers accountability, transparency, and adaptability. In a world where AI impacts healthcare, law, education, and national security, VissionAI serves as a blueprint for scalable, ethical, autonomous intelligence. The future isn't just AI—it’s VissionAI.",
+      conclusion: "Cybersecurity has become a strategic business enabler, not just a technical function. AI-driven defense systems, zero trust policies, and quantum-safe encryption are reshaping the way we protect data. The next-generation cyber strategy must be adaptive, automated, and deeply integrated across cloud, IoT, and human interfaces.",
     },
-    flowchartImage: "/image/vissflow.png",
-    tags: ['VissionAI', 'EthicalAI', 'NeuroSymbolicAI', 'GovernedAI', 'AI2025'],
-    relatedArticles: [
-      'building-ethical-ai-framework',
-      'self-adaptive-governance-ai',
-      'xai-systems-in-enterprise'
-    ]
+    flowchartImage: "/image/Cyber.png",
+    tags: ['AIInCyberSecurity', 'CyberThreatIntelligence', 'SCADASecurity', 'DataPrivacy', 'PhishingDefense'],
+    relatedArticles: ['future-ai-enterprise-2025', 'building-ethical-ai-framework', 'ai-governance-trust']
+  },
+  {
+    id: 'ai-governance-trust',
+    title: 'The Internet of Things (IoT)',
+    excerpt: 'The Internet of Things (IoT) is reshaping our world by enabling smart devices to communicate, analyze, and act in real time transforming industries, cities, and everyday life through intelligent automation and connectivity.',
+    category: 'AI Ethics',
+    image: '/image/internet.jpg',
+    featured: false,
+    author: {
+      name: 'Palanivel',
+      role: 'AI Governance Specialist',
+      avatar: generateAvatar('Palanivel')
+    },
+    content: {
+      introduction: "The Internet of Things (IoT) is not just about smart devices—it's a revolutionary ecosystem where sensors, networks, and data analytics merge to enable intelligent automation. As industries shift towards digitization, IoT plays a critical role in creating smarter homes, connected factories, predictive healthcare, and real-time decision-making systems.",
+      sections: [
+        {
+          title: "Understanding IoT: Beyond Basic Connectivity",
+          content: "IoT refers to the interconnection of everyday physical objects with the internet, allowing them to collect, exchange, and act upon data.",
+          subsections: [
+            {
+              title: "Edge Computing",
+              content: "Processing data closer to the device to reduce latency and bandwidth."
+            },
+            {
+              title: "AI-Powered IoT (AIoT)",
+              content: "Integrating machine learning models into IoT devices for intelligent behavior."
+            },
+            {
+              title: "5G Integration",
+              content: "Ultra-low latency and high-speed communication enable massive IoT deployments."
+            }
+          ]
+        },
+        {
+          title: "Architecture of an Advanced IoT System",
+          content: "A full-scale IoT system involves multiple layers:",
+          subsections: [
+            {
+              title: "System Layers",
+              content: [
+                " Sensing Layer Includes sensors, RFID tags, and actuators",
+                " Network Layer Uses Wi-Fi, LPWAN, 5G, and protocols like MQTT or CoAP",
+                " Edge Layer Performs preprocessing or analytics before cloud",
+                " Data Processing Layer Stores and analyzes big data using AI/ML",
+                " Application Layer Mobile apps, dashboards, automation tools"
+              ]
+            }
+          ]
+        },
+        {
+          title: "Industrial Use Cases of IoT",
+          content: "The Internet of Things (IoT) is revolutionizing industries by enabling real-time data collection, automation, and predictive intelligence. Below are key sectors where IoT is having a transformative impact.",
+          subsections: [
+            {
+              title: "A. Smart Manufacturing (IIoT)",
+              content: "Predictive maintenance reduces downtime using sensor data. Digital twins simulate equipment performance in real-time. AI models optimize production efficiency and detect defects."
+            },
+            {
+              title: "B. Smart Cities",
+              content: "IoT-enabled traffic control systems reduce congestion. Smart meters monitor energy usage and optimize distribution. Waste management becomes more efficient with fill-level sensors."
+            },
+            {
+              title: "C. Healthcare (IoMT)",
+              content: "Wearable IoT devices track vitals and send alerts to doctors. Smart pills and remote patient monitoring reduce hospital visits. AI-assisted diagnostics through connected devices improves accuracy."
+            }
+          ]
+        },
+        {
+          title: "Future Trends in IoT",
+          content: "Artificial Intelligence (AI) enhances the capabilities of IoT by enabling real-time decision-making, predictive intelligence, and autonomous operations. Together, they form AIoT (Artificial Intelligence of Things) — the fusion of smart connectivity and machine intelligence.",
+          subsections: [
+            {
+              title: "IoT + Generative AI:",
+              content: "Devices not only sense and respond but also create—like AI-generated reports from sensor data."
+            },
+            {
+              title: "Self-Healing IoT Networks",
+              content: "Using AI, these networks detect faults and reroute traffic in real time."
+            },
+            {
+              title: "Sustainability with IoT",
+              content: "Precision agriculture, smart grids, and water management systems use IoT to reduce waste and environmental impact."
+            }
+          ]
+        }
+      ],
+      conclusion: "AI governance is not a one-time implementation but an ongoing commitment to responsible AI development and deployment. Organizations that invest in robust governance frameworks will not only mitigate risks but also build the trust necessary for AI adoption and success. The future of AI depends on our ability to create systems that are not just intelligent, but also trustworthy, accountable, and aligned with human values.",
+    },
+    flowchartImage: "/image/iot.png",
+    tags: ['InternetOfThings', 'SmartTechnology', 'EdgeComputing', 'AIoT', '5GandIoT', 'IoTArchitecture'],
+    relatedArticles: ['building-ethical-ai-framework', 'future-ai-enterprise-2025', 'roi-ai-implementation']
   }
+ 
+  
 ];
 
 export const getArticleById = (id: string): Article | undefined => {
