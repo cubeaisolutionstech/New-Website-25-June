@@ -73,6 +73,9 @@ const About = () => {
             <h1 className="text-4xl md:text-7xl font-bold text-white mb-8">
               About <span className="text-blue-400">CubeAI Solutions</span>
             </h1>
+             <h2 className="text-2xl md:text-3xl font-semibold text-white mb-6">
+              Leading AI Innovation for Global Businesses
+            </h2>
             <p className="text-xl text-gray-200 max-w-4xl mx-auto leading-relaxed">
               We are a leading AI solutions company dedicated to transforming businesses through innovative technology and intelligent automation across the globe.
             </p>

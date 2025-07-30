@@ -175,6 +175,9 @@ const Career = () => {
             <h1 className="text-4xl md:text-7xl font-bold text-white mb-8">
               Build the <span className="text-blue-400">Future</span> with Us
             </h1>
+             <h2 className="text-2xl md:text-3xl font-semibold text-white mb-6">
+              AI Careers at CubeAISolutions
+            </h2>
             <p className="text-xl text-gray-200 max-w-4xl mx-auto leading-relaxed">
               Join CubeAI Solutions and work on cutting-edge AI projects that transform industries.
              
