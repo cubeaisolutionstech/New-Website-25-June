@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { ArrowRight, TrendingUp, Share2 } from 'lucide-react';
 import { getArticlesByCategory } from '../data/articles';
 import AOS from 'aos';
@@ -22,6 +23,12 @@ const Insights = () => {
         backgroundImage: 'linear-gradient(to bottom right, #b2d0eeff, #e6f0ff)',
       }}
     >
+      <Helmet>
+        <title>CubeAI Insights | Knowledge Hub</title>
+        <meta name="description" content="Unlock deep insights, predictive trends, and transformative strategies powered by AI, machine learning, and next-gen innovation." />
+        <meta name="keywords" content="AI, Machine Learning, Technology Trends, AI Ethics, Business Strategy, Case Studies" />
+      </Helmet>
+
       {/* Animated Background Blobs */}
       <div className="absolute inset-0 pointer-events-none z-0">
         <div className="absolute top-20 right-10 w-[500px] h-[500px] bg-purple-400 opacity-20 rounded-full blur-[160px] animate-pulse"></div>
@@ -33,14 +40,14 @@ const Insights = () => {
         <div className="text-center mb-16" data-aos="fade-down">
           <div className="inline-flex items-center px-4 py-2 bg-purple-100 rounded-full text-purple-700 font-medium mb-6">
             <TrendingUp className="w-4 h-4 mr-2" />
-            CubeAI  Insights
+            CubeAI Insights
           </div>
-          <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+          <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
             Knowledge{' '}
             <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
               Hub
             </span>
-          </h2>
+          </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Unlock deep insights, predictive trends, and transformative strategies powered by AI, machine learning, and next-gen innovation.
           </p>
@@ -79,6 +86,10 @@ const Insights = () => {
                       <img
                         src={insight.image}
                         alt={insight.title}
+                        width={600}
+                        height={400}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                       />
                     </div>
@@ -131,12 +142,15 @@ const Insights = () => {
                   <img
                     src={insight.image}
                     alt={insight.title}
+                    width={600}
+                    height={400}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-1 flex items-center space-x-1">
                   </div>
                 </div>
-
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-4">
                     <button
@@ -149,17 +163,13 @@ const Insights = () => {
                       <Share2 className="w-4 h-4" />
                     </button>
                   </div>
-
                   <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-purple-600 line-clamp-2">
                     {insight.title}
                   </h3>
-
                   <p className="text-gray-600 mb-4 leading-relaxed line-clamp-3">{insight.excerpt}</p>
-
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-4 text-sm text-gray-500">
                     </div>
-
                     <Link
                       to={`/article/${insight.id}`}
                       className="group/btn flex items-center text-purple-600 hover:text-purple-700 font-semibold"
