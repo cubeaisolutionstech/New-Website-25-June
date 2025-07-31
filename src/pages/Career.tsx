@@ -137,7 +137,7 @@ const Career = () => {
       <Toaster position="top-right" />
       {/* SEO Meta Tags */}
       <Helmet>
-        <title>Career Opportunities at CubeAI Solutions - Join Our Innovative Team</title>
+        <title>Careers at CubeAI Solutions – Join Our Innovative Team</title>
         <meta
           name="description"
           content="Explore exciting career opportunities at CubeAI Solutions in AI, software development, and more. Join our team in Coimbatore, Bangalore, or London."

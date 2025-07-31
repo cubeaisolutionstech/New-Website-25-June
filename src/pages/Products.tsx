@@ -153,16 +153,21 @@ const Products = () => {
       <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0">
           <motion.img
-            src="image/producti.webp"
-            alt="Products Background"
-            className="w-full h-full object-cover"
-            initial={{ scale: 1.1, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 1.5, ease: 'easeOut' }}
-            onError={(e) => {
-              e.currentTarget.src = '';
-            }}
-          />
+  src="image/producti.webp"
+  alt="Products Background"
+  width={1600} // Set based on actual image size or container width
+  height={900} // Maintain proper aspect ratio
+  loading="lazy" // Or "lazy" if below the fold
+  decoding="async"
+  className="w-full h-full object-cover"
+  initial={{ scale: 1.1, opacity: 0 }}
+  animate={{ scale: 1, opacity: 1 }}
+  transition={{ duration: 1.5, ease: 'easeOut' }}
+  onError={(e) => {
+    e.currentTarget.src = ''; // Optional fallback
+  }}
+/>
+
           <div className="absolute inset-0 bg-black/50" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -250,16 +255,21 @@ const Products = () => {
                   />
                   {/* Product Image */}
                   <div className="mb-6 overflow-hidden rounded-xl">
-                    <motion.img
-                      src={product.image}
-                      alt={product.title}
-                      className="w-full h-32 object-cover"
-                      whileHover={{ scale: 1.15 }}
-                      transition={{ duration: 0.5 }}
-                      onError={(e) => {
-                        e.currentTarget.src = '';
-                      }}
-                    />
+                   <motion.img
+  src={product.image}
+  alt={product.title}
+  width={400} // Or actual width of the image/card
+  height={128} // h-32 = 8rem = 128px
+  loading="lazy" // Lazy-load since it's a thumbnail (not above-the-fold hero)
+  decoding="async"
+  className="w-full h-32 object-cover"
+  whileHover={{ scale: 1.15 }}
+  transition={{ duration: 0.5 }}
+  onError={(e) => {
+    e.currentTarget.src = '/fallback.webp'; // Use a valid fallback image
+  }}
+/>
+
                   </div>
                   {/* Icon and Stars */}
                   <div className="flex items-start justify-between mb-8">

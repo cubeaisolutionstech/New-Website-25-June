@@ -136,6 +136,7 @@ const Contact = () => {
             src="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?auto=compress&cs=tinysrgb&w=1600"
             alt="CubeAI Solutions contact background"
             className="w-full h-full object-cover"
+            loading='lazy'
             onError={(e) => console.error('Error loading hero image:', e)}
           />
           <div className="absolute inset-0 bg-black/50" />

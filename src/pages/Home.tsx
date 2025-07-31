@@ -325,11 +325,15 @@ const Home = () => {
                 <Link to={`/explore/${card.id}`}>
                   <div className="relative overflow-hidden rounded-2xl h-full border border-gray-200 hover:border-gray-300 transition-all duration-500 bg-white">
                     <div className="mb-6 overflow-hidden rounded-t-2xl">
-                      <img
-                        src={card.image}
-                        alt={card.title}
-                        className="w-full h-32 object-cover group-hover:scale-110 transition-transform duration-500"
-                      />
+                    <img
+  src={card.image}
+  alt={card.title}
+  width={600}
+  height={128}
+  loading="eager"
+  className="w-full h-32 object-cover group-hover:scale-110 transition-transform duration-500"
+/>
+
                     </div>
 
                     <div className="p-6">
@@ -381,11 +385,15 @@ const Home = () => {
                 <Link to={`/industry/${industry.id}`}>
                   <div className="relative overflow-hidden rounded-xl border border-gray-200 hover:border-gray-300 transition-all duration-500 bg-white">
                     <div className="relative h-48">
-                      <img
-                        src={industry.image}
-                        alt={industry.name}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                      />
+                     <img
+  src={industry.image}
+  alt={industry.name}
+  width={600}
+  height={400}
+  loading="lazy"
+  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+/>
+
                       <div className="absolute inset-0 bg-black/40" />
                       <div className="absolute inset-0 flex items-center justify-center">
                         <h3 className="text-white text-xl font-bold text-center px-4">{industry.name}</h3>

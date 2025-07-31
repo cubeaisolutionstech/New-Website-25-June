@@ -53,11 +53,16 @@ const About = () => {
       {/* Hero Section */}
       <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0">
-          <img
-            src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=1600"
-            alt="About Us Background"
-            className="w-full h-full object-cover"
-          />
+        <img
+  src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=1600"
+  alt="About Us Background"
+  width={1600}
+  height={900} // or whatever fits your design ratio
+  loading="eager"
+  decoding="async"
+  className="w-full h-full object-cover"
+/>
+
           <div className="absolute inset-0 bg-black/50" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -179,13 +184,17 @@ const About = () => {
                 <div className="bg-white/80 backdrop-blur-lg rounded-2xl p-6 border border-gray-200 hover:border-indigo-300 transition-all duration-500 h-full shadow-lg hover:shadow-xl">
                   {/* Profile Image */}
                   <div className="relative mb-6 overflow-hidden rounded-xl">
-                    <motion.img
-                      src={member.image}
-                      alt={member.name}
-                      className="w-full h-64 object-contain bg-gray-50"
-                      whileHover={{ scale: 1.1, rotate: 2 }}
-                      transition={{ duration: 0.4 }}
-                    />
+                   <motion.img
+  src={member.image}
+  alt={member.name}
+  width={400}             // Estimate or match real size
+  height={256}            // 64 (rem) * 4 = 256px
+  loading="lazy"          // or "eager" if shown immediately on load
+  className="w-full h-64 object-contain bg-gray-50"
+  whileHover={{ scale: 1.1, rotate: 2 }}
+  transition={{ duration: 0.4 }}
+/>
+
                     <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
                   {/* Member Info */}
@@ -249,12 +258,17 @@ const About = () => {
                   {/* Profile Image */}
                   <div className="relative mb-6 overflow-hidden rounded-xl">
                     <motion.img
-                      src={member.image}
-                      alt={member.name}
-                      className="w-full h-64 object-contain bg-gray-50"
-                      whileHover={{ scale: 1.1, rotate: 2 }}
-                      transition={{ duration: 0.4 }}
-                    />
+  src={member.image}
+  alt={member.name}
+  width={400} // or actual width of the image
+  height={256} // h-64 = 16rem = 256px
+  loading="lazy" // or "eager" if above the fold
+  decoding="async"
+  className="w-full h-64 object-contain bg-gray-50"
+  whileHover={{ scale: 1.1, rotate: 2 }}
+  transition={{ duration: 0.4 }}
+/>
+
                     <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
                   {/* Member Info */}

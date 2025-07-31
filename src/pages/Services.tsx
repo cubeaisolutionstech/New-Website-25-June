@@ -47,6 +47,7 @@ const Services: React.FC = () => {
     message: '',
     service: '',
   });
+
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [submitSuccess, setSubmitSuccess] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<string>('');
@@ -59,7 +60,7 @@ const Services: React.FC = () => {
       color: 'from-blue-600 to-indigo-700',
       description: 'Advanced AI and ML solutions for Industry 4.0 & 5.0, legacy modernization, and intelligent automation.',
       features: ['Industry 4.0 & 5.0', 'Legacy System Modernization', 'Multi-Agent Systems', 'Deep Learning Models', 'Autonomous Decision-Making', 'AI-Driven Optimization'],
-      bgImage: 'image/saima.png',
+      bgImage: '/image/saima.webp',
       gradient: 'bg-gradient-to-br from-blue-600/10 to-indigo-700/10',
     },
     {
@@ -69,7 +70,7 @@ const Services: React.FC = () => {
       color: 'from-emerald-600 to-teal-700',
       description: 'Comprehensive data analytics solutions including medical data analytics and SAAS platforms.',
       features: ['Predictive Analytics', 'Data Visualization', 'Big Data Analytics', 'AI-Powered Decision Making', 'Industrial Data Analytics', 'Anomaly Detection'],
-      bgImage: 'image/saida.webp',
+      bgImage: '/image/saida.webp',
       gradient: 'bg-gradient-to-br from-emerald-600/10 to-teal-700/10',
     },
     {
@@ -79,7 +80,7 @@ const Services: React.FC = () => {
       color: 'from-violet-600 to-purple-700',
       description: 'Intelligent chatbot solutions and computer vision applications.',
       features: ['Chatbot Solutions', 'Computer Vision', 'NLP', 'Image Recognition', 'Automated Surveillance & Monitoring'],
-      bgImage: 'image/svision.jpg',
+      bgImage: '/image/svision.webp',
       gradient: 'bg-gradient-to-br from-violet-600/10 to-purple-700/10',
     },
     {
@@ -89,7 +90,7 @@ const Services: React.FC = () => {
       color: 'from-red-600 to-rose-700',
       description: 'Cutting-edge cybersecurity solutions with IoT services and auto-sizing capabilities.',
       features: ['IoT Services', 'Zero Trust Architecture', 'Threat Detection', 'Security Monitoring', 'Auto-Scaling Security Infrastructure'],
-      bgImage: 'image/scity.jpg',
+      bgImage: '/image/scity.webp',
       gradient: 'bg-gradient-to-br from-red-600/10 to-rose-700/10',
     },
     {
@@ -99,7 +100,7 @@ const Services: React.FC = () => {
       color: 'from-orange-600 to-amber-700',
       description: 'Innovative embedded systems, IoT solutions, and advanced drone technology.',
       features: ['Embedded Solutions', 'Drone Technology', 'IoT Integration', 'Drone Automation', 'Real-Time Embedded Applications'],
-      bgImage: 'image/scubebotics.jpg',
+      bgImage: '/image/scubebotics.webp',
       gradient: 'bg-gradient-to-br from-orange-600/10 to-amber-700/10',
     },
     {
@@ -109,7 +110,7 @@ const Services: React.FC = () => {
       color: 'from-cyan-600 to-blue-700',
       description: 'Scalable data engineering and cloud solutions for modern enterprises.',
       features: ['Data Engineering', 'Cloud Engineering', 'DevOps & Automation', 'Infrastructure Design', 'Multi-Cloud & Hybrid Deployments', 'Cloud Infrastructure Management'],
-      bgImage: 'image/sdec.webp',
+      bgImage: '/image/sdec.webp',
       gradient: 'bg-gradient-to-br from-cyan-600/10 to-blue-700/10',
     },
     {
@@ -119,7 +120,7 @@ const Services: React.FC = () => {
       color: 'from-indigo-600 to-purple-700',
       description: 'Comprehensive technology solutions including web development, app development, and business consulting.',
       features: ['Backend Development', 'Cross-Platform App Development', 'Strategic IT Consulting', 'Digital Transformation Services', 'UI/UX Design & Prototyping', 'E-Commerce & CMS Integration', 'SEO & Digital Marketing', 'Cloud-Ready Business Solutions'],
-      bgImage: 'image/stech.jpg',
+      bgImage: '/image/stech.webp',
       gradient: 'bg-gradient-to-br from-indigo-600/10 to-purple-700/10',
     },
   ];
@@ -146,7 +147,6 @@ const Services: React.FC = () => {
     setErrorMessage('');
     setIsSubmitting(true);
 
-    // Client-side validation
     const validationError = validateForm();
     if (validationError) {
       setErrorMessage(validationError);
@@ -195,27 +195,23 @@ const Services: React.FC = () => {
     <div className="min-h-screen pt-20 bg-gray-50">
       <Helmet>
         <title>CubeAI Solutions - Our Services</title>
-        <meta
-          name="description"
-          content="Explore CubeAI Solutions' comprehensive AI-powered services, including AIMA, AIDA, CITY, Cubebotics, DCE, Vision AI, and Tech Solution, designed to transform businesses across industries."
-        />
-        <meta
-          name="keywords"
-          content="CubeAI Solutions, AI services, machine learning, data analytics, cybersecurity, IoT, cloud engineering, web development, app development, business consulting"
-        />
+        <meta name="description" content="Explore CubeAI Solutions' comprehensive AI-powered services, including AIMA, AIDA, CITY, Cubebotics, DCE, Vision AI, and Tech Solution, designed to transform businesses across industries." />
+        <meta name="keywords" content="CubeAI Solutions, AI services, machine learning, data analytics, cybersecurity, IoT, cloud engineering, web development, app development, business consulting" />
       </Helmet>
 
-      {/* Hero Section with Developer Background */}
+      {/* Hero Section */}
       <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="image/hand.webp"
+            src="/image/hand.webp"
             alt="Services Background"
+            width={1920}
+            height={600}
+            loading="eager"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/50" />
         </div>
-
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -260,6 +256,7 @@ const Services: React.FC = () => {
                 key={service.id}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
+                
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ y: -10, scale: 1.02 }}
                 className="group"
@@ -269,16 +266,17 @@ const Services: React.FC = () => {
                     <img
                       src={service.bgImage}
                       alt={service.title}
+                      width={600}
+                      height={400}
+                      loading="lazy"
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-black/40" />
                   </div>
-
                   <div className="p-10">
                     <h3 className="text-2xl font-bold text-gray-900 mb-2">{service.title}</h3>
                     <p className="text-blue-600 mb-6 font-medium">{service.subtitle}</p>
                     <p className="text-gray-600 mb-8 leading-relaxed">{service.description}</p>
-
                     <div className="mb-8">
                       <h4 className="text-lg font-semibold text-gray-900 mb-4">Key Features:</h4>
                       <div className="space-y-3">
@@ -290,7 +288,6 @@ const Services: React.FC = () => {
                         ))}
                       </div>
                     </div>
-
                     <Link
                       to={`/service/${service.id}`}
                       className={`inline-flex items-center w-full justify-center bg-gradient-to-r ${service.color} text-white py-4 rounded-xl font-semibold transition-all duration-300 group-hover:scale-105`}
@@ -394,7 +391,6 @@ const Services: React.FC = () => {
               <p className="text-blue-100 mb-10 text-lg">
                 Fill out the form or contact us directly using the information below.
               </p>
-
               <div className="space-y-6">
                 <div className="flex items-start">
                   <div className="bg-white/20 p-3 rounded-lg mr-4">
@@ -405,7 +401,6 @@ const Services: React.FC = () => {
                     <p className="text-blue-100">cubeaisolutions@gmail.com</p>
                   </div>
                 </div>
-
                 <div className="flex items-start">
                   <div className="bg-white/20 p-3 rounded-lg mr-4">
                     <Phone className="w-6 h-6" />
@@ -415,7 +410,6 @@ const Services: React.FC = () => {
                     <p className="text-blue-100">+91 9486938781</p>
                   </div>
                 </div>
-
                 <div className="flex items-start">
                   <div className="bg-white/20 p-3 rounded-lg mr-4">
                     <MapPin className="w-6 h-6" />
@@ -472,7 +466,6 @@ const Services: React.FC = () => {
                         required
                       />
                     </div>
-
                     <div className="relative">
                       <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                         <Mail className="w-5 h-5 text-gray-400" />
@@ -487,7 +480,6 @@ const Services: React.FC = () => {
                         required
                       />
                     </div>
-
                     <div className="relative">
                       <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                         <Phone className="w-5 h-5 text-gray-400" />
@@ -502,7 +494,6 @@ const Services: React.FC = () => {
                         required
                       />
                     </div>
-
                     <div className="relative">
                       <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                         <Building className="w-5 h-5 text-gray-400" />
@@ -517,7 +508,6 @@ const Services: React.FC = () => {
                       />
                     </div>
                   </div>
-
                   <div className="mb-6">
                     <select
                       name="service"
@@ -534,7 +524,6 @@ const Services: React.FC = () => {
                       ))}
                     </select>
                   </div>
-
                   <div className="mb-8">
                     <div className="relative">
                       <div className="absolute inset-0 left-0 pl-3 pt-3 flex items-start pointer-events-none">
@@ -551,7 +540,6 @@ const Services: React.FC = () => {
                       />
                     </div>
                   </div>
-
                   <button
                     type="submit"
                     disabled={isSubmitting}
