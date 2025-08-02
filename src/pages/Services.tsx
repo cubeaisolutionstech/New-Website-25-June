@@ -60,7 +60,7 @@ const Services: React.FC = () => {
       color: 'from-blue-600 to-indigo-700',
       description: 'Advanced AI and ML solutions for Industry 4.0 & 5.0, legacy modernization, and intelligent automation.',
       features: ['Industry 4.0 & 5.0', 'Legacy System Modernization', 'Multi-Agent Systems', 'Deep Learning Models', 'Autonomous Decision-Making', 'AI-Driven Optimization'],
-      bgImage: '/image/saima.webp',
+      bgImage: '/image/saima.png',
       gradient: 'bg-gradient-to-br from-blue-600/10 to-indigo-700/10',
     },
     {
@@ -80,7 +80,7 @@ const Services: React.FC = () => {
       color: 'from-violet-600 to-purple-700',
       description: 'Intelligent chatbot solutions and computer vision applications.',
       features: ['Chatbot Solutions', 'Computer Vision', 'NLP', 'Image Recognition', 'Automated Surveillance & Monitoring'],
-      bgImage: '/image/svision.webp',
+      bgImage: '/image/svision.jpg',
       gradient: 'bg-gradient-to-br from-violet-600/10 to-purple-700/10',
     },
     {
@@ -90,7 +90,7 @@ const Services: React.FC = () => {
       color: 'from-red-600 to-rose-700',
       description: 'Cutting-edge cybersecurity solutions with IoT services and auto-sizing capabilities.',
       features: ['IoT Services', 'Zero Trust Architecture', 'Threat Detection', 'Security Monitoring', 'Auto-Scaling Security Infrastructure'],
-      bgImage: '/image/scity.webp',
+      bgImage: '/image/scity.jpg',
       gradient: 'bg-gradient-to-br from-red-600/10 to-rose-700/10',
     },
     {
@@ -100,7 +100,7 @@ const Services: React.FC = () => {
       color: 'from-orange-600 to-amber-700',
       description: 'Innovative embedded systems, IoT solutions, and advanced drone technology.',
       features: ['Embedded Solutions', 'Drone Technology', 'IoT Integration', 'Drone Automation', 'Real-Time Embedded Applications'],
-      bgImage: '/image/scubebotics.webp',
+      bgImage: '/image/scubebotics.jpg',
       gradient: 'bg-gradient-to-br from-orange-600/10 to-amber-700/10',
     },
     {
@@ -120,7 +120,7 @@ const Services: React.FC = () => {
       color: 'from-indigo-600 to-purple-700',
       description: 'Comprehensive technology solutions including web development, app development, and business consulting.',
       features: ['Backend Development', 'Cross-Platform App Development', 'Strategic IT Consulting', 'Digital Transformation Services', 'UI/UX Design & Prototyping', 'E-Commerce & CMS Integration', 'SEO & Digital Marketing', 'Cloud-Ready Business Solutions'],
-      bgImage: '/image/stech.webp',
+      bgImage: '/image/stech.jpg',
       gradient: 'bg-gradient-to-br from-indigo-600/10 to-purple-700/10',
     },
   ];
