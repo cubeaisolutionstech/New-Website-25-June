@@ -55,7 +55,7 @@ const About = () => {
     {
       name: 'Mr.K.K Baluswamy',
       title: 'Independent Consultant',
-      image: 'image/balu.jpeg',
+      image: 'image/balu.jpg',
       bio: 'Strategic consultant helping organizations navigate digital transformation.',
     },
   ];
