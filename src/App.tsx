@@ -16,6 +16,8 @@ import IndustryDetail from './pages/IndustryDetail';
 import ProductDetail from './pages/ProductDetail';
 import Insights from './pages/Insights'; // Added import
 import ArticlePage from './pages/ArticlePage'; // Added import
+import SocialMediaLinks from './components/SocialMediaLinks'; // Added import
+
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -51,6 +53,7 @@ function App() {
       <Router>
         <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-indigo-900">
           <Navbar />
+          <SocialMediaLinks /> {/* Added component */}
           <ScrollToTop />
           <Routes>
             <Route path="/" element={<Home />} />

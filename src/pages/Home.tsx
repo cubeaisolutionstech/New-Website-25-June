@@ -233,6 +233,7 @@ const Home = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
           className="relative z-10 pb-16"
+          
         >
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
@@ -393,7 +394,6 @@ const Home = () => {
   loading="lazy"
   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
 />
-
                       <div className="absolute inset-0 bg-black/40" />
                       <div className="absolute inset-0 flex items-center justify-center">
                         <h3 className="text-white text-xl font-bold text-center px-4">{industry.name}</h3>
