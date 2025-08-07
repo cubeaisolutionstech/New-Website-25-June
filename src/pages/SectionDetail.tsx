@@ -469,7 +469,7 @@ const SectionDetail: React.FC = () => {
     return (
       <div className="min-h-screen flex items-center justify-center pt-20 bg-gray-50">
         <div className="text-center">
-          <h1 className="text-4xl font-bold mb-4 text-gray-900">Page Not Found</h1>
+          <span className="text-4xl font-bold mb-4 text-gray-900">Page Not Found</span>
           <p className="text-gray-600">The requested page could not be found.</p>
         </div>
       </div>

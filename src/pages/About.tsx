@@ -250,9 +250,9 @@ const About = () => {
               <Sparkles className="w-5 h-5 text-white mr-2" />
               <span className="text-white font-medium">About Our Journey</span>
             </div>
-            <h2 className="text-4xl md:text-7xl font-bold text-white mb-8">
+            <h1 className="text-4xl md:text-7xl font-bold text-white mb-8">
               About <span className="text-blue-400">CubeAI Solutions</span>
-            </h2>
+            </h1>
             <h2 className="text-2xl md:text-3xl font-semibold text-white mb-6">
               Leading AI Innovation for Global Businesses
             </h2>
@@ -452,9 +452,9 @@ const About = () => {
             <div className="w-20 h-20 rounded-xl bg-red-600 flex items-center justify-center mx-auto mb-8">
               <Globe className="w-10 h-10 text-white" />
             </div>
-            <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+            <h3 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
               Global AI Solutions Network
-            </h2>
+            </h3>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Serving clients worldwide with local expertise and global reach across multiple continents
             </p>

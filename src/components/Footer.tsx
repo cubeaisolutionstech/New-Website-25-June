@@ -42,9 +42,9 @@ const Footer = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 rounded-xl"></div>
                 </div>
-                <span className="text-white font-bold text-2xl bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
+                <h1 className="text-white font-bold text-2xl bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
                   CubeAI Solutions
-                </span>
+                </h1>
               </div>
               <p className="text-gray-300 mb-6 leading-relaxed">
                 Empowering businesses with intelligent AI solutions that drive innovation, efficiency, and sustainable growth across industries worldwide.
