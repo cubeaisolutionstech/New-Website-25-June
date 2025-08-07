@@ -839,7 +839,7 @@ const ServiceDetail = () => {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-100">
         <div className="text-center">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Service Not Found</h1>
+          <span className="text-4xl font-bold text-gray-900 mb-4">Service Not Found</span>
           <p className="text-gray-700 mb-8">The requested service could not be found.</p>
           <Link
             to="/"

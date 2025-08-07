@@ -98,7 +98,7 @@ const ArticlePage = () => {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-gray-900 mb-4">Article not found</h1>
+          <span className="text-2xl font-bold text-gray-900 mb-4">Article not found</span>
           <Link to="/" className="text-purple-600 hover:text-purple-700">
             Return to homepage
           </Link>

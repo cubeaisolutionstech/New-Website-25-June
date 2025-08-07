@@ -219,7 +219,7 @@ const IndustryDetail = () => {
     return (
       <div className="min-h-screen flex items-center justify-center pt-20 bg-gray-200">
         <div className="text-center">
-          <h1 className="text-4xl font-bold mb-4 text-gray-900">Industry Not Found</h1>
+          <span className="text-4xl font-bold mb-4 text-gray-900">Industry Not Found</span>
           <p className="text-gray-600 mb-8">The requested industry page could not be found.</p>
           <Link
             to="/"

@@ -157,7 +157,7 @@ const Home = () => {
     <div className="relative overflow-hidden bg-gray-50">
        
       <Helmet>
-        <title>CubeAI Solutions - AI Automation Tools for Business Productivity</title>
+        <title>CubeAI Solutions: AI Tools for Workflow Automation</title>
         <meta
           name="description"
           content="CubeAI Solutions delivers GenAI-driven software, including web and mobile apps, FinTech, and cybersecurity tools, to streamline operations and boost efficiency."

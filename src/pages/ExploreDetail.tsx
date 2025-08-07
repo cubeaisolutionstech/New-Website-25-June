@@ -190,7 +190,7 @@ const ExploreDetail = () => {
     return (
       <div className="min-h-screen flex items-center justify-center pt-20 bg-gradient-to-br from-slate-50 to-blue-50">
         <div className="text-center">
-          <h1 className="text-4xl font-bold mb-4 text-slate-800">Page Not Found</h1>
+          <span className="text-4xl font-bold mb-4 text-slate-800">Page Not Found</span>
           <p className="text-slate-600 mb-8">The requested page could not be found.</p>
           <Link
             to="/"
