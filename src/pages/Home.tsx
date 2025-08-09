@@ -166,6 +166,9 @@ const Home = () => {
           name="keywords"
           content="CubeAI Solutions, AI solutions, GenAI software, web development, mobile apps, FinTech, cybersecurity, business transformation"
         />
+       
+       <meta name="google-site-verification" content="bcVqGkmuaS0Sk1xXnqhiE_qKKiENi2AnFRb-vTKCvVw" />
+
       </Helmet>
       
       <FloatingCube />
@@ -383,30 +386,40 @@ const Home = () => {
                 whileHover={{ scale: 1.02, y: -5 }}
                 className="group cursor-pointer"
               >
-                <Link to={`/industry/${industry.id}`}>
-                  <div className="relative overflow-hidden rounded-xl border border-gray-200 hover:border-gray-300 transition-all duration-500 bg-white">
-                    <div className="relative h-48">
-                     <img
-  src={industry.image}
-  alt={industry.name}
-  width={600}
-  height={400}
-  loading="lazy"
-  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-/>
-                      <div className="absolute inset-0 bg-black/40" />
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <h3 className="text-white text-xl font-bold text-center px-4">{industry.name}</h3>
-                      </div>
-                    </div>
-                    <div className="p-6 text-center">
-                      <div className="flex items-center justify-center text-blue-600 group-hover:text-blue-700 transition-colors">
-                        <span className="text-sm font-medium">Learn More</span>
-                        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                      </div>
-                    </div>
-                  </div>
-                </Link>
+             <Link
+  to={`/industry/${industry.id}`}
+  aria-label={`Learn more about ${industry.name} industry insights`}
+>
+  <article
+    className="relative overflow-hidden rounded-xl border border-gray-200 hover:border-gray-300 transition-all duration-500 bg-white"
+  >
+    <div className="relative h-48">
+      <img
+        src={industry.image}
+        alt={`${industry.name} industry overview and insights`}
+        width={600}
+        height={400}
+        loading="lazy"
+        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+      />
+      <div className="absolute inset-0 bg-black/40" />
+      <div className="absolute inset-0 flex items-center justify-center">
+        <h2 className="text-white text-xl font-bold text-center px-4">
+          {industry.name}
+        </h2>
+      </div>
+    </div>
+    <div className="p-6 text-center">
+      <div className="flex items-center justify-center text-blue-600 group-hover:text-blue-700 transition-colors">
+        <span className="text-sm font-medium">
+          Learn More about {industry.name}
+        </span>
+        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+      </div>
+    </div>
+  </article>
+</Link>
+
               </motion.div>
             ))}
           </div>
