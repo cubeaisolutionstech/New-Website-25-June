@@ -226,18 +226,17 @@ const About = () => {
 
   return (
     <div className="min-h-screen pt-20 bg-gray-50">
-      {/* Helmet for SEO */}
-      <Helmet>
-        <title>CubeAI Solutions - About Us</title>
-        <meta
-          name="description"
-          content="Learn more about CubeAI Solutions, our mission, vision, and the team driving innovation in AI technology."
-        />
-        <meta
-          name="keywords"
-          content="CubeAI Solutions, AI technology, mission, vision, team, innovation"
-        />
-      </Helmet>
+     <Helmet>
+  <title>CubeAI Solutions - AI Innovation & Leadership</title>
+  <meta
+    name="description"
+    content="Discover CubeAI Solutions' journey in AI innovation, leadership, and global transformation. Learn about our mission, vision, expert team, and prestigious awards."
+  />
+  <meta
+    name="keywords"
+    content="CubeAI Solutions, AI innovation, leadership team, mission, vision, global offices, awards, AI technology, business transformation"
+  />
+</Helmet>
       {/* Hero Section */}
       <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0">

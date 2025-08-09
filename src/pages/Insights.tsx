@@ -24,11 +24,16 @@ const Insights = () => {
       }}
     >
       <Helmet>
-        <title>CubeAI Insights | Knowledge Hub</title>
-        <meta name="description" content="Unlock deep insights, predictive trends, and transformative strategies powered by AI, machine learning, and next-gen innovation." />
-        <meta name="keywords" content="AI, Machine Learning, Technology Trends, AI Ethics, Business Strategy, Case Studies" />
-      </Helmet>
-
+  <title>CubeAI Insights | Knowledge Hub | AI & ML Trends 2025</title>
+  <meta
+    name="description"
+    content="Explore CubeAI Insights: Unlock deep insights, predictive trends, and transformative strategies in AI, machine learning, and innovation as of August 2025."
+  />
+  <meta
+    name="keywords"
+    content="CubeAI Insights, AI trends 2025, machine learning, technology trends, AI ethics, business strategy, case studies, knowledge hub, innovation"
+  />
+</Helmet>
       {/* Animated Background Blobs */}
       <div className="absolute inset-0 pointer-events-none z-0">
         <div className="absolute top-20 right-10 w-[500px] h-[500px] bg-purple-400 opacity-20 rounded-full blur-[160px] animate-pulse"></div>

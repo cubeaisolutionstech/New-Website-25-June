@@ -3,6 +3,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { Share2, ArrowLeft, ArrowRight, Tag, BookOpen } from 'lucide-react';
 import { getArticleById, getRelatedArticles } from '../data/articles';
 import Header from '../components/Header';
+import { Helmet } from 'react-helmet-async';
 
 // Define the Article interface to match the data structure
 interface Article {
@@ -99,10 +100,9 @@ const ArticlePage = () => {
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <span className="text-2xl font-bold text-gray-900 mb-4">Article not found</span>
-         <a href="/" className="text-purple-600 hover:text-purple-700">
-  Return to homepage
-</a>
-
+          <a href="/" className="text-purple-600 hover:text-purple-700">
+            Return to homepage
+          </a>
         </div>
       </div>
     );
@@ -110,6 +110,18 @@ const ArticlePage = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <Helmet>
+        <title>{article.title} | CubeAI Insights</title>
+        <meta
+          name="description"
+          content={`Read ${article.title} on CubeAI Insights: ${article.excerpt || 'Explore deep insights on AI and innovation'}.`}
+        />
+        <meta
+          name="keywords"
+          content={`${article.tags.join(', ')}, ${article.category}, CubeAI Insights, AI trends, technology, innovation`}
+        />
+      </Helmet>
+
       <Header />
 
       {/* Reading Progress Bar */}
@@ -126,8 +138,8 @@ const ArticlePage = () => {
           <div className="max-w-4xl mx-auto">
             <nav className="flex items-center space-x-2 text-sm text-gray-500 mb-8">
               <a href="/" className="hover:text-purple-600">Home</a>
-  <span>/</span>
-  <a href="/insights" className="hover:text-purple-600">Insights</a>
+              <span>/</span>
+              <a href="/insights" className="hover:text-purple-600">Insights</a>
               <span className="text-gray-900">{article.category}</span>
             </nav>
 

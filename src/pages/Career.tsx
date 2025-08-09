@@ -137,16 +137,16 @@ const Career = () => {
       <Toaster position="top-right" />
       {/* SEO Meta Tags */}
       <Helmet>
-        <title>Careers at CubeAI Solutions – Join Our Innovative Team</title>
-        <meta
-          name="description"
-          content="Explore exciting career opportunities at CubeAI Solutions in AI, software development, and more. Join our team in Coimbatore, Bangalore, or London."
-        />
-        <meta
-          name="keywords"
-          content="career opportunities, CubeAI Solutions, AI jobs, software development jobs, Coimbatore, Bangalore, London"
-        />
-      </Helmet>
+  <title> About us - Careers at CubeAI Solutions </title>
+  <meta
+    name="description"
+    content="Join CubeAI Solutions in August 2025! Explore AI, software development, and more career opportunities in Coimbatore, Bangalore, and London. Apply today."
+  />
+  <meta
+    name="keywords"
+    content="CubeAI Solutions careers, AI jobs 2025, software development jobs, Coimbatore jobs, Bangalore jobs, London jobs, apply now, career opportunities"
+  />
+</Helmet>
 
       {/* Hero Section */}
       <section className="relative py-32 overflow-hidden">
