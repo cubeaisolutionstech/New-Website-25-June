@@ -25,23 +25,17 @@ import {
   Lock,
   Wifi,
   Gauge,
-  Cpu, // Replaced Microchip with Cpu
+  Cpu,
   Plane,
   Server,
   Code,
   Briefcase,
   Megaphone,
-  Wrench,
-  Camera,
-  Truck,
-  Battery,
-  MapPin,
-  AlertTriangle,
-  Headphones,
+  Camera, // Added Camera to imports
 } from 'lucide-react';
 
 const ServiceDetail = () => {
-  const { serviceId } = useParams<{ serviceId: string }>();
+  const { serviceSlug } = useParams<{ serviceSlug: string }>();
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -74,7 +68,8 @@ const ServiceDetail = () => {
   };
 
   const serviceData = {
-    aima: {
+    'artificial-intelligence-machine-learning-agent': {
+      slug: 'artificial-intelligence-machine-learning-agent',
       title: 'AIMA - Artificial Intelligence, Machine Learning & Agent',
       subtitle: 'Revolutionizing Industries with Intelligent Automation',
       color: 'from-blue-500 to-indigo-600',
@@ -194,7 +189,8 @@ const ServiceDetail = () => {
         },
       ],
     },
-    aida: {
+    'artificial-intelligence-data-analysis': {
+      slug: 'artificial-intelligence-data-analysis',
       title: 'AIDA - Artificial Intelligence & Data Analysis',
       subtitle: 'Transforming Data into Actionable Insights',
       color: 'from-emerald-500 to-teal-600',
@@ -287,6 +283,7 @@ const ServiceDetail = () => {
       ],
     },
     'vision-ai': {
+      slug: 'vision-ai',
       title: 'Vision AI - AI Solutions',
       subtitle: 'Intelligent Visual Recognition Systems',
       color: 'from-violet-500 to-purple-600',
@@ -336,7 +333,8 @@ const ServiceDetail = () => {
         },
       ],
     },
-    city: {
+    'cyber-tech-innovation': {
+      slug: 'cyber-tech-innovation',
       title: 'CITY - Cyber Tech Innovation',
       subtitle: 'Securing the Future with Advanced Technology',
       color: 'from-purple-500 to-pink-500',
@@ -471,21 +469,22 @@ const ServiceDetail = () => {
         },
       ],
     },
-    cubeboyics: {
-      title: 'Cubeboyics - Embedded Systems & IoT',
+    'embedded-systems-iot': {
+      slug: 'embedded-systems-iot',
+      title: 'Cubebotics - Embedded Systems & IoT',
       subtitle: 'Building Smart Devices for Tomorrow',
       color: 'from-orange-500 to-red-500',
-      icon: Cpu, // Replaced Microchip with Cpu
+      icon: Cpu,
       sections: [
         {
           title: 'Embedded & IoT Solutions',
-          icon: Cpu, // Replaced Microchip with Cpu
+          icon: Cpu,
           content: (
             <div className="space-y-8">
               <motion.div className="bg-gradient-to-r from-orange-50 to-red-50 rounded-2xl p-8" variants={fadeInUp}>
                 <div className="flex items-center mb-6">
                   <div className="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center mr-4">
-                    <Cpu className="w-6 h-6 text-white" /> {/* Replaced Microchip with Cpu */}
+                    <Cpu className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900">Devices That Think and Act</h3>
                 </div>
@@ -563,7 +562,8 @@ const ServiceDetail = () => {
         },
       ],
     },
-    dce: {
+    'data-cloud-engineering': {
+      slug: 'data-cloud-engineering',
       title: 'DCE - Data & Cloud Engineering',
       subtitle: 'Scalable Cloud Solutions for Modern Businesses',
       color: 'from-cyan-500 to-blue-600',
@@ -655,7 +655,8 @@ const ServiceDetail = () => {
         },
       ],
     },
-    'tech-solution': {
+    'future-technology-services': {
+      slug: 'future-technology-services',
       title: 'Tech Solution - Future Technology & Services',
       subtitle: 'Comprehensive Technology Services',
       color: 'from-indigo-500 to-purple-600',
@@ -833,7 +834,7 @@ const ServiceDetail = () => {
     },
   };
 
-  const service = serviceData[serviceId as keyof typeof serviceData];
+  const service = serviceData[serviceSlug as keyof typeof serviceData];
 
   if (!service) {
     return (
@@ -841,14 +842,14 @@ const ServiceDetail = () => {
         <div className="text-center">
           <span className="text-4xl font-bold text-gray-900 mb-4">Service Not Found</span>
           <p className="text-gray-700 mb-8">The requested service could not be found.</p>
-          <Link
-            to="/"
-            className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-colors"
-            aria-label="Go back to homepage"
-          >
-            <ArrowLeft className="w-5 h-5 mr-2" />
-            Back to Home
-          </Link>
+        <a
+    href="/"
+    className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-colors"
+    aria-label="Go back to homepage"
+  >
+    <ArrowLeft className="w-5 h-5 mr-2" />
+    Back to Home
+  </a>
         </div>
       </div>
     );
@@ -870,7 +871,7 @@ const ServiceDetail = () => {
           name="keywords"
           content={`CubeAI Solutions, ${service.title}, AI solutions, ${service.sections
             .map((section) => section.title)
-            .join(', ')}`}
+            .join(', ')}, ${service.slug}`}
         />
       </Helmet>
 
