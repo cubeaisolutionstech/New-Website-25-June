@@ -28,7 +28,7 @@ interface FormData {
 
 // Define the shape of a service
 interface Service {
-  id: string;
+  slug: string;
   title: string;
   subtitle: string;
   color: string;
@@ -54,7 +54,7 @@ const Services: React.FC = () => {
 
   const services: Service[] = [
     {
-      id: 'aima',
+      slug: 'artificial-intelligence-machine-learning-agent',
       title: 'AIMA',
       subtitle: 'Artificial Intelligence, Machine Learning & Agent',
       color: 'from-blue-600 to-indigo-700',
@@ -64,7 +64,7 @@ const Services: React.FC = () => {
       gradient: 'bg-gradient-to-br from-blue-600/10 to-indigo-700/10',
     },
     {
-      id: 'aida',
+      slug: 'artificial-intelligence-data-analysis',
       title: 'AIDA',
       subtitle: 'Artificial Intelligence & Data Analysis',
       color: 'from-emerald-600 to-teal-700',
@@ -74,7 +74,7 @@ const Services: React.FC = () => {
       gradient: 'bg-gradient-to-br from-emerald-600/10 to-teal-700/10',
     },
     {
-      id: 'vision-ai',
+      slug: 'vision-ai',
       title: 'VisionAI',
       subtitle: 'AI Solutions',
       color: 'from-violet-600 to-purple-700',
@@ -84,7 +84,7 @@ const Services: React.FC = () => {
       gradient: 'bg-gradient-to-br from-violet-600/10 to-purple-700/10',
     },
     {
-      id: 'city',
+      slug: 'cyber-tech-innovation',
       title: 'CyTI',
       subtitle: 'Cyber Tech Innovation',
       color: 'from-red-600 to-rose-700',
@@ -94,7 +94,7 @@ const Services: React.FC = () => {
       gradient: 'bg-gradient-to-br from-red-600/10 to-rose-700/10',
     },
     {
-      id: 'cubeboyics',
+      slug: 'embedded-systems-iot',
       title: 'Cubebotics',
       subtitle: 'Embedded Systems & IoT',
       color: 'from-orange-600 to-amber-700',
@@ -104,7 +104,7 @@ const Services: React.FC = () => {
       gradient: 'bg-gradient-to-br from-orange-600/10 to-amber-700/10',
     },
     {
-      id: 'dce',
+      slug: 'data-cloud-engineering',
       title: 'DCE',
       subtitle: 'Data & Cloud Engineering',
       color: 'from-cyan-600 to-blue-700',
@@ -114,7 +114,7 @@ const Services: React.FC = () => {
       gradient: 'bg-gradient-to-br from-cyan-600/10 to-blue-700/10',
     },
     {
-      id: 'tech-solution',
+      slug: 'future-technology-services',
       title: 'Tech Solution',
       subtitle: 'Future Technology & Services',
       color: 'from-indigo-600 to-purple-700',
@@ -195,7 +195,7 @@ const Services: React.FC = () => {
     <div className="min-h-screen pt-20 bg-gray-50">
       <Helmet>
         <title>CubeAI Solutions - Our Services</title>
-        <meta name="description" content="Explore CubeAI Solutions' comprehensive AI-powered services, including AIMA, AIDA, CITY, Cubebotics, DCE, Vision AI, and Tech Solution, designed to transform businesses across industries." />
+        <meta name="description" content="Explore CubeAI Solutions' comprehensive AI-powered services, including AIMA, AIDA, CyTI, Cubebotics, DCE, Vision AI, and Tech Solution, designed to transform businesses across industries." />
         <meta name="keywords" content="CubeAI Solutions, AI services, machine learning, data analytics, cybersecurity, IoT, cloud engineering, web development, app development, business consulting" />
       </Helmet>
 
@@ -253,10 +253,9 @@ const Services: React.FC = () => {
           <div className="grid lg:grid-cols-2 gap-12">
             {services.map((service, index) => (
               <motion.div
-                key={service.id}
+                key={service.slug}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ y: -10, scale: 1.02 }}
                 className="group"
@@ -288,13 +287,9 @@ const Services: React.FC = () => {
                         ))}
                       </div>
                     </div>
-                    <Link
-                      to={`/service/${service.id}`}
-                      className={`inline-flex items-center w-full justify-center bg-gradient-to-r ${service.color} text-white py-4 rounded-xl font-semibold transition-all duration-300 group-hover:scale-105`}
-                    >
-                      Learn More
-                      <ArrowRight className="w-5 h-5 ml-2" />
-                    </Link>
+                   <a
+                     href={`/services/${service.slug}`}
+                      className={`inline-flex items-center w-full justify-center bg-gradient-to-r ${service.color} text-white py-4 rounded-xl font-semibold transition-all duration-300 group-hover:scale-105`}> Learn More <ArrowRight className="w-5 h-5 ml-2" /> </a>
                   </div>
                 </div>
               </motion.div>
@@ -518,7 +513,7 @@ const Services: React.FC = () => {
                     >
                       <option value="">Select a Service</option>
                       {services.map(service => (
-                        <option key={service.id} value={service.id}>
+                        <option key={service.slug} value={service.slug}>
                           {service.title} - {service.subtitle}
                         </option>
                       ))}

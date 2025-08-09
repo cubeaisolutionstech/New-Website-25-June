@@ -99,9 +99,10 @@ const ArticlePage = () => {
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <span className="text-2xl font-bold text-gray-900 mb-4">Article not found</span>
-          <Link to="/" className="text-purple-600 hover:text-purple-700">
-            Return to homepage
-          </Link>
+         <a href="/" className="text-purple-600 hover:text-purple-700">
+  Return to homepage
+</a>
+
         </div>
       </div>
     );
@@ -124,10 +125,9 @@ const ArticlePage = () => {
         <div className="container mx-auto px-4 lg:px-6">
           <div className="max-w-4xl mx-auto">
             <nav className="flex items-center space-x-2 text-sm text-gray-500 mb-8">
-              <Link to="/" className="hover:text-purple-600">Home</Link>
-              <span>/</span>
-              <Link to="/insights" className="hover:text-purple-600">Insights</Link>
-              <span>/</span>
+              <a href="/" className="hover:text-purple-600">Home</a>
+  <span>/</span>
+  <a href="/insights" className="hover:text-purple-600">Insights</a>
               <span className="text-gray-900">{article.category}</span>
             </nav>
 

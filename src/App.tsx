@@ -18,7 +18,6 @@ import Insights from './pages/Insights'; // Added import
 import ArticlePage from './pages/ArticlePage'; // Added import
 import SocialMediaLinks from './components/SocialMediaLinks'; // Added import
 
-
 const ScrollToTop = () => {
   const { pathname } = useLocation();
   useEffect(() => {
@@ -40,7 +39,7 @@ function App() {
       '/contact',
       '/insights', // Added route
       '/article/:id', // Added route
-      '/service/:serviceId',
+      '/services/:serviceSlug', // Updated route to match Services.tsx
       '/explore/:exploreId',
       '/explore/:exploreId/:sectionId',
       '/industry/:industryId',
@@ -64,7 +63,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/insights" element={<Insights />} /> {/* Added route */}
             <Route path="/article/:id" element={<ArticlePage />} /> {/* Added route */}
-            <Route path="/service/:serviceId" element={<ServiceDetail />} />
+            <Route path="/services/:serviceSlug" element={<ServiceDetail />} /> {/* Updated route */}
             <Route path="/explore/:exploreId" element={<ExploreDetail />} />
             <Route path="/explore/:exploreId/:sectionId" element={<SectionDetail />} />
             <Route path="/industry/:industryId" element={<IndustryDetail />} />
