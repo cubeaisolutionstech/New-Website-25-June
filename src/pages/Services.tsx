@@ -289,7 +289,8 @@ const Services: React.FC = () => {
                     </div>
                    <a
                      href={`/services/${service.slug}`}
-                      className={`inline-flex items-center w-full justify-center bg-gradient-to-r ${service.color} text-white py-4 rounded-xl font-semibold transition-all duration-300 group-hover:scale-105`}> Learn More <ArrowRight className="w-5 h-5 ml-2" /> </a>
+                      className={`inline-flex items-center w-full justify-center bg-gradient-to-r ${service.color} text-white py-4 rounded-xl font-semibold transition-all duration-300 group-hover:scale-105`}> Learn More <ArrowRight className="w-5 h-5 ml-2" /></a>
+
                   </div>
                 </div>
               </motion.div>
