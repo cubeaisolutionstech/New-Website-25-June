@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Users, Target, Award, Globe, Sparkles, Zap, Crown, Trophy, X } from 'lucide-react';
 
-// Define Award interface
+// Define interfaces
 interface Award {
   title: string;
   year: string;
@@ -17,14 +17,28 @@ interface Award {
   }[];
 }
 
-const About = () => {
+interface TeamMember {
+  name: string;
+  title: string;
+  image: string;
+  bio: string;
+}
+
+interface Role {
+  title: string;
+  description: string;
+  color: string;
+  icon: React.ComponentType<{ className: string }>;
+}
+
+const About: React.FC = () => {
   const [selectedAward, setSelectedAward] = useState<Award | null>(null);
   const [activeSummaryIndex, setActiveSummaryIndex] = useState<{ [key: number]: number }>({});
   const [isHovering, setIsHovering] = useState<{ [key: number]: boolean }>({});
 
-  const offices = ['Coimbatore', 'Bangalore', 'Namakkal', 'Kochi', 'Tiruppur', 'UK'];
+  const offices: string[] = ['Coimbatore', 'Bangalore', 'Namakkal', 'Kochi', 'Tiruppur', 'UK'];
 
-  const boardMembers = [
+  const boardMembers: TeamMember[] = [
     {
       name: 'Thiru IRS P.Muthusamy BSc(Agri) BL,MS',
       title: 'EX-IRS',
@@ -39,16 +53,16 @@ const About = () => {
     },
   ];
 
-  const advisors = [
+  const advisors: TeamMember[] = [
     {
       name: 'Dr. Gopala Krishnan',
-      title: 'Ksr CT Principal',
+      title: 'KSR CT Principal',
       image: 'image/gopala.jpeg',
       bio: 'Financial strategist with deep expertise in technology investments.',
     },
     {
       name: 'Dr. Venkateshan',
-      title: 'Ksr CE Principal',
+      title: 'KSR CE Principal',
       image: 'image/venkat.jpg',
       bio: 'Former CTO of leading tech companies with expertise in AI and cloud architecture.',
     },
@@ -66,14 +80,14 @@ const About = () => {
       year: '2025',
       shortDescription: 'Recognized for leading AI innovation across industries.',
       detailedDescription:
-        'Recognized as the Best AI Company of the Year for pioneering transformative AI solutions that empower enterprises through intelligent automation, predictive analytics, and scalable architectures—driving unmatched operational excellence and accelerated growth.',
+        'Recognized as the Best AI Company of the Year for pioneering transformative AI solutions that empower enterprises through intelligent automation, predictive analytics, and scalable architectures driving unmatched operational excellence and accelerated growth.',
       backgroundImage: '/image/award1.jpg',
       modalImages: [
         {
           image: '/image/award1.jpg',
           gradient: 'from-purple-600 to-pink-600',
           summary:
-            'Cubeaisolutions Tech Pvt Ltd receives the "Best AI Company of the Year" award at the New Age Business Summit 2025 ',
+            'CubeAI Solutions Tech Pvt Ltd receives the "Best AI Company of the Year" award at the New Age Business Summit 2025.',
         },
         {
           image: '/image/award2.jpg',
@@ -83,7 +97,7 @@ const About = () => {
         {
           image: '/image/award3.jpg',
           gradient: 'from-pink-600 to-red-600',
-          summary: ' A memorable celebration with industry leaders, innovators, and changemakers.',
+          summary: 'A memorable celebration with industry leaders, innovators, and changemakers.',
         },
       ],
     },
@@ -92,37 +106,37 @@ const About = () => {
       year: '2023',
       shortDescription: 'Celebrated for outstanding contributions to AI technology.',
       detailedDescription:
-        'Celebrated for groundbreaking innovations in artificial intelligence—delivering state-of-the-art algorithms and intelligent systems that have redefined industry standards in machine learning, automation, and enterprise transformation.',
+        'Celebrated for groundbreaking innovations in artificial intelligence delivering state of the art algorithms and intelligent systems that have redefined industry standards in machine learning, automation, and enterprise transformation.',
       backgroundImage: '/image/award5.png',
       modalImages: [
         {
           image: '/image/Achivements4.jpg',
           gradient: 'from-blue-600 to-cyan-500',
           summary:
-            ' Ms. Santhiya P (CHRO) and supported by Mr. Shyam Sundar, the event saw 100+ talented students participate in interviews for roles in AI and IoT.',
+            'Ms. Santhiya P (CHRO) and supported by Mr. Shyam Sundar, the event saw 100+ talented students participate in interviews for roles in AI and IoT.',
         },
         {
           image: '/image/Achivements1.jpg',
           gradient: 'from-cyan-500 to-teal-600',
           summary:
-            'Exciting day at Cubeaisolutions Tech Pvt Ltd as we welcomed Supreme Court Advocate V N Subramaniam to our Cyber Tech Innovation (CyTI) Centre at KSR College of Engineering.',
+            'Exciting day at CubeAI Solutions Tech Pvt Ltd as we welcomed Supreme Court Advocate V N Subramaniam to our Cyber Tech Innovation (CyTI) Centre at KSR College of Engineering.',
         },
         {
           image: '/image/Achivements5.jpg',
           gradient: 'from-teal-600 to-blue-600',
           summary:
-            'Cubeaisolutions Tech Pvt Ltd was proud to speak at India’s First Vibe Coding Summit on May 10, 2025, held at Sona Incubation Foundation, Salem.',
+            'CubeAI Solutions Tech Pvt Ltd was proud to speak at India’s First Vibe Coding Summit on May 10, 2025, held at Sona Incubation Foundation, Salem.',
         },
         {
           image: '/image/Achivements2.jpg',
           gradient: 'from-blue-600 to-cyan-500',
           summary:
-            'Entrepreneurship Development Programme on Media Drone Operations, organized by EDII-TN, Government of Tamil Nadu, in Chennai ',
+            'Entrepreneurship Development Programme on Media Drone Operations, organized by EDII-TN, Government of Tamil Nadu, in Chennai.',
         },
         {
           image: '/image/award7.webp',
           gradient: 'from-blue-600 to-cyan-500',
-          summary: 'Grateful for our leaders and proud of the amazing individuals driving Cubeaisolutions Tech Pvt Ltd forward.',
+          summary: 'Grateful for our leaders and proud of the amazing individuals driving CubeAI Solutions Tech Pvt Ltd forward.',
         },
         {
           image: '/image/award8.webp',
@@ -136,26 +150,27 @@ const About = () => {
       title: 'Joint Venture',
       year: '2022',
       shortDescription: 'Acknowledged for strategic AI partnerships driving innovation.',
-      detailedDescription: 'CubeAI and Genufy TechWorks join hands to build AI-powered solutions in Salesforce, healthcare, and digital transformation.',
+      detailedDescription:
+        'CubeAI and Genufy TechWorks join hands to build AI-powered solutions in Salesforce, healthcare, and digital transformation.',
       backgroundImage: '/image/coll2.jpg',
       modalImages: [
         {
           image: '/image/coll3.jpg',
           gradient: 'from-amber-500 to-orange-500',
           summary:
-            'Cubeaisolutions Tech Pvt Ltd has signed an MoU with Genufy TechWorks to collaborate on AI-driven solutions in Salesforce development, hospital management systems.',
+            'CubeAI Solutions Tech Pvt Ltd has signed an MoU with Genufy TechWorks to collaborate on AI-driven solutions in Salesforce development, hospital management systems.',
         },
         {
           image: '/image/coll1.jpg',
           gradient: 'from-orange-500 to-red-500',
           summary:
-            'CubeAISolutions Tech Pvt Ltd and Poultry Tech have launched a joint venture, CubeAI Live Matrix, to revolutionize the poultry industry with AI-driven solutions.',
+            'CubeAI Solutions Tech Pvt Ltd and Poultry Tech have launched a joint venture, CubeAI Live Matrix, to revolutionize the poultry industry with AI-driven solutions.',
         },
         {
           image: '/image/mipi1.jpg',
           gradient: 'from-red-500 to-amber-500',
           summary:
-            'Exciting news! CubeAISolutions Tech Pvt Ltd has signed an MoU with MiPhi Semiconductors Pvt Ltd, led by COO Prasad Balakrishnan.',
+            'Exciting news! CubeAI Solutions Tech Pvt Ltd has signed an MoU with MiPhi Semiconductors Pvt Ltd, led by COO Prasad Balakrishnan.',
         },
       ],
     },
@@ -193,7 +208,7 @@ const About = () => {
   };
 
   // Function to get unique description title based on award title
-  const getDescriptionTitle = (awardTitle: string) => {
+  const getDescriptionTitle = (awardTitle: string): string => {
     switch (awardTitle) {
       case 'Best AI Company of the Year 2025':
         return 'Industry Leadership Recognition';
@@ -226,17 +241,17 @@ const About = () => {
 
   return (
     <div className="min-h-screen pt-20 bg-gray-50">
-     <Helmet>
-  <title>CubeAI Solutions - AI Innovation & Leadership</title>
-  <meta
-    name="description"
-    content="Discover CubeAI Solutions' journey in AI innovation, leadership, and global transformation. Learn about our mission, vision, expert team, and prestigious awards."
-  />
-  <meta
-    name="keywords"
-    content="CubeAI Solutions, AI innovation, leadership team, mission, vision, global offices, awards, AI technology, business transformation"
-  />
-</Helmet>
+      <Helmet>
+        <title>CubeAI Solutions - Agentic AI Innovation</title>
+        <meta
+          name="description"
+          content="Discover CubeAI Solutions' leadership in Agentic AI, empowering enterprises with intelligent automation, generative AI, and sustainable business transformation."
+        />
+        <meta
+          name="keywords"
+          content="CubeAI Solutions, Agentic AI, generative AI, intelligent automation, enterprise AI, business transformation, AI innovation"
+        />
+      </Helmet>
       {/* Hero Section */}
       <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0">
@@ -247,16 +262,16 @@ const About = () => {
           <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-20">
             <div className="inline-flex items-center px-6 py-3 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 mb-8">
               <Sparkles className="w-5 h-5 text-white mr-2" />
-              <span className="text-white font-medium">About Our Journey</span>
+              <span className="text-white font-medium">Our AI Journey</span>
             </div>
             <h1 className="text-4xl md:text-7xl font-bold text-white mb-8">
               About <span className="text-blue-400">CubeAI Solutions</span>
             </h1>
             <h2 className="text-2xl md:text-3xl font-semibold text-white mb-6">
-              Leading AI Innovation for Global Businesses
+              Empowering Enterprises with Agentic AI for the Future
             </h2>
             <p className="text-xl text-gray-200 max-w-4xl mx-auto leading-relaxed">
-              We are a leading AI solutions company dedicated to transforming businesses through innovative technology and intelligent automation across the globe.
+              At CubeAI Solutions, we lead the transformation from conventional AI to Agentic AI building self directed, intelligent systems that autonomously analyze, decide, and act to achieve enterprise goals. From generative AI innovations to AI automation tools, we are redefining what’s possible for industries worldwide.
             </p>
           </motion.div>
         </div>
@@ -275,10 +290,16 @@ const About = () => {
                 <div className="w-16 h-16 rounded-xl bg-blue-600 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
                   <Target className="w-8 h-8 text-white" />
                 </div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Mission for AI-Driven Transformation</h2>
+                <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Mission</h2>
                 <p className="text-gray-600 leading-relaxed text-lg">
-                  At Cube AI Solutions, our mission is to equip businesses across the globe with next-generation artificial intelligence solutions that accelerate digital transformation, enhance operational efficiency, and foster long-term, sustainable growth. We are committed to democratizing advanced technologies, making powerful AI tools intuitive, scalable, and accessible to organizations of all sizes—fueling innovation at every stage of the business lifecycle.
+                  To revolutionize industries by integrating Agentic AI, generative AI, and intelligent automation into every layer of enterprise operations. We aim to empower organizations to:
                 </p>
+                <ul className="text-gray-600 leading-relaxed text-lg mt-4 list-disc list-inside">
+                  <li>Automate with precision</li>
+                  <li>Adapt to changing markets instantly</li>
+                  <li>Accelerate growth through AI-driven decision-making</li>
+                  <li>Achieve sustainable business productivity using AI</li>
+                </ul>
               </div>
             </motion.div>
             <motion.div
@@ -291,10 +312,16 @@ const About = () => {
                 <div className="w-16 h-16 rounded-xl bg-emerald-600 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
                   <Award className="w-8 h-8 text-white" />
                 </div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Vision for Intelligent Technology</h2>
+                <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Vision</h2>
                 <p className="text-gray-600 leading-relaxed text-lg">
-                  To become the world's foremost leader in AI-powered business transformation, shaping a future where intelligent technology and human ingenuity converge to solve complex challenges, accelerate innovation, and unlock boundless opportunities for growth.
+                  To become the global leader in Agentic AI innovation, enabling businesses to operate as intelligent, adaptive ecosystems in the Industry 4.0 and Industry 5.0 era. We envision a world where:
                 </p>
+                <ul className="text-gray-600 leading-relaxed text-lg mt-4 list-disc list-inside">
+                  <li>Enterprises use autonomous AI agents for operational excellence</li>
+                  <li>Generative AI fuels creativity, innovation, and growth</li>
+                  <li>Human expertise and AI precision work together for sustainable progress</li>
+                  <li>Every organization gains the tools to thrive in the AI-driven economy</li>
+                </ul>
               </div>
             </motion.div>
           </div>
@@ -560,29 +587,21 @@ const About = () => {
                 className="group relative cursor-pointer"
               >
                 <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-blue-600 rounded-3xl blur-xl opacity-25 group-hover:opacity-40 transition-opacity duration-500" />
-                {/* Card with Background Image */}
                 <div className="relative bg-white/10 backdrop-blur-xl rounded-3xl overflow-hidden h-full border border-white/20 min-w-[400px] min-h-[380px]">
-                  {/* Background Image */}
                   <div className="absolute inset-0">
                     <img src={award.backgroundImage} alt={award.title} className="w-full h-full object-cover" />
-                    {/* Dark overlay for text readability */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30" />
                   </div>
-                  {/* Content overlay */}
                   <div className="relative z-10 p-8 h-full flex flex-col justify-end">
-                    {/* Bottom section with main content */}
                     <div>
-                      {/* Title */}
                       <motion.h3 className="text-2xl font-bold text-white mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-purple-200 transition-all duration-500">
                         {award.title}
                       </motion.h3>
-                      {/* Description */}
                       <p className="text-gray-200 leading-relaxed text-sm group-hover:text-white transition-colors duration-500">
                         {award.shortDescription}
                       </p>
                     </div>
                   </div>
-                  {/* Animated border effect */}
                   <motion.div
                     className="absolute inset-0 rounded-3xl"
                     animate={{
@@ -598,7 +617,6 @@ const About = () => {
                       ease: 'linear',
                     }}
                   />
-                  {/* Hover gradient overlay */}
                   <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-purple-600 to-blue-600 opacity-0 group-hover:opacity-10 transition-opacity duration-500 blur-xl" />
                 </div>
               </motion.div>
@@ -647,16 +665,13 @@ const About = () => {
                 className="bg-white rounded-3xl max-w-8xl w-full max-h-[100vh] overflow-y-auto relative"
                 onClick={(e) => e.stopPropagation()}
               >
-                {/* Close Button */}
                 <button
                   onClick={() => setSelectedAward(null)}
                   className="absolute top-6 right-6 z-10 w-12 h-12 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors duration-200"
                 >
                   <X className="w-6 h-6 text-gray-600" />
                 </button>
-                {/* Modal Content */}
                 <div className="p-8">
-                  {/* Header */}
                   <div className="flex items-center mb-8">
                     <div className="w-20 h-20 rounded-2xl bg-gradient-to-r from-purple-600 to-blue-600 flex items-center justify-center mr-6 shadow-xl">
                       <Trophy className="w-10 h-10 text-white" />
@@ -665,7 +680,6 @@ const About = () => {
                       <h2 className="text-3xl font-bold text-gray-900">{selectedAward.title}</h2>
                     </div>
                   </div>
-                  {/* Images Grid with Carousel */}
                   <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
                     {selectedAward.modalImages.map((modalImage, index) => (
                       <motion.div
@@ -680,11 +694,8 @@ const About = () => {
                           setActiveSummaryIndex((prev) => ({ ...prev, [index]: 0 }));
                         }}
                       >
-                        {/* Image Container */}
                         <div className="relative h-[300px] overflow-hidden">
-                          {/* Background gradient */}
                           <div className={`absolute inset-0 bg-gradient-to-r ${modalImage.gradient} opacity-30`} />
-                          {/* Image */}
                           <div className="relative z-10 h-full flex">
                             <div className="w-full relative">
                               <motion.img
@@ -698,7 +709,6 @@ const About = () => {
                               <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-black/10" />
                             </div>
                           </div>
-                          {/* Carousel Slide */}
                           <AnimatePresence>
                             {isHovering[index] && (
                               <motion.div
@@ -723,13 +733,11 @@ const About = () => {
                               </motion.div>
                             )}
                           </AnimatePresence>
-                          {/* Hover overlay */}
                           <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
                         </div>
                       </motion.div>
                     ))}
                   </div>
-                  {/* Award Description */}
                   <div className="space-y-6">
                     <div>
                       <h3 className="text-xl font-semibold text-gray-900 mb-3">{getDescriptionTitle(selectedAward.title)}</h3>
@@ -757,33 +765,33 @@ const About = () => {
               Our Expert AI and Technology Team
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Our diverse team of AI specialists, engineers, and consultants brings together decades of experience in cutting-edge technology and business transformation.
+              Our diverse team of AI specialists, engineers, and consultants brings together expertise in Agentic AI, generative AI, and intelligent automation to drive enterprise transformation.
             </p>
           </motion.div>
           <div className="grid md:grid-cols-3 gap-8">
-            {[
+            {([
               {
                 title: 'AI Researchers',
                 description:
-                  'Our team comprises PhD-level AI scientists and innovators specializing in machine learning, deep learning, and cutting-edge artificial intelligence research. With a strong track record of peer-reviewed publications, patents, and real-world breakthroughs, they drive our mission to turn pioneering ideas into scalable, intelligent solutions.',
+                  'Our AI research division pioneers advancements in Agentic AI, deep learning, natural language processing, and generative AI. They develop intelligent models that think, plan, and act autonomously, enabling next-generation enterprise applications.',
                 color: 'from-blue-600 to-indigo-700',
                 icon: Zap,
               },
               {
                 title: 'Software Engineers',
                 description:
-                  'Our team of full-stack software engineers excels in building scalable, enterprise-grade applications powered by cloud-native architectures. Blending technical depth with user-centered thinking, they transform complex requirements into seamless digital experiences that drive performance, security, and long-term growth.',
+                  'Our software engineering team turns complex ideas into scalable, high-performance AI automation tools. From IoT-enabled automation systems to generative AI-powered analytics platforms, they build solutions that adapt, learn, and evolve with your business.',
                 color: 'from-emerald-600 to-teal-700',
                 icon: Target,
               },
               {
                 title: 'Business Consultants',
                 description:
-                  'Our seasoned business consultants serve as trusted strategic advisors, guiding organizations through digital transformation with deep industry insight and proven, agile methodologies. We collaborate closely with leadership teams to align technology with business goals, unlocking innovation, driving operational efficiency, and delivering measurable impact.',
+                  'Our AI business consultants bridge the gap between technology and business strategy. They design AI-driven transformation roadmaps that maximize ROI, streamline processes, and unlock new revenue streams through enterprise AI solutions.',
                 color: 'from-red-600 to-rose-700',
                 icon: Award,
               },
-            ].map((role, index) => (
+            ] as Role[]).map((role, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 50 }}

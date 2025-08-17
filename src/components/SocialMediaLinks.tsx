@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Linkedin, Instagram, Twitter, Facebook } from 'lucide-react';
+import { Linkedin, Instagram, Facebook } from 'lucide-react';
 
 const SocialMediaLinks = () => {
   const socialLinks = [
@@ -18,7 +18,6 @@ const SocialMediaLinks = () => {
       color: '#e13030ff',
       bgColor: 'hover:bg-gradient-to-br hover:from-[#E1306C] hover:via-[#F56040] hover:to-[#FCAF45]',
     },
-   
     {
       name: 'Facebook',
       icon: Facebook,
@@ -29,7 +28,7 @@ const SocialMediaLinks = () => {
   ];
 
   return (
-    <div className="fixed top-1/2 right-4 transform -translate-y-1/2 z-50 flex flex-col space-y-6">
+    <div className="fixed top-1/2 right-4 transform -translate-y-1/2 z-50 flex flex-col space-y-6 hidden md:block">
       {socialLinks.map((link, index) => (
         <motion.div
           key={link.name}
@@ -56,7 +55,7 @@ const SocialMediaLinks = () => {
             whileTap={{ scale: 0.95 }}
             aria-label={`Visit our ${link.name} page`}
           >
-            <link.icon className="w-4 h-4 text-gray-700 group-hover:text-white transition-colors duration-300" />
+            <link.icon className="w-5 h-5 text-gray-700 group-hover:text-white transition-colors duration-300" />
             
             {/* Animated line effect */}
             <motion.div
