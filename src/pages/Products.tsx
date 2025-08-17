@@ -31,46 +31,72 @@ const Products = () => {
     {
       id: 'andromeda-crm',
       title: 'Andromeda CRM',
-      description: 'Revolutionary customer relationship management with AI-powered insights spanning across your entire customer galaxy.',
+      description: 'Andromeda CRM is an Agentic AI-powered customer relationship management platform that autonomously manages, analyzes, and enhances customer interactions. By leveraging generative AI, predictive intelligence, and AI automation tools, it provides businesses with actionable insights, smart engagement, and faster decision-making — all in real time.',
       icon: Users,
       color: 'from-blue-600 to-indigo-700',
       bgColor: 'bg-blue-50/10',
       iconBg: 'bg-blue-600',
       image: 'image/crm.webp',
-      features: ['360° Customer View', 'Predictive Analytics', 'Automated Workflows', 'Real-time Reporting'],
+      features: [
+        'Intelligent Lead Prioritization ',
+        'Adaptive Customer Journeys ',
+        'Smart Interaction Summaries',
+        'Autonomous Data Enrichment ',
+        'Sentiment & Engagement Analysis ',
+        'Proactive Sales Coaching ',
+        'Multi-Channel Integration ',
+      ],
     },
     {
       id: 'orion-erp',
       title: 'Orion ERP',
-      description: 'Comprehensive enterprise resource planning that connects every constellation of your business operations.',
+      description: 'Experience a new era of ERP where generative AI, AI automation tools, and enterprise AI solutions transform every workflow into a self-optimizing system. Orion ERP seamlessly integrates finance, operations, HR, and supply chain into one intelligent ecosystem — unlocking unprecedented business productivity using AI.',
       icon: Building2,
       color: 'from-emerald-600 to-teal-700',
       bgColor: 'bg-emerald-50/10',
       iconBg: 'bg-emerald-600',
       image: 'image/werp.jpg',
-      features: ['Integrated Modules', 'Cloud-Native', 'Real-time Data', 'Scalable Architecture'],
+      features: [
+        'Adaptive Process Intelligence ',
+        'Predictive Resource Management ',
+        'AI-Driven Decision Support ',
+        'Hyper-Scalable Infrastructure ',
+        'Unified Data Ecosystem ',
+      ],
     },
     {
       id: 'nebula-cdm',
       title: 'Nebula CDM',
-      description: 'Advanced customer data management with intelligent processing that illuminates insights from data clouds.',
+      description: 'Nebula CDM revolutionizes customer data management by integrating Agentic AI to autonomously collect, clean, and analyze data across all channels. It transforms scattered datasets into a single, intelligent knowledge hub that drives business productivity using AI and ensures enterprise-grade compliance.',
       icon: Database,
       color: 'from-red-600 to-rose-700',
       bgColor: 'bg-red-50/10',
       iconBg: 'bg-red-600',
       image: 'image/cdn.webp',
-      features: ['Data Unification', 'Privacy Compliance', 'AI Processing', 'API Integration'],
+      features: [
+        'Autonomous Data Orchestration ',
+        'Context-Aware Data Enrichment ',
+        'Intelligent Data Governance ',
+        'Seamless Cross-Platform Connectivity ',
+        'Real-Time Insight Generation '
+      ],
     },
     {
       id: 'cosmos-orchestration',
       title: 'Cosmos Orchestration',
-      description: 'Seamless workflow automation and process orchestration across your entire enterprise cosmos.',
+      description: 'Cosmos Orchestration leverages Agentic AI to autonomously design, optimize, and manage end-to-end enterprise workflows. It ensures seamless process coordination, enabling your systems, applications, and teams to work in perfect synchronization for maximum efficiency and agility.',
       icon: Workflow,
       color: 'from-orange-600 to-amber-700',
       bgColor: 'bg-orange-50/10',
       iconBg: 'bg-orange-600',
       image: 'image/General.webp',
-      features: ['Workflow Automation', 'Process Integration', 'Event-Driven Architecture', 'Multi-System Sync'],
+      features: [
+        'Autonomous Workflow Design ',
+        'Intelligent Process Optimization',
+        'Context-Aware Event Handling ',
+        'Unified Orchestration Hub ',
+        'Scalable Multi-Environment Sync',
+      ],
     },
   ];
 
@@ -153,21 +179,20 @@ const Products = () => {
       <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0">
           <motion.img
-  src="image/producti.webp"
-  alt="Products Background"
-  width={1600} // Set based on actual image size or container width
-  height={900} // Maintain proper aspect ratio
-  loading="lazy" // Or "lazy" if below the fold
-  decoding="async"
-  className="w-full h-full object-cover"
-  initial={{ scale: 1.1, opacity: 0 }}
-  animate={{ scale: 1, opacity: 1 }}
-  transition={{ duration: 1.5, ease: 'easeOut' }}
-  onError={(e) => {
-    e.currentTarget.src = ''; // Optional fallback
-  }}
-/>
-
+            src="image/producti.webp"
+            alt="Products Background"
+            width={1600}
+            height={900}
+            loading="lazy"
+            decoding="async"
+            className="w-full h-full object-cover"
+            initial={{ scale: 1.1, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 1.5, ease: 'easeOut' }}
+            onError={(e) => {
+              e.currentTarget.src = '/fallback.webp';
+            }}
+          />
           <div className="absolute inset-0 bg-black/50" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -255,21 +280,20 @@ const Products = () => {
                   />
                   {/* Product Image */}
                   <div className="mb-6 overflow-hidden rounded-xl">
-                   <motion.img
-  src={product.image}
-  alt={product.title}
-  width={400} // Or actual width of the image/card
-  height={128} // h-32 = 8rem = 128px
-  loading="lazy" // Lazy-load since it's a thumbnail (not above-the-fold hero)
-  decoding="async"
-  className="w-full h-32 object-cover"
-  whileHover={{ scale: 1.15 }}
-  transition={{ duration: 0.5 }}
-  onError={(e) => {
-    e.currentTarget.src = '/fallback.webp'; // Use a valid fallback image
-  }}
-/>
-
+                    <motion.img
+                      src={product.image}
+                      alt={product.title}
+                      width={400}
+                      height={128}
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full h-32 object-cover"
+                      whileHover={{ scale: 1.15 }}
+                      transition={{ duration: 0.5 }}
+                      onError={(e) => {
+                        e.currentTarget.src = '/fallback.webp';
+                      }}
+                    />
                   </div>
                   {/* Icon and Stars */}
                   <div className="flex items-start justify-between mb-8">
