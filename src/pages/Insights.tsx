@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { ArrowRight, TrendingUp, Share2 } from 'lucide-react';
+import { ArrowRight, Share2 } from 'lucide-react';
 import { getArticlesByCategory } from '../data/articles';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -43,18 +43,15 @@ const Insights = () => {
       <div className="container mx-auto px-4 lg:px-6 relative z-10">
         {/* Header */}
         <div className="text-center mb-16" data-aos="fade-down">
-          <div className="inline-flex items-center px-4 py-2 bg-purple-100 rounded-full text-purple-700 font-medium mb-6">
-            <TrendingUp className="w-4 h-4 mr-2" />
-            CubeAI Insights
-          </div>
+         
           <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-            Knowledge{' '}
+              CubeAI{' '}
             <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
               Hub
             </span>
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Unlock deep insights, predictive trends, and transformative strategies powered by AI, machine learning, and next-gen innovation.
+          <p className="text-xl text-gray max-w-3xl mx-auto leading-relaxed">
+Empower your decisions with AI-driven insights, forecast future trends with precision, and revolutionize strategies through next-gen innovation.
           </p>
         </div>
 

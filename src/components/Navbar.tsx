@@ -88,7 +88,7 @@ const Navbar: React.FC<NavbarProps> = () => {
                 <Link
                   key={item.name}
                   to={item.path}
-                  className={`relative text-gray-800 hover:text-blue-600 transition-all duration-300 font-medium ${
+                  className={`relative  text-lg text-gray-800 hover:text-blue-600 transition-all duration-300 font-medium ${
                     location.pathname === item.path ? 'text-blue-600' : ''
                   }`}
                   aria-current={location.pathname === item.path ? 'page' : undefined}

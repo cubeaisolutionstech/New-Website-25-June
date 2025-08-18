@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import {
   ArrowRight,
-  CheckCircle,
+  Check, // Replaced CheckCircle with Check for a simpler tick icon
   Sparkles,
   Mail,
   User,
@@ -58,8 +58,15 @@ const Services: React.FC = () => {
       title: 'AIMA',
       subtitle: 'Artificial Intelligence, Machine Learning & Agent',
       color: 'from-blue-600 to-indigo-700',
-      description: 'Advanced AI and ML solutions for Industry 4.0 & 5.0, legacy modernization, and intelligent automation.',
-      features: ['Industry 4.0 & 5.0', 'Legacy System Modernization', 'Multi-Agent Systems', 'Deep Learning Models', 'Autonomous Decision-Making', 'AI-Driven Optimization'],
+      description: 'AIMA harnesses the power of Agentic AI, machine learning, and autonomous multi-agent systems to revolutionize Industry 4.0 and 5.0 operations. From intelligent process automation to future-ready modernization, AIMA enables enterprises to achieve self-optimizing, adaptive, and scalable operations that drive measurable business value.',
+      features: [
+        'Adaptive Industrial Intelligence',
+        'Autonomous Production Optimization',
+        'Cognitive Multi-Agent Collaboration',
+        'Intelligent Legacy Revitalization',
+        'Predictive & Prescriptive Analytics',
+        'Scalable AI Infrastructure',
+      ],
       bgImage: '/image/saima.png',
       gradient: 'bg-gradient-to-br from-blue-600/10 to-indigo-700/10',
     },
@@ -68,8 +75,15 @@ const Services: React.FC = () => {
       title: 'AIDA',
       subtitle: 'Artificial Intelligence & Data Analysis',
       color: 'from-emerald-600 to-teal-700',
-      description: 'Comprehensive data analytics solutions including medical data analytics and SAAS platforms.',
-      features: ['Predictive Analytics', 'Data Visualization', 'Big Data Analytics', 'AI-Powered Decision Making', 'Industrial Data Analytics', 'Anomaly Detection'],
+      description: 'We empower organizations with Agentic AI–driven data analytics that transform raw information into actionable intelligence. From medical data analysis to enterprise SaaS platforms, our solutions leverage autonomous data agents, predictive modeling, and context-aware analytics to deliver insights that drive precision, speed, and profitability.',
+      features: [
+        'Context-Aware Data Agents',
+        'Real-Time Data Processing',
+        'Cognitive Pattern Recognition',
+        'Adaptive Anomaly Intelligence',
+        'Cross-Domain Data Integration',
+        'Scalable Analytics Ecosystem',
+      ],
       bgImage: '/image/saida.webp',
       gradient: 'bg-gradient-to-br from-emerald-600/10 to-teal-700/10',
     },
@@ -78,8 +92,15 @@ const Services: React.FC = () => {
       title: 'VisionAI',
       subtitle: 'AI Solutions',
       color: 'from-violet-600 to-purple-700',
-      description: 'Intelligent chatbot solutions and computer vision applications.',
-      features: ['Chatbot Solutions', 'Computer Vision', 'NLP', 'Image Recognition', 'Automated Surveillance & Monitoring'],
+      description: 'Our VisionAI solutions harness Agentic AI to deliver next-generation visual intelligence and interactive automation. From advanced multimodal understanding to real-time visual decision making, we design systems that see, interpret, and act with human like perception empowering enterprises with faster, smarter, and more reliable outcomes.',
+      features: [
+        'Autonomous Visual Agents',
+        'Multimodal Interaction',
+        'Edge-Based Image Analytics',
+        'Behavioral Pattern Detection',
+        'Adaptive Object & Scene Understanding',
+        'Vision-Driven Process Automation',
+      ],
       bgImage: '/image/svision.jpg',
       gradient: 'bg-gradient-to-br from-violet-600/10 to-purple-700/10',
     },
@@ -88,8 +109,15 @@ const Services: React.FC = () => {
       title: 'CyTI',
       subtitle: 'Cyber Tech Innovation',
       color: 'from-red-600 to-rose-700',
-      description: 'Cutting-edge cybersecurity solutions with IoT services and auto-sizing capabilities.',
-      features: ['IoT Services', 'Zero Trust Architecture', 'Threat Detection', 'Security Monitoring', 'Auto-Scaling Security Infrastructure'],
+      description: 'CyTI empowers enterprises with Agentic AI driven cybersecurity that adapts, predicts, and neutralizes threats in real time. From smart IoT defense to self-optimizing security frameworks, our solutions ensure resilient, future-ready protection for the Industry 4.0 and 5.0 era.',
+      features: [
+        'Autonomous Threat Response',
+        'AI-Enhanced IoT Security',
+        'Predictive Vulnerability Analysis',
+        'Self-Healing Security Systems',
+        'Quantum-Resilient Encryption',
+        'Continuous Adaptive Risk Management (CARM)',
+      ],
       bgImage: '/image/scity.jpg',
       gradient: 'bg-gradient-to-br from-red-600/10 to-rose-700/10',
     },
@@ -98,8 +126,15 @@ const Services: React.FC = () => {
       title: 'Cubebotics',
       subtitle: 'Embedded Systems & IoT',
       color: 'from-orange-600 to-amber-700',
-      description: 'Innovative embedded systems, IoT solutions, and advanced drone technology.',
-      features: ['Embedded Solutions', 'Drone Technology', 'IoT Integration', 'Drone Automation', 'Real-Time Embedded Applications'],
+      description: 'Cubebotics delivers next-generation embedded systems, autonomous IoT ecosystems, and intelligent drone solutions powered by Agentic AI. Our technology transforms devices from passive data collectors into self optimizing, decision making systems, enabling industries to achieve real-time automation, predictive operations, and seamless system orchestration.',
+      features: [
+        'Edge AI Processing',
+        'Swarm-Enabled Drone Networks',
+        'Context-Aware IoT Devices',
+        'Autonomous Machine-to-Machine (M2M) Communication',
+        'Ultra-Low Power Embedded Design',
+        'Predictive Maintenance Intelligence',
+      ],
       bgImage: '/image/scubebotics.jpg',
       gradient: 'bg-gradient-to-br from-orange-600/10 to-amber-700/10',
     },
@@ -108,8 +143,15 @@ const Services: React.FC = () => {
       title: 'DCE',
       subtitle: 'Data & Cloud Engineering',
       color: 'from-cyan-600 to-blue-700',
-      description: 'Scalable data engineering and cloud solutions for modern enterprises.',
-      features: ['Data Engineering', 'Cloud Engineering', 'DevOps & Automation', 'Infrastructure Design', 'Multi-Cloud & Hybrid Deployments', 'Cloud Infrastructure Management'],
+      description: 'Cube AI Solutions’ DCE service delivers Agentic AI powered data engineering and intelligent cloud transformation for enterprises seeking scalability, speed, and resilience. By integrating autonomous data pipelines, self-optimizing cloud infrastructures, and predictive workload orchestration, we help businesses achieve faster insights, cost efficiency, and future-proof digital ecosystems.',
+      features: [
+        'Autonomous Data Pipelines',
+        'Agentic Cloud Orchestration',
+        'Serverless & Event-Driven Architectures',
+        'Intelligent Data Governance',
+        'Predictive Infrastructure Scaling',
+        'Cross-Platform Cloud Interoperability',
+      ],
       bgImage: '/image/sdec.webp',
       gradient: 'bg-gradient-to-br from-cyan-600/10 to-blue-700/10',
     },
@@ -118,8 +160,17 @@ const Services: React.FC = () => {
       title: 'Tech Solution',
       subtitle: 'Future Technology & Services',
       color: 'from-indigo-600 to-purple-700',
-      description: 'Comprehensive technology solutions including web development, app development, and business consulting.',
-      features: ['Backend Development', 'Cross-Platform App Development', 'Strategic IT Consulting', 'Digital Transformation Services', 'UI/UX Design & Prototyping', 'E-Commerce & CMS Integration', 'SEO & Digital Marketing', 'Cloud-Ready Business Solutions'],
+      description: 'At Cube AI Solutions, our Agentic AI-powered technology services go beyond traditional development by enabling self-optimizing applications, autonomous digital experiences, and data-driven business strategies. We deliver future-ready web, mobile, and enterprise solutions that accelerate growth, enhance customer engagement, and drive digital transformation for Industry 4.0 and 5.0 enterprises.',
+      features: [
+        'Intelligent Web Platforms',
+        'AI-Augmented Mobile Apps',
+        'Autonomous Business Process Consulting',
+        'Next-Gen Digital Experience Design',
+        'Voice & Conversational Interfaces',
+        'Data-Driven Marketing Automation',
+        'API-First & Microservices Architecture',
+        'Cloud-Native Enterprise Solutions',
+      ],
       bgImage: '/image/stech.jpg',
       gradient: 'bg-gradient-to-br from-indigo-600/10 to-purple-700/10',
     },
@@ -243,7 +294,7 @@ const Services: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             className="text-center mb-20"
           >
-            <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl md:text-6xl font-bold text-black-600 mb-6"> {/* Changed to text-green-600 */}
               Artificial Intelligence and Technology Services
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
@@ -275,21 +326,24 @@ const Services: React.FC = () => {
                   <div className="p-10">
                     <h3 className="text-2xl font-bold text-gray-900 mb-2">{service.title}</h3>
                     <p className="text-blue-600 mb-6 font-medium">{service.subtitle}</p>
-                    <p className="text-gray-600 mb-8 leading-relaxed">{service.description}</p>
+                    <p className="text-black mb-8 leading-relaxed">{service.description}</p> {/* Changed to text-black */}
                     <div className="mb-8">
-                      <h4 className="text-lg font-semibold text-gray-900 mb-4">Key Features:</h4>
+                      <h4 className="text-lg font-semibold text-purple-600 mb-4">Key Features:</h4> {/* Changed to text-purple-600 */}
                       <div className="space-y-3">
                         {service.features.map((feature, featureIndex) => (
-                          <div key={featureIndex} className="flex items-center text-gray-600">
-                            <CheckCircle className="w-5 h-5 text-blue-600 mr-3 flex-shrink-0" />
+                          <div key={featureIndex} className="flex items-center text-black"> {/* Changed to text-black */}
+                            <Check className="w-5 h-5 text-yellow-600 mr-3 flex-shrink-0" /> {/* Replaced CheckCircle with Check and set to text-yellow-600 */}
                             <span>{feature}</span>
                           </div>
                         ))}
                       </div>
                     </div>
-                   <a
-                     href={`/services/${service.slug}`}
-                      className={`inline-flex items-center w-full justify-center bg-gradient-to-r ${service.color} text-white py-4 rounded-xl font-semibold transition-all duration-300 group-hover:scale-105`}> Learn More <ArrowRight className="w-5 h-5 ml-2" /> </a>
+                    <a
+                      href={`/services/${service.slug}`}
+                      className={`inline-flex items-center w-full justify-center bg-gradient-to-r ${service.color} text-white py-4 rounded-xl font-semibold transition-all duration-300 group-hover:scale-105`}
+                    >
+                      Get Details <ArrowRight className="w-5 h-5 ml-2" />
+                    </a>
                   </div>
                 </div>
               </motion.div>
@@ -306,7 +360,7 @@ const Services: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             className="text-center mb-20"
           >
-            <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl md:text-6xl font-bold text-green-600 mb-6"> {/* Changed to text-green-600 */}
               Our AI Solution Development Process
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">

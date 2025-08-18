@@ -31,7 +31,7 @@ import {
   Code,
   Briefcase,
   Megaphone,
-  Camera, // Added Camera to imports
+  Camera,
 } from 'lucide-react';
 
 const ServiceDetail = () => {
@@ -70,32 +70,44 @@ const ServiceDetail = () => {
   const serviceData = {
     'artificial-intelligence-machine-learning-agent': {
       slug: 'artificial-intelligence-machine-learning-agent',
-      title: 'AIMA - Artificial Intelligence, Machine Learning & Agent',
-      subtitle: 'Revolutionizing Industries with Intelligent Automation',
-      color: 'from-blue-500 to-indigo-600',
+      title: 'AIMA – Advanced Industrial & Manufacturing Automation Powered by Agentic AI',
+      subtitle: 'Empowering Industries with Autonomous, Intelligent, and Adaptive Solutions',
+      color: 'from-blue-600 to-indigo-700',
       icon: Sparkles,
       sections: [
         {
-          title: 'Industry 4.0 & 5.0',
+          title: 'Introduction to AIMA',
+          icon: Brain,
+          content: (
+            <div className="space-y-6">
+              <p className="text-lg text-gray-700 leading-relaxed">
+                In a world where <span className="font-bold text-blue-600">digital transformation</span> is no longer optional, businesses require more than just conventional AI — they need self-directed, decision-making <span className="font-bold text-blue-600">AI agents</span> that operate with speed, accuracy, and autonomy.
+              </p>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                <span className="font-bold text-blue-600">Cube AI Solutions</span> introduces AIMA (Advanced Industrial & Manufacturing Automation) — powered by <span className="font-bold text-blue-600">Agentic AI</span>, <span className="font-bold text-blue-600">generative AI</span>, and <span className="font-bold text-blue-600">AI automation tools</span> — to transform operations, boost <span className="font-bold text-blue-600">business productivity using AI</span>, and drive sustainable growth.
+              </p>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                Our <span className="font-bold text-blue-600">enterprise AI solutions</span> combine <span className="font-bold text-blue-600">real-time decision-making</span>, <span className="font-bold text-blue-600">predictive intelligence</span>, and <span className="font-bold text-blue-600">automation-first strategies</span> to optimize <span className="font-bold text-blue-600">Industry 4.0</span> and <span className="font-bold text-blue-600">Industry 5.0</span> ecosystems, modernize legacy systems, and ensure competitive advantage.
+              </p>
+            </div>
+          ),
+        },
+        {
+          title: 'Industry 4.0 with Agentic AI',
           icon: Globe,
           content: (
             <div className="space-y-8">
               <motion.div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8" variants={fadeInUp}>
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center mr-4">
-                    <Globe className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900">Industry 4.0: Smarter Factories, Brighter Future</h3>
-                </div>
                 <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                  Imagine stepping into a factory where machines chat with each other, spot problems before they escalate, and tweak operations to save energy. That’s Industry 4.0 for you—a friendly revolution making work smarter and life easier for everyone involved!
+                  <span className="font-bold text-blue-600">Industry 4.0</span> represents the digitally connected factory, where <span className="font-bold text-blue-600">enterprise AI solutions</span> integrate <span className="font-bold text-blue-600">IoT devices</span>, <span className="font-bold text-blue-600">robotics</span>, and <span className="font-bold text-blue-600">machine learning</span> for predictive, data-driven decisions.
                 </p>
+                <h4 className="text-xl font-semibold text-gray-900 mb-4">Key Capabilities in Industry 4.0:</h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {[
-                    { text: 'Real-time tracking with a smile', icon: Zap },
-                    { text: 'Cutting waste like a pro', icon: TrendingUp },
-                    { text: 'Catching issues early', icon: Shield },
-                    { text: 'Boosting quality effortlessly', icon: CheckCircle },
+                    { text: 'AI-driven Predictive Maintenance – Minimize downtime using AI automation tools to forecast equipment failures.', icon: Gauge },
+                    { text: 'Intelligent Robotics – Autonomous robots powered by Agentic AI for precision manufacturing.', icon: Cpu },
+                    { text: 'Generative AI for Process Optimization – Simulating production workflows to identify improvements.', icon: Settings },
+                    { text: 'Real-time Quality Control – Vision AI agents detecting defects before they reach customers.', icon: Eye },
                   ].map((point, i) => (
                     <motion.div
                       key={i}
@@ -105,38 +117,7 @@ const ServiceDetail = () => {
                       viewport={{ once: true }}
                       className="flex items-center bg-white rounded-xl p-4 shadow-sm"
                     >
-                      <point.icon className="w-5 h-5 text-green-500 mr-3" />
-                      <span className="text-gray-700">{point.text}</span>
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
-              <motion.div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-8" variants={fadeInUp}>
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-purple-500 rounded-xl flex items-center justify-center mr-4">
-                    <Users className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900">Industry 5.0: Human-Tech Teamwork</h3>
-                </div>
-                <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                  Now picture humans and machines teaming up like best buddies, creating innovative, eco-friendly solutions. Industry 5.0 is all about that warm collaboration, putting people first while tech lends a helping hand!
-                </p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {[
-                    { text: 'Humans and robots working together', icon: Users },
-                    { text: 'Tailored products just for you', icon: Rocket },
-                    { text: 'Green practices we all love', icon: Globe },
-                    { text: 'Sparkling new ideas', icon: Sparkles },
-                  ].map((point, i) => (
-                    <motion.div
-                      key={i}
-                      variants={bulletVariants}
-                      initial="hidden"
-                      whileInView="visible"
-                      viewport={{ once: true }}
-                      className="flex items-center bg-white rounded-xl p-4 shadow-sm"
-                    >
-                      <point.icon className="w-5 h-5 text-purple-500 mr-3" />
+                      <point.icon className="w-5 h-5 text-blue-600 mr-3" />
                       <span className="text-gray-700">{point.text}</span>
                     </motion.div>
                   ))}
@@ -146,26 +127,21 @@ const ServiceDetail = () => {
           ),
         },
         {
-          title: 'Legacy Modernization',
-          icon: Rocket,
+          title: 'Industry 5.0 with Agentic AI',
+          icon: Users,
           content: (
             <div className="space-y-8">
-              <motion.div className="bg-gradient-to-r from-orange-50 to-red-50 rounded-2xl p-8" variants={fadeInUp}>
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center mr-4">
-                    <Rocket className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900">Transform Your Legacy Systems</h3>
-                </div>
+              <motion.div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8" variants={fadeInUp}>
                 <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                  Got an old system gathering dust? We’ll breathe new life into it with AI magic, making it work smoothly with today’s tech—think of it as a friendly upgrade for your business!
+                  <span className="font-bold text-blue-600">Industry 5.0</span> moves beyond automation to <span className="font-bold text-blue-600">human-AI collaboration</span>, where <span className="font-bold text-blue-600">Agentic AI</span> augments human decision-making with <span className="font-bold text-blue-600">generative intelligence</span> and <span className="font-bold text-blue-600">real-time adaptability</span>.
                 </p>
+                <h4 className="text-xl font-semibold text-gray-900 mb-4">Key Capabilities in Industry 5.0:</h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {[
-                    { text: 'Seamless cloud move with no hiccups', icon: Cloud },
-                    { text: 'Rock-solid data security', icon: Shield },
-                    { text: 'Training your team with care', icon: Users },
-                    { text: 'New tools that fit right in', icon: Settings },
+                    { text: 'Human-Centric Automation – AI agents working alongside humans to enhance productivity.', icon: Users },
+                    { text: 'Generative AI for Innovation – Designing new products, solutions, and processes through creative AI capabilities.', icon: Sparkles },
+                    { text: 'Personalized Manufacturing – Customizing production at scale using enterprise AI solutions.', icon: Rocket },
+                    { text: 'Resilient & Sustainable Operations – AI-driven energy optimization and waste reduction.', icon: Globe },
                   ].map((point, i) => (
                     <motion.div
                       key={i}
@@ -175,14 +151,139 @@ const ServiceDetail = () => {
                       viewport={{ once: true }}
                       className="flex items-center bg-white rounded-xl p-4 shadow-sm"
                     >
-                      <point.icon className="w-5 h-5 text-orange-500 mr-3" />
+                      <point.icon className="w-5 h-5 text-blue-600 mr-3" />
                       <span className="text-gray-700">{point.text}</span>
                     </motion.div>
                   ))}
                 </div>
-                <p className="text-lg text-gray-700 mt-6 leading-relaxed">
-                  We handle the transition with a smile, keeping your business running like a well-oiled machine.
+              </motion.div>
+            </div>
+          ),
+        },
+        {
+          title: 'Legacy Modernization with Agentic AI',
+          icon: Rocket,
+          content: (
+            <div className="space-y-8">
+              <motion.div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8" variants={fadeInUp}>
+                <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+                  Outdated IT systems can slow down innovation, increase costs, and create operational bottlenecks. <span className="font-bold text-blue-600">Cube AI Solutions</span> helps enterprises modernize <span className="font-bold text-blue-600">legacy systems</span> with <span className="font-bold text-blue-600">Agentic AI</span>, ensuring <span className="font-bold text-blue-600">compatibility</span>, <span className="font-bold text-blue-600">scalability</span>, and <span className="font-bold text-blue-600">agility</span> in the modern digital landscape.
                 </p>
+                <h4 className="text-xl font-semibold text-gray-900 mb-4">Key Capabilities in Legacy Modernization:</h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {[
+                    { text: 'AI-powered Migration – Automated migration from outdated systems to cloud-native platforms.', icon: Cloud },
+                    { text: 'Generative AI for Code Refactoring – Automatically rewriting and optimizing legacy code.', icon: Code },
+                    { text: 'AI automation tools for Data Integration – Consolidating data from multiple systems for unified decision-making.', icon: Database },
+                    { text: 'Enterprise AI solutions for Security – Modernizing security protocols with AI-driven threat detection.', icon: Shield },
+                  ].map((point, i) => (
+                    <motion.div
+                      key={i}
+                      variants={bulletVariants}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true }}
+                      className="flex items-center bg-white rounded-xl p-4 shadow-sm"
+                    >
+                      <point.icon className="w-5 h-5 text-blue-600 mr-3" />
+                      <span className="text-gray-700">{point.text}</span>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
+          ),
+        },
+        {
+          title: 'Key Features of AIMA with Agentic AI',
+          icon: Settings,
+          content: (
+            <div className="space-y-8">
+              <motion.div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8" variants={fadeInUp}>
+                <h4 className="text-xl font-semibold text-gray-900 mb-4">For AIMA (Overall):</h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {[
+                    { text: 'Autonomous Decision-Making – AI agents that act without manual intervention.', icon: Brain },
+                    { text: 'Generative AI Simulation – Virtual modeling for industrial optimization.', icon: Sparkles },
+                    { text: 'AI automation tools for end-to-end process efficiency.', icon: Zap },
+                    { text: 'Enterprise-grade Security & Compliance for all solutions.', icon: Shield },
+                  ].map((point, i) => (
+                    <motion.div
+                      key={i}
+                      variants={bulletVariants}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true }}
+                      className="flex items-center bg-white rounded-xl p-4 shadow-sm"
+                    >
+                      <point.icon className="w-5 h-5 text-blue-600 mr-3" />
+                      <span className="text-gray-700">{point.text}</span>
+                    </motion.div>
+                  ))}
+                </div>
+                <h4 className="text-xl font-semibold text-gray-900 mb-4 mt-6">For Industry 4.0:</h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {[
+                    { text: 'Predictive Maintenance Intelligence.', icon: Gauge },
+                    { text: 'Real-time Defect Detection.', icon: Eye },
+                    { text: 'Digital Twin Simulation.', icon: Globe },
+                    { text: 'AI-powered Supply Chain Optimization.', icon: Settings },
+                  ].map((point, i) => (
+                    <motion.div
+                      key={i}
+                      variants={bulletVariants}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true }}
+                      className="flex items-center bg-white rounded-xl p-4 shadow-sm"
+                    >
+                      <point.icon className="w-5 h-5 text-blue-600 mr-3" />
+                      <span className="text-gray-700">{point.text}</span>
+                    </motion.div>
+                  ))}
+                </div>
+                <h4 className="text-xl font-semibold text-gray-900 mb-4 mt-6">For Industry 5.0:</h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {[
+                    { text: 'Human-AI Collaborative Workflows.', icon: Users },
+                    { text: 'Personalized Product Design.', icon: Rocket },
+                    { text: 'Sustainable Manufacturing Intelligence.', icon: Globe },
+                    { text: 'Generative AI-driven R&D.', icon: Sparkles },
+                  ].map((point, i) => (
+                    <motion.div
+                      key={i}
+                      variants={bulletVariants}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true }}
+                      className="flex items-center bg-white rounded-xl p-4 shadow-sm"
+                    >
+                      <point.icon className="w-5 h-5 text-blue-600 mr-3" />
+                      <span className="text-gray-700">{point.text}</span>
+                    </motion.div>
+                  ))}
+                </div>
+                <h4 className="text-xl font-semibold text-gray-900 mb-4 mt-6">For Legacy Modernization:</h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {[
+                    { text: 'AI-powered System Migration.', icon: Cloud },
+                    { text: 'Generative AI Code Transformation.', icon: Code },
+                    { text: 'Intelligent Data Unification.', icon: Database },
+                    { text: 'Secure Cloud-native Infrastructure.', icon: Shield },
+                  ].map((point, i) => (
+                    <motion.div
+                      key={i}
+                      variants={bulletVariants}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true }}
+                      className="flex items-center bg-white rounded-xl p-4 shadow-sm"
+                    >
+                      <point.icon className="w-5 h-5 text-blue-600 mr-3" />
+                      <span className="text-gray-700">{point.text}</span>
+                    </motion.div>
+                  ))}
+                </div>
               </motion.div>
             </div>
           ),
@@ -191,32 +292,39 @@ const ServiceDetail = () => {
     },
     'artificial-intelligence-data-analysis': {
       slug: 'artificial-intelligence-data-analysis',
-      title: 'AIDA - Artificial Intelligence & Data Analysis',
-      subtitle: 'Transforming Data into Actionable Insights',
-      color: 'from-emerald-500 to-teal-600',
+      title: 'AIDA – Agentic AI Data Analysis',
+      subtitle: 'Transforming Data into Autonomous Intelligence',
+      color: 'from-emerald-600 to-teal-700',
       icon: Database,
       sections: [
         {
-          title: 'Medical Data Analytics',
-          icon: Heart,
+          title: 'Introduction to AIDA',
+          icon: Brain,
+          content: (
+            <div className="space-y-6">
+              <p className="text-lg text-gray-700 leading-relaxed">
+                <span className="font-bold text-blue-600">AIDA</span> by <span className="font-bold text-blue-600">Cube AI Solutions</span> is a next-generation <span className="font-bold text-blue-600">Agentic AI platform</span> designed to revolutionize how enterprises harness <span className="font-bold text-blue-600">data analytics</span>. Moving beyond conventional AI, AIDA leverages <span className="font-bold text-blue-600">autonomous decision-making agents</span> that don’t just process data — they interpret, act, and adapt in real time.
+              </p>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                In today’s hyper-competitive business environment, <span className="font-bold text-blue-600">data</span> is the most valuable asset. With <span className="font-bold text-blue-600">generative AI</span>, <span className="font-bold text-blue-600">AI automation tools</span>, and advanced <span className="font-bold text-blue-600">enterprise AI solutions</span>, AIDA transforms raw data into <span className="font-bold text-blue-600">actionable intelligence</span> that drives <span className="font-bold text-blue-600">business productivity using AI</span>.
+              </p>
+            </div>
+          ),
+        },
+        {
+          title: 'Core Capabilities of AIDA',
+          icon: Settings,
           content: (
             <div className="space-y-8">
               <motion.div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl p-8" variants={fadeInUp}>
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-emerald-500 rounded-xl flex items-center justify-center mr-4">
-                    <Heart className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900">Revolutionizing Healthcare with Data</h3>
-                </div>
-                <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                  We’re turning medical data into a superhero tool—helping doctors predict health risks, personalize treatments, and speed up research with a caring touch!
-                </p>
+                <h4 className="text-xl font-semibold text-gray-900 mb-4">Core Capabilities of AIDA:</h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {[
-                    { text: 'Spotting risks before they grow', icon: Eye },
-                    { text: 'Treatments made just for you', icon: Users },
-                    { text: 'Faster drug discoveries', icon: Rocket },
-                    { text: 'Fewer mistakes, more smiles', icon: Shield },
+                    { text: 'Autonomous Data Interpretation – Embedded AI agents that understand data context and act without manual triggers.', icon: Brain },
+                    { text: 'Generative AI Insights – Create predictive models and forecasts that adapt to changing trends.', icon: Sparkles },
+                    { text: 'Enterprise-Grade AI Automation Tools – Seamless integration with existing workflows, boosting operational efficiency.', icon: Zap },
+                    { text: 'Scalable SaaS Delivery – Cloud-ready solutions accessible anywhere with enterprise-grade security.', icon: Cloud },
+                    { text: 'Real-Time Decision Engines – Make instant, informed business decisions powered by Agentic AI.', icon: Gauge },
                   ].map((point, i) => (
                     <motion.div
                       key={i}
@@ -226,39 +334,76 @@ const ServiceDetail = () => {
                       viewport={{ once: true }}
                       className="flex items-center bg-white rounded-xl p-4 shadow-sm"
                     >
-                      <point.icon className="w-5 h-5 text-emerald-500 mr-3" />
+                      <point.icon className="w-5 h-5 text-emerald-600 mr-3" />
                       <span className="text-gray-700">{point.text}</span>
                     </motion.div>
                   ))}
                 </div>
-                <p className="text-lg text-gray-700 mt-6 leading-relaxed">
-                  From X-rays to DNA, we’re here to make healthcare better and more affordable for all.
+              </motion.div>
+              <motion.div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8" variants={fadeInUp}>
+                <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+                  <span className="font-bold text-blue-600">AIDA’s Medical Data Analysis</span> capabilities empower <span className="font-bold text-blue-600">hospitals</span>, <span className="font-bold text-blue-600">clinics</span>, <span className="font-bold text-blue-600">pharmaceutical companies</span>, and <span className="font-bold text-blue-600">life sciences research organizations</span> with real-time, <span className="font-bold text-blue-600">AI-driven decision support</span>.
                 </p>
+                <h4 className="text-xl font-semibold text-gray-900 mb-4">How It Works:</h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {[
+                    { text: 'Integrates data from EMR/EHR systems, IoT medical devices, and clinical databases.', icon: Database },
+                    { text: 'Applies Agentic AI to detect anomalies, predict patient risks, and recommend treatment pathways.', icon: Brain },
+                    { text: 'Uses generative AI to create adaptive models for drug discovery, disease prediction, and population health management.', icon: Sparkles },
+                  ].map((point, i) => (
+                    <motion.div
+                      key={i}
+                      variants={bulletVariants}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true }}
+                      className="flex items-center bg-white rounded-xl p-4 shadow-sm"
+                    >
+                      <point.icon className="w-5 h-5 text-emerald-600 mr-3" />
+                      <span className="text-gray-700">{point.text}</span>
+                    </motion.div>
+                  ))}
+                </div>
+                <h4 className="text-xl font-semibold text-gray-900 mb-4 mt-6">Key Benefits:</h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {[
+                    { text: 'Faster clinical decision-making.', icon: Zap },
+                    { text: 'Improved patient outcomes with predictive analytics.', icon: Heart },
+                    { text: 'Reduced operational costs through AI automation tools in data handling.', icon: BarChart3 },
+                  ].map((point, i) => (
+                    <motion.div
+                      key={i}
+                      variants={bulletVariants}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true }}
+                      className="flex items-center bg-white rounded-xl p-4 shadow-sm"
+                    >
+                      <point.icon className="w-5 h-5 text-emerald-600 mr-3" />
+                      <span className="text-gray-700">{point.text}</span>
+                    </motion.div>
+                  ))}
+                </div>
               </motion.div>
             </div>
           ),
         },
         {
-          title: 'SAAS Solutions',
+          title: 'SaaS Solutions',
           icon: Cloud,
           content: (
             <div className="space-y-8">
-              <motion.div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-2xl p-8" variants={fadeInUp}>
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center mr-4">
-                    <Cloud className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900">Software That Grows With You</h3>
-                </div>
+              <motion.div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl p-8" variants={fadeInUp}>
                 <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                  Our SAAS platforms are like friendly assistants, automating tasks and making your workday a breeze—perfect for any industry looking to shine!
+                  <span className="font-bold text-blue-600">AIDA’s SaaS model</span> ensures businesses access <span className="font-bold text-blue-600">enterprise AI solutions</span> without the complexity of large infrastructure investments.
                 </p>
+                <h4 className="text-xl font-semibold text-gray-900 mb-4">Core Advantages:</h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {[
-                    { text: 'Grows with your business needs', icon: TrendingUp },
-                    { text: 'Access from anywhere, anytime', icon: Globe },
-                    { text: 'Safety you can trust', icon: Shield },
-                    { text: 'Tools that play nice together', icon: Settings },
+                    { text: 'Instant Deployment – Go live within hours, not weeks.', icon: Rocket },
+                    { text: 'Pay-as-You-Grow Model – Scale AI services based on demand.', icon: TrendingUp },
+                    { text: 'Enterprise-Grade Security – Data encryption, compliance, and LLM safety protocols.', icon: Shield },
+                    { text: 'Continuous Learning – Agents evolve with your data, ensuring business productivity using AI improves over time.', icon: Brain },
                   ].map((point, i) => (
                     <motion.div
                       key={i}
@@ -268,14 +413,11 @@ const ServiceDetail = () => {
                       viewport={{ once: true }}
                       className="flex items-center bg-white rounded-xl p-4 shadow-sm"
                     >
-                      <point.icon className="w-5 h-5 text-blue-500 mr-3" />
+                      <point.icon className="w-5 h-5 text-emerald-600 mr-3" />
                       <span className="text-gray-700">{point.text}</span>
                     </motion.div>
                   ))}
                 </div>
-                <p className="text-lg text-gray-700 mt-6 leading-relaxed">
-                  No setup hassles—just smart, cost-effective tools to manage your world effortlessly.
-                </p>
               </motion.div>
             </div>
           ),
@@ -284,32 +426,42 @@ const ServiceDetail = () => {
     },
     'vision-ai': {
       slug: 'vision-ai',
-      title: 'Vision AI - AI Solutions',
-      subtitle: 'Intelligent Visual Recognition Systems',
-      color: 'from-violet-500 to-purple-600',
+      title: 'Agentic Vision AI – Autonomous Visual Intelligence for Enterprises',
+      subtitle: 'Redefining Visual AI with Agentic Intelligence',
+      color: 'from-violet-600 to-purple-700',
       icon: Eye,
       sections: [
         {
-          title: 'Chatbot Solutions',
-          icon: MessageCircle,
+          title: 'Introduction to Agentic Vision AI',
+          icon: Camera,
+          content: (
+            <div className="space-y-6">
+              <p className="text-lg text-gray-700 leading-relaxed">
+                <span className="font-bold text-blue-600">Cube AI Solutions</span> redefines traditional <span className="font-bold text-blue-600">Vision AI</span> with <span className="font-bold text-blue-600">Agentic AI</span>, empowering enterprises to move beyond passive <span className="font-bold text-blue-600">image recognition</span> into <span className="font-bold text-blue-600">autonomous visual decision-making</span>.
+              </p>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                In conventional AI, visual systems detect and classify objects, but they still rely heavily on manual intervention. With <span className="font-bold text-blue-600">Agentic AI</span>, our vision systems perceive, interpret, and act in real time — enabling faster, smarter, and self-directed operations that boost <span className="font-bold text-blue-600">business productivity using AI</span>.
+              </p>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                Our <span className="font-bold text-blue-600">Agentic Vision AI solutions</span> integrate <span className="font-bold text-blue-600">generative AI models</span>, <span className="font-bold text-blue-600">AI automation tools</span>, and <span className="font-bold text-blue-600">enterprise AI solutions</span> to deliver scalable, industry-specific <span className="font-bold text-blue-600">visual intelligence</span>.
+              </p>
+            </div>
+          ),
+        },
+        {
+          title: 'Core Capabilities of Agentic Vision AI',
+          icon: Settings,
           content: (
             <div className="space-y-8">
               <motion.div className="bg-gradient-to-r from-violet-50 to-purple-50 rounded-2xl p-8" variants={fadeInUp}>
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-violet-500 rounded-xl flex items-center justify-center mr-4">
-                    <MessageCircle className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900">Chatbots That Actually Get It</h3>
-                </div>
-                <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                  Our chatbots are like friendly neighbors, always there 24/7 with personalized chats that feel like a warm conversation—works anywhere you need!
-                </p>
+                <h4 className="text-xl font-semibold text-gray-900 mb-4">Core Capabilities of Agentic Vision AI:</h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {[
-                    { text: 'Understands you naturally', icon: Brain },
-                    { text: 'Works on any platform', icon: Globe },
-                    { text: 'Remembers the context', icon: Users },
-                    { text: 'Learns as we go', icon: TrendingUp },
+                    { text: 'Autonomous Visual Agents – AI that understands visual data context and executes decisions independently.', icon: Brain },
+                    { text: 'Real-Time Object Tracking & Recognition – Detect anomalies, threats, or defects instantly.', icon: Eye },
+                    { text: 'Generative AI-Enhanced Insights – Predict future visual patterns and anomalies using advanced models.', icon: Sparkles },
+                    { text: 'Edge-Based AI Processing – Reduce latency by processing data locally, enabling immediate response.', icon: Zap },
+                    { text: 'Seamless Integration – Works with enterprise ERP, CRM, IoT, and operational systems.', icon: Settings },
                   ].map((point, i) => (
                     <motion.div
                       key={i}
@@ -319,14 +471,46 @@ const ServiceDetail = () => {
                       viewport={{ once: true }}
                       className="flex items-center bg-white rounded-xl p-4 shadow-sm"
                     >
-                      <point.icon className="w-5 h-5 text-violet-500 mr-3" />
+                      <point.icon className="w-5 h-5 text-violet-600 mr-3" />
                       <span className="text-gray-700">{point.text}</span>
                     </motion.div>
                   ))}
                 </div>
-                <p className="text-lg text-gray-700 mt-6 leading-relaxed">
-                  Perfect for support, leads, or team tasks—chatting with a human-like flair!
+              </motion.div>
+            </div>
+          ),
+        },
+        {
+          title: 'Agentic Chatbot Solutions',
+          icon: MessageCircle,
+          content: (
+            <div className="space-y-8">
+              <motion.div className="bg-gradient-to-r from-violet-50 to-purple-50 rounded-2xl p-8" variants={fadeInUp}>
+                <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+                  We extend our <span className="font-bold text-blue-600">Agentic AI capabilities</span> into <span className="font-bold text-blue-600">Chatbot Solutions</span> that go far beyond scripted Q&A. These <span className="font-bold text-blue-600">intelligent agents</span> perceive, understand, and act — turning customer interactions into instant <span className="font-bold text-blue-600">business outcomes</span>.
                 </p>
+                <h4 className="text-xl font-semibold text-gray-900 mb-4">Core Capabilities of Agentic Chatbots:</h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {[
+                    { text: 'Vision-Enabled Conversations – Chatbots that can see and interpret images sent by users.', icon: Camera },
+                    { text: 'Generative AI Conversations – Adaptive, context-rich responses driven by enterprise-trained LLMs.', icon: Sparkles },
+                    { text: 'Automated Task Execution – Complete transactions, schedule meetings, process orders without human handoff.', icon: Zap },
+                    { text: 'Omnichannel Integration – Deploy across websites, mobile apps, messaging platforms, and social media.', icon: Globe },
+                    { text: 'Enterprise Data Connectivity – Securely access and use company databases for personalized, accurate responses.', icon: Database },
+                  ].map((point, i) => (
+                    <motion.div
+                      key={i}
+                      variants={bulletVariants}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true }}
+                      className="flex items-center bg-white rounded-xl p-4 shadow-sm"
+                    >
+                      <point.icon className="w-5 h-5 text-violet-600 mr-3" />
+                      <span className="text-gray-700">{point.text}</span>
+                    </motion.div>
+                  ))}
+                </div>
               </motion.div>
             </div>
           ),
@@ -335,31 +519,44 @@ const ServiceDetail = () => {
     },
     'cyber-tech-innovation': {
       slug: 'cyber-tech-innovation',
-      title: 'CITY - Cyber Tech Innovation',
-      subtitle: 'Securing the Future with Advanced Technology',
-      color: 'from-purple-500 to-pink-500',
+      title: 'CyTI – Cyber Tech Innovation with Agentic AI',
+      subtitle: 'Next-Generation Digital Security & Intelligence',
+      color: 'from-red-600 to-rose-700',
       icon: Shield,
       sections: [
+        {
+          title: 'Introduction to CyTI',
+          icon: Lock,
+          content: (
+            <div className="space-y-6">
+              <p className="text-lg text-gray-700 leading-relaxed">
+                In today’s hyper-connected enterprise environment, <span className="font-bold text-blue-600">cybersecurity</span> is no longer just about protection — it’s about <span className="font-bold text-blue-600">prediction</span>, <span className="font-bold text-blue-600">prevention</span>, and <span className="font-bold text-blue-600">autonomous action</span>.
+              </p>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                <span className="font-bold text-blue-600">Cube AI Solutions</span> transforms conventional <span className="font-bold text-blue-600">AI-powered security</span> into <span className="font-bold text-blue-600">Agentic AI–driven Cyber Tech Innovation</span>, delivering self-directed digital defense systems that adapt, learn, and respond in real time. Our solutions go beyond monitoring to create active, intelligent <span className="font-bold text-blue-600">cyber agents</span> capable of neutralizing threats before they escalate — empowering organizations to achieve higher <span className="font-bold text-blue-600">business productivity using AI</span>.
+              </p>
+            </div>
+          ),
+        },
         {
           title: 'IoT Services',
           icon: Wifi,
           content: (
-            <div className="space-y-12 w-full mx-auto">
-              <motion.div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-8" variants={fadeInUp}>
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-purple-500 rounded-xl flex items-center justify-center mr-4">
-                    <Wifi className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900">Securing Automotive IoT Ecosystems</h3>
-                </div>
+            <div className="space-y-8">
+              <motion.div className="bg-gradient-to-r from-red-50 to-rose-50 rounded-2xl p-8" variants={fadeInUp}>
                 <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                  We’re the guardians of connected cars, ensuring every IoT gadget in your vehicle is safe and sound with expert solutions—think reverse engineering to compliance checks!
+                  The <span className="font-bold text-blue-600">Internet of Things (IoT)</span> is no longer just about connected devices — it’s about <span className="font-bold text-blue-600">connected intelligence</span>.
                 </p>
+                <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+                  Our <span className="font-bold text-blue-600">Agentic AI–powered IoT services</span> transform passive devices into <span className="font-bold text-blue-600">decision-making agents</span> capable of analyzing data locally, optimizing operations, and initiating <span className="font-bold text-blue-600">security protocols</span> autonomously.
+                </p>
+                <h4 className="text-xl font-semibold text-gray-900 mb-4">Key IoT Capabilities:</h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {[
-                    { text: 'Threat Modeling', icon: Shield },
-                    { text: 'End-to-End Encryption', icon: Lock },
-                    { text: 'Compliance Auditing', icon: CheckCircle },
+                    { text: 'Edge Autonomy – Embedded agents process and act on data instantly at the device level.', icon: Cpu },
+                    { text: 'Predictive Maintenance – Generative AI forecasts component failures before they happen.', icon: Gauge },
+                    { text: 'Smart Security Integration – IoT systems coordinate with cybersecurity agents for unified defense.', icon: Shield },
+                    { text: 'Industry 4.0 & 5.0 Alignment – Designed for automated manufacturing, logistics, and urban infrastructure.', icon: Globe },
                   ].map((point, i) => (
                     <motion.div
                       key={i}
@@ -369,83 +566,34 @@ const ServiceDetail = () => {
                       viewport={{ once: true }}
                       className="flex items-center bg-white rounded-xl p-4 shadow-sm"
                     >
-                      <point.icon className="w-5 h-5 text-indigo-500 mr-3" />
+                      <point.icon className="w-5 h-5 text-red-600 mr-3" />
                       <span className="text-gray-700">{point.text}</span>
                     </motion.div>
                   ))}
                 </div>
-              </motion.div>
-              <motion.div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-8" variants={fadeInUp}>
-                <h4 className="text-xl font-semibold text-gray-900 mb-4">Automotive Reverse Engineering</h4>
-                <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                  We dive into your car’s tech like detectives, strengthening systems with a focus on AUTOSAR, ECU security, and smooth communication—keeping your ride secure!
-                </p>
-              </motion.div>
-              <motion.div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-8" variants={fadeInUp}>
-                <h4 className="text-xl font-semibold text-gray-900 mb-4">ECU Penetration Testing</h4>
-                <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                  Our team plays the role of friendly hackers, checking every ECU nook and cranny to spot weaknesses and boost your vehicle’s safety with care.
-                </p>
-              </motion.div>
-              <motion.div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-8" variants={fadeInUp}>
-                <h4 className="text-xl font-semibold text-gray-900 mb-4">AUTOSAR Penetration</h4>
-                <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                  We secure your AUTOSAR ECUs with a thorough check of architecture and protocols, ensuring your tech runs like a charm with top-notch cybersecurity.
-                </p>
-              </motion.div>
-              <motion.div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-8" variants={fadeInUp}>
-                <h4 className="text-xl font-semibold text-gray-900 mb-4">Full Vehicle Security Validation</h4>
-                <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                  We give your whole car a security hug, checking everything from ECUs to fleet systems, so you can drive with complete peace of mind.
-                </p>
-              </motion.div>
-              <motion.div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-8" variants={fadeInUp}>
-                <h4 className="text-xl font-semibold text-gray-900 mb-4">Infotainment Penetration Testing</h4>
-                <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                  We make sure your car’s entertainment system is a safe haven, testing it with love to deliver a smooth and secure ride experience.
-                </p>
-              </motion.div>
-              <motion.div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-8" variants={fadeInUp}>
-                <h4 className="text-xl font-semibold text-gray-900 mb-4">OBC and Charging Station Penetration Testing</h4>
-                <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                  We secure your electric vehicle chargers and stations, ensuring a reliable power-up every time with our expert testing.
-                </p>
-              </motion.div>
-              <motion.div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-8" variants={fadeInUp}>
-                <h4 className="text-xl font-semibold text-gray-900 mb-4">R155 CSMS Consultancy</h4>
-                <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                  We guide you through UNECE R155 rules with a friendly hand, offering top cybersecurity advice and smooth software updates.
-                </p>
-              </motion.div>
-              <motion.div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-8" variants={fadeInUp}>
-                <h4 className="text-xl font-semibold text-gray-900 mb-4">SDV Penetration Testing</h4>
-                <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                  We keep Software Defined Vehicles safe with cutting-edge tests, ensuring your futuristic ride is as secure as it is smart.
-                </p>
               </motion.div>
             </div>
           ),
         },
         {
-          title: 'LLM Security Services',
-          icon: Gauge,
+          title: 'LLM Security Solutions',
+          icon: Lock,
           content: (
             <div className="space-y-8">
-              <motion.div className="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-2xl p-8" variants={fadeInUp}>
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-indigo-500 rounded-xl flex items-center justify-center mr-4">
-                    <Gauge className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900">Automated Red Teaming</h3>
-                </div>
+              <motion.div className="bg-gradient-to-r from-red-50 to-rose-50 rounded-2xl p-8" variants={fadeInUp}>
                 <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                  Deploy AI systems with confidence, knowing they’re protected against sophisticated threats. Our LLM Security Services perform automated red teaming at scale, rigorously testing Large Language Models (LLMs) with advanced attack techniques such as
+                  As enterprises adopt <span className="font-bold text-blue-600">large language models (LLMs)</span> for advanced <span className="font-bold text-blue-600">data intelligence</span>, securing them is critical.
                 </p>
+                <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+                  Our <span className="font-bold text-blue-600">LLM Security Solutions</span> safeguard <span className="font-bold text-blue-600">sensitive data</span> and prevent <span className="font-bold text-blue-600">malicious prompt injections</span>, <span className="font-bold text-blue-600">data leaks</span>, or misuse of <span className="font-bold text-blue-600">generative models</span>. By embedding <span className="font-bold text-blue-600">Agentic AI</span> into the security layer, our solutions autonomously detect suspicious patterns, enforce <span className="font-bold text-blue-600">compliance</span>, and adapt to evolving threats in real time.
+                </p>
+                <h4 className="text-xl font-semibold text-gray-900 mb-4">LLM Security Capabilities:</h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {[
-                    { text: 'prompt injection', icon: TrendingUp },
-                    { text: 'jailbreak attempts', icon: BarChart3 },
-                    { text: 'multi-turn exploits', icon: Settings },
+                    { text: 'Prompt Injection Defense – Detect and neutralize malicious queries instantly.', icon: Shield },
+                    { text: 'Data Privacy Enforcement – Restrict unauthorized data access using autonomous policies.', icon: Lock },
+                    { text: 'Generative AI Monitoring – Audit model outputs for bias, misinformation, or data leaks.', icon: Eye },
+                    { text: 'Zero-Trust AI Integration – Aligns with enterprise zero-trust architecture.', icon: Settings },
                   ].map((point, i) => (
                     <motion.div
                       key={i}
@@ -455,14 +603,11 @@ const ServiceDetail = () => {
                       viewport={{ once: true }}
                       className="flex items-center bg-white rounded-xl p-4 shadow-sm"
                     >
-                      <point.icon className="w-5 h-5 text-indigo-500 mr-3" />
+                      <point.icon className="w-5 h-5 text-red-600 mr-3" />
                       <span className="text-gray-700">{point.text}</span>
                     </motion.div>
                   ))}
                 </div>
-                <p className="text-lg text-gray-700 mt-6 leading-relaxed">
-                  Using over 2 million prompts per technique, we simulate real-world adversarial scenarios to uncover vulnerabilities. Each model response is thoroughly evaluated with multiple specialized evaluation models to identify safety violations, sensitive data leaks, and policy non-compliance.
-                </p>
               </motion.div>
             </div>
           ),
@@ -471,32 +616,41 @@ const ServiceDetail = () => {
     },
     'embedded-systems-iot': {
       slug: 'embedded-systems-iot',
-      title: 'Cubebotics - Embedded Systems & IoT',
-      subtitle: 'Building Smart Devices for Tomorrow',
-      color: 'from-orange-500 to-red-500',
+      title: 'Cubebotics – Embedded Systems, IoT & Drone Technology',
+      subtitle: 'Innovative Solutions for Autonomous Devices',
+      color: 'from-orange-600 to-amber-700',
       icon: Cpu,
       sections: [
         {
-          title: 'Embedded & IoT Solutions',
+          title: 'Introduction to Cubebotics',
           icon: Cpu,
           content: (
+            <div className="space-y-6">
+              <p className="text-lg text-gray-700 leading-relaxed">
+                <span className="font-bold text-blue-600">Cubebotics</span> is <span className="font-bold text-blue-600">Cube AI Solutions’</span> cutting-edge innovation hub for <span className="font-bold text-blue-600">embedded systems</span>, <span className="font-bold text-blue-600">IoT solutions</span>, and next-generation <span className="font-bold text-blue-600">drone technology</span>. By integrating <span className="font-bold text-blue-600">Agentic AI</span>, we go beyond conventional automation — enabling devices to think, decide, and act autonomously.
+              </p>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                Unlike traditional AI, which requires constant human or cloud oversight, <span className="font-bold text-blue-600">Agentic AI</span> empowers <span className="font-bold text-blue-600">embedded systems</span> to analyze data locally, make context-aware decisions in milliseconds, and adapt dynamically to real-world conditions. This evolution drives <span className="font-bold text-blue-600">enterprise AI solutions</span> that enhance <span className="font-bold text-blue-600">business productivity using AI</span> while ensuring unmatched <span className="font-bold text-blue-600">reliability</span>, <span className="font-bold text-blue-600">security</span>, and <span className="font-bold text-blue-600">scalability</span>.
+              </p>
+            </div>
+          ),
+        },
+        {
+          title: 'Embedded IoT Solutions with Agentic AI',
+          icon: Wifi,
+          content: (
             <div className="space-y-8">
-              <motion.div className="bg-gradient-to-r from-orange-50 to-red-50 rounded-2xl p-8" variants={fadeInUp}>
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center mr-4">
-                    <Cpu className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900">Devices That Think and Act</h3>
-                </div>
+              <motion.div className="bg-gradient-to-r from-orange-50 to-amber-50 rounded-2xl p-8" variants={fadeInUp}>
                 <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                  We craft smart gadgets and IoT systems that feel like trusty sidekicks—perfect for smart homes or bustling factories with a personal touch!
+                  Our <span className="font-bold text-blue-600">embedded IoT solutions</span> are built for <span className="font-bold text-blue-600">Industry 4.0</span> and <span className="font-bold text-blue-600">Industry 5.0</span> environments, where speed, precision, and autonomy are critical.
                 </p>
+                <h4 className="text-xl font-semibold text-gray-900 mb-4">Key Enterprise Advantages:</h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {[
-                    { text: 'Quick edge processing', icon: Zap },
-                    { text: 'Energy-saving designs', icon: Gauge },
-                    { text: 'Safe connections', icon: Lock },
-                    { text: 'Custom firmware magic', icon: Code },
+                    { text: 'Edge Autonomy – Localized decision-making reduces latency and dependence on the cloud.', icon: Zap },
+                    { text: 'Predictive Maintenance – Generative AI predicts equipment failures before they disrupt operations.', icon: Gauge },
+                    { text: 'Cybersecurity by Design – Embedded AI agents protect data and systems from real-time threats.', icon: Shield },
+                    { text: 'Interoperability – Seamless integration with legacy systems, cloud platforms, and enterprise workflows.', icon: Settings },
                   ].map((point, i) => (
                     <motion.div
                       key={i}
@@ -506,39 +660,30 @@ const ServiceDetail = () => {
                       viewport={{ once: true }}
                       className="flex items-center bg-white rounded-xl p-4 shadow-sm"
                     >
-                      <point.icon className="w-5 h-5 text-orange-500 mr-3" />
+                      <point.icon className="w-5 h-5 text-orange-600 mr-3" />
                       <span className="text-gray-700">{point.text}</span>
                     </motion.div>
                   ))}
                 </div>
-                <p className="text-lg text-gray-700 mt-6 leading-relaxed">
-                  Reliable and fun devices that make your life easier, one smart step at a time.
-                </p>
               </motion.div>
             </div>
           ),
         },
         {
-          title: 'Drone Technology',
+          title: 'Drone Technology Powered by Agentic AI',
           icon: Plane,
           content: (
             <div className="space-y-8">
-              <motion.div className="bg-gradient-to-r from-red-50 to-pink-50 rounded-2xl p-8" variants={fadeInUp}>
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-red-500 rounded-xl flex items-center justify-center mr-4">
-                    <Plane className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900">Taking Flight with AI</h3>
-                </div>
+              <motion.div className="bg-gradient-to-r from-orange-50 to-amber-50 rounded-2xl p-8" variants={fadeInUp}>
                 <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                  Our AI-powered drones are like flying helpers, mapping lands, watching over, delivering packages, and inspecting with a cheerful buzz!
+                  We are redefining <span className="font-bold text-blue-600">drone capabilities</span> by embedding <span className="font-bold text-blue-600">Agentic AI</span> into aerial systems. Unlike standard programmed drones, our <span className="font-bold text-blue-600">autonomous drones</span>:
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {[
-                    { text: 'Flies on its own', icon: Brain },
-                    { text: 'Crystal-clear pictures', icon: Camera },
-                    { text: 'Live data updates', icon: Wifi },
-                    { text: 'Tough weather friend', icon: Shield },
+                    { text: 'Plan and adapt routes dynamically based on live environmental data.', icon: Brain },
+                    { text: 'Execute complex missions such as industrial inspections, security patrols, and disaster response with minimal human input.', icon: Rocket },
+                    { text: 'Collaborate in swarms for coordinated large-scale tasks.', icon: Users },
+                    { text: 'Capture and analyze high-resolution data in real time using onboard generative AI models.', icon: Camera },
                   ].map((point, i) => (
                     <motion.div
                       key={i}
@@ -548,14 +693,31 @@ const ServiceDetail = () => {
                       viewport={{ once: true }}
                       className="flex items-center bg-white rounded-xl p-4 shadow-sm"
                     >
-                      <point.icon className="w-5 h-5 text-red-500 mr-3" />
+                      <point.icon className="w-5 h-5 text-orange-600 mr-3" />
                       <span className="text-gray-700">{point.text}</span>
                     </motion.div>
                   ))}
                 </div>
-                <p className="text-lg text-gray-700 mt-6 leading-relaxed">
-                  Great for farms or rescues, with sensors that handle any adventure!
-                </p>
+                <h4 className="text-xl font-semibold text-gray-900 mb-4 mt-6">Business Impact of Agentic Drones:</h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {[
+                    { text: 'Faster and safer operations in hazardous environments.', icon: Zap },
+                    { text: 'Real-time intelligence delivery for enterprise decision-making.', icon: Brain },
+                    { text: 'Reduced operational costs with automated deployment cycles.', icon: BarChart3 },
+                  ].map((point, i) => (
+                    <motion.div
+                      key={i}
+                      variants={bulletVariants}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true }}
+                      className="flex items-center bg-white rounded-xl p-4 shadow-sm"
+                    >
+                      <point.icon className="w-5 h-5 text-orange-600 mr-3" />
+                      <span className="text-gray-700">{point.text}</span>
+                    </motion.div>
+                  ))}
+                </div>
               </motion.div>
             </div>
           ),
@@ -564,32 +726,40 @@ const ServiceDetail = () => {
     },
     'data-cloud-engineering': {
       slug: 'data-cloud-engineering',
-      title: 'DCE - Data & Cloud Engineering',
-      subtitle: 'Scalable Cloud Solutions for Modern Businesses',
-      color: 'from-cyan-500 to-blue-600',
+      title: 'DCE – Data & Cloud Engineering with Agentic AI',
+      subtitle: 'Building Resilient, Intelligent Data Infrastructures',
+      color: 'from-cyan-600 to-blue-700',
       icon: Server,
       sections: [
         {
-          title: 'Data Engineering',
-          icon: Database,
+          title: 'Introduction to DCE',
+          icon: Cloud,
+          content: (
+            <div className="space-y-6">
+              <p className="text-lg text-gray-700 leading-relaxed">
+                At <span className="font-bold text-blue-600">Cube AI Solutions</span>, our <span className="font-bold text-blue-600">Data & Cloud Engineering (DCE)</span> services are engineered for the next generation of <span className="font-bold text-blue-600">digital enterprises</span>. By integrating <span className="font-bold text-blue-600">Agentic AI</span>, we enable <span className="font-bold text-blue-600">data ecosystems</span> that are not only intelligent but autonomously adaptive, capable of self-optimizing workflows, detecting anomalies in real time, and delivering actionable insights without constant human intervention.
+              </p>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                Unlike traditional data engineering methods that focus solely on collection and storage, our <span className="font-bold text-blue-600">enterprise AI solutions</span> transform raw data into <span className="font-bold text-blue-600">business productivity using AI</span> by embedding <span className="font-bold text-blue-600">autonomous agents</span> at every stage — from ingestion to analytics to deployment.
+              </p>
+            </div>
+          ),
+        },
+        {
+          title: 'Agentic AI-Powered Data & Cloud Engineering',
+          icon: Settings,
           content: (
             <div className="space-y-8">
               <motion.div className="bg-gradient-to-r from-cyan-50 to-blue-50 rounded-2xl p-8" variants={fadeInUp}>
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-cyan-500 rounded-xl flex items-center justify-center mr-4">
-                    <Database className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900">Unlock Your Data's Superpower</h3>
-                </div>
                 <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                  We turn your data into a storytelling hero, building systems that gather, process, and reveal insights with a warm, welcoming approach!
+                  Our <span className="font-bold text-blue-600">DCE services</span> combine <span className="font-bold text-blue-600">data engineering expertise</span>, <span className="font-bold text-blue-600">cloud-native architectures</span>, and <span className="font-bold text-blue-600">AI automation tools</span> to help enterprises build resilient, future-ready <span className="font-bold text-blue-600">data infrastructures</span>. Leveraging <span className="font-bold text-blue-600">generative AI</span> and <span className="font-bold text-blue-600">agentic AI frameworks</span>, we deliver platforms that:
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {[
-                    { text: 'Scalable pipelines that grow', icon: Settings },
-                    { text: 'Instant insights', icon: Zap },
-                    { text: 'Quality checks with love', icon: CheckCircle },
-                    { text: 'ML-ready data magic', icon: Brain },
+                    { text: 'Automate data cleaning, transformation, and integration.', icon: Zap },
+                    { text: 'Make real-time optimization decisions without manual triggers.', icon: Brain },
+                    { text: 'Scale dynamically across hybrid and multi-cloud environments.', icon: TrendingUp },
+                    { text: 'Provide continuous intelligence for faster decision-making.', icon: Gauge },
                   ].map((point, i) => (
                     <motion.div
                       key={i}
@@ -599,39 +769,34 @@ const ServiceDetail = () => {
                       viewport={{ once: true }}
                       className="flex items-center bg-white rounded-xl p-4 shadow-sm"
                     >
-                      <point.icon className="w-5 h-5 text-cyan-500 mr-3" />
+                      <point.icon className="w-5 h-5 text-cyan-600 mr-3" />
                       <span className="text-gray-700">{point.text}</span>
                     </motion.div>
                   ))}
                 </div>
-                <p className="text-lg text-gray-700 mt-6 leading-relaxed">
-                  From raw data to ready-to-use insights, we’ve got you covered for BI or ML adventures.
-                </p>
               </motion.div>
             </div>
           ),
         },
         {
-          title: 'Cloud Engineering',
-          icon: Cloud,
+          title: 'Data Engineering with Agentic AI',
+          icon: Database,
           content: (
             <div className="space-y-8">
-              <motion.div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8" variants={fadeInUp}>
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center mr-4">
-                    <Cloud className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900">Take Your Business to the Cloud</h3>
-                </div>
+              <motion.div className="bg-gradient-to-r from-cyan-50 to-blue-50 rounded-2xl p-8" variants={fadeInUp}>
                 <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                  We make cloud migration a breeze, designing setups and adding DevOps magic to keep your business soaring high with ease!
+                  In today’s enterprise landscape, <span className="font-bold text-blue-600">data engineering</span> is more than pipelines and warehouses — it’s about creating self-managing, <span className="font-bold text-blue-600">intelligent data ecosystems</span>.
+                </p>
+                <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+                  With <span className="font-bold text-blue-600">Agentic AI</span>, our data engineering solutions:
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {[
-                    { text: 'Smooth move with no downtime', icon: Rocket },
-                    { text: 'Auto-scaling for busy days', icon: TrendingUp },
-                    { text: 'Smart cost savings', icon: BarChart3 },
-                    { text: 'Backup plans you can rely on', icon: Shield },
+                    { text: 'Autonomously cleanse and enrich data from multiple sources.', icon: Settings },
+                    { text: 'Apply predictive and generative AI models to forecast trends and detect anomalies.', icon: Sparkles },
+                    { text: 'Enable real-time analytics without waiting for batch processing cycles.', icon: Zap },
+                    { text: 'Optimize ETL/ELT pipelines with minimal human oversight.', icon: Gauge },
+                    { text: 'Integrate seamlessly with legacy systems to preserve investments while modernizing capabilities.', icon: Cloud },
                   ].map((point, i) => (
                     <motion.div
                       key={i}
@@ -641,14 +806,84 @@ const ServiceDetail = () => {
                       viewport={{ once: true }}
                       className="flex items-center bg-white rounded-xl p-4 shadow-sm"
                     >
-                      <point.icon className="w-5 h-5 text-blue-500 mr-3" />
+                      <point.icon className="w-5 h-5 text-cyan-600 mr-3" />
                       <span className="text-gray-700">{point.text}</span>
                     </motion.div>
                   ))}
                 </div>
-                <p className="text-lg text-gray-700 mt-6 leading-relaxed">
-                  Secure, scalable clouds with a touch of DevOps love for your growing needs.
-                </p>
+              </motion.div>
+            </div>
+          ),
+        },
+        {
+          title: 'Key Features – Data & Cloud Engineering with Agentic AI',
+          icon: Server,
+          content: (
+            <div className="space-y-8">
+              <motion.div className="bg-gradient-to-r from-cyan-50 to-blue-50 rounded-2xl p-8" variants={fadeInUp}>
+                <h4 className="text-xl font-semibold text-gray-900 mb-4">DCE (Data & Cloud Engineering):</h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {[
+                    { text: 'End-to-end enterprise AI solutions for data modernization.', icon: Settings },
+                    { text: 'Agent-based orchestration of data pipelines and cloud operations.', icon: Brain },
+                    { text: 'Real-time anomaly detection and automated resolution.', icon: Eye },
+                    { text: 'Full alignment with Industry 4.0 and Industry 5.0 transformation goals.', icon: Globe },
+                  ].map((point, i) => (
+                    <motion.div
+                      key={i}
+                      variants={bulletVariants}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true }}
+                      className="flex items-center bg-white rounded-xl p-4 shadow-sm"
+                    >
+                      <point.icon className="w-5 h-5 text-cyan-600 mr-3" />
+                      <span className="text-gray-700">{point.text}</span>
+                    </motion.div>
+                  ))}
+                </div>
+                <h4 className="text-xl font-semibold text-gray-900 mb-4 mt-6">Data Engineering:</h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {[
+                    { text: 'Autonomous data cleaning, transformation, and integration.', icon: Settings },
+                    { text: 'Predictive analytics powered by generative AI.', icon: Sparkles },
+                    { text: 'AI-driven quality control for data reliability.', icon: CheckCircle },
+                    { text: 'Seamless legacy system modernization without disruption.', icon: Cloud },
+                  ].map((point, i) => (
+                    <motion.div
+                      key={i}
+                      variants={bulletVariants}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true }}
+                      className="flex items-center bg-white rounded-xl p-4 shadow-sm"
+                    >
+                      <point.icon className="w-5 h-5 text-cyan-600 mr-3" />
+                      <span className="text-gray-700">{point.text}</span>
+                    </motion.div>
+                  ))}
+                </div>
+                <h4 className="text-xl font-semibold text-gray-900 mb-4 mt-6">Cloud Engineering:</h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {[
+                    { text: 'Intelligent scaling and cost optimization.', icon: TrendingUp },
+                    { text: 'Automated compliance and security enforcement.', icon: Shield },
+                    { text: 'AI-optimized data flow management.', icon: Zap },
+                    { text: 'Resilient, self-healing cloud architectures.', icon: Server },
+                  ].map((point, i) => (
+                    <motion.div
+                      key={i}
+                      variants={bulletVariants}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true }}
+                      className="flex items-center bg-white rounded-xl p-4 shadow-sm"
+                    >
+                      <point.icon className="w-5 h-5 text-cyan-600 mr-3" />
+                      <span className="text-gray-700">{point.text}</span>
+                    </motion.div>
+                  ))}
+                </div>
               </motion.div>
             </div>
           ),
@@ -657,32 +892,43 @@ const ServiceDetail = () => {
     },
     'future-technology-services': {
       slug: 'future-technology-services',
-      title: 'Tech Solution - Future Technology & Services',
-      subtitle: 'Comprehensive Technology Services',
-      color: 'from-indigo-500 to-purple-600',
+      title: 'Technology Solutions – Future Technology & Services',
+      subtitle: 'Integrating Agentic AI for Intelligent Technology Stacks',
+      color: 'from-indigo-600 to-purple-700',
       icon: Monitor,
       sections: [
         {
-          title: 'Web Development',
+          title: 'Introduction to Technology Solutions',
+          icon: Monitor,
+          content: (
+            <div className="space-y-6">
+              <p className="text-lg text-gray-700 leading-relaxed">
+                At <span className="font-bold text-blue-600">Cube AI Solutions</span>, we believe that technology should not just support your business — it should think, adapt, and grow alongside it. Our Tech Solutions integrate <span className="font-bold text-blue-600">Agentic AI</span>, <span className="font-bold text-blue-600">generative AI</span>, and <span className="font-bold text-blue-600">AI automation tools</span> into every layer of your enterprise technology stack, ensuring that your business stays ahead in a world of continuous digital evolution.
+              </p>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                Unlike traditional IT services, our <span className="font-bold text-blue-600">enterprise AI solutions</span> enable systems to make autonomous decisions, optimize operations in real time, and drive measurable <span className="font-bold text-blue-600">business productivity using AI</span>. From web and app development to business consulting and digital marketing, we create intelligent, self-improving solutions that redefine efficiency and innovation.
+              </p>
+            </div>
+          ),
+        },
+        {
+          title: 'Web Development with Agentic AI',
           icon: Monitor,
           content: (
             <div className="space-y-8">
               <motion.div className="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-2xl p-8" variants={fadeInUp}>
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-indigo-500 rounded-xl flex items-center justify-center mr-4">
-                    <Monitor className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900">Your Digital Storefront</h3>
-                </div>
                 <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                  We build websites that feel like a warm welcome, fast and secure, helping your business grow with a smile on every visitor’s face!
+                  Your website is no longer just a digital presence — it’s a smart, adaptive platform that engages visitors dynamically.
+                </p>
+                <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+                  Our <span className="font-bold text-blue-600">Agentic AI-driven web development solutions</span>:
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {[
-                    { text: 'Loads in a flash', icon: Zap },
-                    { text: 'Mobile-friendly vibe', icon: Smartphone },
-                    { text: 'SEO that works wonders', icon: TrendingUp },
-                    { text: 'Safe and sound design', icon: Shield },
+                    { text: 'Personalize user journeys based on behavior and context.', icon: Users },
+                    { text: 'Use generative AI to create dynamic content, chatbots, and recommendations.', icon: Sparkles },
+                    { text: 'Continuously optimize site performance through AI automation tools.', icon: Zap },
+                    { text: 'Deliver enterprise-grade security, scalability, and UX design.', icon: Shield },
                   ].map((point, i) => (
                     <motion.div
                       key={i}
@@ -692,39 +938,54 @@ const ServiceDetail = () => {
                       viewport={{ once: true }}
                       className="flex items-center bg-white rounded-xl p-4 shadow-sm"
                     >
-                      <point.icon className="w-5 h-5 text-indigo-500 mr-3" />
+                      <point.icon className="w-5 h-5 text-indigo-600 mr-3" />
                       <span className="text-gray-700">{point.text}</span>
                     </motion.div>
                   ))}
                 </div>
-                <p className="text-lg text-gray-700 mt-6 leading-relaxed">
-                  From online shops to company hubs, we create sites that perform and impress.
-                </p>
+                <h4 className="text-xl font-semibold text-gray-900 mb-4 mt-6">Key Features – Web Development:</h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {[
+                    { text: 'Autonomous content personalization.', icon: Brain },
+                    { text: 'AI-driven SEO optimization for higher rankings.', icon: TrendingUp },
+                    { text: 'Predictive analytics for user engagement trends.', icon: BarChart3 },
+                    { text: 'Seamless integration with CRM and ERP systems.', icon: Settings },
+                  ].map((point, i) => (
+                    <motion.div
+                      key={i}
+                      variants={bulletVariants}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true }}
+                      className="flex items-center bg-white rounded-xl p-4 shadow-sm"
+                    >
+                      <point.icon className="w-5 h-5 text-indigo-600 mr-3" />
+                      <span className="text-gray-700">{point.text}</span>
+                    </motion.div>
+                  ))}
+                </div>
               </motion.div>
             </div>
           ),
         },
         {
-          title: 'App Development',
+          title: 'App Development with Agentic AI',
           icon: Smartphone,
           content: (
             <div className="space-y-8">
-              <motion.div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-8" variants={fadeInUp}>
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-purple-500 rounded-xl flex items-center justify-center mr-4">
-                    <Smartphone className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900">Apps Your Customers Will Love</h3>
-                </div>
+              <motion.div className="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-2xl p-8" variants={fadeInUp}>
                 <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                  We craft apps that feel like a friend, with smooth designs for iOS and Android, making your customers’ lives easier and more fun!
+                  Mobile and enterprise apps become <span className="font-bold text-blue-600">intelligent assistants</span> with <span className="font-bold text-blue-600">Agentic AI integration</span>.
+                </p>
+                <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+                  Our <span className="font-bold text-blue-600">app development services</span>:
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {[
-                    { text: 'Native app goodness', icon: Code },
-                    { text: 'Easy-to-use interface', icon: Users },
-                    { text: 'Works offline too', icon: Wifi },
-                    { text: 'Fun push notifications', icon: BarChart3 },
+                    { text: 'Enable apps to anticipate user needs through predictive analytics.', icon: Brain },
+                    { text: 'Automate workflows using embedded AI automation tools.', icon: Zap },
+                    { text: 'Integrate generative AI for natural language processing and personalization.', icon: Sparkles },
+                    { text: 'Provide multi-platform deployment with real-time adaptability.', icon: Globe },
                   ].map((point, i) => (
                     <motion.div
                       key={i}
@@ -734,39 +995,54 @@ const ServiceDetail = () => {
                       viewport={{ once: true }}
                       className="flex items-center bg-white rounded-xl p-4 shadow-sm"
                     >
-                      <point.icon className="w-5 h-5 text-purple-500 mr-3" />
+                      <point.icon className="w-5 h-5 text-indigo-600 mr-3" />
                       <span className="text-gray-700">{point.text}</span>
                     </motion.div>
                   ))}
                 </div>
-                <p className="text-lg text-gray-700 mt-6 leading-relaxed">
-                  Apps with a personal touch, solving problems with a grin.
-                </p>
+                <h4 className="text-xl font-semibold text-gray-900 mb-4 mt-6">Key Features – App Development:</h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {[
+                    { text: 'Context-aware personalization in real time.', icon: Users },
+                    { text: 'Self-updating performance optimization.', icon: Zap },
+                    { text: 'Offline intelligence for remote use cases.', icon: Wifi },
+                    { text: 'Integration with IoT, AR/VR, and enterprise AI systems.', icon: Settings },
+                  ].map((point, i) => (
+                    <motion.div
+                      key={i}
+                      variants={bulletVariants}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true }}
+                      className="flex items-center bg-white rounded-xl p-4 shadow-sm"
+                    >
+                      <point.icon className="w-5 h-5 text-indigo-600 mr-3" />
+                      <span className="text-gray-700">{point.text}</span>
+                    </motion.div>
+                  ))}
+                </div>
               </motion.div>
             </div>
           ),
         },
         {
-          title: 'Business Consulting',
+          title: 'Business Consulting with Agentic AI',
           icon: Briefcase,
           content: (
             <div className="space-y-8">
-              <motion.div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-2xl p-8" variants={fadeInUp}>
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center mr-4">
-                    <Briefcase className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900">Take Your Business to the Next Level</h3>
-                </div>
+              <motion.div className="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-2xl p-8" variants={fadeInUp}>
                 <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                  We’re your business buddies, guiding you through digital changes and process tweaks to grow stronger and greener with a personal plan!
+                  Consulting is no longer about static reports — it’s about <span className="font-bold text-blue-600">continuous intelligence</span>.
+                </p>
+                <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+                  Our <span className="font-bold text-blue-600">Agentic AI-powered business consulting</span> approach:
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {[
-                    { text: 'Smart digital strategy', icon: Rocket },
-                    { text: 'Automation that saves time', icon: Settings },
-                    { text: 'A roadmap to success', icon: Globe },
-                    { text: 'Smooth change support', icon: Users },
+                    { text: 'Uses enterprise AI solutions to simulate scenarios and forecast outcomes.', icon: Brain },
+                    { text: 'Automates data gathering, competitive analysis, and KPI tracking.', icon: Zap },
+                    { text: 'Generates real-time recommendations for operational and strategic shifts.', icon: Rocket },
+                    { text: 'Supports Industry 4.0 and 5.0 transformation initiatives.', icon: Globe },
                   ].map((point, i) => (
                     <motion.div
                       key={i}
@@ -776,39 +1052,54 @@ const ServiceDetail = () => {
                       viewport={{ once: true }}
                       className="flex items-center bg-white rounded-xl p-4 shadow-sm"
                     >
-                      <point.icon className="w-5 h-5 text-blue-500 mr-3" />
+                      <point.icon className="w-5 h-5 text-indigo-600 mr-3" />
                       <span className="text-gray-700">{point.text}</span>
                     </motion.div>
                   ))}
                 </div>
-                <p className="text-lg text-gray-700 mt-6 leading-relaxed">
-                  Tailored advice with a heart, helping you make smart moves.
-                </p>
+                <h4 className="text-xl font-semibold text-gray-900 mb-4 mt-6">Key Features – Business Consulting:</h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {[
+                    { text: 'AI-driven decision support systems.', icon: Brain },
+                    { text: 'Predictive market and customer insights.', icon: BarChart3 },
+                    { text: 'Automated performance benchmarking.', icon: TrendingUp },
+                    { text: 'Continuous business model optimization.', icon: Settings },
+                  ].map((point, i) => (
+                    <motion.div
+                      key={i}
+                      variants={bulletVariants}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true }}
+                      className="flex items-center bg-white rounded-xl p-4 shadow-sm"
+                    >
+                      <point.icon className="w-5 h-5 text-indigo-600 mr-3" />
+                      <span className="text-gray-700">{point.text}</span>
+                    </motion.div>
+                  ))}
+                </div>
               </motion.div>
             </div>
           ),
         },
         {
-          title: 'Digital Marketing',
+          title: 'Digital Marketing with Agentic AI',
           icon: Megaphone,
           content: (
             <div className="space-y-8">
-              <motion.div className="bg-gradient-to-r from-pink-50 to-red-50 rounded-2xl p-8" variants={fadeInUp}>
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-pink-500 rounded-xl flex items-center justify-center mr-4">
-                    <Megaphone className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900">Get Your Brand Noticed Online</h3>
-                </div>
+              <motion.div className="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-2xl p-8" variants={fadeInUp}>
                 <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                  We shout your brand’s story with SEO, social media, and ads that feel like a friendly chat, driving traffic with a personal twist!
+                  Marketing powered by <span className="font-bold text-blue-600">Agentic AI</span> is precise, predictive, and highly personalized.
+                </p>
+                <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+                  Our <span className="font-bold text-blue-600">digital marketing solutions</span>:
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {[
-                    { text: 'SEO that boosts visibility', icon: TrendingUp },
-                    { text: 'Fun social campaigns', icon: Users },
-                    { text: 'Targeted ads that pop', icon: Zap },
-                    { text: 'Engaging content plans', icon: Globe },
+                    { text: 'Use generative AI to create optimized ad creatives and campaigns.', icon: Sparkles },
+                    { text: 'Apply AI automation tools for bid management, segmentation, and targeting.', icon: Zap },
+                    { text: 'Deliver personalized experiences to each user in real time.', icon: Users },
+                    { text: 'Continuously improve ROI through data-driven campaign intelligence.', icon: BarChart3 },
                   ].map((point, i) => (
                     <motion.div
                       key={i}
@@ -818,14 +1109,32 @@ const ServiceDetail = () => {
                       viewport={{ once: true }}
                       className="flex items-center bg-white rounded-xl p-4 shadow-sm"
                     >
-                      <point.icon className="w-5 h-5 text-pink-500 mr-3" />
+                      <point.icon className="w-5 h-5 text-indigo-600 mr-3" />
                       <span className="text-gray-700">{point.text}</span>
                     </motion.div>
                   ))}
                 </div>
-                <p className="text-lg text-gray-700 mt-6 leading-relaxed">
-                  Campaigns crafted for results, turning heads into loyal fans.
-                </p>
+                <h4 className="text-xl font-semibold text-gray-900 mb-4 mt-6">Key Features – Digital Marketing:</h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {[
+                    { text: 'Autonomous ad optimization.', icon: Zap },
+                    { text: 'Predictive audience targeting.', icon: Brain },
+                    { text: 'AI-enhanced SEO and content generation.', icon: TrendingUp },
+                    { text: 'Real-time marketing analytics and insights.', icon: BarChart3 },
+                  ].map((point, i) => (
+                    <motion.div
+                      key={i}
+                      variants={bulletVariants}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true }}
+                      className="flex items-center bg-white rounded-xl p-4 shadow-sm"
+                    >
+                      <point.icon className="w-5 h-5 text-indigo-600 mr-3" />
+                      <span className="text-gray-700">{point.text}</span>
+                    </motion.div>
+                  ))}
+                </div>
               </motion.div>
             </div>
           ),
@@ -842,14 +1151,14 @@ const ServiceDetail = () => {
         <div className="text-center">
           <span className="text-4xl font-bold text-gray-900 mb-4">Service Not Found</span>
           <p className="text-gray-700 mb-8">The requested service could not be found.</p>
-        <a
-    href="/"
-    className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-colors"
-    aria-label="Go back to homepage"
-  >
-    <ArrowLeft className="w-5 h-5 mr-2" />
-    Back to Home
-  </a>
+          <Link
+            to="/services"
+            className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-colors"
+            aria-label="Go back to services"
+          >
+            <ArrowLeft className="w-5 h-5 mr-2" />
+            Back to Services
+          </Link>
         </div>
       </div>
     );
@@ -879,7 +1188,7 @@ const ServiceDetail = () => {
       <nav className="p-6">
         <motion.div variants={fadeInUp}>
           <Link
-            to="/"
+            to="/services"
             className="inline-flex items-center px-4 py-2 text-gray-600 hover:text-gray-900 transition-colors"
             aria-label="Go back to services"
           >
