@@ -14,10 +14,13 @@ import ExploreDetail from './pages/ExploreDetail';
 import SectionDetail from './pages/SectionDetail';
 import IndustryDetail from './pages/IndustryDetail';
 import ProductDetail from './pages/ProductDetail';
-import Insights from './pages/Insights'; // Added import
-import ArticlePage from './pages/ArticlePage'; // Added import
-import SocialMediaLinks from './components/SocialMediaLinks'; // Added import
+import Insights from './pages/Insights';
+import ArticlePage from './pages/ArticlePage';
+import SocialMediaLinks from './components/SocialMediaLinks';
+import AnalyticsTracker from './components/AnalyticsTracker'; // Import the tracker
 
+
+// Scroll to Top Component
 const ScrollToTop = () => {
   const { pathname } = useLocation();
   useEffect(() => {
@@ -37,9 +40,9 @@ function App() {
       '/services',
       '/career',
       '/contact',
-      '/insights', // Added route
-      '/article/:id', // Added route
-      '/services/:serviceSlug', // Updated route to match Services.tsx
+      '/insights',
+      '/article/:id',
+      '/services/:serviceSlug',
       '/explore/:exploreId',
       '/explore/:exploreId/:sectionId',
       '/industry/:industryId',
@@ -50,9 +53,10 @@ function App() {
   return (
     <HelmetProvider>
       <Router>
+        <AnalyticsTracker /> {/* Place the tracker at the top of Router */}
         <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-indigo-900">
           <Navbar />
-          <SocialMediaLinks /> {/* Added component */}
+          <SocialMediaLinks />
           <ScrollToTop />
           <Routes>
             <Route path="/" element={<Home />} />
@@ -61,9 +65,9 @@ function App() {
             <Route path="/services" element={<Services />} />
             <Route path="/career" element={<Career />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/insights" element={<Insights />} /> {/* Added route */}
-            <Route path="/article/:id" element={<ArticlePage />} /> {/* Added route */}
-            <Route path="/services/:serviceSlug" element={<ServiceDetail />} /> {/* Updated route */}
+            <Route path="/insights" element={<Insights />} />
+            <Route path="/article/:id" element={<ArticlePage />} />
+            <Route path="/services/:serviceSlug" element={<ServiceDetail />} />
             <Route path="/explore/:exploreId" element={<ExploreDetail />} />
             <Route path="/explore/:exploreId/:sectionId" element={<SectionDetail />} />
             <Route path="/industry/:industryId" element={<IndustryDetail />} />
