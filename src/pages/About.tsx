@@ -252,6 +252,7 @@ const About: React.FC = () => {
           content="CubeAI Solutions, Agentic AI, generative AI, intelligent automation, enterprise AI, business transformation, AI innovation"
         />
       </Helmet>
+
       {/* Hero Section */}
       <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0">
@@ -272,10 +273,12 @@ const About: React.FC = () => {
             </h2>
             <p className="text-xl text-gray-200 max-w-4xl mx-auto leading-relaxed">
               At CubeAI Solutions, we lead the transformation from conventional AI to Agentic AI building self directed, intelligent systems that autonomously analyze, decide, and act to achieve enterprise goals. From generative AI innovations to AI automation tools, we are redefining what’s possible for industries worldwide.
+              {' '}<a href="/services" className="text-blue-400 hover:underline" aria-label="Explore AI-Powered Services">Explore AI-Powered Services</a>.
             </p>
           </motion.div>
         </div>
       </section>
+
       {/* Mission & Vision */}
       <section className="py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -327,6 +330,7 @@ const About: React.FC = () => {
           </div>
         </div>
       </section>
+
       {/* Board of Directors */}
       <section className="py-32 bg-gradient-to-br from-slate-50 via-gray-50 to-zinc-50 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(99,102,241,0.1),transparent)] pointer-events-none" />
@@ -398,6 +402,7 @@ const About: React.FC = () => {
               </motion.div>
             ))}
           </div>
+
           {/* Advisors */}
           <motion.div
             initial={{ opacity: 0, y: 100 }}
@@ -467,6 +472,7 @@ const About: React.FC = () => {
           </div>
         </div>
       </section>
+
       {/* Global Offices */}
       <section className="py-32 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -482,7 +488,8 @@ const About: React.FC = () => {
               Global AI Solutions Network
             </h3>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Serving clients worldwide with local expertise and global reach across multiple continents
+              Serving clients worldwide with local expertise and global reach across multiple continents.
+              {' '}<a href="/contact" className="text-red-600 hover:underline" aria-label="Contact CubeAI for AI Solutions">Contact CubeAI for AI Solutions</a>.
             </p>
           </motion.div>
           <div className="grid md:grid-cols-3 lg:grid-cols-6 gap-6">
@@ -501,6 +508,7 @@ const About: React.FC = () => {
           </div>
         </div>
       </section>
+
       {/* Awards Section */}
       <section className="py-32 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden">
         <div className="absolute inset-0">
@@ -647,6 +655,7 @@ const About: React.FC = () => {
             </div>
           </motion.div>
         </div>
+
         {/* Award Modal */}
         <AnimatePresence>
           {selectedAward && (
@@ -750,6 +759,7 @@ const About: React.FC = () => {
           )}
         </AnimatePresence>
       </section>
+
       {/* Team Section */}
       <section className="py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -814,6 +824,7 @@ const About: React.FC = () => {
           </div>
         </div>
       </section>
+
       {/* Inline Styles */}
       <style jsx>{`
         @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');

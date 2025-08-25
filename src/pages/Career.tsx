@@ -54,7 +54,6 @@ const Career = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log('Submitting application with data:', formData);
-
     try {
       const formDataToSend = new FormData();
       formDataToSend.append('name', formData.name);
@@ -66,20 +65,16 @@ const Career = () => {
         console.warn('No resume file provided');
       }
       formDataToSend.append('coverLetter', formData.coverLetter);
-
       console.log('Sending FormData to backend:', Object.fromEntries(formDataToSend));
       const response = await fetch('http://localhost:5000/api/career', {
         method: 'POST',
         body: formDataToSend,
       });
-
       const data = await response.json();
       console.log('Backend response:', data);
-
       if (!response.ok) {
         throw new Error(data.message || 'Application submission failed');
       }
-
       toast.success(data.message || 'Application submitted successfully!');
       setShowConfirmation(true);
       setTimeout(() => {
@@ -129,24 +124,25 @@ const Career = () => {
     { title: 'Backend Developer', location: 'Bangalore, India', type: 'Full-time' },
     { title: 'Machine Learning Engineer', location: 'London, UK', type: 'Full-time' },
     { title: 'Data Analyst', location: 'Namakkal, India', type: 'Part-time' },
-    { title: 'DevOps Engineer', location: 'Kochi, India', type: 'Full-time' }, // Fixed typo
+    { title: 'DevOps Engineer', location: 'Kochi, India', type: 'Full-time' },
   ];
 
   return (
     <div className="min-h-screen pt-20 bg-gray-50">
       <Toaster position="top-right" />
+
       {/* SEO Meta Tags */}
       <Helmet>
-  <title>CubeAI Solutions - career for Future</title>
-  <meta
-    name="description"
-    content="Join CubeAI Solutions in August 2025! Explore AI, software development, and more career opportunities in Coimbatore, Bangalore, and London. Apply today."
-  />
-  <meta
-    name="keywords"
-    content="CubeAI Solutions careers, AI jobs 2025, software development jobs, Coimbatore jobs, Bangalore jobs, London jobs, apply now, career opportunities"
-  />
-</Helmet>
+        <title>CubeAI Solutions - Career for Future</title>
+        <meta
+          name="description"
+          content="Join CubeAI Solutions in August 2025! Explore AI, software development, and more career opportunities in Coimbatore, Bangalore, and London. Apply today."
+        />
+        <meta
+          name="keywords"
+          content="CubeAI Solutions careers, AI jobs 2025, software development jobs, Coimbatore jobs, Bangalore jobs, London jobs, apply now, career opportunities, machine learning jobs, data science jobs, tech innovation"
+        />
+      </Helmet>
 
       {/* Hero Section */}
       <section className="relative py-32 overflow-hidden">
@@ -175,13 +171,13 @@ const Career = () => {
             <h1 className="text-4xl md:text-7xl font-bold text-white mb-8">
               Build the <span className="text-blue-400">Future</span> with Us
             </h1>
-             <h2 className="text-2xl md:text-3xl font-semibold text-white mb-6">
-              AI Careers at CubeAISolutions
+            <h2 className="text-2xl md:text-3xl font-semibold text-white mb-6">
+              AI Careers at CubeAI Solutions
             </h2>
             <p className="text-xl text-gray-200 max-w-4xl mx-auto leading-relaxed">
               Join CubeAI Solutions and work on cutting-edge AI projects that transform industries.
-             
-              and become part of our innovative team.
+              {' '}<a href="/about" className="text-blue-400 hover:underline" aria-label="Learn About CubeAI Solutions">Learn About CubeAI Solutions</a>
+              {' '}and become part of our innovative team.
             </p>
           </motion.div>
         </div>
@@ -201,7 +197,6 @@ const Career = () => {
               Discover opportunities to grow your career with us. Find the role that matches your skills and passion.
             </p>
           </motion.div>
-
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {jobOpenings.map((job, index) => (
               <motion.div
@@ -249,7 +244,6 @@ const Career = () => {
           >
             <div className="bg-white rounded-2xl p-10 border border-gray-200">
               <h2 className="text-3xl font-bold text-gray-900 mb-8">Apply Now</h2>
-
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
@@ -293,7 +287,6 @@ const Career = () => {
                     />
                   </div>
                 </div>
-
                 <div>
                   <label
                     htmlFor="position"
@@ -314,7 +307,6 @@ const Career = () => {
                     aria-required="true"
                   />
                 </div>
-
                 <div>
                   <label
                     htmlFor="resume"
@@ -334,7 +326,6 @@ const Career = () => {
                     aria-required="true"
                   />
                 </div>
-
                 <div>
                   <label
                     htmlFor="coverLetter"
@@ -355,7 +346,6 @@ const Career = () => {
                     aria-required="true"
                   ></textarea>
                 </div>
-
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
