@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { ArrowRight, Share2 } from 'lucide-react';
 import { getArticlesByCategory } from '../data/articles';
@@ -24,16 +23,17 @@ const Insights = () => {
       }}
     >
       <Helmet>
-  <title>CubeAI Insights | Knowledge Hub | AI & ML Trends 2025</title>
-  <meta
-    name="description"
-    content="Explore CubeAI Insights: Unlock deep insights, predictive trends, and transformative strategies in AI, machine learning, and innovation as of August 2025."
-  />
-  <meta
-    name="keywords"
-    content="CubeAI Insights, AI trends 2025, machine learning, technology trends, AI ethics, business strategy, case studies, knowledge hub, innovation"
-  />
-</Helmet>
+        <title>CubeAI Insights | Knowledge Hub | AI & ML Trends 2025</title>
+        <meta
+          name="description"
+          content="Explore CubeAI Insights: Unlock deep insights, predictive trends, and transformative strategies in AI, machine learning, and innovation as of August 2025."
+        />
+        <meta
+          name="keywords"
+          content="CubeAI Insights, AI trends 2025, machine learning insights, emerging technology trends, AI ethics and governance, responsible AI, AI in business strategy, digital transformation strategies, AI case studies, real-world AI applications, knowledge hub for artificial intelligence, future of AI and ML, innovation in artificial intelligence, predictive analytics trends, next-gen business automation, enterprise AI solutions"
+        />
+      </Helmet>
+
       {/* Animated Background Blobs */}
       <div className="absolute inset-0 pointer-events-none z-0">
         <div className="absolute top-20 right-10 w-[500px] h-[500px] bg-purple-400 opacity-20 rounded-full blur-[160px] animate-pulse"></div>
@@ -43,15 +43,14 @@ const Insights = () => {
       <div className="container mx-auto px-4 lg:px-6 relative z-10">
         {/* Header */}
         <div className="text-center mb-16" data-aos="fade-down">
-         
           <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-              CubeAI{' '}
+            CubeAI{' '}
             <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
               Hub
             </span>
           </h1>
           <p className="text-xl text-gray max-w-3xl mx-auto leading-relaxed">
-Empower your decisions with AI-driven insights, forecast future trends with precision, and revolutionize strategies through next-gen innovation.
+            Empower your decisions with AI-driven insights, forecast future trends with precision, and revolutionize strategies through next-gen innovation.
           </p>
         </div>
 
@@ -114,13 +113,13 @@ Empower your decisions with AI-driven insights, forecast future trends with prec
                       <div className="flex items-center justify-between">
                         <div className="flex items-center space-x-6 text-sm text-gray-500">
                         </div>
-                        <Link
-                          to={`/article/${insight.id}`}
+                        <a
+                          href={`/article/${insight.id}`}
                           className="group/btn flex items-center text-purple-600 hover:text-purple-700 font-semibold"
                         >
                           <span>Read Article</span>
                           <ArrowRight className="w-5 h-5 ml-2 group-hover/btn:translate-x-2 transition-transform" />
-                        </Link>
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -172,13 +171,13 @@ Empower your decisions with AI-driven insights, forecast future trends with prec
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-4 text-sm text-gray-500">
                     </div>
-                    <Link
-                      to={`/article/${insight.id}`}
+                    <a
+                      href={`/article/${insight.id}`}
                       className="group/btn flex items-center text-purple-600 hover:text-purple-700 font-semibold"
                     >
                       <span>Read</span>
                       <ArrowRight className="w-4 h-4 ml-1 group-hover/btn:translate-x-1 transition-transform" />
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </article>

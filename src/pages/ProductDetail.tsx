@@ -304,17 +304,18 @@ const ProductDetail = () => {
 
   return (
     <div className="min-h-screen pt-20 bg-gray-50">
-      <Helmet>
-        <title>{`CubeAI Solutions - ${product.title} Product Details`}</title>
-        <meta
-          name="description"
-          content={`Discover ${product.title}, a ${product.subtitle.toLowerCase()} solution by CubeAI, featuring AI-powered capabilities to transform your business operations.`}
-        />
-        <meta
-          name="keywords"
-          content={`CubeAI Solutions, ${product.title}, ${product.subtitle.toLowerCase()}, AI solutions, business automation, predictive analytics`}
-        />
-      </Helmet>
+     <Helmet>
+  <title>CubeAI Solutions - Product Details</title>
+  <meta
+    name="description"
+    content="Discover CubeAI's products featuring AI-powered solutions to transform business operations with automation, predictive analytics, and innovation."
+  />
+  <meta
+    name="keywords"
+    content="CubeAI Solutions, AI solutions, business automation, predictive analytics, digital transformation, enterprise software"
+  />
+</Helmet>
+
 
       {/* Hero Section with the only h1 tag */}
       <section className="relative py-32 overflow-hidden">

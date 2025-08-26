@@ -113,13 +113,14 @@ const ArticlePage = () => {
       <Helmet>
         <title>{article.title} | CubeAI Insights</title>
         <meta
-          name="description"
-          content={`Read ${article.title} on CubeAI Insights: ${article.excerpt || 'Explore deep insights on AI and innovation'}.`}
-        />
-        <meta
-          name="keywords"
-          content={`${article.tags.join(', ')}, ${article.category}, CubeAI Insights, AI trends, technology, innovation`}
-        />
+  name="description"
+  content="Read the latest insights on AI, technology, and innovation from CubeAI Insights."
+/>
+<meta
+  name="keywords"
+  content="AI, Artificial Intelligence, Machine Learning, Business Automation, Cloud Computing, Data Analytics, Digital Transformation, IoT, SaaS, Enterprise Software, Technology, Innovation"
+/>
+
       </Helmet>
 
       <Header />

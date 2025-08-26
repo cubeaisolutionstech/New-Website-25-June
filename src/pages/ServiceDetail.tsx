@@ -1168,21 +1168,18 @@ const ServiceDetail = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
-      <Helmet>
-        <title>{`CubeAI Solutions - ${service.title}`}</title>
-        <meta
-          name="description"
-          content={`Explore ${service.title} by CubeAI, offering innovative solutions including ${service.sections
-            .map((section) => section.title)
-            .join(', ')}.`}
-        />
-        <meta
-          name="keywords"
-          content={`CubeAI Solutions, ${service.title}, AI solutions, ${service.sections
-            .map((section) => section.title)
-            .join(', ')}, ${service.slug}`}
-        />
-      </Helmet>
+     <Helmet>
+  <title>CubeAI Solutions - AI Services</title>
+  <meta
+    name="description"
+    content="Explore CubeAI's AI services, offering innovative solutions including automation, predictive analytics, machine learning, cloud AI, and digital transformation."
+  />
+  <meta
+    name="keywords"
+    content="CubeAI Solutions, AI services, Artificial Intelligence, Machine Learning, Automation, Predictive Analytics, Cloud AI, Data Analytics, Digital Transformation, Intelligent Systems"
+  />
+</Helmet>
+
 
       {/* Navigation */}
       <nav className="p-6">

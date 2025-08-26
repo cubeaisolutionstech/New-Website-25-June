@@ -14,6 +14,8 @@ import {
   Send,
   MapPin,
   AlertCircle,
+  CheckCircle, // Add this line
+
 } from 'lucide-react';
 
 // Define the shape of the form data
@@ -244,10 +246,14 @@ const Services: React.FC = () => {
 
   return (
     <div className="min-h-screen pt-20 bg-gray-50">
-      <Helmet>
-        <title>CubeAI Solutions - Our Services</title>
-        <meta name="description" content="Explore CubeAI Solutions' comprehensive AI-powered services, including AIMA, AIDA, CyTI, Cubebotics, DCE, Vision AI, and Tech Solution, designed to transform businesses across industries." />
-        <meta name="keywords" content="CubeAI Solutions, AI services, machine learning, data analytics, cybersecurity, IoT, cloud engineering, web development, app development, business consulting" />
+     <Helmet>
+    <title>CubeAI Services & Services , ML, IoT & Digital Transformation</title>
+    <meta name="description" content="Discover CubeAI Solutions services in AI, Machine Learning, IoT, Data Analytics, Embedded Systems, and Digital Transformation for businesses." />
+    <meta 
+  name="keywords" 
+  content="AI solutions, Artificial Intelligence services, Machine Learning solutions, AI consulting, AI agents, Deep Learning, Data Analytics, Big Data, Predictive Analytics, Business Intelligence, AI-powered automation, Digital Transformation, Cloud Engineering, Cloud Solutions, DevOps automation, Hybrid Cloud, Cybersecurity services, Threat Detection, IoT solutions, Embedded Systems, Drone technology, Computer Vision, NLP solutions, AI chatbots, Industry 4.0, Industry 5.0, SaaS platforms, CubeAI Solutions" 
+/>
+
       </Helmet>
 
       {/* Hero Section */}
