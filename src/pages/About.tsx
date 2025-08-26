@@ -244,13 +244,10 @@ const About: React.FC = () => {
       <Helmet>
         <title>CubeAI Solutions - Agentic AI Innovation</title>
         <meta
-          name="description"
-          content="Discover CubeAI Solutions' leadership in Agentic AI, empowering enterprises with intelligent automation, generative AI, and sustainable business transformation."
-        />
-        <meta
-          name="keywords"
-          content="CubeAI Solutions, Agentic AI, generative AI, intelligent automation, enterprise AI, business transformation, AI innovation"
-        />
+    name="description"
+    content="Discover CubeAI Solutions' journey in AI innovation, leadership, and global transformation. Learn about our mission, vision, expert team, and prestigious awards." />
+
+      <meta name="keywords" content="CubeAI Solutions, AI innovation, leadership team, mission, vision, global offices, AI awards, business transformation, board of directors, advisors, global AI solutions, team expertise" />
       </Helmet>
 
       {/* Hero Section */}

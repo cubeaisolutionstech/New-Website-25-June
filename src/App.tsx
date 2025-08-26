@@ -69,7 +69,7 @@ function App() {
             <Route path="/article/:id" element={<ArticlePage />} />
             <Route path="/services/:serviceSlug" element={<ServiceDetail />} />
             <Route path="/explore/:exploreId" element={<ExploreDetail />} />
-            <Route path="/explore/:exploreId/:sectionId" element={<SectionDetail />} />
+            <Route path="/section/:exploreId/:itemId" element={<SectionDetail />} />
             <Route path="/industry/:industryId" element={<IndustryDetail />} />
             <Route path="/product/:productId" element={<ProductDetail />} />
             <Route path="*" element={<div>404: Page Not Found</div>} />

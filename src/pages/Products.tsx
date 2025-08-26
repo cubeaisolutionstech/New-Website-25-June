@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion, Variants } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import {
   Users,
   Building2,
@@ -164,14 +163,14 @@ const Products = () => {
   return (
     <div className="min-h-screen pt-20 relative overflow-hidden bg-gradient-to-b from-gray-100 to-blue-100">
       <Helmet>
-        <title>CubeAI Solutions - Our Products</title>
+        <title>CubeAI Solutions - AI-Powered Enterprise Products</title>
         <meta
           name="description"
-          content="Explore CubeAI's suite of AI-powered enterprise solutions, including Andromeda CRM, Orion ERP, Nebula CDM, and Cosmos Orchestration, designed to transform your business operations."
+          content="Discover CubeAI’s innovative AI-powered enterprise products — Andromeda CRM, Orion ERP, Nebula CDM, and Cosmos Orchestration. Our solutions simplify customer management, optimize resources, unify data, and automate workflows to accelerate digital transformation."
         />
         <meta
           name="keywords"
-          content="CubeAI Solutions, Andromeda CRM, Orion ERP, Nebula CDM, Cosmos Orchestration, AI solutions, enterprise software, business automation"
+          content="CubeAI Solutions products, Andromeda CRM AI customer management, Orion ERP enterprise resource planning, Nebula CDM customer data management, Cosmos Orchestration workflow automation, AI-powered enterprise software, digital transformation tools, business process automation"
         />
       </Helmet>
 
@@ -335,8 +334,8 @@ const Products = () => {
                     </div>
                   </div>
                   {/* CTA Button */}
-                  <Link
-                    to={`/product/${product.id}`}
+                  <a
+                    href={`/product/${product.id}`}
                     className="w-full"
                     aria-label={`Learn more about ${product.title}`}
                   >
@@ -348,7 +347,7 @@ const Products = () => {
                       Learn More
                       <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-2 transition-transform" />
                     </motion.button>
-                  </Link>
+                  </a>
                 </div>
               </motion.div>
             ))}

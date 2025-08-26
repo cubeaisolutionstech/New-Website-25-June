@@ -3,6 +3,9 @@ import { motion } from 'framer-motion';
 import { Link, useNavigate } from 'react-router-dom';
 import { Award, ArrowRight, Sparkles, Target } from 'lucide-react';
 import FloatingCube from '../components/FloatingCube';
+import { Helmet } from 'react-helmet-async';
+
+
 
 const Home = () => {
   const [selectedCard, setSelectedCard] = useState<string | null>(null);
@@ -142,6 +145,18 @@ const Home = () => {
   return (
     <div className="relative overflow-hidden bg-gray-100">
       <FloatingCube />
+      <Helmet>
+        <title>CubeAI Solutions: AI Tools for Workflow Automation</title>
+        <meta
+          name="description"
+          content="CubeAI Solutions delivers GenAI-driven software, including web and mobile apps, FinTech, and cybersecurity tools, to streamline operations and boost efficiency."
+        />
+        <meta
+          name="keywords"
+          content="CubeAI Solutions, AI workflow automation, Generative AI software, machine learning solutions, web and mobile app development, FinTech AI tools, cybersecurity AI, AI-powered analytics"
+        />
+        <meta name="google-site-verification" content="bcVqGkmuaS0Sk1xXnqhiE_qKKiENi2AnFRb-vTKCvVw" />
+      </Helmet>
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-gradient-to-br from-blue-600 via-purple-600 to-purple-700">

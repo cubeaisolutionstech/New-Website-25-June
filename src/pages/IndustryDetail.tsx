@@ -456,14 +456,14 @@ const IndustryDetail = () => {
   return (
     <div className="min-h-screen bg-blue-100">
       <Helmet>
-        <title>{`CubeAI Solutions - ${industry.title} Industry Solutions`}</title>
+        <title>CubeAI Solutions - Industry Solutions</title>
         <meta
           name="description"
-          content={`Explore CubeAI's ${industry.title.toLowerCase()} solutions, including AI-powered automation, analytics, and innovative technologies to transform your industry.`}
+          content="Explore CubeAI's industry solutions, including AI-powered automation, predictive analytics, digital transformation, and innovative technologies tailored for different sectors."
         />
         <meta
           name="keywords"
-          content={`CubeAI Solutions, ${industry.title.toLowerCase()}, AI solutions, industry automation, predictive analytics, smart technology`}
+          content="CubeAI Solutions, Industry Solutions, AI solutions, Business Automation, AI-powered technology, Smart Systems, Predictive Analytics, Digital Transformation, Industry 4.0"
         />
       </Helmet>
 
@@ -518,12 +518,16 @@ const IndustryDetail = () => {
                 transition={{ delay: 0.6, duration: 0.8 }}
                 className="flex items-center space-x-4"
               >
-                <div className="inline-flex items-center px-6 py-3 rounded-full bg-blue-100 text-blue-800 font-medium hover:bg-blue-200 transition-colors cursor-pointer">
+                <a
+                  href="#solutions"
+                  className="inline-flex items-center px-6 py-3 rounded-full bg-blue-100 text-blue-800 font-medium hover:bg-blue-200 transition-colors cursor-pointer"
+                >
                   <Sparkles className="w-5 h-5 mr-2" />
                   Explore Solutions
-                </div>
+                </a>
               </motion.div>
             </div>
+
             {/* Right Image with Organic Shape */}
             <div className="relative">
               <motion.div
@@ -576,7 +580,7 @@ const IndustryDetail = () => {
       </section>
 
       {/* Content Sections with Clean Cards */}
-      <section className="py-20 bg-white">
+      <section id="solutions" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-8">
             {sections.map((sectionContent: SectionContent, index: number) => (

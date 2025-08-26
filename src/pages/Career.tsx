@@ -136,7 +136,7 @@ const Career = () => {
         <title>CubeAI Solutions - Career for Future</title>
         <meta
           name="description"
-          content="Join CubeAI Solutions in August 2025! Explore AI, software development, and more career opportunities in Coimbatore, Bangalore, and London. Apply today."
+          content="Join CubeAI Solutions to Explore AI, software development, and more career opportunities in Coimbatore, Bangalore, and London."
         />
         <meta
           name="keywords"
