@@ -1510,13 +1510,13 @@ const SectionDetail = () => {
             transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
             className="w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full mx-auto mb-4"
           />
-          <motion.h1
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-2xl font-bold text-gray-800"
           >
             Loading Amazing Content...
-          </motion.h1>
+          </motion.p>
         </div>
       </div>
     );
@@ -1537,7 +1537,7 @@ const SectionDetail = () => {
           >
             🤔
           </motion.div>
-          <h1 className="text-4xl font-bold mb-4 text-gray-800">Oops! Not Found</h1>
+          <span className="text-4xl font-bold mb-4 text-gray-800">Oops! Not Found</span>
           <p className="text-gray-600 mb-8">{error || 'The requested page could not be found.'}</p>
           <Link
             to="/"

@@ -290,7 +290,7 @@ const About: React.FC = () => {
                 <div className="w-16 h-16 rounded-xl bg-blue-600 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
                   <Target className="w-8 h-8 text-white" />
                 </div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Mission</h2>
+                <h3 className="text-3xl font-bold text-gray-900 mb-6">Our Mission</h3>
                 <p className="text-gray-600 leading-relaxed text-lg">
                   To revolutionize industries by integrating Agentic AI, generative AI, and intelligent automation into every layer of enterprise operations. We aim to empower organizations to:
                 </p>
@@ -312,7 +312,7 @@ const About: React.FC = () => {
                 <div className="w-16 h-16 rounded-xl bg-emerald-600 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
                   <Award className="w-8 h-8 text-white" />
                 </div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Vision</h2>
+                <h3 className="text-3xl font-bold text-gray-900 mb-6">Our Vision</h3>
                 <p className="text-gray-600 leading-relaxed text-lg">
                   To become the global leader in Agentic AI innovation, enabling businesses to operate as intelligent, adaptive ecosystems in the Industry 4.0 and Industry 5.0 era. We envision a world where:
                 </p>
@@ -481,9 +481,9 @@ const About: React.FC = () => {
             <div className="w-20 h-20 rounded-xl bg-red-600 flex items-center justify-center mx-auto mb-8">
               <Globe className="w-10 h-10 text-white" />
             </div>
-            <h3 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
               Global AI Solutions Network
-            </h3>
+            </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Serving clients worldwide with local expertise and global reach across multiple continents.
               {' '}<a href="/contact" className="text-red-600 hover:underline" aria-label="Contact CubeAI for AI Solutions">Contact CubeAI for AI Solutions</a>.
@@ -499,7 +499,7 @@ const About: React.FC = () => {
                 whileHover={{ scale: 1.05, y: -5 }}
                 className="bg-white rounded-xl p-6 text-center border border-gray-200 hover:border-gray-300 transition-all duration-500"
               >
-                <h3 className="text-lg font-semibold text-gray-900">{office}</h3>
+                <h2 className="text-lg font-semibold text-gray-900">{office}</h2>
               </motion.div>
             ))}
           </div>

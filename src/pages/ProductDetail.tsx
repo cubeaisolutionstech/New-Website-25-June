@@ -289,7 +289,7 @@ const ProductDetail = () => {
     return (
       <div className="min-h-screen flex items-center justify-center pt-20">
         <div className="text-center text-gray-900">
-          <h2 className="text-4xl font-bold mb-4">Product Not Found</h2>
+          <span className="text-4xl font-bold mb-4">Product Not Found</span>
           <p className="text-gray-600">The requested product could not be found.</p>
         </div>
       </div>
