@@ -490,7 +490,7 @@ const IndustryDetail = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
               >
-                <h1 className="text-5xl lg:text-7xl font-bold text-blue-900 leading-tight">
+                <span className="text-5xl lg:text-7xl font-bold text-blue-900 leading-tight">
                   {industry.title.split(' ').map((word, index) => (
                     <motion.span
                       key={index}
@@ -502,16 +502,16 @@ const IndustryDetail = () => {
                       {word}
                     </motion.span>
                   ))}
-                </h1>
+                </span>
               </motion.div>
-              <motion.p
+              <motion.h1
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.4, duration: 0.8 }}
                 className="text-xl text-gray-700 leading-relaxed max-w-lg"
               >
                 Transforming industries with cutting-edge AI solutions and innovative technology platforms
-              </motion.p>
+              </motion.h1>
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}

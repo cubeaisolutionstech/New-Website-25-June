@@ -162,14 +162,14 @@ const Home = () => {
       <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-gradient-to-br from-blue-600 via-purple-600 to-purple-700">
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex-1 flex flex-col justify-center pt-28">
           <motion.div className="mb-16">
-            <motion.h2
+            <motion.h1
               className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
               Empowering Businesses with <span className="text-yellow-400">Intelligent AI</span>
-            </motion.h2>
+            </motion.h1>
             <motion.h2
               className="text-2xl md:text-3xl font-semibold text-white mb-6"
               initial={{ opacity: 0, y: 20 }}
