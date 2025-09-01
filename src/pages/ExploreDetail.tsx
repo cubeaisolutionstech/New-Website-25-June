@@ -50,6 +50,7 @@ const ExploreDetail = () => {
         { id: 'invoice-examination', name: 'Invoice Examination', icon: FileText, category: 'Finance', description: 'Smart invoice processing and validation system with fraud detection' },
         { id: 'excel-to-pdf', name: 'Excel to PDF', icon: FileText, category: 'Document', description: 'Automated document conversion with formatting preservation and batch processing' },
         { id: 'pdf-to-excel', name: 'PDF to Excel', icon: FileText, category: 'Document', description: 'Advanced data extraction and conversion with table recognition' },
+        { id: 'chatbot-solutions', name: 'AI-Powered Chatbots', icon: Sparkles, category: 'AI', description: 'Smart chatbot solutions driven by advanced natural language processing' },
         { id: 'logistics-automation', name: 'Smart Logistics Automation', icon: Zap, category: 'Logistics', description: 'End-to-end supply chain optimization with predictive analytics' },
         { id: 'legacy-modernization', name: 'Legacy System Transformation', icon: Database, category: 'Modernization', description: 'Modernize outdated systems with AI-driven platforms for seamless integration'},
         { id: 'industry-40', name: 'Industry 4.0 & 5.0 Innovation', icon: Cpu, category: 'Manufacturing', description: 'Cutting-edge smart manufacturing powered by AI, IoT, and advanced analytics'},
@@ -92,7 +93,6 @@ const ExploreDetail = () => {
         { id: 'number-plate', name: 'Number Plate Recognition System', icon: Camera, category: 'Security', description: 'Real-time vehicle identification and monitoring with license plate detection' },
         { id: 'pcb-board', name: 'PCB Board', icon: Cpu, category: 'Manufacturing', description: 'Automated circuit board inspection and quality control with defect detection' },
         { id: 'meter-monitoring', name: 'Water and Energy Meter Monitoring', icon: Shield, category: 'IoT', description: 'Smart meter reading and consumption analytics with mobile application support' },
-        { id: 'chatbot-solutions', name: 'AI-Powered Chatbots', icon: Sparkles, category: 'AI', description: 'Smart chatbot solutions driven by advanced natural language processing' },
         { id: "fabric-defect-detection", name: "Fabric Defect Detection System", icon: Camera, category: "Manufacturing", description: "Automated fabric inspection with real-time defect detection for quality assurance" },
         { id: "contactless-body-measurement", name: "Contactless Human Body Size Measurement Solution", icon: Activity, category: "Measurement", description: "Accurate, non-invasive body size measurement using advanced computer vision" }
       ],

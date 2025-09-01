@@ -126,6 +126,41 @@ const SectionDetail = () => {
           color: 'from-blue-500 to-cyan-600',
           bgGradient: 'from-blue-50 to-cyan-50'
         },
+         'chatbot-solutions': {
+          id: 'chatbot-solutions',
+          title: 'AI-Powered Chatbot Solutions',
+          subtitle: 'Intelligent Conversational AI Platform',
+          description: 'Advanced chatbot solutions with natural language processing and multi-channel support',
+          fullContent: 'Transform your customer engagement with our AI-Powered Chatbot Solutions that deliver intelligent, human-like conversations across multiple channels. This comprehensive platform uses advanced natural language processing and machine learning to understand user intent, provide accurate responses, and seamlessly escalate complex queries to human agents. With multi-language support and continuous learning capabilities, our chatbots improve over time while maintaining consistent service quality.',
+          features: [
+            'Natural Language Understanding',
+            'Multi-channel Deployment',
+            'Intelligent Intent Recognition',
+            'Seamless Human Handoff',
+            'Continuous Learning',
+            'Analytics Dashboard'
+          ],
+          benefits: [
+            'Handle 80% of customer queries automatically',
+            'Reduce response time to seconds',
+            'Provide 24/7 customer support',
+            'Lower support costs by 70%',
+            'Improve customer satisfaction',
+            'Scale support operations efficiently'
+          ],
+          techStack: ['Natural Language Processing', 'Machine Learning', 'Conversational AI', 'Multi-channel APIs', 'Analytics Platform'],
+          useCases: [
+            'Customer Service Automation',
+            'E-commerce Support',
+            'Lead Generation',
+            'FAQ Automation',
+            'Appointment Scheduling'
+          ],
+          image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+          icon: Sparkles,
+          color: 'from-indigo-500 to-purple-600',
+          bgGradient: 'from-indigo-50 to-purple-50'
+        },
         'resume-filtering': {
           id: 'resume-filtering',
           title: 'Resume Filtering Agent',
