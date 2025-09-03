@@ -107,7 +107,7 @@ const About: React.FC = () => {
       shortDescription: 'Celebrated for outstanding contributions to AI technology.',
       detailedDescription:
         'Celebrated for groundbreaking innovations in artificial intelligence delivering state of the art algorithms and intelligent systems that have redefined industry standards in machine learning, automation, and enterprise transformation.',
-      backgroundImage: '/image/award5.png',
+      backgroundImage: '/image/Achivements4.jpg',
       modalImages: [
         {
           image: '/image/Achivements4.jpg',
