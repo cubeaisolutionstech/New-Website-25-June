@@ -17,17 +17,24 @@ import ProductDetail from './pages/ProductDetail';
 import Insights from './pages/Insights';
 import ArticlePage from './pages/ArticlePage';
 import SocialMediaLinks from './components/SocialMediaLinks';
-import AnalyticsTracker from './components/AnalyticsTracker'; // Import the tracker
+import AnalyticsTracker from './components/AnalyticsTracker'; 
+import ReadyToContact from './components/ReadyToContact';
 
-
-// Scroll to Top Component
-const ScrollToTop = () => {
+// Scroll to Top + ReadyToContact wrapper
+const AppContent = () => {
   const { pathname } = useLocation();
+
   useEffect(() => {
     console.log(`Navigated to path: ${pathname}`);
     window.scrollTo(0, 0);
   }, [pathname]);
-  return null;
+
+  return (
+    <>
+      {/* Show ReadyToContact everywhere except Contact page */}
+      {pathname !== '/contact' && <ReadyToContact />}
+    </>
+  );
 };
 
 function App() {
@@ -44,7 +51,7 @@ function App() {
       '/article/:id',
       '/services/:serviceSlug',
       '/explore/:exploreId',
-      '/explore/:exploreId/:sectionId',
+      '/section/:exploreId/:itemId',
       '/industry/:industryId',
       '/product/:productId',
     ]);
@@ -53,11 +60,11 @@ function App() {
   return (
     <HelmetProvider>
       <Router>
-        <AnalyticsTracker /> {/* Place the tracker at the top of Router */}
+        <AnalyticsTracker /> {/* Tracking user navigation */}
         <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-indigo-900">
           <Navbar />
           <SocialMediaLinks />
-          <ScrollToTop />
+          <AppContent /> {/* Handles ScrollToTop + ReadyToContact */}
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />

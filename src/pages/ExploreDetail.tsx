@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, Brain, BarChart3, Eye, Code, Zap, FileText, Cpu, Database, Activity, Camera, Shield, Building2, Sparkles, Cloud, Smartphone, MessageSquare, Stethoscope, Scale, Users, PenTool, Plane, Mail } from 'lucide-react';
+import { ArrowRight, Brain, BarChart3, Eye, Code, Zap, FileText, Cpu, Database, Activity, Camera, Shield, Building2, Sparkles, Cloud, Smartphone, MessageSquare, Stethoscope, Scale, Users, PenTool, Plane, Mail, DollarSign, BarChart, Home, Globe, Phone } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import type { LucideIcon } from 'lucide-react';
 
@@ -26,42 +26,49 @@ interface ExploreData {
   items: DomainItem[];
 }
 
-// Define valid exploreId keys
 type ExploreId = 'aima' | 'aida' | 'vision-ai' | 'city' | 'cubebotics' | 'dce' | 'tech-solution';
 
 const ExploreDetail = () => {
   const { exploreId } = useParams<{ exploreId: ExploreId }>();
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   const exploreData: Record<ExploreId, ExploreData> = {
     aima: {
-      title: 'AIMA',
-      subtitle: 'Artificial Intelligence, Machine Learning & Agent',
-      description: 'Get business automation, intelligent processing, document conversion, and analysis — all in one scalable AI solution',
-      color: 'from-emerald-400 via-cyan-500 to-blue-600',
-      bgGradient: 'from-emerald-50 via-cyan-50 to-blue-50',
-      cardColor: 'from-emerald-100 to-cyan-100',
-      bgImage: '/image/eaima.jpg',
-      items: [
-        { id: 'resume-filtering', name: 'Resume Filtering Agent', icon: FileText, category: 'Automation', description: 'AI-powered resume screening and candidate filtering with intelligent matching algorithms' },
-        { id: 'sql-automation', name: 'SQL Automation Agent', icon: Database, category: 'Automation', description: 'An SQL Automation Agent is a specialized software tool or AI agent designed to automate, schedule, and manage routine or complex database operations' },
-        { id: 'medical-agent', name: 'Hospital Management System', icon: Activity, category: 'Healthcare', description: 'Intelligent medical diagnosis and analysis assistant for healthcare professionals' },
-        { id: 'invoice-examination', name: 'Invoice Examination', icon: FileText, category: 'Finance', description: 'Smart invoice processing and validation system with fraud detection' },
-        { id: 'excel-to-pdf', name: 'Excel to PDF', icon: FileText, category: 'Document', description: 'Automated document conversion with formatting preservation and batch processing' },
-        { id: 'pdf-to-excel', name: 'PDF to Excel', icon: FileText, category: 'Document', description: 'Advanced data extraction and conversion with table recognition' },
-        { id: 'chatbot-solutions', name: 'AI-Powered Chatbots', icon: Sparkles, category: 'AI', description: 'Smart chatbot solutions driven by advanced natural language processing' },
-        { id: 'logistics-automation', name: 'Smart Logistics Automation', icon: Zap, category: 'Logistics', description: 'End-to-end supply chain optimization with predictive analytics' },
-        { id: 'legacy-modernization', name: 'Legacy System Transformation', icon: Database, category: 'Modernization', description: 'Modernize outdated systems with AI-driven platforms for seamless integration'},
-        { id: 'industry-40', name: 'Industry 4.0 & 5.0 Innovation', icon: Cpu, category: 'Manufacturing', description: 'Cutting-edge smart manufacturing powered by AI, IoT, and advanced analytics'},
-        { id: 'customer-support-agent', name: 'Customer Support Agent', icon: MessageSquare, category: 'Customer Service', description: 'AI-driven customer support with automated responses and sentiment analysis' },
-        { id: 'voice-clinical-agent', name: 'Voice Activated Clinical Intelligence Agent', icon: Stethoscope, category: 'Healthcare', description: 'Voice-enabled clinical assistant for hands-free medical data access and documentation' },
-        { id: 'legal-document-analyzer', name: 'Legal Document Analyzer Agent', icon: Scale, category: 'Legal', description: 'AI-powered analysis and summarization of legal documents with compliance checks' },
-        { id: 'lead-generation-agent', name: 'Lead Generation Agent', icon: Users, category: 'Marketing', description: 'Automated lead identification and qualification with predictive scoring' },
-        { id: 'linkedin-content-agent', name: 'LinkedIn Content Creation Agent', icon: PenTool, category: 'Marketing', description: 'AI-crafted LinkedIn posts and content strategies for enhanced engagement' },
-        { id: 'travel-planner-agent', name: 'Travel Planner Agent', icon: Plane, category: 'Travel', description: 'Intelligent travel itinerary planning with personalized recommendations' },
-        { id: 'email-automation-agent', name: 'Email Automation Agent', icon: Mail, category: 'Automation', description: 'Automated email campaign management with personalized content generation' },
-      ],
+title: 'AIMA',
+subtitle: 'Artificial Intelligence, Machine Learning & Agent',
+description: 'Get business automation, intelligent processing, document conversion, and analysis — all in one scalable AI solution',
+color: 'from-emerald-400 via-cyan-500 to-blue-600',
+bgGradient: 'from-emerald-50 via-cyan-50 to-blue-50',
+cardColor: 'from-emerald-100 to-cyan-100',
+bgImage: '/image/eaima.jpg',
+items: [
+{ id: 'resume-filtering', name: 'Resume Filtering Agent', icon: FileText, category: 'Automation', description: 'AI-powered resume screening and candidate filtering with intelligent matching algorithms' },
+{ id: 'sql-automation', name: 'SQL Automation Agent', icon: Database, category: 'Automation', description: 'An SQL Automation Agent is a specialized software tool or AI agent designed to automate, schedule, and manage routine or complex database operations' },
+{ id: 'medical-agent', name: 'Hospital Management System', icon: Activity, category: 'Healthcare', description: 'Intelligent medical diagnosis and analysis assistant for healthcare professionals' },
+{ id: 'invoice-examination', name: 'Invoice Examination', icon: FileText, category: 'Finance', description: 'Smart invoice processing and validation system with fraud detection' },
+{ id: 'excel-to-pdf', name: 'Excel to PDF', icon: FileText, category: 'Document', description: 'Automated document conversion with formatting preservation and batch processing' },
+{ id: 'pdf-to-excel', name: 'PDF to Excel', icon: FileText, category: 'Document', description: 'Advanced data extraction and conversion with table recognition' },
+{ id: 'logistics-automation', name: 'Smart Logistics Automation', icon: Zap, category: 'Logistics', description: 'End-to-end supply chain optimization with predictive analytics' },
+{ id: 'legacy-modernization', name: 'Legacy System Transformation', icon: Database, category: 'Modernization', description: 'Modernize outdated systems with AI-driven platforms for seamless integration'},
+{ id: 'industry-40', name: 'Industry 4.0 & 5.0 Innovation', icon: Cpu, category: 'Manufacturing', description: 'Cutting-edge smart manufacturing powered by AI, IoT, and advanced analytics'},
+{ id: 'customer-support-agent', name: 'Customer Support Agent', icon: MessageSquare, category: 'Customer Service', description: 'AI-driven customer support with automated responses and sentiment analysis' },
+{ id: 'voice-clinical-agent', name: 'Voice Activated Clinical Intelligence Agent', icon: Stethoscope, category: 'Healthcare', description: 'Voice-enabled clinical assistant for hands-free medical data access and documentation' },
+{ id: 'legal-document-analyzer', name: 'Legal Document Analyzer Agent', icon: Scale, category: 'Legal', description: 'AI-powered analysis and summarization of legal documents with compliance checks' },
+{ id: 'lead-generation-agent', name: 'Lead Generation Agent', icon: Users, category: 'Marketing', description: 'Automated lead identification and qualification with predictive scoring and multi-channel sourcing' },
+{ id: 'linkedin-content-agent', name: 'LinkedIn Content Creation Agent', icon: PenTool, category: 'Marketing', description: 'AI-crafted LinkedIn posts and content strategies for enhanced engagement' },
+{ id: 'travel-planner-agent', name: 'Travel Planner Agent', icon: Plane, category: 'Travel', description: 'Intelligent travel itinerary planning with personalized recommendations' },
+{ id: 'email-automation-agent', name: 'Email Automation Agent', icon: Mail, category: 'Automation', description: 'Automated email campaign management with personalized content generation' },
+{ id: 'content-creating-agents', name: 'Content Creating Agents', icon: PenTool, category: 'Marketing', description: 'AI-powered content generation for blogs, articles, and marketing materials with SEO optimization' },
+{ id: 'social-media-agent', name: 'Social Media Agent', icon: MessageSquare, category: 'Marketing', description: 'Intelligent social media management with post scheduling, engagement analysis, and trend monitoring' },
+{ id: 'investment-agent', name: 'Investment Agent', icon: DollarSign, category: 'Finance', description: 'AI-driven investment analysis and portfolio management with risk assessment and market predictions' },
+{ id: 'events-analysing-agent', name: 'Events Analysing Agent', icon: BarChart, category: 'Analytics', description: 'Advanced event data analysis with performance metrics, attendee insights, and ROI calculations' },
+{ id: 'house-conveyancing-agent', name: 'House Conveyancing Agent', icon: Home, category: 'Real Estate', description: 'Automated property transfer processing with legal document review and compliance verification' },
+{ id: 'cold-mail-sending-agents', name: 'Cold Mail Sending Agents', icon: Mail, category: 'Sales', description: 'Personalized cold email campaign automation with A/B testing and response tracking' },
+{ id: 'web-scraping-agent', name: 'Web Scraping Agent', icon: Globe, category: 'Data', description: 'Ethical web data extraction with structured output and real-time monitoring capabilities' },
+{ id: 'table-booking-calling-agent', name: 'Table Booking Calling Agent', icon: Phone, category: 'Hospitality', description: 'Voice-enabled restaurant reservation system with availability checking and confirmation handling' }
+],
     },
     aida: {
       title: 'AIDA',
@@ -83,18 +90,19 @@ const ExploreDetail = () => {
     'vision-ai': {
       title: 'Vision AI',
       subtitle: 'Computer Vision & Intelligent Systems',
-      description: 'Get smart recognition, automated monitoring, real-time analysis, and security — all in one intelligent vision solution',
+      description: 'Get smart recognition, automated monitoring, real real-time analysis, and security — all in one intelligent vision solution',
       color: 'from-violet-400 via-purple-500 to-indigo-600',
       bgGradient: 'from-violet-50 via-purple-50 to-indigo-50',
       cardColor: 'from-violet-100 to-purple-100',
       bgImage: '/image/evision.jpeg',
       items: [
-        { id: 'attendance-system', name: 'Smart Attendance System', icon: Eye, category: 'Recognition', description: 'Facial recognition and automated attendance tracking with real-time monitoring' },
-        { id: 'number-plate', name: 'Number Plate Recognition System', icon: Camera, category: 'Security', description: 'Real-time vehicle identification and monitoring with license plate detection' },
-        { id: 'pcb-board', name: 'PCB Board', icon: Cpu, category: 'Manufacturing', description: 'Automated circuit board inspection and quality control with defect detection' },
-        { id: 'meter-monitoring', name: 'Water and Energy Meter Monitoring', icon: Shield, category: 'IoT', description: 'Smart meter reading and consumption analytics with mobile application support' },
-        { id: "fabric-defect-detection", name: "Fabric Defect Detection System", icon: Camera, category: "Manufacturing", description: "Automated fabric inspection with real-time defect detection for quality assurance" },
-        { id: "contactless-body-measurement", name: "Contactless Human Body Size Measurement Solution", icon: Activity, category: "Measurement", description: "Accurate, non-invasive body size measurement using advanced computer vision" }
+        { id: 'attendance-system', name: 'Smart Attendance System', icon: Eye, category: 'Recognition', description: 'Facial recognition and automated attendance tracking with real-time monitoring', image: '/image/attness.webp' },
+        { id: 'number-plate', name: 'Number Plate Recognition System', icon: Camera, category: 'Security', description: 'Real-time vehicle identification and monitoring with license plate detection', image: '/image/number.png' },
+        { id: 'pcb-board', name: 'PCB Board', icon: Cpu, category: 'Manufacturing', description: 'Automated circuit board inspection and quality control with defect detection', image: '/image/pcb.jpg' },
+        { id: 'meter-monitoring', name: 'Water and Energy Meter Monitoring', icon: Shield, category: 'IoT', description: 'Smart meter reading and consumption analytics with mobile application support', image: '/image/metter.webp' },
+        { id: 'chatbot-solutions', name: 'AI-Powered Chatbots', icon: Sparkles, category: 'AI', description: 'Smart chatbot solutions driven by advanced natural language processing', image: '/image/echat.avif' },
+        { id: 'fabric-defect', name: 'Fabric Defect Detection System', icon: Camera, category: 'Manufacturing', description: 'Automated fabric inspection with real-time defect detection for quality assurance', image: '/image/fabric-defect.jpg' },
+        { id: 'body-measurement', name: 'Contactless Human Body Size Measurement Solution', icon: Activity, category: 'Measurement', description: 'Accurate, non-invasive body size measurement using advanced computer vision', image: '/image/body-measurement.jpg' }
       ],
     },
     city: {
@@ -108,7 +116,8 @@ const ExploreDetail = () => {
       items: [
         { id: 'iot-services', name: 'IoT Connectivity Solutions', icon: Database, category: 'IoT', description: 'Integrated Internet of Things solutions for connected devices and systems', image: '/image/eiot.jpg' },
         { id: 'auto-sizing', name: 'Large Language Model Solutions', icon: Brain, category: 'AI', description: 'Advanced LLMs for intelligent applications and natural language understanding', image: '/image/ellm.jpg' },
-      ],
+        { id :'Digital',name:'Digital Monitoring System',icon: Shield, category:'AI', description:'A Digital Monitoring System tracks real-time activities, provides insights, and improves efficiency with instant alerts.'}
+      ]
     },
     cubebotics: {
       title: 'Cubebotics',
@@ -134,6 +143,7 @@ const ExploreDetail = () => {
       items: [
         { id: 'data-engineering', name: 'Data Pipeline Engineering', icon: Database, category: 'Data', description: 'Scalable data pipelines designed for efficiency and reliability', image: '/image/de.jpg' },
         { id: 'cloud-engineering', name: 'Cloud Infrastructure Solutions', icon: Cloud, category: 'Cloud', description: 'End-to-end cloud services for migration and infrastructure optimization', image: '/image/ce.png' },
+        { id: 'Hadoop ',name:'Hadoop in Docker ',icon:Database,category:'Data', description:'Our Docker Compose setup supports HDFS, YARN, Spark integration for efficient analytics, ML, and productivity in diverse environments.'}
       ],
     },
     'tech-solution': {
@@ -163,6 +173,16 @@ const ExploreDetail = () => {
     console.log('Explore data:', exploreData[exploreId]);
   }, [exploreId]);
 
+  const handleSeeHowItWorks = (itemId: string) => {
+    console.log(`Navigating to /section/${exploreId}/${itemId}`);
+    try {
+      navigate(`/section/${exploreId}/${itemId}`);
+    } catch (err) {
+      console.error(`Navigation error for ${itemId}:`, err);
+      setError(`Failed to navigate to ${itemId} page`);
+    }
+  };
+
   // Function to handle title capitalization
   const getFormattedTitle = (title: string) => {
     if (title === 'AIMA' || title === 'AIDA' || title === 'CyTI') {
@@ -175,7 +195,7 @@ const ExploreDetail = () => {
     return (
       <div className="min-h-screen bg-gray-100 flex items-center justify-center">
         <div className="text-center">
-          <span className="text-2xl font-bold text-gray-800">Loading...</span>
+          <h1 className="text-2xl font-bold text-gray-800">Loading...</h1>
         </div>
       </div>
     );
@@ -185,7 +205,7 @@ const ExploreDetail = () => {
     return (
       <div className="min-h-screen bg-gray-100 flex items-center justify-center">
         <div className="text-center">
-          <span className="text-4xl font-bold mb-4 text-gray-800">404 - Not Found</span>
+          <h1 className="text-4xl font-bold mb-4 text-gray-800">404 - Not Found</h1>
           <p className="text-gray-600 mb-8">{error || 'The requested page could not be found.'}</p>
           <Link
             to="/"
@@ -250,14 +270,6 @@ const ExploreDetail = () => {
       <Helmet>
         <title>{`CubeAI - ${explore.title} Solutions`}</title>
         <meta name="description" content={explore.description} />
-        <meta
-          name="keywords"
-          content="CubeAI Solutions, Artificial Intelligence, AI solutions, Machine Learning, Business Automation, Cloud Computing, Data Analytics, Digital Transformation, IoT, Industry 4.0, SaaS, Enterprise Software"
-        />
-        <meta
-          name="description"
-          content="CubeAI Solutions provides AI-powered solutions for business automation, machine learning, data analytics, cloud computing, IoT, and digital transformation."
-        />
       </Helmet>
 
       {/* Background Design */}
@@ -496,6 +508,7 @@ const ExploreDetail = () => {
               {explore.items.map((item, index) => {
                 const ItemIcon = item.icon;
                 const animationVariant = cardAnimationVariants[index % cardAnimationVariants.length];
+
                 return (
                   <motion.div
                     key={item.id}
@@ -533,13 +546,15 @@ const ExploreDetail = () => {
                         <p className="text-gray-700 text-sm leading-relaxed mb-6 flex-1">
                           {item.description}
                         </p>
-                        <a
-                          href={`/section/${exploreId}/${item.id}`}
+                        <motion.button
+                          whileHover={{ scale: 1.02, y: -2 }}
+                          whileTap={{ scale: 0.98 }}
+                          onClick={() => handleSeeHowItWorks(item.id)}
                           className="w-full bg-gray-900 text-white py-3 px-4 rounded-xl font-semibold text-sm hover:bg-gray-800 transition-all duration-300 flex items-center justify-center space-x-2 shadow-lg group-hover:shadow-xl"
                         >
                           <span>See How It Works</span>
                           <ArrowRight className="w-4 h-4" />
-                        </a>
+                        </motion.button>
                       </div>
                       <div className="absolute top-4 right-4 w-2 h-2 bg-white/40 rounded-full group-hover:bg-white/60 transition-colors" />
                       <div className="absolute bottom-4 left-4 w-1 h-1 bg-white/30 rounded-full group-hover:bg-white/50 transition-colors" />

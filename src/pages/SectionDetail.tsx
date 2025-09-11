@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
-import { ArrowLeft, ArrowRight, Code, CheckCircle, Star, Users, Shield, Zap, TrendingUp, Globe, Smartphone, BarChart3, Brain, Eye, Database, Activity, FileText, Cpu, Camera, MessageSquare, Stethoscope, Scale, PenTool, Plane, Mail, Building2, Sparkles, Cloud, Award, Target, Lightbulb, ChevronLeft, ChevronRight, DivideIcon as LucideIcon } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Code, CheckCircle, Star, Users, Shield, Zap, TrendingUp, Globe, Smartphone, BarChart3, Brain, Database, Activity, FileText, Cpu, Camera, MessageSquare, Stethoscope, Scale, PenTool, Plane, Mail, Building2, Sparkles, Cloud, Award, Target, Lightbulb, ChevronLeft, ChevronRight, DivideIcon as LucideIcon } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 
 // Define interfaces for type safety
@@ -16,7 +16,7 @@ interface SectionContent {
   techStack: string[];
   useCases: string[];
   image: string;
-  icon: typeof LucideIcon; // Updated to use typeof LucideIcon
+  icon: LucideIcon; // Updated to use LucideIcon
   color: string;
   bgGradient: string;
 }
@@ -121,45 +121,10 @@ const SectionDetail = () => {
             'Database Query Optimization',
             'Compliance and Governance Automation'
           ],
-          image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+          image: '/image/sql.webp',
           icon: Database,
           color: 'from-blue-500 to-cyan-600',
           bgGradient: 'from-blue-50 to-cyan-50'
-        },
-         'chatbot-solutions': {
-          id: 'chatbot-solutions',
-          title: 'AI-Powered Chatbot Solutions',
-          subtitle: 'Intelligent Conversational AI Platform',
-          description: 'Advanced chatbot solutions with natural language processing and multi-channel support',
-          fullContent: 'Transform your customer engagement with our AI-Powered Chatbot Solutions that deliver intelligent, human-like conversations across multiple channels. This comprehensive platform uses advanced natural language processing and machine learning to understand user intent, provide accurate responses, and seamlessly escalate complex queries to human agents. With multi-language support and continuous learning capabilities, our chatbots improve over time while maintaining consistent service quality.',
-          features: [
-            'Natural Language Understanding',
-            'Multi-channel Deployment',
-            'Intelligent Intent Recognition',
-            'Seamless Human Handoff',
-            'Continuous Learning',
-            'Analytics Dashboard'
-          ],
-          benefits: [
-            'Handle 80% of customer queries automatically',
-            'Reduce response time to seconds',
-            'Provide 24/7 customer support',
-            'Lower support costs by 70%',
-            'Improve customer satisfaction',
-            'Scale support operations efficiently'
-          ],
-          techStack: ['Natural Language Processing', 'Machine Learning', 'Conversational AI', 'Multi-channel APIs', 'Analytics Platform'],
-          useCases: [
-            'Customer Service Automation',
-            'E-commerce Support',
-            'Lead Generation',
-            'FAQ Automation',
-            'Appointment Scheduling'
-          ],
-          image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-          icon: Sparkles,
-          color: 'from-indigo-500 to-purple-600',
-          bgGradient: 'from-indigo-50 to-purple-50'
         },
         'resume-filtering': {
           id: 'resume-filtering',
@@ -191,7 +156,7 @@ const SectionDetail = () => {
             'Executive Search',
             'Seasonal Hiring Campaigns'
           ],
-          image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+           image: '/image/resume.webp',
           icon: FileText,
           color: 'from-purple-500 to-pink-600',
           bgGradient: 'from-purple-50 to-pink-50'
@@ -226,7 +191,7 @@ const SectionDetail = () => {
             'Complaint Resolution',
             'Product Information Queries'
           ],
-          image: 'https://images.unsplash.com/photo-1556745757-8d76bdb6984b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+          image: '/image/customer.png',
           icon: MessageSquare,
           color: 'from-green-500 to-blue-600',
           bgGradient: 'from-green-50 to-blue-50'
@@ -261,7 +226,7 @@ const SectionDetail = () => {
             'Patient Monitoring',
             'Medical Research Data Collection'
           ],
-          image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+          image: '/image/voice.jpg',
           icon: Stethoscope,
           color: 'from-red-500 to-pink-600',
           bgGradient: 'from-red-50 to-pink-50'
@@ -296,7 +261,7 @@ const SectionDetail = () => {
             'Surgical Suite Scheduling',
             'Multi-location Healthcare Systems'
           ],
-          image: 'https://images.unsplash.com/photo-1538108149393-fbbd81895907?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+          image: '/image/hospital.webp',
           icon: Activity,
           color: 'from-blue-600 to-purple-600',
           bgGradient: 'from-blue-50 to-purple-50'
@@ -331,7 +296,7 @@ const SectionDetail = () => {
             'Legal Research',
             'M&A Document Analysis'
           ],
-          image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+          image: '/image/legal.jpg',
           icon: Scale,
           color: 'from-indigo-500 to-purple-600',
           bgGradient: 'from-indigo-50 to-purple-50'
@@ -341,7 +306,7 @@ const SectionDetail = () => {
           title: 'Lead Generation Agent',
           subtitle: 'AI-Powered Sales Pipeline Acceleration',
           description: 'Intelligent lead capture, qualification, and nurturing across multiple channels',
-          fullContent: 'In Cube AI Solutions, our Lead Generation Agent helps businesses turn clicks into clients by using agentic AI, generative AI, and next-generation AI automation tools to capture, qualify, and nurture leads with precision from multiple digital channels. Built for today\'s enterprises, this smart solution automates website, LinkedIn, online directory, and social media platform lead capture and ensures no lead is left behind. With lead scoring, filtering, and CRM integration built-in, Lead Generation Agent allows sales and marketing teams to prioritize high-value leads, enhance conversion rates, and drive pipeline acceleration.',
+          fullContent: 'At Cube AI Solutions, our vision is to revolutionize the way businesses are run using state-of-the-art AI and Agentic AI solutions. Our Lead Generation Agent is specifically created to automate one of the most labor-intensive parts of business expansion—identifying and cultivating high-quality leads. Through the automation of lead generation, our AI agent equips companies with the ability to close deals while we do the heavy lifting of lead identification, qualification, and engagement of potential customers. Our Lead Generation Agent is a robust instrument that digitally completes the entire lead acquisition process with accuracy and speed. It smartly determines possible leads by scanning enormous datasets, making sure that only the most potential prospects are pursued. Using intelligent targeting strategies, the agent qualifies leads in accordance with your company\'s specific parameters, thus increasing chances for conversion. Once they are found, the agent cultivates these leads with customized contact, from creating bespoke content to handling follow-up interactions, all while adjusting to prospect activity to drive the highest level of engagement. This automation not only saves time it doubles productivity. By automating tasks such as digging through contact lists or writing repetitive emails, our Lead Generation Agent enables your sales team to spend their time building connections and closing deals. The result is an efficient sales pipeline with measurable growth, gaining more traction and a higher conversion rate. Whether you\'re a small business looking to scale or an enterprise aiming to optimize your sales process, our Lead Generation Agent delivers real value by enhancing efficiency, improving lead quality, and accelerating your path to revenue. With Cube AI Solutions, you\'re not just adopting technology you\'re partnering with a solution that evolves with your business, ensuring sustained growth in today\'s competitive landscape.',
           features: [
             'Multi-channel Lead Capture',
             'AI-powered Lead Scoring',
@@ -366,7 +331,7 @@ const SectionDetail = () => {
             'E-commerce Lead Generation',
             'SaaS Customer Acquisition'
           ],
-          image: 'https://images.unsplash.com/photo-1460925895917-dccba630e52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+          image: '/image/lead.webp',
           icon: Users,
           color: 'from-orange-500 to-red-600',
           bgGradient: 'from-orange-50 to-red-50'
@@ -401,7 +366,7 @@ const SectionDetail = () => {
             'Industry Expertise Showcase',
             'Professional Network Growth'
           ],
-          image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+          image: '/image/linked.png',
           icon: PenTool,
           color: 'from-blue-600 to-cyan-600',
           bgGradient: 'from-blue-50 to-cyan-50'
@@ -436,7 +401,7 @@ const SectionDetail = () => {
             'Group Travel Coordination',
             'Travel Policy Compliance'
           ],
-          image: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+          image: '/image/Travel.webp',
           icon: Plane,
           color: 'from-teal-500 to-blue-600',
           bgGradient: 'from-teal-50 to-blue-50'
@@ -471,7 +436,7 @@ const SectionDetail = () => {
             'Newsletter Automation',
             'Transactional Email Optimization'
           ],
-          image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+          image: '/image/email.webp',
           icon: Mail,
           color: 'from-pink-500 to-rose-600',
           bgGradient: 'from-pink-50 to-rose-50'
@@ -506,7 +471,7 @@ const SectionDetail = () => {
             'Expense Management',
             'Multi-entity Processing'
           ],
-          image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+          image: '/image/invoice.webp',
           icon: FileText,
           color: 'from-yellow-500 to-orange-600',
           bgGradient: 'from-yellow-50 to-orange-50'
@@ -541,7 +506,7 @@ const SectionDetail = () => {
             'Executive Summaries',
             'Operational Reports'
           ],
-          image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+          image: '/image/ex to pd.jpg',
           icon: FileText,
           color: 'from-green-500 to-teal-600',
           bgGradient: 'from-green-50 to-teal-50'
@@ -576,7 +541,7 @@ const SectionDetail = () => {
             'Compliance Documentation',
             'Research Data Collection'
           ],
-          image: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+          image: '/image/pd to ex.png',
           icon: FileText,
           color: 'from-purple-500 to-indigo-600',
           bgGradient: 'from-purple-50 to-indigo-50'
@@ -611,7 +576,7 @@ const SectionDetail = () => {
             'Food Delivery Services',
             'Healthcare Logistics'
           ],
-          image: 'https://images.unsplash.com/photo-1566328151448-0ad0e4b41f30?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+          image: '/image/smart.webp',
           icon: Zap,
           color: 'from-amber-500 to-orange-600',
           bgGradient: 'from-amber-50 to-orange-50'
@@ -646,7 +611,7 @@ const SectionDetail = () => {
             'API Gateway Implementation',
             'Cloud Migration Projects'
           ],
-          image: 'https://images.unsplash.com/photo-1518186285589-2f7649de83e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+          image:'/image/legacy.webp',
           icon: Database,
           color: 'from-slate-500 to-gray-600',
           bgGradient: 'from-slate-50 to-gray-50'
@@ -681,11 +646,308 @@ const SectionDetail = () => {
             'Energy Management Systems',
             'Supply Chain Integration'
           ],
-          image: 'https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+          image: '/image/sindu.jpg',
           icon: Cpu,
           color: 'from-blue-600 to-indigo-700',
           bgGradient: 'from-blue-50 to-indigo-50'
-        }
+        },
+        'content-creating-agents': {
+        id: 'content-creating-agents',
+        title: 'Content Creating Agents',
+        subtitle: 'AI-Driven Content Generation',
+        description: 'Intelligent agents for automated content creation across various formats',
+       fullContent: `At Cube AI Solutions, we're redefining how businesses approach content creation with our advanced AI and Agentic AI technologies. Our Content Creating Agent is built to tackle the time-intensive task of producing high-quality content, enabling companies to maintain a strong, consistent brand presence without the burden of manual effort.The Content Creating Agent creates a variety of content immediately, from motivating blog posts and social media posts to specific marketing material. With advanced AI, it provides imaginative, on-brand content specific to your audience so that every item fits your company's voice and mission. From persuasive articles for website traffic to short posts for social media engagement, our agent creates refined content at scale, freeing your team from hours of effort.What makes our solution stand out is that it can marry creativity with consistency. Not only does the agent create original content, but it also ensures a consistent tone and style on every platform, enhancing your brand's presence and influence. This automation avoids the repetitive process of brainstorming, writing, and editing, freeing your team to work on strategy and expansion. The outcome is a remarkable increase in productivity, with content that speaks to your audience and drives quantifiable outcomes, from engagement to brand awareness.With Cube AI Solutions' Content Creating Agent, you have a trusted collaborator that enables your business to lead in the rapidly changing digital world, creating high-quality content with ease and making your brand prominent.`,
+        features: [
+          'Multi-format Content Generation',
+          'Brand Voice Adaptation',
+          'SEO Optimization',
+          'Plagiarism Checking',
+          'Content Scheduling',
+          'Performance Analytics'
+        ],
+        benefits: [
+          'Save content creation time by 80%',
+          'Improve content quality',
+          'Scale content production',
+          'Enhance SEO rankings',
+          'Reduce costs',
+          'Maintain consistency'
+        ],
+        techStack: ['Generative AI', 'Natural Language Processing', 'Content Management Systems', 'SEO Tools', 'Analytics'],
+        useCases: [
+          'Blog Writing',
+          'Marketing Campaigns',
+          'Social Media Management',
+          'Email Newsletters',
+          'Product Descriptions'
+        ],
+        image: '/image/content.webp', // Replace with real image
+        icon: PenTool,
+        color: 'from-blue-500 to-cyan-600',
+        bgGradient: 'from-blue-50 to-cyan-50'
+      },
+      'social-media-agent': {
+        id: 'social-media-agent',
+        title: 'Social Media Agent',
+        subtitle: 'Automated Social Media Management',
+        description: 'AI agent for handling social media interactions, posting, and analytics',
+        fullContent: `At Cube AI Solutions, we're redefining how businesses approach content creation with our advanced AI and Agentic AI technologies. Our Content Creating Agent is built to tackle the time-intensive task of producing high-quality content, enabling companies to maintain a strong, consistent brand presence without the burden of manual effort.
+
+The Content Creating Agent creates a variety of content immediately, from motivating blog posts and social media posts to specific marketing material. With advanced AI, it provides imaginative, on-brand content specific to your audience so that every item fits your company's voice and mission. From persuasive articles for website traffic to short posts for social media engagement, our agent creates refined content at scale, freeing your team from hours of effort.
+
+What makes our solution stand out is that it can marry creativity with consistency. Not only does the agent create original content, but it also ensures a consistent tone and style on every platform, enhancing your brand's presence and influence. This automation avoids the repetitive process of brainstorming, writing, and editing, freein
+System: g your team to work on strategy and expansion. The outcome is a remarkable increase in productivity, with content that speaks to your audience and drives quantifiable outcomes, from engagement to brand awareness.
+
+With Cube AI Solutions' Content Creating Agent, you have a trusted collaborator that enables your business to lead in the rapidly changing digital world, creating high-quality content with ease and making your brand prominent.`,
+        features: [
+          'Automated Posting',
+          'Engagement Response',
+          'Trend Analysis',
+          'Audience Targeting',
+          'Content Curation',
+          'Reporting Dashboard'
+        ],
+        benefits: [
+          'Increase engagement by 50%',
+          'Save time on management',
+          'Optimize posting schedules',
+          'Grow followers',
+          'Improve ROI',
+          'Real-time monitoring'
+        ],
+        techStack: ['Social APIs', 'Machine Learning', 'Sentiment Analysis', 'Scheduling Tools', 'Analytics'],
+        useCases: [
+          'Brand Management',
+          'Influencer Campaigns',
+          'Customer Interaction',
+          'Content Promotion',
+          'Crisis Monitoring'
+        ],
+        image: '/image/social.webp', // Replace with real image
+        icon: Globe,
+        color: 'from-purple-500 to-pink-600',
+        bgGradient: 'from-purple-50 to-pink-50'
+      },
+      'investment-agent': {
+        id: 'investment-agent',
+        title: 'Investment Agent',
+        subtitle: 'AI-Powered Financial Advisory',
+        description: 'Intelligent agent for investment analysis and recommendations',
+       fullContent: `At Cube AI Solutions, we're leading the way to revolutionize the way companies and individuals deal with their financial portfolios using our groundbreaking AI and Agentic AI technologies. Our Investment Agent is an advanced solution aimed at eradicating the time-consuming, tasking effort of dealing with complicated investment management. Through automating vital processes, it enables users to make more intelligent, quicker, and more profitable investments while reducing risks, all with unmatched efficiency.
+
+The Investment Agent is an active, smart partner that endlessly keeps your investment portfolio under watch within different asset categories—stocks, bonds, real estate, cryptocurrencies, and more. With real-time market information, past patterns, and sophisticated algorithms, it sorts out winning opportunities that align with your individualized financial goals, whether it is short-term profit or long-term wealth accumulation. For instance, it can identify undervalued stocks, trending emerging markets, or high-yield investments, delivering clear, executable recommendations to enable you to beat the market.
+
+What distinguishes our Investment Agent is its capacity to reduce risks by predictive financial modeling. With the processing of huge amounts of economic data, including market volatility, economic indicators, and international events, the agent predicts possible risks and market slumps with high accuracy. It anticipates risks and market declines ahead of time and recommends offsetting strategies to counteract such risks, including diversification of your portfolio, asset allocation rebalancing, or hedging against market movements. This keeps your investments strong, even in volatile economic conditions.
+
+The automation facilitated by the Investment Agent removes the need for back-office work such as monitoring market news, digging into financial reports, or readjusting portfolios. This not only saves hours of effort but also scales productivity through enabling you to concentrate on strategic decisions instead of getting stuck in data. For companies, this translates to finance departments being able to focus on big-picture planning, while individual investors are able to optimize their wealth with the self-assurance of a professional analyst. The intuitive recommendations of the agent are made available for anyone, whether an experienced investor or a newcomer, to clearly make sense of without impenetrable jargon.
+
+Our Investment Agent has already demonstrated its worth in actual use, just like our other AI agents, for example, our sales and customer support agents, who have achieved great efficiency and business growth. It increases decision-making speed, portfolio performance, and diminishes the stress of dealing with complex financial markets through simplified investment process. From company treasuries managing cash flow to individuals constructing retirement portfolios, the Investment Agent produces quantifiable results, such as increased returns, reduced risks, and increased peace of mind.
+
+With the Investment Agent of Cube AI Solutions, you're not merely embracing a tool—you're investing in a solution that will grow with the changing financial world. It allows you to grasp opportunities, shield your assets, and realize your financial objectives with accuracy, making it an invaluable asset in today's fast-paced marketplaces.`,
+        features: [
+          'Market Trend Analysis',
+          'Portfolio Optimization',
+          'Risk Assessment',
+          'Real-time Alerts',
+          'Investment Simulations',
+          'Reporting Tools'
+        ],
+        benefits: [
+          'Improve returns by 30%',
+          'Reduce risks',
+          'Automate analysis',
+          'Personalized advice',
+          'Save time',
+          'Data-driven decisions'
+        ],
+        techStack: ['Financial APIs', 'Predictive Analytics', 'Machine Learning', 'Risk Models', 'Data Visualization'],
+        useCases: [
+          'Stock Trading',
+          'Portfolio Management',
+          'Retirement Planning',
+          'Crypto Investments',
+          'Market Forecasting'
+        ],
+        image: '/image/investor.jpg', // Replace with real image
+        icon: BarChart3,
+        color: 'from-green-500 to-blue-600',
+        bgGradient: 'from-green-50 to-blue-50'
+      },
+      'events-analysing-agent': {
+        id: 'events-analysing-agent',
+        title: 'Events Analysing Agent',
+        subtitle: 'Intelligent Event Data Analytics',
+        description: 'AI agent for analyzing event data and providing insights',
+        fullContent: 'Cube AI Solutions\' Events Analysing Agent leverages AI to streamline event planning and execution. It automates data collection and analysis, monitoring key metrics like registration, attendance, and engagement in real-time for virtual, in-person, or hybrid events. By integrating data from ticketing systems, social media, and feedback, it provides actionable insights to optimize sessions, marketing, and logistics. The agent generates tailored reports on attendee demographics and behavior, reducing manual effort and enabling data-driven decisions. Ideal for conferences, webinars, trade shows, and corporate events, it boosts productivity, enhances attendee satisfaction, and elevates event success.',
+        features: [
+          'Data Aggregation',
+          'Sentiment Analysis',
+          'Attendance Tracking',
+          'Performance Metrics',
+          'Predictive Forecasting',
+          'Custom Reports'
+        ],
+        benefits: [
+          'Improve event success by 40%',
+          'Optimize planning',
+          'Enhance attendee experience',
+          'Reduce costs',
+          'Data-driven improvements',
+          'Real-time insights'
+        ],
+        techStack: ['Event APIs', 'Analytics Tools', 'Machine Learning', 'Sentiment Analysis', 'Reporting Dashboards'],
+        useCases: [
+          'Conference Analysis',
+          'Webinar Metrics',
+          'Trade Show Insights',
+          'Corporate Events',
+          'Virtual Event Tracking'
+        ],
+        image: '/image/event.jpg', // Replace with real image
+        icon: Activity,
+        color: 'from-red-500 to-pink-600',
+        bgGradient: 'from-red-50 to-pink-50'
+      },
+      'house-conveyancing-agent': {
+        id: 'house-conveyancing-agent',
+        title: 'House Conveyancing Agent',
+        subtitle: 'Automated Property Transfer Assistance',
+        description: 'AI agent for streamlining house conveyancing processes',
+        fullContent: 'Cube AI Solutions\' House Conveyancing Agent revolutionizes real estate by simplifying property transactions with AI. It guides buyers, sellers, and agents through negotiations, offering real-time insights, response suggestions, and contract analysis to ensure clarity and efficiency. The agent compares properties using market data, providing fair pricing recommendations based on location, condition, and trends. By automating research and communication, it saves time, reduces errors, and boosts productivity. Ideal for first-time buyers, investors, and real estate professionals, it streamlines negotiations, contract reviews, and valuations, ensuring confident, data-driven decisions.',
+        features: [
+          'Document Automation',
+          'Compliance Verification',
+          'Stakeholder Communication',
+          'Timeline Management',
+          'Risk Assessment',
+          'Digital Signatures'
+        ],
+        benefits: [
+          'Speed up processes by 60%',
+          'Reduce errors',
+          'Ensure compliance',
+          'Lower costs',
+          'Improve efficiency',
+          'Secure transactions'
+        ],
+        techStack: ['Legal APIs', 'Document Processing', 'Automation Tools', 'Compliance Frameworks', 'Secure Storage'],
+        useCases: [
+          'Property Sales',
+          'Real Estate Transactions',
+          'Legal Due Diligence',
+          'Mortgage Processing',
+          'Title Transfers'
+        ],
+        image: '/image/home.webp', // Replace with real image
+        icon: Scale,
+        color: 'from-indigo-500 to-purple-600',
+        bgGradient: 'from-indigo-50 to-purple-50'
+      },
+      'cold-mail-sending-agents': {
+        id: 'cold-mail-sending-agents',
+        title: 'Cold Mail Sending Agents',
+        subtitle: 'AI-Optimized Email Outreach',
+        description: 'Intelligent agents for automated cold email campaigns',
+        fullContent: 'Cube AI Solutions\' Cold Mail Sending Agent transforms outreach by automating personalized email campaigns. It crafts engaging, human-sounding emails tailored to prospects’ industry, role, and interests, ensuring relevance and high engagement. The agent manages contact lists, segments audiences, and schedules emails for optimal open rates. Real-time performance tracking, like open and click-through rates, enables continuous campaign optimization. By automating repetitive tasks, it boosts productivity, freeing sales and marketing teams to focus on relationships and conversions. Ideal for startups to enterprises, it drives lead generation and partnerships. This agent delivers efficient, data-driven outreach, helping businesses connect with prospects and achieve growth goals.',
+        features: [
+          'Personalized Email Generation',
+          'Send Scheduling',
+          'Response Tracking',
+          'A/B Testing',
+          'Compliance Checking',
+          'Analytics Dashboard'
+        ],
+        benefits: [
+          'Increase response rates by 50%',
+          'Scale outreach',
+          'Reduce manual effort',
+          'Improve conversions',
+          'Ensure compliance',
+          'Data-driven optimization'
+        ],
+        techStack: ['Email APIs', 'Generative AI', 'Tracking Tools', 'A/B Testing', 'Compliance Modules'],
+        useCases: [
+          'Sales Prospecting',
+          'Lead Generation',
+          'Marketing Campaigns',
+          'Networking Outreach',
+          'Recruitment Emails'
+        ],
+        image: '/image/mail.webp', // Replace with real image
+        icon: Mail,
+        color: 'from-orange-500 to-red-600',
+        bgGradient: 'from-orange-50 to-red-50'
+      },
+      'web-scraping-agent': {
+        id: 'web-scraping-agent',
+        title: 'Web Scraping Agent',
+        subtitle: 'Intelligent Data Extraction',
+        description: 'AI agent for automated web data scraping and processing',
+        fullContent: 'Cube AI Solutions\' Web Scraping Agent revolutionizes data collection by automating web data extraction. It crawls complex websites, handles dynamic content, and bypasses obstacles like CAPTCHAs to extract structured data such as prices, reviews, or trends. Data is organized into usable formats like CSV or JSON for seamless integration. The agent provides real-time market insights, enabling businesses to track pricing, competitors, or customer sentiment. By eliminating manual data collection, it boosts productivity, supports strategic decisions, and empowers e-commerce, marketing, finance, and research teams.',
+        features: [
+          'Dynamic Content Handling',
+          'Data Cleaning',
+          'Scheduled Scraping',
+          'API Integration',
+          'Compliance Monitoring',
+          'Data Export'
+        ],
+        benefits: [
+          'Automate data collection',
+          'Save time by 90%',
+          'Handle large-scale scraping',
+          'Ensure data accuracy',
+          'Reduce costs',
+          'Compliant operations'
+        ],
+        techStack: ['Scraping Libraries', 'Proxy Management', 'Data Processing', 'Machine Learning', 'Export Tools'],
+        useCases: [
+          'Market Research',
+          'Price Monitoring',
+          'Competitor Analysis',
+          'Content Aggregation',
+          'Lead Generation'
+        ],
+        image: '/image/web.webp', // Replace with real image
+        icon: Globe,
+        color: 'from-teal-500 to-blue-600',
+        bgGradient: 'from-teal-50 to-blue-50'
+      },
+      'table-booking-calling-agent': {
+        id: 'table-booking-calling-agent',
+        title: 'Table Booking Calling Agent',
+        subtitle: 'Automated Reservation Management',
+        description: 'AI agent for handling table bookings via calls and integrations',
+        fullContent: 'Cube AI Solutions\' Table Booking Calling Agent revolutionizes restaurant reservations by automating bookings with intelligent, human-like calls. Using advanced natural language processing, it communicates naturally to check table availability, confirm bookings, and handle special requests like dietary needs or seating preferences. Operating 24/7, it manages last-minute changes and syncs with restaurant systems to ensure accuracy. By automating calls, it saves time for customers and reduces workload for restaurant staff. Ideal for restaurants and diners, it enhances efficiency and delivers a seamless, customer-centric experience.',
+        features: [
+          'Voice Recognition',
+          'Booking Confirmation',
+          'Calendar Integration',
+          'Reminder Notifications',
+          'Availability Checking',
+          'Reporting'
+        ],
+        benefits: [
+          'Streamline bookings',
+          'Reduce no-shows by 40%',
+          '24/7 availability',
+          'Improve customer service',
+          'Optimize table usage',
+          'Lower staff workload'
+        ],
+        techStack: ['Voice AI', 'Calendar APIs', 'Notification Systems', 'Availability Algorithms', 'Analytics'],
+        useCases: [
+          'Restaurant Reservations',
+          'Event Bookings',
+          'Hotel Table Management',
+          'Cafe Scheduling',
+          'Group Dining'
+        ],
+        image: '/image/table.jpg', // Replace with real image
+        icon: MessageSquare,
+        color: 'from-pink-500 to-rose-600',
+        bgGradient: 'from-pink-50 to-rose-50'
+      }
       }
     },
     aida: {
@@ -723,7 +985,7 @@ const SectionDetail = () => {
             'Pharmaceutical Manufacturing',
             'Textile Production'
           ],
-          image: 'https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+          image: '/image/mdata.jpg',
           icon: Database,
           color: 'from-blue-500 to-indigo-600',
           bgGradient: 'from-blue-50 to-indigo-50'
@@ -758,7 +1020,7 @@ const SectionDetail = () => {
             'Succession Planning',
             'Employee Engagement Initiatives'
           ],
-          image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+          image: '/image/hra.png',
           icon: BarChart3,
           color: 'from-green-500 to-emerald-600',
           bgGradient: 'from-green-50 to-emerald-50'
@@ -793,7 +1055,7 @@ const SectionDetail = () => {
             'Food Delivery Services',
             'Catering Operations'
           ],
-          image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+          image: '/image/rest.jpg',
           icon: BarChart3,
           color: 'from-orange-500 to-red-600',
           bgGradient: 'from-orange-50 to-red-50'
@@ -828,7 +1090,7 @@ const SectionDetail = () => {
             'Third-party Logistics',
             'International Shipping'
           ],
-          image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+          image: '/image/Logistic.avif',
           icon: BarChart3,
           color: 'from-purple-500 to-indigo-600',
           bgGradient: 'from-purple-50 to-indigo-50'
@@ -863,7 +1125,7 @@ const SectionDetail = () => {
             'Sales Chat Support',
             'Multi-channel Customer Service'
           ],
-          image: 'https://images.unsplash.com/photo-1553484771-371a605b060b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+          image: '/image/cusdata.webp',
           icon: BarChart3,
           color: 'from-teal-500 to-cyan-600',
           bgGradient: 'from-teal-50 to-cyan-50'
@@ -898,7 +1160,7 @@ const SectionDetail = () => {
             'Collaboration Platforms',
             'Industry-Specific Solutions'
           ],
-          image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+          image: '/image/sesaa.jpg',
           icon: Zap,
           color: 'from-indigo-500 to-purple-600',
           bgGradient: 'from-indigo-50 to-purple-50'
@@ -975,265 +1237,370 @@ const SectionDetail = () => {
         }
       }
     },
-    'vision-ai': {
-      title: 'Vision AI - Computer Vision Solutions',
-      color: 'from-violet-400 via-purple-500 to-indigo-600',
-      bgGradient: 'from-violet-50 via-purple-50 to-indigo-50',
-      items: {
-        'attendance-system': {
-          id: 'attendance-system',
-          title: 'Smart Attendance System',
-          subtitle: 'AI-Powered Facial Recognition Attendance',
-          description: 'Advanced facial recognition system for automated attendance tracking and monitoring',
-          fullContent: 'Revolutionize your attendance management with our Smart Attendance System that uses advanced facial recognition technology for accurate and efficient employee tracking. This AI-powered solution eliminates the need for manual attendance processes, reduces buddy punching, and provides real-time attendance data with comprehensive analytics. The system supports multiple recognition modes, works in various lighting conditions, and maintains high accuracy while ensuring data privacy and security.',
-          features: [
-            'Advanced Facial Recognition',
-            'Real-time Attendance Tracking',
-            'Anti-spoofing Technology',
-            'Multi-location Support',
-            'Mobile App Integration',
-            'Comprehensive Reporting'
-          ],
-          benefits: [
-            'Eliminate time theft and buddy punching',
-            'Reduce administrative overhead by 80%',
-            'Improve accuracy to 99.7%',
-            'Enable contactless attendance',
-            'Generate automated reports',
-            'Integrate with existing HR systems'
-          ],
-          techStack: ['Computer Vision', 'Facial Recognition', 'Mobile Development', 'Cloud Storage', 'HR Integration APIs'],
-          useCases: [
-            'Corporate Offices',
-            'Manufacturing Plants',
-            'Educational Institutions',
-            'Healthcare Facilities',
-            'Retail Stores'
-          ],
-          image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-          icon: Eye,
-          color: 'from-blue-500 to-purple-600',
-          bgGradient: 'from-blue-50 to-purple-50'
-        },
-        'number-plate': {
-          id: 'number-plate',
-          title: 'Number Plate Recognition System',
-          subtitle: 'Intelligent Vehicle Identification & Monitoring',
-          description: 'AI-powered license plate recognition for security, parking, and traffic management',
-          fullContent: 'Enhance your security and traffic management with our Number Plate Recognition System that provides real-time vehicle identification and monitoring. This advanced computer vision solution automatically captures, reads, and analyzes license plates with high accuracy, enabling automated access control, parking management, and security monitoring. The system works in various weather conditions and lighting scenarios while maintaining exceptional recognition rates.',
-          features: [
-            'Real-time Plate Recognition',
-            'Multi-camera Integration',
-            'Automatic Gate Control',
-            'Visitor Management',
-            'Alert System Integration',
-            'Historical Data Analytics'
-          ],
-          benefits: [
-            'Automate vehicle access control',
-            'Improve security monitoring by 95%',
-            'Reduce manual gate operations',
-            'Enable contactless parking',
-            'Generate detailed vehicle logs',
-            'Integrate with security systems'
-          ],
-          techStack: ['Computer Vision', 'OCR Technology', 'Camera Integration', 'Access Control Systems', 'Database Management'],
-          useCases: [
-            'Gated Communities',
-            'Corporate Parking',
-            'Shopping Centers',
-            'Government Buildings',
-            'Toll Collection Systems'
-          ],
-          image: 'https://images.unsplash.com/photo-1449824913935-dccba630e2f0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-          icon: Camera,
-          color: 'from-red-500 to-pink-600',
-          bgGradient: 'from-red-50 to-pink-50'
-        },
-        'pcb-board': {
-          id: 'pcb-board',
-          title: 'PCB Board Quality Control Agent',
-          subtitle: 'Automated Circuit Board Inspection',
-          description: 'AI-powered PCB inspection system for defect detection and quality assurance',
-          fullContent: 'Transform your electronics manufacturing with our PCB Board Quality Control Agent that uses advanced computer vision to inspect printed circuit boards for defects and quality issues. This intelligent system automatically detects missing components, solder defects, alignment issues, and other manufacturing anomalies with microscopic precision. By integrating seamlessly into production lines, the system ensures consistent quality while reducing inspection time and costs.',
-          features: [
-            'Microscopic Defect Detection',
-            'Component Verification',
-            'Solder Joint Inspection',
-            'Real-time Quality Reporting',
-            'Production Line Integration',
-            'Statistical Quality Control'
-          ],
-          benefits: [
-            'Reduce defect rates by 85%',
-            'Accelerate inspection speed by 500%',
-            'Minimize human inspection errors',
-            'Lower quality control costs',
-            'Improve product reliability',
-            'Enable 100% inspection coverage'
-          ],
-          techStack: ['Computer Vision', 'Machine Learning', 'High-Resolution Imaging', 'Production Integration', 'Quality Management Systems'],
-          useCases: [
-            'Electronics Manufacturing',
-            'Automotive Electronics',
-            'Medical Device Production',
-            'Consumer Electronics',
-            'Industrial Control Systems'
-          ],
-          image: 'https://images.unsplash.com/photo-1518309127606-0dcac6c95d30?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-          icon: Cpu,
-          color: 'from-green-500 to-teal-600',
-          bgGradient: 'from-green-50 to-teal-50'
-        },
-        'meter-monitoring': {
-          id: 'meter-monitoring',
-          title: 'Smart Meter Monitoring System',
-          subtitle: 'Automated Utility Meter Reading & Analytics',
-          description: 'AI-powered meter reading system for water, gas, and electricity with mobile app support',
-          fullContent: 'Modernize your utility monitoring with our Smart Meter Monitoring System that uses computer vision and IoT technology to automatically read and analyze utility meters. This comprehensive solution eliminates manual meter reading, provides real-time consumption data, and enables predictive analytics for better resource management. With mobile app integration and cloud-based analytics, utilities and facility managers can monitor consumption patterns, detect anomalies, and optimize usage efficiently.',
-          features: [
-            'Automated Meter Reading',
-            'Real-time Consumption Analytics',
-            'Anomaly Detection',
-            'Mobile App Integration',
-            'Predictive Usage Modeling',
-            'Billing Integration'
-          ],
-          benefits: [
-            'Eliminate manual meter reading',
-            'Reduce operational costs by 60%',
-            'Improve reading accuracy to 99.8%',
-            'Enable real-time monitoring',
-            'Detect leaks and anomalies early',
-            'Optimize resource consumption'
-          ],
-          techStack: ['Computer Vision', 'IoT Sensors', 'Mobile Development', 'Cloud Analytics', 'Utility Management Systems'],
-          useCases: [
-            'Smart Building Management',
-            'Utility Companies',
-            'Industrial Facilities',
-            'Residential Complexes',
-            'Government Buildings'
-          ],
-          image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-          icon: Shield,
-          color: 'from-yellow-500 to-orange-600',
-          bgGradient: 'from-yellow-50 to-orange-50'
-        },
-        'chatbot-solutions': {
-          id: 'chatbot-solutions',
-          title: 'AI-Powered Chatbot Solutions',
-          subtitle: 'Intelligent Conversational AI Platform',
-          description: 'Advanced chatbot solutions with natural language processing and multi-channel support',
-          fullContent: 'Transform your customer engagement with our AI-Powered Chatbot Solutions that deliver intelligent, human-like conversations across multiple channels. This comprehensive platform uses advanced natural language processing and machine learning to understand user intent, provide accurate responses, and seamlessly escalate complex queries to human agents. With multi-language support and continuous learning capabilities, our chatbots improve over time while maintaining consistent service quality.',
-          features: [
-            'Natural Language Understanding',
-            'Multi-channel Deployment',
-            'Intelligent Intent Recognition',
-            'Seamless Human Handoff',
-            'Continuous Learning',
-            'Analytics Dashboard'
-          ],
-          benefits: [
-            'Handle 80% of customer queries automatically',
-            'Reduce response time to seconds',
-            'Provide 24/7 customer support',
-            'Lower support costs by 70%',
-            'Improve customer satisfaction',
-            'Scale support operations efficiently'
-          ],
-          techStack: ['Natural Language Processing', 'Machine Learning', 'Conversational AI', 'Multi-channel APIs', 'Analytics Platform'],
-          useCases: [
-            'Customer Service Automation',
-            'E-commerce Support',
-            'Lead Generation',
-            'FAQ Automation',
-            'Appointment Scheduling'
-          ],
-          image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-          icon: Sparkles,
-          color: 'from-indigo-500 to-purple-600',
-          bgGradient: 'from-indigo-50 to-purple-50'
-        }
-      }
+   'vision-ai': {
+  title: 'Vision AI - Computer Vision Solutions',
+  color: 'from-violet-400 via-purple-500 to-indigo-600',
+  bgGradient: 'from-violet-50 via-purple-50 to-indigo-50',
+  items: {
+    'attendance-system': {
+      id: 'attendance-system',
+      title: 'Smart Attendance System',
+      subtitle: 'AI-Powered Facial Recognition Attendance',
+      description: 'Advanced facial recognition system for automated attendance tracking and monitoring',
+      fullContent: 'Revolutionize your attendance management with our Smart Attendance System that uses advanced facial recognition technology for accurate and efficient employee tracking. This AI-powered solution eliminates the need for manual attendance processes, reduces buddy punching, and provides real-time attendance data with comprehensive analytics. The system supports multiple recognition modes, works in various lighting conditions, and maintains high accuracy while ensuring data privacy and security.',
+      features: [
+        'Advanced Facial Recognition',
+        'Real-time Attendance Tracking',
+        'Anti-spoofing Technology',
+        'Multi-location Support',
+        'Mobile App Integration',
+        'Comprehensive Reporting'
+      ],
+      benefits: [
+        'Eliminate time theft and buddy punching',
+        'Reduce administrative overhead by 80%',
+        'Improve accuracy to 99.7%',
+        'Enable contactless attendance',
+        'Generate automated reports',
+        'Integrate with existing HR systems'
+      ],
+      techStack: ['Computer Vision', 'Facial Recognition', 'Mobile Development', 'Cloud Storage', 'HR Integration APIs'],
+      useCases: [
+        'Corporate Offices',
+        'Manufacturing Plants',
+        'Educational Institutions',
+        'Healthcare Facilities',
+        'Retail Stores'
+      ],
+      image: '/image/attness.webp',
+      icon: 'Eye',
+      color: 'from-blue-500 to-purple-600',
+      bgGradient: 'from-blue-50 to-purple-50'
     },
-    city: {
-      title: 'CyTI - Cyber Technology Innovation',
+    'number-plate': {
+      id: 'number-plate',
+      title: 'Number Plate Recognition System',
+      subtitle: 'Intelligent Vehicle Identification & Monitoring',
+      description: 'AI-powered license plate recognition for security, parking, and traffic management',
+      fullContent: 'Enhance your security and traffic management with our Number Plate Recognition System that provides real-time vehicle identification and monitoring. This advanced computer vision solution automatically captures, reads, and analyzes license plates with high accuracy, enabling automated access control, parking management, and security monitoring. The system works in various weather conditions and lighting scenarios while maintaining exceptional recognition rates.',
+      features: [
+        'Real-time Plate Recognition',
+        'Multi-camera Integration',
+        'Automatic Gate Control',
+        'Visitor Management',
+        'Alert System Integration',
+        'Historical Data Analytics'
+      ],
+      benefits: [
+        'Automate vehicle access control',
+        'Improve security monitoring by 95%',
+        'Reduce manual gate operations',
+        'Enable contactless parking',
+        'Generate detailed vehicle logs',
+        'Integrate with security systems'
+      ],
+      techStack: ['Computer Vision', 'OCR Technology', 'Camera Integration', 'Access Control Systems', 'Database Management'],
+      useCases: [
+        'Gated Communities',
+        'Corporate Parking',
+        'Shopping Centers',
+        'Government Buildings',
+        'Toll Collection Systems'
+      ],
+      image: '/image/number.png',
+      icon: 'Camera',
+      color: 'from-red-500 to-pink-600',
+      bgGradient: 'from-red-50 to-pink-50'
+    },
+    'pcb-board': {
+      id: 'pcb-board',
+      title: 'PCB Board Quality Control Agent',
+      subtitle: 'Automated Circuit Board Inspection',
+      description: 'AI-powered PCB inspection system for defect detection and quality assurance',
+      fullContent: 'Transform your electronics manufacturing with our PCB Board Quality Control Agent that uses advanced computer vision to inspect printed circuit boards for defects and quality issues. This intelligent system automatically detects missing components, solder defects, alignment issues, and other manufacturing anomalies with microscopic precision. By integrating seamlessly into production lines, the system ensures consistent quality while reducing inspection time and costs.',
+      features: [
+        'Microscopic Defect Detection',
+        'Component Verification',
+        'Solder Joint Inspection',
+        'Real-time Quality Reporting',
+        'Production Line Integration',
+        'Statistical Quality Control'
+      ],
+      benefits: [
+        'Reduce defect rates by 85%',
+        'Accelerate inspection speed by 500%',
+        'Minimize human inspection errors',
+        'Lower quality control costs',
+        'Improve product reliability',
+        'Enable 100% inspection coverage'
+      ],
+      techStack: ['Computer Vision', 'Machine Learning', 'High-Resolution Imaging', 'Production Integration', 'Quality Management Systems'],
+      useCases: [
+        'Electronics Manufacturing',
+        'Automotive Electronics',
+        'Medical Device Production',
+        'Consumer Electronics',
+        'Industrial Control Systems'
+      ],
+      image: '/image/pcb.jpg',
+      icon: 'Cpu',
+      color: 'from-green-500 to-teal-600',
+      bgGradient: 'from-green-50 to-teal-50'
+    },
+    'meter-monitoring': {
+      id: 'meter-monitoring',
+      title: 'Smart Meter Monitoring System',
+      subtitle: 'Automated Utility Meter Reading & Analytics',
+      description: 'AI-powered meter reading system for water, gas, and electricity with mobile app support',
+      fullContent: 'Modernize your utility monitoring with our Smart Meter Monitoring System that uses computer vision and IoT technology to automatically read and analyze utility meters. This comprehensive solution eliminates manual meter reading, provides real-time consumption data, and enables predictive analytics for better resource management. With mobile app integration and cloud-based analytics, utilities and facility managers can monitor consumption patterns, detect anomalies, and optimize usage efficiently.',
+      features: [
+        'Automated Meter Reading',
+        'Real-time Consumption Analytics',
+        'Anomaly Detection',
+        'Mobile App Integration',
+        'Predictive Usage Modeling',
+        'Billing Integration'
+      ],
+      benefits: [
+        'Eliminate manual meter reading',
+        'Reduce operational costs by 60%',
+        'Improve reading accuracy to 99.8%',
+        'Enable real-time monitoring',
+        'Detect leaks and anomalies early',
+        'Optimize resource consumption'
+      ],
+      techStack: ['Computer Vision', 'IoT Sensors', 'Mobile Development', 'Cloud Analytics', 'Utility Management Systems'],
+      useCases: [
+        'Smart Building Management',
+        'Utility Companies',
+        'Industrial Facilities',
+        'Residential Complexes',
+        'Government Buildings'
+      ],
+      image: '/image/metter.webp',
+      icon: 'Shield',
+      color: 'from-yellow-500 to-orange-600',
+      bgGradient: 'from-yellow-50 to-orange-50'
+    },
+    'chatbot-solutions': {
+      id: 'chatbot-solutions',
+      title: 'AI-Powered Chatbot Solutions',
+      subtitle: 'Intelligent Conversational AI Platform',
+      description: 'Advanced chatbot solutions with natural language processing and multi-channel support',
+      fullContent: 'Transform your customer engagement with our AI-Powered Chatbot Solutions that deliver intelligent, human-like conversations across multiple channels. This comprehensive platform uses advanced natural language processing and machine learning to understand user intent, provide accurate responses, and seamlessly escalate complex queries to human agents. With multi-language support and continuous learning capabilities, our chatbots improve over time while maintaining consistent service quality.',
+      features: [
+        'Natural Language Understanding',
+        'Multi-channel Deployment',
+        'Intelligent Intent Recognition',
+        'Seamless Human Handoff',
+        'Continuous Learning',
+        'Analytics Dashboard'
+      ],
+      benefits: [
+        'Handle 80% of customer queries automatically',
+        'Reduce response time to seconds',
+        'Provide 24/7 customer support',
+        'Lower support costs by 70%',
+        'Improve customer satisfaction',
+        'Scale support operations efficiently'
+      ],
+      techStack: ['Natural Language Processing', 'Machine Learning', 'Conversational AI', 'Multi-channel APIs', 'Analytics Platform'],
+      useCases: [
+        'Customer Service Automation',
+        'E-commerce Support',
+        'Lead Generation',
+        'FAQ Automation',
+        'Appointment Scheduling'
+      ],
+      image: '/image/echat.avif',
+      icon: 'Sparkles',
+      color: 'from-indigo-500 to-purple-600',
+      bgGradient: 'from-indigo-50 to-purple-50'
+    },
+    'fabric-defect': {
+      id: 'fabric-defect',
+      title: 'Fabric Defect Detection System',
+      subtitle: 'AI-Powered Textile Quality Inspection',
+      description: 'Real-time defect detection in fabrics using computer vision and deep learning',
+      fullContent: 'Our Fabric Defect Detection System at Cube AI Solutions leverages artificial intelligence (AI), computer vision, and deep learning to identify defects such as holes, stains, misweaves, color deviations, broken yarns, and surface imperfections in real-time during textile manufacturing and quality inspection. Traditional manual inspection methods are slow, error-prone, and inconsistent, leading to waste, rework, and increased production costs. Our AI-driven solution enables rapid quality control, minimizes material wastage, and boosts operational efficiency. Using high-resolution cameras, advanced image processing, and machine learning, the system inspects fabric rolls in real-time, detecting and categorizing even the smallest anomalies with high accuracy. Features like automated notifications, defect visualization dashboards, and predictive analytics empower quality teams to take immediate corrective actions, preventing defective products from reaching customers. Scalable across various fabrics like cotton, silk, polyester, wool, and blends, our solution integrates seamlessly into Industry 4.0 and 5.0 smart manufacturing ecosystems. Beyond detection, it provides data-driven insights for process optimization, reducing quality-related losses, enhancing customer satisfaction, and promoting sustainability through optimized fabric use. Cube AI Solutions’ AI-powered fabric inspection ensures compliance with global textile standards, driving productivity, cost savings, and end-to-end digitalization of textile operations.',
+      features: [
+        'Real-time Defect Detection',
+        'High-Resolution Imaging',
+        'Defect Categorization',
+        'Automated Notifications',
+        'Predictive Analytics',
+        'Multi-Fabric Compatibility'
+      ],
+      benefits: [
+        'Reduce material waste by up to 50%',
+        'Enhance quality control efficiency by 70%',
+        'Minimize production costs',
+        'Ensure consistent product quality',
+        'Enable data-driven process optimization',
+        'Comply with global textile standards'
+      ],
+      techStack: ['Computer Vision', 'Deep Learning', 'Image Processing', 'Machine Learning', 'Industrial IoT Integration'],
+      useCases: [
+        'Textile Manufacturing',
+        'Garment Production',
+        'Quality Inspection Lines',
+        'Fabric Roll Processing',
+        'Apparel Industry'
+      ],
+      image: '/image/fabic.jpg',
+      icon: 'Eye',
+      color: 'from-purple-500 to-indigo-600',
+      bgGradient: 'from-purple-50 to-indigo-50'
+    },
+    'body-measurement': {
+      id: 'body-measurement',
+      title: 'Contactless Human Body Size Measurement Solution',
+      subtitle: 'AI-Driven Body Dimension Analysis',
+      description: 'Accurate body measurements using computer vision without physical contact',
+      fullContent: 'Cube AI Solutions’ Contactless Human Body Size Measurement Solution employs AI, computer vision, and deep learning to deliver precise body measurements from images or videos without physical contact. This transformative technology serves industries like fashion, retail, healthcare, fitness, and e-commerce by enabling accurate measurement extraction, real-time virtual fitting, and personalized recommendations. Unlike traditional measurement methods, which are time-consuming, error-prone, and inconvenient, our AI-powered solution uses high-resolution image processing, pose estimation models, and predictive analytics to capture body shape, height, weight, and key anthropometric points with high accuracy. In fashion and retail, it supports virtual try-ons, size standardization, and reduced return rates. In healthcare, it aids patient monitoring, telemedicine, obesity management, and rehabilitation. In fitness, it enables tracking of body changes and fitness goals without physical equipment. Seamlessly integrated into mobile apps, e-commerce platforms, and smart healthcare systems, our scalable, secure, and user-friendly solution enhances digital measurement experiences. It also provides data-driven insights for personalized recommendations, predictive health analytics, and optimized inventory planning, boosting productivity, customer engagement, and operational efficiency. By integrating AI automation, enterprise AI solutions, and agentic AI-driven personalization, Cube AI Solutions empowers businesses to lead in digital transformation, customer experience, and smart body analytics, aligning with Industry 4.0 and 5.0 innovations.',
+      features: [
+        'Contactless Measurement Extraction',
+        'High-Accuracy Pose Estimation',
+        'Real-time Processing',
+        'Multi-Industry Integration',
+        'Predictive Analytics',
+        'Mobile and Web App Support'
+      ],
+      benefits: [
+        'Reduce return rates by up to 40%',
+        'Enable seamless virtual try-ons',
+        'Enhance customer satisfaction',
+        'Support telemedicine and health monitoring',
+        'Improve fitness tracking accuracy',
+        'Optimize inventory and personalization'
+      ],
+      techStack: ['Computer Vision', 'Deep Learning', 'Pose Estimation', 'Image Processing', 'Mobile and Web Integration'],
+      useCases: [
+        'Fashion and E-commerce',
+        'Healthcare and Telemedicine',
+        'Fitness and Wellness',
+        'Virtual Fitting Rooms',
+        'Personalized Retail'
+      ],
+      image: '/image/temp.avif',
+      icon: 'Camera',
       color: 'from-blue-500 to-cyan-600',
-      bgGradient: 'from-blue-50 via-cyan-50 to-blue-50',
-      items: {
-        'iot-services': {
-          id: 'iot-services',
-          title: 'IoT Connectivity Solutions',
-          subtitle: 'Comprehensive Internet of Things Platform',
-          description: 'End-to-end IoT solutions for connected devices and smart systems integration',
-          fullContent: 'Unlock the power of connected devices with our comprehensive IoT Connectivity Solutions that enable seamless integration of sensors, devices, and systems. Our platform provides secure device management, real-time data collection, and intelligent analytics to transform your operations. With support for multiple protocols and edge computing capabilities, we deliver scalable IoT solutions that drive operational efficiency and enable data-driven decision making across industries.',
-          features: [
-            'Multi-protocol Device Support',
-            'Secure Device Management',
-            'Real-time Data Processing',
-            'Edge Computing Integration',
-            'Scalable Cloud Infrastructure',
-            'Advanced Analytics Dashboard'
-          ],
-          benefits: [
-            'Reduce operational costs by 45%',
-            'Improve system efficiency by 60%',
-            'Enable predictive maintenance',
-            'Enhance data visibility',
-            'Automate routine processes',
-            'Scale IoT deployments easily'
-          ],
-          techStack: ['IoT Platforms', 'Edge Computing', 'Cloud Infrastructure', 'Device Management', 'Data Analytics'],
-          useCases: [
-            'Smart Manufacturing',
-            'Smart Cities Infrastructure',
-            'Agricultural Monitoring',
-            'Healthcare IoT',
-            'Energy Management Systems'
-          ],
-          image: 'https://images.unsplash.com/photo-1518309127606-0dcac6c95d30?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-          icon: Database,
-          color: 'from-blue-500 to-indigo-600',
-          bgGradient: 'from-blue-50 to-indigo-50'
-        },
-        'auto-sizing': {
-          id: 'auto-sizing',
-          title: 'Large Language Model Solutions',
-          subtitle: 'Enterprise AI Language Processing',
-          description: 'Advanced LLMs for intelligent applications and natural language understanding',
-          fullContent: 'Harness the power of advanced Large Language Models with our comprehensive LLM Solutions that bring intelligent natural language processing to your applications. Our platform provides fine-tuned models, custom training capabilities, and enterprise-grade deployment options that enable sophisticated language understanding, content generation, and conversational AI. With industry-specific training and privacy-first architecture, we deliver LLM solutions that meet your unique business requirements.',
-          features: [
-            'Custom Model Training',
-            'Multi-language Support',
-            'Enterprise Security',
-            'API Integration',
-            'Real-time Processing',
-            'Performance Optimization'
-          ],
-          benefits: [
-            'Enhance application intelligence',
-            'Improve user experience by 75%',
-            'Automate content generation',
-            'Enable natural language interfaces',
-            'Reduce development time',
-            'Scale language processing tasks'
-          ],
-          techStack: ['Large Language Models', 'Natural Language Processing', 'Machine Learning', 'API Development', 'Cloud Computing'],
-          useCases: [
-            'Intelligent Document Processing',
-            'Customer Service Automation',
-            'Content Generation',
-            'Language Translation',
-            'Conversational Interfaces'
-          ],
-          image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-          icon: Brain,
-          color: 'from-purple-500 to-pink-600',
-          bgGradient: 'from-purple-50 to-pink-50'
-        }
-      }
+      bgGradient: 'from-blue-50 to-cyan-50'
+    }
+  }
+},
+    city: {
+  title: 'CyTI - Cyber Technology Innovation',
+  color: 'from-blue-500 to-cyan-600',
+  bgGradient: 'from-blue-50 via-cyan-50 to-blue-50',
+  items: {
+    'iot-services': {
+      id: 'iot-services',
+      title: 'IoT Connectivity Solutions',
+      subtitle: 'Comprehensive Internet of Things Platform',
+      description: 'End-to-end IoT solutions for connected devices and smart systems integration',
+      fullContent: 'Unlock the power of connected devices with our comprehensive IoT Connectivity Solutions that enable seamless integration of sensors, devices, and systems. Our platform provides secure device management, real-time data collection, and intelligent analytics to transform your operations. With support for multiple protocols and edge computing capabilities, we deliver scalable IoT solutions that drive operational efficiency and enable data-driven decision making across industries.',
+      features: [
+        'Multi-protocol Device Support',
+        'Secure Device Management',
+        'Real-time Data Processing',
+        'Edge Computing Integration',
+        'Scalable Cloud Infrastructure',
+        'Advanced Analytics Dashboard'
+      ],
+      benefits: [
+        'Reduce operational costs by 45%',
+        'Improve system efficiency by 60%',
+        'Enable predictive maintenance',
+        'Enhance data visibility',
+        'Automate routine processes',
+        'Scale IoT deployments easily'
+      ],
+      techStack: ['IoT Platforms', 'Edge Computing', 'Cloud Infrastructure', 'Device Management', 'Data Analytics'],
+      useCases: [
+        'Smart Manufacturing',
+        'Smart Cities Infrastructure',
+        'Agricultural Monitoring',
+        'Healthcare IoT',
+        'Energy Management Systems'
+      ],
+      image: '/image/eiot.jpg',
+      icon: Database,
+      color: 'from-blue-500 to-indigo-600',
+      bgGradient: 'from-blue-50 to-indigo-50'
     },
+    'auto-sizing': {
+      id: 'auto-sizing',
+      title: 'Large Language Model Solutions',
+      subtitle: 'Enterprise AI Language Processing',
+      description: 'Advanced LLMs for intelligent applications and natural language understanding',
+      fullContent: 'Harness the power of advanced Large Language Models with our comprehensive LLM Solutions that bring intelligent natural language processing to your applications. Our platform provides fine-tuned models, custom training capabilities, and enterprise-grade deployment options that enable sophisticated language understanding, content generation, and conversational AI. With industry-specific training and privacy-first architecture, we deliver LLM solutions that meet your unique business requirements.',
+      features: [
+        'Custom Model Training',
+        'Multi-language Support',
+        'Enterprise Security',
+        'API Integration',
+        'Real-time Processing',
+        'Performance Optimization'
+      ],
+      benefits: [
+        'Enhance application intelligence',
+        'Improve user experience by 75%',
+        'Automate content generation',
+        'Enable natural language interfaces',
+        'Reduce development time',
+        'Scale language processing tasks'
+      ],
+      techStack: ['Large Language Models', 'Natural Language Processing', 'Machine Learning', 'API Development', 'Cloud Computing'],
+      useCases: [
+        'Intelligent Document Processing',
+        'Customer Service Automation',
+        'Content Generation',
+        'Language Translation',
+        'Conversational Interfaces'
+      ],
+      image: '/image/ellm.jpg',
+      icon: Brain,
+      color: 'from-purple-500 to-pink-600',
+      bgGradient: 'from-purple-50 to-pink-50'
+    },
+    'Digital': {
+      id: 'Digital',
+      title: 'Digital Monitoring System',
+      subtitle: 'Intelligent Education Monitoring Platform',
+      description: 'AI-powered monitoring system for student attendance, behavior, and performance',
+      fullContent: 'With Cube AI Solutions, our Student Digital Monitoring System harnesses agentic AI, IoT integration, and deep analytics to build a wiser, safer, and more effective digital environment for colleges, universities, and schools. Conventional student monitoring usually depends on manual recording, disparate data systems, and variable reporting, which lead to restricted insights into the behavior, attendance, performance, and well-being of students. This absence of real-time insights translates into inefficient planning, lost interventions, security loopholes, and low student engagement. Our digital monitoring platform using AI tackles all these issues by combining IoT-supported data gathering, real-time dashboards, predictive analytics, and cloud-supported intelligence to give institutions a 360-degree overview of student activities. The system tracks daily attendance, class participation, behavior patterns, online learning interactions, and test scores, in addition to providing functionalities such as alerts for outliers, automated reports, and predictive analysis for dropout possibility and performance enhancement. With Power BI-driven visualizations, historical trends analysis, and configurable dashboards, administrators are able to monitor student performance over time, enhance academic planning, and make better decisions. Similar to digital monitoring in industrial processes Our solution supports real-time monitoring, anomaly detection, predictive planning, and role-based access control to facilitate secure, efficient, and data-driven educational operations. Our Student Digital Monitoring System is developed with the digital transformation of education under Industry 4.0 and Industry 5.0 paradigms in mind and equips teachers with the ability to develop customized learning trails, enhance safety compliance, and enhance institutional effectiveness. From classroom observation and e-learning analytics to attendance automation and predictive performance insights, our platform offers a smart basis for business productivity with AI in education, fueling student success and institutional excellence.',
+      features: [
+        'Real-time Attendance Tracking',
+        'Behavior Pattern Analysis',
+        'Predictive Dropout Analysis',
+        'Automated Alerts and Reports',
+        'Customizable Dashboards',
+        'IoT Integration'
+      ],
+      benefits: [
+        'Enhance student safety and engagement',
+        'Improve academic planning',
+        'Reduce dropout rates',
+        'Enable real-time interventions',
+        'Streamline administrative tasks',
+        'Boost institutional effectiveness'
+      ],
+      techStack: ['Agentic AI', 'IoT Integration', 'Predictive Analytics', 'Power BI', 'Cloud Infrastructure', 'Deep Learning'],
+      useCases: [
+        'Universities and Colleges',
+        'Schools and Academies',
+        'Online Learning Platforms',
+        'Educational Institutions',
+        'Student Welfare Programs'
+      ],
+      image: '/image/digital.png',
+      icon: Brain,
+      color: 'from-blue-500 to-cyan-600',
+      bgGradient: 'from-blue-50 to-cyan-50'
+    }
+  }
+},
     cubebotics: {
       title: 'Cubebotics - Embedded Systems & IoT',
       color: 'from-blue-600 to-indigo-700',
@@ -1269,7 +1636,7 @@ const SectionDetail = () => {
             'Energy Management',
             'Quality Control Systems'
           ],
-          image: 'https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+          image: '/image/eembd.jpg',
           icon: Cpu,
           color: 'from-slate-500 to-gray-600',
           bgGradient: 'from-slate-50 to-gray-50'
@@ -1304,7 +1671,7 @@ const SectionDetail = () => {
             'Environmental Assessment',
             'Emergency Response'
           ],
-          image: 'https://images.unsplash.com/photo-1473968512647-dccba630e2f0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+          image: '/image/edrone.jpg',
           icon: Zap,
           color: 'from-cyan-500 to-blue-600',
           bgGradient: 'from-cyan-50 to-blue-50'
@@ -1346,7 +1713,7 @@ const SectionDetail = () => {
             'Business Intelligence',
             'Machine Learning Pipelines'
           ],
-          image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+          image: '/image/edec.jpg',
           icon: Database,
           color: 'from-blue-500 to-purple-600',
           bgGradient: 'from-blue-50 to-purple-50'
@@ -1381,7 +1748,7 @@ const SectionDetail = () => {
             'Global Infrastructure',
             'Cost Optimization Projects'
           ],
-          image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+          image: '/image/ecloud.png',
           icon: Cloud,
           color: 'from-teal-500 to-cyan-600',
           bgGradient: 'from-teal-50 to-cyan-50'
@@ -1423,7 +1790,7 @@ const SectionDetail = () => {
             'Portfolio Sites',
             'Enterprise Dashboards'
           ],
-          image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+          image: '/image/eweb.jpg',
           icon: Code,
           color: 'from-blue-500 to-purple-600',
           bgGradient: 'from-blue-50 to-purple-50'
@@ -1458,7 +1825,7 @@ const SectionDetail = () => {
             'Healthcare Applications',
             'Financial Services Apps'
           ],
-          image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+          image: '/image/emobile.avif',
           icon: Smartphone,
           color: 'from-green-500 to-teal-600',
           bgGradient: 'from-green-50 to-teal-50'
@@ -1493,7 +1860,7 @@ const SectionDetail = () => {
             'Data Strategy Development',
             'Innovation Programs'
           ],
-          image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+          image: '/image/ebuss.webp',
           icon: Building2,
           color: 'from-indigo-500 to-purple-600',
           bgGradient: 'from-indigo-50 to-purple-50'
@@ -1545,13 +1912,13 @@ const SectionDetail = () => {
             transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
             className="w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full mx-auto mb-4"
           />
-          <motion.p
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-2xl font-bold text-gray-800"
           >
             Loading Amazing Content...
-          </motion.p>
+          </motion.h1>
         </div>
       </div>
     );
@@ -1572,7 +1939,7 @@ const SectionDetail = () => {
           >
             🤔
           </motion.div>
-          <span className="text-4xl font-bold mb-4 text-gray-800">Oops! Not Found</span>
+          <h1 className="text-4xl font-bold mb-4 text-gray-800">Oops! Not Found</h1>
           <p className="text-gray-600 mb-8">{error || 'The requested page could not be found.'}</p>
           <Link
             to="/"
@@ -1592,18 +1959,10 @@ const SectionDetail = () => {
 
   return (
     <div className={`min-h-screen bg-gradient-to-br ${section.bgGradient} relative overflow-hidden`}>
-     <Helmet>
-  <title>CubeAI - AI Services</title>
-  <meta
-    name="description"
-    content="Explore CubeAI's AI-based services, offering intelligent automation, predictive analytics, machine learning, and digital transformation solutions to empower businesses."
-  />
-  <meta
-    name="keywords"
-    content="CubeAI, AI services, Artificial Intelligence, Machine Learning, Business Automation, Predictive Analytics, Cloud AI, Data Analytics, Digital Transformation, Industry 4.0"
-  />
-</Helmet>
-
+      <Helmet>
+        <title>{`CubeAI - ${section.title}`}</title>
+        <meta name="description" content={section.description} />
+      </Helmet>
 
       {/* Animated Background */}
       <div className="absolute inset-0 overflow-hidden">
