@@ -317,7 +317,6 @@ const ProductDetail = () => {
 </Helmet>
 
 
-      {/* Hero Section with the only h1 tag */}
       <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0">
           <img src={product.bgImage} alt={product.title} className="w-full h-full object-cover" />

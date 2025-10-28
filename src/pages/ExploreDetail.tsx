@@ -195,7 +195,7 @@ items: [
     return (
       <div className="min-h-screen bg-gray-100 flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-gray-800">Loading...</h1>
+          <span className="text-2xl font-bold text-gray-800">Loading...</span>
         </div>
       </div>
     );
@@ -205,7 +205,7 @@ items: [
     return (
       <div className="min-h-screen bg-gray-100 flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-4xl font-bold mb-4 text-gray-800">404 - Not Found</h1>
+          <span className="text-4xl font-bold mb-4 text-gray-800">404 - Not Found</span>
           <p className="text-gray-600 mb-8">{error || 'The requested page could not be found.'}</p>
           <Link
             to="/"

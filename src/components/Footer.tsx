@@ -30,7 +30,7 @@ const Footer = () => {
       </Helmet>
         <footer className="bg-[#001F54] backdrop-blur-xl border-t border-blue-200/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Company Info */}
             <div className="flex flex-col">
               <div className="flex items-center space-x-3 mb-6">
@@ -85,7 +85,7 @@ const Footer = () => {
               </div>
             </div>
             {/* Corporate Office */}
-            <div className="flex flex-col">
+            {/* <div className="flex flex-col">
               <h3 className="text-white font-semibold mb-6 text-lg">Corporate Office</h3>
               <div className="flex items-start text-gray-300">
                 <MapPin className="w-6 h-6 mr-3 text-blue-400 mt-0.5 flex-shrink-0" />
@@ -95,9 +95,9 @@ const Footer = () => {
                   <span>Bangalore 560100</span>
                 </div>
               </div>
-            </div>
+            </div> */}
             {/* Branch Office */}
-            <div className="flex flex-col">
+            {/* <div className="flex flex-col">
               <h3 className="text-white font-semibold mb-6 text-lg">Branch Office</h3>
               <div className="flex items-start text-gray-300 mb-4">
                 <MapPin className="w-6 h-6 mr-3 text-blue-400 mt-0.5 flex-shrink-0" />
@@ -115,7 +115,7 @@ const Footer = () => {
                   <span>Tamil Nadu - 641001</span>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
           {/* Footer Bottom */}
           <div className="border-t border-blue-500/20 mt-12 pt-8">
