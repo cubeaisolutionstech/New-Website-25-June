@@ -348,7 +348,7 @@ const Contact = () => {
               </motion.div>
 
               {/* Global Offices */}
-              <motion.div
+              {/* <motion.div
                 whileHover={{ y: -5, scale: 1.02 }}
                 className="bg-white rounded-2xl p-10 border border-gray-200"
               >
@@ -373,7 +373,7 @@ const Contact = () => {
                     </motion.div>
                   ))}
                 </div>
-              </motion.div>
+              </motion.div> */}
 
               {/* Embedded Live Google Map */}
               <motion.div
