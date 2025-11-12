@@ -331,10 +331,10 @@ const Contact = () => {
                     <span className="font-semibold text-gray-900">+91 9486938781</span>
                   </div>
  <div>
-                      <p className="font-semibold text-gray-900 ml-12">Corporate office</p>
+                      {/* <p className="font-semibold text-gray-900 ml-12">Corporate office</p> */}
                   </div>
 
-                  <div className="flex items-start group">
+                  {/* <div className="flex items-start group">
                     <div className="w-12 h-12 rounded-xl bg-emerald-600 flex items-center justify-center mr-4 mt-1">
                       <MapPin className="w-6 h-6 text-white" /> 
                     </div>
@@ -343,7 +343,7 @@ const Contact = () => {
                       <p className="font-semibold text-gray-900">Shri Anathanagar </p>
                       <p className="font-semibold text-gray-900">Bangalore 560100</p>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </motion.div>
 
