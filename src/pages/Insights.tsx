@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { ArrowRight, Share2 } from 'lucide-react';
 import { getArticlesByCategory } from '../data/articles';
+import { VOICE_AGENT_KEYWORDS_STRING } from '../seo/voiceKeywords';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -9,6 +10,9 @@ const Insights = () => {
   const [activeCategory, setActiveCategory] = useState('All');
   const categories = ['All', 'Technology Trends', 'AI Ethics', 'Business Strategy', 'Case Studies'];
   const filteredInsights = getArticlesByCategory(activeCategory);
+  const baseInsightKeywords =
+    'CubeAI Insights, AI trends 2025, machine learning insights, emerging technology trends, AI ethics and governance, responsible AI, AI in business strategy, digital transformation strategies, AI case studies, real-world AI applications, knowledge hub for artificial intelligence, future of AI and ML, innovation in artificial intelligence, predictive analytics trends, next-gen business automation, enterprise AI solutions';
+  const insightKeywords = `${baseInsightKeywords}, ${VOICE_AGENT_KEYWORDS_STRING}`;
 
   useEffect(() => {
     AOS.init({ duration: 800 });
@@ -30,7 +34,7 @@ const Insights = () => {
         />
         <meta
           name="keywords"
-          content="CubeAI Insights, AI trends 2025, machine learning insights, emerging technology trends, AI ethics and governance, responsible AI, AI in business strategy, digital transformation strategies, AI case studies, real-world AI applications, knowledge hub for artificial intelligence, future of AI and ML, innovation in artificial intelligence, predictive analytics trends, next-gen business automation, enterprise AI solutions"
+          content={insightKeywords}
         />
       </Helmet>
 

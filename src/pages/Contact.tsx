@@ -12,6 +12,7 @@ import {
   Sparkles,
 } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
+import { VOICE_AGENT_KEYWORDS_STRING } from '../seo/voiceKeywords';
 import { toast, Toaster } from 'react-hot-toast';
 
 const Contact = () => {
@@ -102,15 +103,9 @@ const Contact = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const offices = [
-    { city: 'Coimbatore', country: 'India' },
-    { city: 'Bangalore', country: 'India' },
-    { city: 'Namakkal', country: 'India' },
-    { city: 'Kochi', country: 'India' }, // Fixed typo
-    { city: 'Tiruppur', country: 'India' },
-    { city: 'Dharapuram', country: 'India' },
-    { city: 'London', country: 'UK' },
-  ];
+  const baseContactKeywords =
+    'contact CubeAI Solutions, AI solutions, business transformation, Coimbatore, Bangalore, London';
+  const contactKeywords = `${baseContactKeywords}, ${VOICE_AGENT_KEYWORDS_STRING}`;
 
   return (
     <div className="min-h-screen pt-20 bg-gray-50">
@@ -124,7 +119,7 @@ const Contact = () => {
         />
         <meta
           name="keywords"
-          content="contact CubeAI Solutions, AI solutions, business transformation, Coimbatore, Bangalore, London"
+          content={contactKeywords}
         />
         
       </Helmet>

@@ -11,6 +11,7 @@ import {
   Sparkles,
 } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
+import { VOICE_AGENT_KEYWORDS_STRING } from '../seo/voiceKeywords';
 import { toast, Toaster } from 'react-hot-toast';
 
 const Career = () => {
@@ -127,6 +128,10 @@ const Career = () => {
     { title: 'DevOps Engineer', location: 'Kochi, India', type: 'Full-time' },
   ];
 
+  const baseCareerKeywords =
+    'CubeAI Solutions careers, AI jobs 2025, software development jobs, Coimbatore jobs, Bangalore jobs, London jobs, apply now, career opportunities, machine learning jobs, data science jobs, tech innovation';
+  const careerKeywords = `${baseCareerKeywords}, ${VOICE_AGENT_KEYWORDS_STRING}`;
+
   return (
     <div className="min-h-screen pt-20 bg-gray-50">
       <Toaster position="top-right" />
@@ -140,7 +145,7 @@ const Career = () => {
         />
         <meta
           name="keywords"
-          content="CubeAI Solutions careers, AI jobs 2025, software development jobs, Coimbatore jobs, Bangalore jobs, London jobs, apply now, career opportunities, machine learning jobs, data science jobs, tech innovation"
+          content={careerKeywords}
         />
       </Helmet>
 

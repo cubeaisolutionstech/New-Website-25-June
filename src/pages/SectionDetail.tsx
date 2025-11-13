@@ -3,6 +3,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import { ArrowLeft, ArrowRight, Code, CheckCircle, Star, Users, Shield, Zap, TrendingUp, Globe, Smartphone, BarChart3, Brain, Database, Activity, FileText, Cpu, Camera, MessageSquare, Stethoscope, Scale, PenTool, Plane, Mail, Building2, Sparkles, Cloud, Award, Target, Lightbulb, ChevronLeft, ChevronRight, DivideIcon as LucideIcon } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
+import { VOICE_AGENT_KEYWORDS_STRING } from '../seo/voiceKeywords';
 
 // Define interfaces for type safety
 interface SectionContent {
@@ -1956,12 +1957,15 @@ With the Investment Agent of Cube AI Solutions, you're not merely embracing a to
   const domain = sectionData[exploreId];
   const section = domain.items[itemId];
   const SectionIcon = section.icon;
+  const subtitlePart = section.subtitle ? `${section.subtitle}, ` : '';
+  const sectionKeywords = `${section.title}, ${subtitlePart}${VOICE_AGENT_KEYWORDS_STRING}`;
 
   return (
     <div className={`min-h-screen bg-gradient-to-br ${section.bgGradient} relative overflow-hidden`}>
       <Helmet>
         <title>{`CubeAI - ${section.title}`}</title>
         <meta name="description" content={section.description} />
+        <meta name="keywords" content={sectionKeywords} />
       </Helmet>
 
       {/* Animated Background */}

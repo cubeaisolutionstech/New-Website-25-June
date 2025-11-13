@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Users, Target, Award, Globe, Sparkles, Zap, Crown, Trophy, X } from 'lucide-react';
+import { Users, Target, Award, Sparkles, Zap, Trophy, X } from 'lucide-react';
+import { VOICE_AGENT_KEYWORDS_STRING } from '../seo/voiceKeywords';
 
 // Define interfaces
 interface Award {
@@ -17,13 +18,6 @@ interface Award {
   }[];
 }
 
-interface TeamMember {
-  name: string;
-  title: string;
-  image: string;
-  bio: string;
-}
-
 interface Role {
   title: string;
   description: string;
@@ -35,44 +29,6 @@ const About: React.FC = () => {
   const [selectedAward, setSelectedAward] = useState<Award | null>(null);
   const [activeSummaryIndex, setActiveSummaryIndex] = useState<{ [key: number]: number }>({});
   const [isHovering, setIsHovering] = useState<{ [key: number]: boolean }>({});
-
-  const offices: string[] = ['Coimbatore', 'Bangalore', 'Namakkal', 'Kochi', 'Tiruppur', 'UK'];
-
-  const boardMembers: TeamMember[] = [
-    {
-      name: 'Thiru IRS P.Muthusamy BSc(Agri) BL,MS',
-      title: 'EX-IRS',
-      image: 'image/pmuthu.jpg',
-      bio: 'Visionary leader with 25+ years in AI and technology innovation.',
-    },
-    {
-      name: 'MR.Prasad Balakrishanan',
-      title: 'Miphi CEO',
-      image: 'image/prasad.jpg',
-      bio: 'AI research pioneer with expertise in machine learning and neural networks.',
-    },
-  ];
-
-  const advisors: TeamMember[] = [
-    {
-      name: 'Dr. Gopala Krishnan',
-      title: 'KSR CT Principal',
-      image: 'image/gopala.jpeg',
-      bio: 'Financial strategist with deep expertise in technology investments.',
-    },
-    {
-      name: 'Dr. Venkateshan',
-      title: 'KSR CE Principal',
-      image: 'image/venkat.jpg',
-      bio: 'Former CTO of leading tech companies with expertise in AI and cloud architecture.',
-    },
-    {
-      name: 'Mr.K.K Baluswamy',
-      title: 'Independent Consultant',
-      image: 'image/balu.jpg',
-      bio: 'Strategic consultant helping organizations navigate digital transformation.',
-    },
-  ];
 
   const awards: Award[] = [
     {
@@ -239,6 +195,10 @@ const About: React.FC = () => {
     return () => timers.forEach((timer) => clearInterval(timer));
   }, [isHovering, selectedAward]);
 
+  const baseAboutKeywords =
+    "CubeAI Solutions, AI innovation, leadership team, mission, vision, global offices, AI awards, business transformation, board of directors, advisors, global AI solutions, team expertise";
+  const aboutKeywords = `${baseAboutKeywords}, ${VOICE_AGENT_KEYWORDS_STRING}`;
+
   return (
     <div className="min-h-screen pt-20 bg-gray-50">
       <Helmet>
@@ -247,7 +207,7 @@ const About: React.FC = () => {
     name="description"
     content="Discover CubeAI Solutions' journey in AI innovation, leadership, and global transformation. Learn about our mission, vision, expert team, and prestigious awards." />
 
-      <meta name="keywords" content="CubeAI Solutions, AI innovation, leadership team, mission, vision, global offices, AI awards, business transformation, board of directors, advisors, global AI solutions, team expertise" />
+      <meta name="keywords" content={aboutKeywords} />
       </Helmet>
 
       {/* Hero Section */}

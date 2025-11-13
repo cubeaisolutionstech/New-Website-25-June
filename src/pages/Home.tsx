@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Award, ArrowRight, Sparkles, Target } from 'lucide-react';
 import FloatingCube from '../components/FloatingCube';
 import { Helmet } from 'react-helmet-async';
+import { VOICE_AGENT_KEYWORDS_STRING } from '../seo/voiceKeywords';
 
 
 
@@ -138,6 +139,10 @@ const Home = () => {
     { number: 150, label: 'AI Product Solution', suffix: '+' },
   ];
 
+  const baseHomeKeywords =
+    'CubeAI Solutions, AI workflow automation, Generative AI software, machine learning solutions, web and mobile app development, FinTech AI tools, cybersecurity AI, AI-powered analytics';
+  const homeKeywords = `${baseHomeKeywords}, ${VOICE_AGENT_KEYWORDS_STRING}`;
+
   const handleCardClick = (id: string) => {
     setSelectedCard(id === selectedCard ? null : id);
   };
@@ -153,7 +158,7 @@ const Home = () => {
         />
         <meta
           name="keywords"
-          content="CubeAI Solutions, AI workflow automation, Generative AI software, machine learning solutions, web and mobile app development, FinTech AI tools, cybersecurity AI, AI-powered analytics"
+          content={homeKeywords}
         />
         <meta name="google-site-verification" content="bcVqGkmuaS0Sk1xXnqhiE_qKKiENi2AnFRb-vTKCvVw" />
       </Helmet>

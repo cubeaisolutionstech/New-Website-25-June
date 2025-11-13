@@ -16,9 +16,19 @@ import {
   Award,
   Mail,
   X,
+  Headset,
+  PhoneCall,
+  Brain,
+  Languages,
   LucideIcon,
+  Phone,
+  Hotel,
+  Heart,
+  CreditCard,
+  ShoppingBag,
 } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
+import { VOICE_AGENT_KEYWORDS_STRING } from '../seo/voiceKeywords';
 
 // Define interface for benefit objects
 interface Benefit {
@@ -26,6 +36,13 @@ interface Benefit {
   title: string;
   description: string;
   image: string;
+}
+
+// Define interface for application objects
+interface Application {
+  sector: string;
+  icon: LucideIcon;
+  features: string[];
 }
 
 // Define interface for product data
@@ -43,6 +60,9 @@ interface Product {
   keyBenefits: string[];
   benefits: Benefit[];
   industries?: string[]; // Optional industries property
+  applications?: Application[]; // Optional applications across sectors
+  metaDescription?: string;
+  metaKeywords?: string;
 }
 
 // Define interface for productData object
@@ -75,6 +95,111 @@ const ProductDetail = () => {
   };
 
   const productData: ProductData = {
+    'i-speak-ai-voice-agent': {
+      title: 'iSpeak™ AI Voice Agent',
+      subtitle: 'Lightning-Fast Voice AI for ERP & CRM Workflows',
+      tagline: 'Automate every live conversation with enterprise-grade intelligence',
+      description:
+        "Transform how your contact center, CRM, and ERP teams operate with **iSpeak™ AI Voice Agent**. Powered by **Lightning Voice AI** and **Electron Intelligence SLMs**, iSpeak™ delivers natural, human-like conversations that understand intent, execute actions, and update your business systems in real time. Eliminate bottlenecks, shorten call handling times, and deliver white-glove customer experiences around the clock.",
+      extendedDescription:
+        "Built for regulated industries and complex enterprise environments, iSpeak™ orchestrates bi-directional voice interactions across telephony, CRM, and ERP stacks while guaranteeing compliance with **SOC 2 Type II, HIPAA, and PCI** standards. Deploy it in the cloud or on-premises to delight customers, supercharge operations, and elevate agent productivity instantly.",
+      icon: Headset,
+      color: 'from-purple-600 to-blue-600',
+      bgImage: '/image/voiceagent.avif',
+      productImage: '/image/voiceagent.webp',
+      metaDescription:
+        'iSpeak™ AI Voice Agent is a natural-sounding AI voice assistant that automates restaurant, travel, and enterprise bookings with real-time ERP and CRM integrations, multilingual support, and 24/7 availability.',
+      metaKeywords: VOICE_AGENT_KEYWORDS_STRING,
+      keyFeatures: [
+        '**Real-Time Voice Automation** – Handle inbound and outbound calls with natural, latency-free conversations that rival live agents.',
+        '**Electron SLM Intent Routing** – Understand caller intent, sentiment, and context to trigger the right workflows in connected systems.',
+        '**Native ERP & CRM Actions** – Update Salesforce, Oracle, SAP, and other enterprise apps without manual intervention.',
+        '**Omni-Channel Telephony Support** – Seamlessly integrate SIP, PSTN, WhatsApp voice, and webRTC channels.',
+        '**Secure Deployment Options** – Choose cloud, hybrid, or on-premise deployments with full compliance coverage.',
+        '**Multilingual Voice Library** – Engage customers across 16 global languages with localized, lifelike voices.',
+      ],
+      keyBenefits: [
+        '**Accelerate Resolution Times** – Reduce average handle time with AI agents that resolve issues and trigger system updates instantly.',
+        '**Boost Agent Productivity** – Let human teams focus on complex escalations while iSpeak™ automates repetitive voice tasks.',
+        '**Enhance Customer Satisfaction** – Deliver consistent, empathetic conversations that adapt to caller tone and preferences.',
+        '**Ensure Compliance & Security** – Maintain audit trails and meet enterprise security standards out of the box.',
+        '**Scale Effortlessly** – Spin up new voice agents for campaigns, geographies, or product lines in minutes, not months.',
+        '**Lower Operational Costs** – Decrease staffing and training expenses by augmenting teams with always-on AI capacity.',
+      ],
+      industries: [
+        '**Contact Centers & BPOs** – Automate high-volume call flows while surfacing complex cases to specialists.',
+        '**Financial Services** – Handle collection follow-ups, KYC verification, and transaction alerts within regulatory guardrails.',
+        '**Healthcare** – Coordinate appointments, prescription reminders, and member outreach with HIPAA-ready voice agents.',
+        '**Retail & E-Commerce** – Offer proactive order updates, returns processing, and loyalty engagement in any language.',
+      ],
+      applications: [
+        {
+          sector: 'Customer Support & Contact Centers',
+          icon: Phone,
+          features: [
+            'Handle inbound/outbound calls with zero wait time',
+            'Automate FAQs, ticket creation, and escalation handling',
+            'Reduce operational costs by up to 60%',
+          ],
+        },
+        {
+          sector: 'Hospitality & Travel',
+          icon: Hotel,
+          features: [
+            'Automate booking, check-in, and concierge services',
+            'Deliver personalized guest experiences through conversational assistance',
+            'Real-time multilingual support for travelers',
+          ],
+        },
+        {
+          sector: 'Healthcare',
+          icon: Heart,
+          features: [
+            'Appointment scheduling, patient follow-ups, and reminders',
+            'Voice-based symptom checking and guidance',
+            'AI-powered nurse assistant for 24/7 patient communication',
+          ],
+        },
+        {
+          sector: 'Banking & Financial Services',
+          icon: CreditCard,
+          features: [
+            'Voice authentication for secure transactions',
+            'Account inquiries, balance checks, and payment reminders',
+            'Smart conversational guidance for customer onboarding',
+          ],
+        },
+        {
+          sector: 'Retail & E-commerce',
+          icon: ShoppingBag,
+          features: [
+            'Conversational shopping assistants',
+            'Real-time order tracking and product inquiries',
+            'Voice-driven customer engagement and upselling',
+          ],
+        },
+      ],
+      benefits: [
+        {
+          icon: PhoneCall,
+          title: 'Real-Time Call Orchestration',
+          description: 'Blend AI voice agents with live transfers, callbacks, and CRM updates to keep every customer journey on track.',
+          image: '/image/voice.jpg',
+        },
+        {
+          icon: Brain,
+          title: 'Context-Aware Intelligence',
+          description: 'Electron SLMs analyze millions of prior interactions to understand intent, sentiment, and next best actions instantly.',
+          image: '/image/voice2.jpg',
+        },
+        {
+          icon: Languages,
+          title: 'Global Language Coverage',
+          description: 'Deliver native-quality voice experiences across 16 languages with configurable tone, accent, and persona.',
+          image: '/image/voice3.jpg',
+        },
+      ],
+    },
     'andromeda-crm': {
       title: 'Andromeda CRM',
       subtitle: 'AI-Powered Customer Relationship Management',
@@ -298,24 +423,52 @@ const ProductDetail = () => {
 
   const Icon = product.icon;
 
-  const formatText = (text: string) => {
-    return text.split('**').map((part, index) => (index % 2 === 1 ? <strong key={index}>{part}</strong> : part));
+  const renderTextWithSuperscript = (text: string, keyPrefix: string) => {
+    if (!text.includes('™')) return text;
+    const segments = text.split('™');
+    return segments.map((segment, idx) => (
+      <React.Fragment key={`${keyPrefix}-${idx}`}>
+        {segment}
+        {idx < segments.length - 1 && (
+          <sup className="ml-0.5 text-[0.65em] align-super leading-none tracking-tight text-current">™</sup>
+        )}
+      </React.Fragment>
+    ));
   };
+
+  const formatText = (text: string) => {
+    return text.split('**').map((part, index) => {
+      const content = renderTextWithSuperscript(part, `part-${index}`);
+      if (index % 2 === 1) {
+        return (
+          <strong key={`strong-${index}`} className="font-semibold text-gray-900">
+            {content}
+          </strong>
+        );
+      }
+      return (
+        <React.Fragment key={`text-${index}`}>
+          {content}
+        </React.Fragment>
+      );
+    });
+  };
+
+  const defaultMetaDescription =
+    "Discover CubeAI's products featuring AI-powered solutions to transform business operations with automation, predictive analytics, and innovation.";
+  const baseMetaKeywords =
+    'CubeAI Solutions, AI solutions, business automation, predictive analytics, digital transformation, enterprise software';
+  const defaultMetaKeywords = `${baseMetaKeywords}, ${VOICE_AGENT_KEYWORDS_STRING}`;
+  const metaDescription = product.metaDescription ?? defaultMetaDescription;
+  const metaKeywords = product.metaKeywords ?? defaultMetaKeywords;
 
   return (
     <div className="min-h-screen pt-20 bg-gray-50">
-     <Helmet>
-  <title>CubeAI Solutions - Product Details</title>
-  <meta
-    name="description"
-    content="Discover CubeAI's products featuring AI-powered solutions to transform business operations with automation, predictive analytics, and innovation."
-  />
-  <meta
-    name="keywords"
-    content="CubeAI Solutions, AI solutions, business automation, predictive analytics, digital transformation, enterprise software"
-  />
-</Helmet>
-
+      <Helmet>
+        <title>{`CubeAI Solutions - ${product.title}`}</title>
+        <meta name="description" content={metaDescription} />
+        <meta name="keywords" content={metaKeywords} />
+      </Helmet>
 
       <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0">
@@ -331,7 +484,9 @@ const ProductDetail = () => {
             <div className={`w-20 h-20 rounded-2xl bg-gradient-to-r ${product.color} flex items-center justify-center mx-auto mb-8`}>
               <Icon className="w-10 h-10 text-white" />
             </div>
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">{product.title}</h1>
+            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
+              {renderTextWithSuperscript(product.title, 'title')}
+            </h1>
             <p className="text-2xl text-blue-300 mb-4 font-medium">{product.subtitle}</p>
             <p className="text-xl text-yellow-300 mb-8 font-semibold">{product.tagline}</p>
           </motion.div>
@@ -386,8 +541,52 @@ const ProductDetail = () => {
         </div>
       </section>
 
+      {/* Applications Across Sectors */}
+      {product.applications && (
+        <section className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} className="text-center mb-16">
+              <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">Applications Across Sectors</h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Discover how {product.title} transforms operations across diverse industries
+              </p>
+            </motion.div>
+            <div className="grid lg:grid-cols-2 gap-8">
+              {product.applications.map((application: Application, index: number) => {
+                const ApplicationIcon = application.icon;
+                return (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                    whileHover={{ y: -5, scale: 1.02 }}
+                    className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 border border-gray-200 hover:border-gray-300 transition-all duration-300 shadow-lg"
+                  >
+                    <div className="flex items-center mb-6">
+                      <div className={`w-14 h-14 rounded-xl bg-gradient-to-r ${product.color} flex items-center justify-center mr-4 flex-shrink-0`}>
+                        <ApplicationIcon className="w-7 h-7 text-white" />
+                      </div>
+                      <h3 className="text-2xl font-bold text-gray-900">{application.sector}</h3>
+                    </div>
+                    <ul className="space-y-3">
+                      {application.features.map((feature: string, featureIndex: number) => (
+                        <li key={featureIndex} className="flex items-start text-gray-700">
+                          <CheckCircle className="w-5 h-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" />
+                          <span className="leading-relaxed">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Key Benefits */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} className="text-center mb-16">
             <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">Business Benefits</h2>
