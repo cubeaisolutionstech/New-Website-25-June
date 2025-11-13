@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import { VOICE_AGENT_KEYWORDS_STRING } from '../seo/voiceKeywords';
 import {
   ArrowRight,
   Check, // Replaced CheckCircle with Check for a simpler tick icon
@@ -244,6 +244,10 @@ const Services: React.FC = () => {
     }
   };
 
+  const baseServiceKeywords =
+    'AI solutions, Artificial Intelligence services, Machine Learning solutions, AI consulting, AI agents, Deep Learning, Data Analytics, Big Data, Predictive Analytics, Business Intelligence, AI-powered automation, Digital Transformation, Cloud Engineering, Cloud Solutions, DevOps automation, Hybrid Cloud, Cybersecurity services, Threat Detection, IoT solutions, Embedded Systems, Drone technology, Computer Vision, NLP solutions, AI chatbots, Industry 4.0, Industry 5.0, SaaS platforms, CubeAI Solutions';
+  const servicesKeywords = `${baseServiceKeywords}, ${VOICE_AGENT_KEYWORDS_STRING}`;
+
   return (
     <div className="min-h-screen pt-20 bg-gray-50">
      <Helmet>
@@ -251,7 +255,7 @@ const Services: React.FC = () => {
     <meta name="description" content="Discover CubeAI Solutions services in AI, Machine Learning, IoT, Data Analytics, Embedded Systems, and Digital Transformation for businesses." />
     <meta 
   name="keywords" 
-  content="AI solutions, Artificial Intelligence services, Machine Learning solutions, AI consulting, AI agents, Deep Learning, Data Analytics, Big Data, Predictive Analytics, Business Intelligence, AI-powered automation, Digital Transformation, Cloud Engineering, Cloud Solutions, DevOps automation, Hybrid Cloud, Cybersecurity services, Threat Detection, IoT solutions, Embedded Systems, Drone technology, Computer Vision, NLP solutions, AI chatbots, Industry 4.0, Industry 5.0, SaaS platforms, CubeAI Solutions" 
+  content={servicesKeywords} 
 />
 
       </Helmet>

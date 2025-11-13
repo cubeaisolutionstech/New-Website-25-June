@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, Brain, BarChart3, Eye, Code, Zap, FileText, Cpu, Database, Activity, Camera, Shield, Building2, Sparkles, Cloud, Smartphone, MessageSquare, Stethoscope, Scale, Users, PenTool, Plane, Mail, DollarSign, BarChart, Home, Globe, Phone } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
+import { VOICE_AGENT_KEYWORDS_STRING } from '../seo/voiceKeywords';
 import type { LucideIcon } from 'lucide-react';
 
 // Define interfaces for type safety
@@ -34,7 +35,8 @@ const ExploreDetail = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const exploreData: Record<ExploreId, ExploreData> = {
+  const exploreData = useMemo<Record<ExploreId, ExploreData>>(
+    () => ({
     aima: {
 title: 'AIMA',
 subtitle: 'Artificial Intelligence, Machine Learning & Agent',
@@ -160,7 +162,7 @@ items: [
         { id: 'business-consulting', name: 'Digital Transformation Consulting', icon: Building2, category: 'Consulting', description: 'Strategic consulting to drive business growth through technology', image: '/image/ebuss.webp' },
       ],
     },
-  };
+  }), []);
 
   useEffect(() => {
     if (!exploreId || !exploreData[exploreId]) {
@@ -171,7 +173,7 @@ items: [
     setLoading(false);
     console.log('Rendering exploreId:', exploreId);
     console.log('Explore data:', exploreData[exploreId]);
-  }, [exploreId]);
+  }, [exploreId, exploreData]);
 
   const handleSeeHowItWorks = (itemId: string) => {
     console.log(`Navigating to /section/${exploreId}/${itemId}`);
@@ -220,6 +222,8 @@ items: [
   }
 
   const explore = exploreData[exploreId];
+  const subtitlePart = explore.subtitle ? `${explore.subtitle}, ` : '';
+  const exploreKeywords = `${explore.title} solutions, ${subtitlePart}${VOICE_AGENT_KEYWORDS_STRING}`;
 
   // Animation variants for cards
   const cardAnimationVariants = [
@@ -270,6 +274,7 @@ items: [
       <Helmet>
         <title>{`CubeAI - ${explore.title} Solutions`}</title>
         <meta name="description" content={explore.description} />
+        <meta name="keywords" content={exploreKeywords} />
       </Helmet>
 
       {/* Background Design */}

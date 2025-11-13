@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import Navbar from './components/Navbar';
@@ -18,9 +18,8 @@ import Insights from './pages/Insights';
 import ArticlePage from './pages/ArticlePage';
 import SocialMediaLinks from './components/SocialMediaLinks';
 import AnalyticsTracker from './components/AnalyticsTracker'; 
-import ReadyToContact from './components/ReadyToContact';
 
-// Scroll to Top + ReadyToContact wrapper
+// Scroll to Top wrapper
 const AppContent = () => {
   const { pathname } = useLocation();
 
@@ -29,12 +28,7 @@ const AppContent = () => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
-  return (
-    <>
-      {/* Show ReadyToContact everywhere except Contact page */}
-      {pathname !== '/contact' && <ReadyToContact />}
-    </>
-  );
+  return null;
 };
 
 function App() {
@@ -64,7 +58,7 @@ function App() {
         <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-indigo-900">
           <Navbar />
           <SocialMediaLinks />
-          <AppContent /> {/* Handles ScrollToTop + ReadyToContact */}
+          <AppContent /> {/* Handles ScrollToTop */}
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />

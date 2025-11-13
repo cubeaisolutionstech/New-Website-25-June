@@ -4,6 +4,7 @@ import { Share2, ArrowLeft, ArrowRight, Tag, BookOpen } from 'lucide-react';
 import { getArticleById, getRelatedArticles } from '../data/articles';
 import Header from '../components/Header';
 import { Helmet } from 'react-helmet-async';
+import { VOICE_AGENT_KEYWORDS_STRING } from '../seo/voiceKeywords';
 
 // Define the Article interface to match the data structure
 interface Article {
@@ -108,19 +109,19 @@ const ArticlePage = () => {
     );
   }
 
+  const baseArticleKeywords =
+    'AI, Artificial Intelligence, Machine Learning, Business Automation, Cloud Computing, Data Analytics, Digital Transformation, IoT, SaaS, Enterprise Software, Technology, Innovation';
+  const articleKeywords = `${baseArticleKeywords}, ${VOICE_AGENT_KEYWORDS_STRING}`;
+
   return (
     <div className="min-h-screen bg-white">
       <Helmet>
         <title>{article.title} | CubeAI Insights</title>
         <meta
-  name="description"
-  content="Read the latest insights on AI, technology, and innovation from CubeAI Insights."
-/>
-<meta
-  name="keywords"
-  content="AI, Artificial Intelligence, Machine Learning, Business Automation, Cloud Computing, Data Analytics, Digital Transformation, IoT, SaaS, Enterprise Software, Technology, Innovation"
-/>
-
+          name="description"
+          content="Read the latest insights on AI, technology, and innovation from CubeAI Insights."
+        />
+        <meta name="keywords" content={articleKeywords} />
       </Helmet>
 
       <Header />

@@ -9,8 +9,10 @@ import {
   ArrowRight,
   Star,
   Orbit,
+  Headset,
 } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
+import { VOICE_AGENT_KEYWORDS_STRING } from '../seo/voiceKeywords';
 
 // Define interfaces for type safety
 interface Product {
@@ -26,7 +28,39 @@ interface Product {
 }
 
 const Products = () => {
+  const renderTitleWithSuperscript = (title: string) => {
+    if (!title.includes('™')) return title;
+    const segments = title.split('™');
+    return segments.map((segment, idx) => (
+      <React.Fragment key={`title-${idx}`}>
+        {segment}
+        {idx < segments.length - 1 && (
+          <sup className="ml-0.5 text-[0.65em] align-super leading-none tracking-tight text-current">™</sup>
+        )}
+      </React.Fragment>
+    ));
+  };
+
   const products: Product[] = [
+    {
+      id: 'i-speak-ai-voice-agent',
+      title: 'iSpeak™ AI Voice Agent',
+      description:
+        'iSpeak™ AI Voice Agent brings the speed and realism of Lightning Voice AI to your ERP and CRM workflows. It uses Electron Intelligence SLMs to understand intent, automate contact center actions, and trigger updates across your enterprise stack in real time while maintaining enterprise-grade security.',
+      icon: Headset,
+      color: 'from-purple-600 to-blue-600',
+      bgColor: 'bg-purple-50/10',
+      iconBg: 'bg-purple-600',
+      image: 'image/voiceagent2.jpg',
+      features: [
+        'Real-time bi-directional voice orchestration',
+        'Lightning-grade text-to-speech with human-like latency',
+        'Native telephony, CRM, and ERP integrations',
+        'Electron SLM intent comprehension and routing',
+        'Enterprise compliance: SOC 2 Type II, HIPAA, PCI',
+        '16-language multilingual voice library',
+      ],
+    },
     {
       id: 'andromeda-crm',
       title: 'Andromeda CRM',
@@ -170,7 +204,7 @@ const Products = () => {
         />
         <meta
           name="keywords"
-          content="CubeAI Solutions products, Andromeda CRM AI customer management, Orion ERP enterprise resource planning, Nebula CDM customer data management, Cosmos Orchestration workflow automation, AI-powered enterprise software, digital transformation tools, business process automation"
+          content={`CubeAI Solutions products, Andromeda CRM AI customer management, Orion ERP enterprise resource planning, Nebula CDM customer data management, Cosmos Orchestration workflow automation, AI-powered enterprise software, digital transformation tools, business process automation, ${VOICE_AGENT_KEYWORDS_STRING}`}
         />
       </Helmet>
 
@@ -313,7 +347,7 @@ const Products = () => {
                   </div>
                   {/* Title and Description */}
                   <h3 className="text-3xl font-bold text-gray-900 mb-6 group-hover:text-blue-600 transition-colors">
-                    {product.title}
+                    {renderTitleWithSuperscript(product.title)}
                   </h3>
                   <p className="text-gray-600 mb-8 leading-relaxed text-lg">{product.description}</p>
                   {/* Features */}

@@ -10,6 +10,7 @@ import {
   Sparkles,
 } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
+import { VOICE_AGENT_KEYWORDS_STRING } from '../seo/voiceKeywords';
 
 // Define interfaces for type safety
 interface SectionContent {
@@ -452,6 +453,9 @@ const IndustryDetail = () => {
 
   const industry = industryData[industryId];
   const sections = [industry.whatWeDo, industry.solutions, industry.trending, industry.futurePlans];
+  const baseIndustryKeywords =
+    'CubeAI Solutions, Industry Solutions, AI solutions, Business Automation, AI-powered technology, Smart Systems, Predictive Analytics, Digital Transformation, Industry 4.0';
+  const industryKeywords = `${baseIndustryKeywords}, ${VOICE_AGENT_KEYWORDS_STRING}`;
 
   return (
     <div className="min-h-screen bg-blue-100">
@@ -463,7 +467,7 @@ const IndustryDetail = () => {
         />
         <meta
           name="keywords"
-          content="CubeAI Solutions, Industry Solutions, AI solutions, Business Automation, AI-powered technology, Smart Systems, Predictive Analytics, Digital Transformation, Industry 4.0"
+          content={industryKeywords}
         />
       </Helmet>
 

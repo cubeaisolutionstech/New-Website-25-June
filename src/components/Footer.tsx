@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, MapPin, Phone } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
+import { VOICE_AGENT_KEYWORDS_STRING } from '../seo/voiceKeywords';
 
 const Footer = () => {
   useEffect(() => {
@@ -15,6 +16,10 @@ const Footer = () => {
     }
   }, []);
 
+  const baseFooterKeywords =
+    'CubeAI Solutions, AI services, contact, innovation, technology solutions, business growth';
+  const footerKeywords = `${baseFooterKeywords}, ${VOICE_AGENT_KEYWORDS_STRING}`;
+
   return (
     <>
       <Helmet>
@@ -25,7 +30,7 @@ const Footer = () => {
         />
         <meta
           name="keywords"
-          content="CubeAI Solutions, AI services, contact, innovation, technology solutions, business growth"
+          content={footerKeywords}
         />
       </Helmet>
         <footer className="bg-[#001F54] backdrop-blur-xl border-t border-blue-200/20">

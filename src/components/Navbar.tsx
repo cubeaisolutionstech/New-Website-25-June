@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
+import { VOICE_AGENT_KEYWORDS_STRING } from '../seo/voiceKeywords';
 
 interface NavItem {
   name: string;
@@ -44,6 +45,10 @@ const Navbar: React.FC<NavbarProps> = () => {
     { name: 'Contact', path: '/contact' },
   ];
 
+  const baseNavbarKeywords =
+    'CubeAI Solutions, AI services, navigation, products, career, contact, business innovation';
+  const navbarKeywords = `${baseNavbarKeywords}, ${VOICE_AGENT_KEYWORDS_STRING}`;
+
   return (
     <>
       <Helmet>
@@ -54,7 +59,7 @@ const Navbar: React.FC<NavbarProps> = () => {
         />
         <meta
           name="keywords"
-          content="CubeAI Solutions, AI services, navigation, products, career, contact, business innovation"
+          content={navbarKeywords}
         />
       </Helmet>
       <motion.nav

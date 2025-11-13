@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
+import { VOICE_AGENT_KEYWORDS_STRING } from '../seo/voiceKeywords';
 import {
   Sparkles,
   ArrowLeft,
@@ -32,6 +33,10 @@ import {
   Briefcase,
   Megaphone,
   Camera,
+  Mic,
+  Phone,
+  Calendar,
+  Clock,
 } from 'lucide-react';
 
 const ServiceDetail = () => {
@@ -507,6 +512,41 @@ const ServiceDetail = () => {
                       className="flex items-center bg-white rounded-xl p-4 shadow-sm"
                     >
                       <point.icon className="w-5 h-5 text-violet-600 mr-3" />
+                      <span className="text-gray-700">{point.text}</span>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
+          ),
+        },
+        {
+          title: 'Voice Agent',
+          icon: Mic,
+          content: (
+            <div className="space-y-8">
+              <motion.div className="bg-gradient-to-r from-violet-50 to-purple-50 rounded-2xl p-8" variants={fadeInUp}>
+                <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+                  Our <span className="font-bold text-blue-600">AI-powered voice agent</span> enables natural, real-time voice interactions between users and the system, providing intelligent conversational experiences similar to an AI assistant. This advanced voice technology transforms how users interact with VisionAI, allowing seamless communication through spoken language for enhanced productivity and intuitive user experiences.
+                </p>
+                <h4 className="text-xl font-semibold text-gray-900 mb-4">Core Capabilities of Voice Agent:</h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {[
+                    { text: 'AI Voice Assistant for Restaurants – Automated restaurant booking and reservation management with natural voice interactions.', icon: Mic },
+                    { text: '24/7 AI Booking Assistant – Always-available voice booking support that handles reservations round-the-clock.', icon: Rocket },
+                    { text: 'Natural Language Voice AI Agent – Conversational voice interface that understands and responds to booking requests naturally.', icon: MessageCircle },
+                    { text: 'Voice AI with Human-like Conversation – Natural, engaging voice interactions that provide intelligent conversational experiences.', icon: Users },
+                    { text: 'Automated Voice Reservation System – Complete voice-driven reservation automation that reduces manual errors and saves staff time.', icon: Zap },
+                  ].map((point, i) => (
+                    <motion.div
+                      key={i}
+                      variants={bulletVariants}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true }}
+                      className="flex items-center bg-white rounded-xl p-4 shadow-sm"
+                    >
+                      <point.icon className="w-5 h-5 text-violet-600 mr-3 flex-shrink-0" />
                       <span className="text-gray-700">{point.text}</span>
                     </motion.div>
                   ))}
@@ -1165,6 +1205,9 @@ const ServiceDetail = () => {
   }
 
   const ServiceIcon = service.icon;
+  const baseServiceKeywords =
+    'CubeAI Solutions, AI services, Artificial Intelligence, Machine Learning, Automation, Predictive Analytics, Cloud AI, Data Analytics, Digital Transformation, Intelligent Systems';
+  const serviceKeywords = `${baseServiceKeywords}, ${VOICE_AGENT_KEYWORDS_STRING}`;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
@@ -1176,7 +1219,7 @@ const ServiceDetail = () => {
   />
   <meta
     name="keywords"
-    content="CubeAI Solutions, AI services, Artificial Intelligence, Machine Learning, Automation, Predictive Analytics, Cloud AI, Data Analytics, Digital Transformation, Intelligent Systems"
+    content={serviceKeywords}
   />
 </Helmet>
 
